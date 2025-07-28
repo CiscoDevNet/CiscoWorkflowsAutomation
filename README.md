@@ -1,4 +1,4 @@
-# devnet-template
+# Cisco Workflows Automation 
 This provides a template repository for creating or importing repos in the CiscoDevNet organization on GitHub.com. 
 
 Please use this template as a guide to creating a repo that encourages contributions and shows thoughtful maintenance strategies.  

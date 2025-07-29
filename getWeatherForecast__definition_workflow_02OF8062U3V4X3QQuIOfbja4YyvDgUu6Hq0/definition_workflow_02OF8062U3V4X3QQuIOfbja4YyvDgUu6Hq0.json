@@ -11,14 +11,14 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "Current Conditions",
+          "name": "City",
           "type": "datatype.string",
           "is_required": false,
           "display_on_wizard": false,
           "is_invisible": false,
           "variable_string_format": "text"
         },
-        "unique_name": "variable_workflow_02ORTJRKUNLH12mwnqz7f4IRKHf8VlVaKRP",
+        "unique_name": "variable_workflow_02ORTJLYVH64Q7QVEssRqyBxRDefmjChIHf",
         "object_type": "variable_workflow"
       },
       {
@@ -41,20 +41,21 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "City",
+          "name": "Current Conditions",
           "type": "datatype.string",
           "is_required": false,
           "display_on_wizard": false,
           "is_invisible": false,
           "variable_string_format": "text"
         },
-        "unique_name": "variable_workflow_02ORTJLYVH64Q7QVEssRqyBxRDefmjChIHf",
+        "unique_name": "variable_workflow_02ORTJRKUNLH12mwnqz7f4IRKHf8VlVaKRP",
         "object_type": "variable_workflow"
       }
     ],
     "properties": {
       "atomic": {
-        "is_atomic": false
+        "atomic_group": "Weather",
+        "is_atomic": true
       },
       "delete_workflow_instance": false,
       "display_name": "Get Weather",

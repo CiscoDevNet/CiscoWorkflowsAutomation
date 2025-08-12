@@ -9,7 +9,9 @@ workflows/
 ├── README.md                # This file - overview and documentation
 ├── Catalyst Center/         # Cisco Catalyst Center automation workflows
 │   ├── Network Hierarchy/   # Network hierarchy management workflows
-│   └── Tasks/               # Catalyst Center task & Execution automation scripts/                     # Python scripts and utilities supporting workflows
+│   └── Tasks/               # Catalyst Center task & Execution automation
+│
+scripts/                     # Python scripts and utilities supporting workflows
     └── url_encode_string.py # URL encoding utility script
 ```
 

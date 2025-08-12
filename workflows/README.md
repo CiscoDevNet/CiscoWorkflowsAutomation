@@ -1,84 +1,42 @@
-# Cisco Automation Workflows
+# Workflows Automation
 
-This directory contains Cisco automation workflows organized by product and functionality. Each workflow is designed to automate common tasks and operations across various Cisco platforms.
+This directory contains automation workflows organized by functionality. Each workflow is designed to automate common tasks and operations across various Domain Controllers or platforms.
 
 ## Directory Structure
 
 ```text
 workflows/
-├── README.md                 # This file - overview and documentation
-└── CatalystCenter/          # Cisco Catalyst Center automation workflows
-    ├── NetworkHierarchy/    # Network hierarchy management workflows
-    └── Tasks/              # General task automation workflows
+├── README.md                # This file - overview and documentation
+├── Catalyst Center/         # Cisco Catalyst Center automation workflows
+│   ├── Network Hierarchy/   # Network hierarchy management workflows
+│   └── Tasks/               # Catalyst Center task & Execution automation scripts/                     # Python scripts and utilities supporting workflows
+    └── url_encode_string.py # URL encoding utility script
 ```
 
-## Organization Principles
+## Organization
 
-### By Product/Platform
+### Workflows
 
-Workflows are organized into directories based on the target Cisco product or platform:
+The workflows directory follows a structured approach to organize automation content:
 
-- **CatalystCenter**: Workflows for Cisco Catalyst Center (DNA Center) automation
+### By Domain Controller/Platform
+
+Within the workflows directory, automation content is organized into subdirectories based on the target Domain Controller or platform:
+
+- **Catalyst Center**: Workflows specifically designed for Cisco Catalyst Center automation and management
 
 ### By Functionality
 
-Within each product directory, workflows are further categorized by their primary function:
+Within each platform directory, workflows are further categorized by their primary operational function:
 
-- **NetworkHierarchy**: Workflows related to network topology, site management, and hierarchical organization
-- **Tasks**: General automation tasks, maintenance operations, and utility workflows
+- **Network Hierarchy**: Workflows related to network topology, site management, and hierarchical organization
+- **Tasks**: General automation workflows for processing tasks and executions
 
-## Workflow Naming Convention
+### Scripts
 
-Workflows should follow a consistent naming pattern:
+The companion scripts' directory (located at the repository root level) contains Python utility scripts that support and enhance the workflow automation:
 
-- Use descriptive names that clearly indicate the workflow's purpose
-- Include the target platform when not obvious from the directory structure
-- Use camelCase or snake_case consistently
-- Example: `createSiteHierarchy`, `device_inventory_sync`
-
-## Workflow Standards
-
-### JSON Workflow Definitions
-
-- Each workflow should include a complete JSON definition file
-- Follow Cisco workflow automation standards and best practices
-- Include proper error handling and logging
-- Document input parameters and expected outputs
-
-### Documentation Requirements
-
-Each workflow directory should contain:
-
-1. **Workflow definition file** (JSON format)
-2. **README.md** with workflow description, prerequisites, and usage instructions
-3. **Examples** showing typical use cases and parameter values
-
-## Getting Started
-
-### Prerequisites
-
-- Access to target Cisco platforms (Catalyst Center, etc.)
-- Appropriate API credentials and permissions
-- Workflow automation platform (SecureX Orchestrator, etc.)
-
-### Usage
-
-1. Navigate to the appropriate product directory
-2. Select the workflow category that matches your use case
-3. Review the workflow documentation and prerequisites
-4. Import the workflow definition into your automation platform
-5. Configure required parameters and credentials
-6. Test the workflow in a non-production environment
-
-## Contributing
-
-When adding new workflows:
-
-1. Place them in the appropriate product/functionality directory
-2. Follow the established naming conventions
-3. Include comprehensive documentation
-4. Test thoroughly before committing
-5. Update this README if adding new categories or products
+These scripts can be embedded within workflows or used independently to support automation tasks across different platforms.
 
 ## Support
 
@@ -86,5 +44,5 @@ For questions or issues with these workflows:
 
 - Check the individual workflow documentation
 - Review Cisco DevNet resources and documentation
-- Open an issue in this repository for workflow-specific problems
+
 

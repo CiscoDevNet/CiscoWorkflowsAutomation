@@ -29,27 +29,17 @@ Workflows specifically designed for SD-Access fabric operations including:
 ```text
 Catalyst Center/
 ├── README.md                   # This file - Catalyst Center workflow overview
-├── Network Hierarchy/          # Site, building, and area management workflows
-├── Tasks/                      # General task automation and utility workflows
-├── Network Settings/           # General network setting management workflows
-├── SD-Access/                  # Software Defined Access fabric workflows
+
 ```
 
 ## Current Workflows
 
-### Tasks Directory
+### Tasks & Execution Operations
 
-Contains utility workflows for common Catalyst Center operations:
-
-- **Get Execution ID.json** - Retrieve execution identifiers for workflow tracking
-- **Get Task ID.json** - Obtain task identifiers for operation monitoring
-- **Wait For Catalyst Center Execution.json** - Wait for execution completion
-- **Wait For Catalyst Center Task.json** - Wait for task completion
-
-## Workflow Categories
-
-### Network Settings
-
+- **Get Execution ID** - Retrieve execution identifiers for workflow tracking
+- **Get Task ID** - Obtain task identifiers for operation monitoring
+- **Wait For Catalyst Center Execution** - Wait for execution completion
+- **Wait For Catalyst Center Task** - Wait for task completion
 
 ### SD-Access Operations
 

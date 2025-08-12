@@ -1,6 +1,6 @@
 # Cisco Catalyst Center Automation Workflows
 
-This directory contains automation workflows for Cisco Catalyst Center that help with operations of **Campus networks** and **Software Defined Access Fabrics (SD-Access)**. The workflows are organized in directories by network operation type to provide targeted automation for specific network management functions.
+This directory contains automation workflows for Cisco Catalyst Center that help with operations of **Campus networks** and **Software Defined Access Fabrics (SD-Access)**. The workflows provide targeted automation for specific network management functions.
 
 ## Network Operation Types
 

@@ -2,6 +2,14 @@
 
 This directory contains educational workflows and training materials used in the Cisco Workflows Automation Learning Series. These workflows are specifically designed for learning purposes, providing step-by-step examples, tutorials, and hands-on exercises to help users understand automation concepts and develop practical skills.
 
+## Community Resources
+
+Get connected with the Cisco Workflows Automation community and access comprehensive learning materials:
+
+- **[Workflows Community](http://cs.co/WorkflowsCommunity)** - Ask questions and keep up to date on all the latest Workflows announcements
+- **[Workflows Self-Learning](http://cs.co/WorkflowsSelfLearning)** - These training videos walk through the basics of getting started with creating Workflows
+- **[Workflows Demos](http://cs.co/WorkflowsDemos)** - Short demo videos showcasing Workflows functionality
+
 ## Purpose
 
 The Learning Series directory serves as an educational repository that:

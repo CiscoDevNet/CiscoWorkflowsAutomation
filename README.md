@@ -8,8 +8,11 @@ This repository contains automation workflows organized by target platform and f
 ```text
 CiscoWorkflowsAutomation/
 ├── README.md                             # This file - repository overview
+├── AI/                                   # AI-powered automation workflows and integrations
 ├── Catalyst Center/                      # Cisco Catalyst Center automation workflows
-├── getWeatherForecast__definition_workflow_*/  # Example workflow definition
+├── Cross Domain/                         # Multi-platform and cross-domain integration workflows
+├── Learning Series/                      # Educational workflows and training materials
+├── Restful WebService/                   # RESTful API integration workflows and examples
 ├── CODE_OF_CONDUCT.md                    # Community standards and interaction guidelines
 ├── CONTRIBUTING.md                       # Contribution guidelines and procedures
 ├── LICENSE                               # Repository license terms

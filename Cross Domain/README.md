@@ -84,6 +84,8 @@ Complex workflows that orchestrate services across multiple domains:
 - Appropriate API access and permissions on each system
 - Network connectivity between automation platform and target systems
 
+---
+
 **Note**: This directory is currently being established. Workflows will be added as cross-domain automation requirements are identified and developed.
 
 **Last Updated**: August 2025

@@ -12,7 +12,7 @@ CiscoWorkflowsAutomation/
 ├── Catalyst Center/                      # Cisco Catalyst Center automation workflows
 ├── Cross Domain/                         # Multi-platform and cross-domain integration workflows
 ├── Learning Series/                      # Educational workflows and training materials
-├── getWeatherForecast__definition_workflow_*/  # Example workflow definition
+├── Restful WebService/                   # RESTful API integration workflows and examples
 ├── CODE_OF_CONDUCT.md                    # Community standards and interaction guidelines
 ├── CONTRIBUTING.md                       # Contribution guidelines and procedures
 ├── LICENSE                               # Repository license terms

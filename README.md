@@ -11,7 +11,7 @@ CiscoWorkflowsAutomation/
 ├── AI/                                   # AI-powered automation workflows and integrations
 ├── Catalyst Center/                      # Cisco Catalyst Center automation workflows
 ├── Cross Domain/                         # Multi-platform and cross-domain integration workflows
-├── Learning Series/                      # Educational workflows and training materials
+├── Meraki/                               # Cisco Meraki automation workflows and integrations
 ├── Restful WebService/                   # RESTful API integration workflows and examples
 ├── CODE_OF_CONDUCT.md                    # Community standards and interaction guidelines
 ├── CONTRIBUTING.md                       # Contribution guidelines and procedures

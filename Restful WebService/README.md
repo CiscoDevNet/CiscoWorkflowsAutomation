@@ -8,7 +8,6 @@ The RESTful Web Service directory serves as a repository for workflows that:
 
 - **Demonstrate API Integration**: Show practical examples of integrating with external RESTful web services
 - **Showcase HTTP Request Handling**: Illustrate core HTTP request capabilities including GET, POST, PUT, DELETE operations
-- **Provide Integration Patterns**: Establish reusable patterns for API authentication, error handling, and data processing
 - **Enable External Service Integration**: Bridge Cisco network automation with third-party services and platforms
 
 ## HTTP Request Capabilities

@@ -28,25 +28,31 @@ Workflows specifically designed for SD-Access fabric operations including:
 
 ```text
 Catalyst Center/
-├── README.md                   # This file - Catalyst Center workflow overview
-
+└── README.md /  # This file - Catalyst Center workflow overview
 ```
 
 ## Current Workflows
 
-### Tasks & Execution Operations
+The following workflows are currently available in this repository:
 
-- **Get Execution ID** - Retrieve execution identifiers for workflow tracking
-- **Get Task ID** - Obtain task identifiers for operation monitoring
-- **Wait For Catalyst Center Execution** - Wait for execution completion
-- **Wait For Catalyst Center Task** - Wait for task completion
+### Task Management and Utility Workflows
 
-### SD-Access Operations
+- **Get Execution ID** - Retrieve execution identifiers for workflow tracking and monitoring
+- **Get Task ID** - Obtain task identifiers for operation monitoring and status checking
+- **Wait For Catalyst Center Execution** - Wait for execution completion with timeout handling
+- **Wait For Catalyst Center Task** - Wait for task completion with proper status validation
 
-- **Fabric Management**: Fabric creation, expansion, and maintenance
-- **Segmentation**: Virtual network (VN) and scalable group tag (SGT) management
-- **Authentication**: Identity and access control integration
-- **Analytics**: Fabric health monitoring and troubleshooting
+### Configuration Template Management
+
+- **Create Template** - Create configuration templates for device provisioning and standardization
+- **Get Templates** - Retrieve existing configuration templates from Catalyst Center
+- **Deploy Template to Multiple Catalyst Centers** - Deploy templates across multiple Catalyst Center instances
+
+### Network Settings and Credentials
+
+- **Assign Network Settings** - Configure network settings including AAA servers, DHCP, and DNS
+- **Assign Network Credentials** - Assign authentication credentials for device management
+- **Deploy Network Settings and Credentials** - Combined deployment of network settings and credentials to sites
 
 ## Prerequisites
 

@@ -40,49 +40,12 @@ Complex workflows that orchestrate services across multiple domains:
 - **Change Management**: Coordinated change implementation across network domains
 - **Compliance Reporting**: Cross-domain compliance validation and reporting
 
-## Integration Capabilities
-
-### Platform Connectivity
-
-- **API Integration**: REST API calls to multiple Cisco platforms
-- **Authentication Management**: Centralized credential management for multi-platform access
-- **Data Synchronization**: Consistent data exchange between different management systems
-- **Event Correlation**: Cross-platform event monitoring and correlation
-
 ### Third-Party Integration
 
 - **ITSM Systems**: Integration with IT Service Management platforms
 - **Monitoring Tools**: Integration with network monitoring and analytics platforms
 - **Security Platforms**: Integration with security information and event management (SIEM) systems
 - **Cloud Services**: Integration with public cloud providers and services
-
-## Use Cases
-
-### Network Transformation
-
-- **Brownfield Modernization**: Workflows for gradually migrating legacy networks to modern architectures
-- **Hybrid Deployments**: Managing mixed environments with both traditional and software-defined networking
-- **Technology Refresh**: Coordinated hardware and software refresh across multiple domains
-
-### Operational Efficiency
-
-- **Automated Provisioning**: End-to-end service provisioning across all network domains
-- **Centralized Management**: Unified workflows for managing distributed network infrastructure
-- **Policy Consistency**: Ensuring consistent policy enforcement across different platforms
-
-### Business Continuity
-
-- **Disaster Recovery**: Cross-domain disaster recovery and business continuity workflows
-- **Load Balancing**: Traffic management and load distribution across multiple domains
-- **Failover Automation**: Automated failover and recovery procedures
-
-## Prerequisites
-
-### Platform Access
-
-- Authentication credentials for all target platforms
-- Appropriate API access and permissions on each system
-- Network connectivity between automation platform and target systems
 
 ---
 

@@ -28,7 +28,20 @@ Workflows specifically designed for SD-Access fabric operations including:
 
 ```text
 Catalyst Center/
-└── README.md /  # This file - Catalyst Center workflow overview
+├── README.md                                                                           # This file - Catalyst Center workflow overview
+├── AssignNetworkCredentials__definition_workflow_02NGXCSAT5Q6T33Z4pykwejT9wziPP6KTwe/
+├── AssignNetworkSettings__definition_workflow_02NG39Z6F63K749IbHoph8nGVpEhHaIUHt6/
+├── ComposeSiteHierachyName__definition_workflow_02NG8EASZBL4E3bes3yy0amgTb0RQCG1v2n/
+├── CreateTemplate__definition_workflow_02OEWDBJ0W6V02w8ZPbJkgtBALD7nFIwmMg/
+├── DeployNetworkSettingsandCredentials__definition_workflow_02NG1H6MKH0GJ4g9gEeP0STvn5AwirGGF1F/
+├── DeployTemplatetoMultipleCatalystCenters__definition_workflow_02OHG69IQ4LYA3ueBbULOgjS8UGLDHocEdV/
+├── GetExecutionID__definition_workflow_02NIIS1MJRLC03UGv6ranhuvuNIv5RDKFyx/
+├── GetFabricDeviceAttributes__definition_workflow_02P6BJYYJ2QJ11dbaqjqZ2NfEaBbbz0xDna/
+├── GetTaskID__definition_workflow_01MXNG0KEEZFY4tZ9xFzej731gBSpkNrzwO/
+├── GetTemplates__definition_workflow_02OF18QTTJWI76Q81OfAI7wjq6ppQ0S6u6b/
+├── RetrieveCatalystCenterInventory__definition_workflow_02LUCD8E5P4ZU17bpnk6E5qWw11nrOeyEig/
+├── WaitForCatalystCenterExecution__definition_workflow_02NHXIR9YQLLH4km689n0NCuWFwW5MuL4BD/
+└── WaitForCatalystCenterTask__definition_workflow_02MYO8WQRTQ0L0yqAI6aoCSoM5AD9vA6vBQ/
 ```
 
 ## Current Workflows
@@ -37,22 +50,41 @@ The following workflows are currently available in this repository:
 
 ### Task Management and Utility Workflows
 
-- **Get Execution ID** - Retrieve execution identifiers for workflow tracking and monitoring
-- **Get Task ID** - Obtain task identifiers for operation monitoring and status checking
-- **Wait For Catalyst Center Execution** - Wait for execution completion with timeout handling
-- **Wait For Catalyst Center Task** - Wait for task completion with proper status validation
+| Workflow Name | Description |
+|---------------|-------------|
+| Get Execution ID | Parses Intent API response and retrieves Catalyst Center Service Job Execution Id |
+| Get Task ID | Parses Intent API response and retrieves Catalyst Center Service Task Id |
+| Wait For Catalyst Center Execution | Waits for a Catalyst Center Job execution and monitors until it completes or fails |
+| Wait For Catalyst Center Task | Waits for a Catalyst Center task to complete or fail |
 
 ### Configuration Template Management
 
-- **Create Template** - Create configuration templates for device provisioning and standardization
-- **Get Templates** - Retrieve existing configuration templates from Catalyst Center
-- **Deploy Template to Multiple Catalyst Centers** - Deploy templates across multiple Catalyst Center instances
+| Workflow Name | Description |
+|---------------|-------------|
+| Create Template | Creates Template in a Project at Template Hub |
+| Get Templates | Retrieves Templates from a Project at Template Hub |
+| Deploy Template to Multiple Catalyst Centers | Deploys a Configuration Template to Multiple Catalyst Centers |
 
 ### Network Settings and Credentials
 
-- **Assign Network Settings** - Configure network settings including AAA servers, DHCP, and DNS
-- **Assign Network Credentials** - Assign authentication credentials for device management
-- **Deploy Network Settings and Credentials** - Combined deployment of network settings and credentials to sites
+| Workflow Name | Description |
+|---------------|-------------|
+| Assign Network Settings | Assign Network and AAA Settings to Site In Network Hierarchy |
+| Assign Network Credentials | Assign Network Credentials to Site Hierarchy |
+| Deploy Network Settings and Credentials | Sets Settings and Credentials to Network Site Hierarchy |
+
+### Site and Hierarchy Management
+
+| Workflow Name | Description |
+|---------------|-------------|
+| Compose Site Hierachy Name | Returns the Site Hierarchy name by concatenating the Parent, Area, Building & Floor elements |
+
+### Device and Inventory Management
+
+| Workflow Name | Description |
+|---------------|-------------|
+| Retrieve Catalyst Center Inventory | Retrieves Catalyst Center Inventory, automates retrieving inventory of devices under management |
+| Get Fabric Device Attributes | Returns a summary of all attributes of a fabric device |
 
 ## Prerequisites
 

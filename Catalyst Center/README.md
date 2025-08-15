@@ -28,7 +28,17 @@ Workflows specifically designed for SD-Access fabric operations including:
 
 ```text
 Catalyst Center/
-└── README.md /  # This file - Catalyst Center workflow overview
+├── README.md                                                                           # This file - Catalyst Center workflow overview
+├── AssignNetworkCredentials__definition_workflow_02NGXCSAT5Q6T33Z4pykwejT9wziPP6KTwe/
+├── AssignNetworkSettings__definition_workflow_02NG39Z6F63K749IbHoph8nGVpEhHaIUHt6/
+├── CreateTemplate__definition_workflow_02OEWDBJ0W6V02w8ZPbJkgtBALD7nFIwmMg/
+├── DeployNetworkSettingsandCredentials__definition_workflow_02NG1H6MKH0GJ4g9gEeP0STvn5AwirGGF1F/
+├── DeployTemplatetoMultipleCatalystCenters__definition_workflow_02OHG69IQ4LYA3ueBbULOgjS8UGLDHocEdV/
+├── GetExecutionID__definition_workflow_02NIIS1MJRLC03UGv6ranhuvuNIv5RDKFyx/
+├── GetTaskID__definition_workflow_01MXNG0KEEZFY4tZ9xFzej731gBSpkNrzwO/
+├── GetTemplates__definition_workflow_02OF18QTTJWI76Q81OfAI7wjq6ppQ0S6u6b/
+├── WaitForCatalystCenterExecution__definition_workflow_02NHXIR9YQLLH4km689n0NCuWFwW5MuL4BD/
+└── WaitForCatalystCenterTask__definition_workflow_02MYO8WQRTQ0L0yqAI6aoCSoM5AD9vA6vBQ/
 ```
 
 ## Current Workflows
@@ -37,22 +47,22 @@ The following workflows are currently available in this repository:
 
 ### Task Management and Utility Workflows
 
-- **Get Execution ID** - Retrieve execution identifiers for workflow tracking and monitoring
-- **Get Task ID** - Obtain task identifiers for operation monitoring and status checking
-- **Wait For Catalyst Center Execution** - Wait for execution completion with timeout handling
-- **Wait For Catalyst Center Task** - Wait for task completion with proper status validation
+- **Get Execution ID** - Parses Intent API response and retrieves Catalyst Center Service Job Execution Id
+- **Get Task ID** - Parses JSON objects to extract task identifiers from Catalyst Center API responses
+- **Wait For Catalyst Center Execution** - Waits for execution completion with configurable timeout and retry logic
+- **Wait For Catalyst Center Task** - Waits for task completion with customizable wait time between polling attempts
 
 ### Configuration Template Management
 
-- **Create Template** - Create configuration templates for device provisioning and standardization
-- **Get Templates** - Retrieve existing configuration templates from Catalyst Center
-- **Deploy Template to Multiple Catalyst Centers** - Deploy templates across multiple Catalyst Center instances
+- **Create Template** - Creates configuration templates with specified content and parameters for device provisioning
+- **Get Templates** - Retrieves templates from a Project at Template Hub by searching for specific template names
+- **Deploy Template to Multiple Catalyst Centers** - Deploys configuration templates across multiple Catalyst Center instances
 
 ### Network Settings and Credentials
 
-- **Assign Network Settings** - Configure network settings including AAA servers, DHCP, and DNS
-- **Assign Network Credentials** - Assign authentication credentials for device management
-- **Deploy Network Settings and Credentials** - Combined deployment of network settings and credentials to sites
+- **Assign Network Settings** - Configures comprehensive network settings including AAA servers, DHCP, DNS, and other network parameters
+- **Assign Network Credentials** - Assigns and manages authentication credentials including SNMP, CLI, and other device access credentials
+- **Deploy Network Settings and Credentials** - Combined workflow that deploys both network settings and credentials to specified sites
 
 ## Prerequisites
 

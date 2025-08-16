@@ -86,6 +86,7 @@ The following workflows are currently available in this repository:
 | Retrieve Catalyst Center Inventory | Retrieves Catalyst Center Inventory, automates retrieving inventory of devices under management | |
 | Get Fabric Device Attributes | Returns a summary of all attributes of a fabric device | |
 
+
 ## Prerequisites
 
 ### Catalyst Center Access

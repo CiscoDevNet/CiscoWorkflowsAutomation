@@ -50,41 +50,41 @@ The following workflows are currently available in this repository:
 
 ### Task Management and Utility Workflows
 
-| Workflow Name | Description |
-|---------------|-------------|
-| Get Execution ID | Parses Intent API response and retrieves Catalyst Center Service Job Execution Id |
-| Get Task ID | Parses Intent API response and retrieves Catalyst Center Service Task Id |
-| Wait For Catalyst Center Execution | Waits for a Catalyst Center Job execution and monitors until it completes or fails |
-| Wait For Catalyst Center Task | Waits for a Catalyst Center task to complete or fail |
+| Workflow Name | Description | Type |
+|---------------|-------------|------|
+| Get Execution ID | Parses Intent API response and retrieves Catalyst Center Service Job Execution Id | Atomic |
+| Get Task ID | Parses Intent API response and retrieves Catalyst Center Service Task Id | Atomic |
+| Wait For Catalyst Center Execution | Waits for a Catalyst Center Job execution and monitors until it completes or fails | Atomic |
+| Wait For Catalyst Center Task | Waits for a Catalyst Center task to complete or fail | Atomic |
 
 ### Configuration Template Management
 
-| Workflow Name | Description |
-|---------------|-------------|
-| Create Template | Creates Template in a Project at Template Hub |
-| Get Templates | Retrieves Templates from a Project at Template Hub |
-| Deploy Template to Multiple Catalyst Centers | Deploys a Configuration Template to Multiple Catalyst Centers |
+| Workflow Name | Description | Type |
+|---------------|-------------|------|
+| Create Template | Creates Template in a Project at Template Hub | |
+| Get Templates | Retrieves Templates from a Project at Template Hub | |
+| Deploy Template to Multiple Catalyst Centers | Deploys a Configuration Template to Multiple Catalyst Centers | |
 
 ### Network Settings and Credentials
 
-| Workflow Name | Description |
-|---------------|-------------|
-| Assign Network Settings | Assign Network and AAA Settings to Site In Network Hierarchy |
-| Assign Network Credentials | Assign Network Credentials to Site Hierarchy |
-| Deploy Network Settings and Credentials | Sets Settings and Credentials to Network Site Hierarchy |
+| Workflow Name | Description | Type |
+|---------------|-------------|------|
+| Assign Network Settings | Assign Network and AAA Settings to Site In Network Hierarchy | |
+| Assign Network Credentials | Assign Network Credentials to Site Hierarchy | |
+| Deploy Network Settings and Credentials | Sets Settings and Credentials to Network Site Hierarchy | |
 
 ### Site and Hierarchy Management
 
-| Workflow Name | Description |
-|---------------|-------------|
-| Compose Site Hierachy Name | Returns the Site Hierarchy name by concatenating the Parent, Area, Building & Floor elements |
+| Workflow Name | Description | Type |
+|---------------|-------------|------|
+| Compose Site Hierachy Name | Returns the Site Hierarchy name by concatenating the Parent, Area, Building & Floor elements | |
 
 ### Device and Inventory Management
 
-| Workflow Name | Description |
-|---------------|-------------|
-| Retrieve Catalyst Center Inventory | Retrieves Catalyst Center Inventory, automates retrieving inventory of devices under management |
-| Get Fabric Device Attributes | Returns a summary of all attributes of a fabric device |
+| Workflow Name | Description | Type |
+|---------------|-------------|------|
+| Retrieve Catalyst Center Inventory | Retrieves Catalyst Center Inventory, automates retrieving inventory of devices under management | |
+| Get Fabric Device Attributes | Returns a summary of all attributes of a fabric device | |
 
 ## Prerequisites
 

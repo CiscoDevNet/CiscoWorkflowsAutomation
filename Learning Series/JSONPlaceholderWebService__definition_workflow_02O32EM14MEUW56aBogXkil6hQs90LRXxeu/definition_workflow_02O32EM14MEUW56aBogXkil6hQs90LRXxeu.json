@@ -1,0 +1,117 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_02O32EM14MEUW56aBogXkil6hQs90LRXxeu",
+    "name": "JSON Placeholder Web Service",
+    "title": "JSON Placeholder Web Service",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "Very Simple Workflow.\nCalls a Web Service called JSON Placeholder Web Service",
+      "display_name": "JSON Placeholder Web Service",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_02O32E6O7CZ734kTsSOj5TNayxWqgl7lH6W",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_02O32FZ7BC5SI6gGrFMogpFNI5kwbqEXzMQ",
+        "name": "HTTP Request",
+        "title": "JSON Placeholder Web Service Call",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "allow_headers_redirect": false,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "description": "HTTP Request",
+          "display_name": "JSON Placeholder Web Service Call",
+          "method": "GET",
+          "relative_url": "/users",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02O32SMP1ABJU6Rj2uZKg1dkekCXUJldsyP",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query the Results",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "description": "JSONPath Query to get value in JSON",
+          "display_name": "JSONPath Query the Results",
+          "input_json": "$activity.definition_activity_02O32FZ7BC5SI6gGrFMogpFNI5kwbqEXzMQ.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$[*].name",
+              "jsonpath_query_name": "name",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_02O32GPTBKD5U26i29OH5ZwyRqy6fZMhMFz"
+    ]
+  },
+  "categories": {
+    "category_02O32GPTBKD5U26i29OH5ZwyRqy6fZMhMFz": {
+      "unique_name": "category_02O32GPTBKD5U26i29OH5ZwyRqy6fZMhMFz",
+      "name": "Learning Series",
+      "title": "Learning Series",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "This is our learning series workflows",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_02O32E6O7CZ734kTsSOj5TNayxWqgl7lH6W": {
+      "unique_name": "definition_target_02O32E6O7CZ734kTsSOj5TNayxWqgl7lH6W",
+      "name": "JSON Placeholder Web Service",
+      "title": "JSON Placeholder Web Service",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "This is for our learning series",
+        "disable_certificate_validation": true,
+        "display_name": "JSON Placeholder Web Service",
+        "host": "jsonplaceholder.typicode.com",
+        "ignore_proxy": false,
+        "is_https_proxy": false,
+        "no_runtime_user": true,
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  }
+}

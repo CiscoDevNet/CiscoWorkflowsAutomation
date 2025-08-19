@@ -1,0 +1,2106 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh",
+    "name": "Select and Schedule Firmware Update by Network Tag",
+    "title": "Select and Schedule Firmware Update by Network Tag",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Switch Upgrade Time",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4OY9P5Qw0pvP8nCRj1jigVG1vin",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "local",
+          "name": "Appliance Upgrade required",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4FNA5118mVpydfnwguXUiRTLdqq",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Selected Switch Version Name",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4TBHM2H049ySM7RbP9g14KRdZMl",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Output - Result",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4QOKU5HV6IkMj2RrKPQYvz7XFJV",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "local",
+          "name": "Switch Upgrade required",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4P4IP4z95c6uCuzIrFB6RvHi1NA",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "Output - Status Code",
+          "type": "datatype.integer",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4VAZC3qMVI88kPtq9ZNYGYylcXp",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "properties": {
+          "value": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"
+          ],
+          "scope": "local",
+          "name": "Days",
+          "type": "datatype.array",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4PG285zXSUOyn4Ysy8qeB32hnms",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "properties": {
+          "value": [],
+          "scope": "local",
+          "name": "Appliance Available Versions",
+          "type": "datatype.array",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4DPNU3pO2xqdryqaLJ2G2n0yZV8",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Network List",
+          "type": "datatype.string",
+          "description": "List of Networks with firmware upgrades scheduled",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4KOWE6kwYGByyxqnIP0TWbEKQ4p",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Network Tag",
+          "type": "datatype.string",
+          "description": "Network Tag",
+          "is_required": true,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02NZIZHN4HSCG4qJCsL1e8Dy3sqmuOhswGR",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Response",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4OKP461PKWQYM5I67mFKEorkOEU",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Upgrade Appliance Version id",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4PL340XdSgAGlcXNdpm9RTOYisA",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Selected Wireless Version Name",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4L5G44GDZ9A3eo22vVBzqjjTPAd",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "properties": {
+          "value": [
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030"
+          ],
+          "scope": "local",
+          "name": "Years",
+          "type": "datatype.array",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4C42P55J4YilVYye0ArH0R1DXVS",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "properties": {
+          "value": [
+            "00:00",
+            "01:00",
+            "02:00",
+            "03:00",
+            "04:00",
+            "05:00",
+            "06:00",
+            "07:00",
+            "08:00",
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00",
+            "18:00",
+            "19:00",
+            "20:00",
+            "21:00",
+            "22:00",
+            "23:00"
+          ],
+          "scope": "local",
+          "name": "Hours",
+          "type": "datatype.array",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4R5600szumZj3Cmx8XpkcamU60Z",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Wireless Current Version",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4NX2520XPqskRnvnhrzh2iPAp4i",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Wireless Upgrade Time",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4F5MJ07GwZK20JtmptuJxKaAH9d",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Selected Wireless Version ID",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4MJDH49tdlgpF1JBrlX8Eu14Fmf",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Selected Appliance Version Name",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4LJET1BhBpBSorY0VXU1WoWjtDn",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "local",
+          "name": "Wireless Upgrade required",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4U02V3LVi9FZuC6DgcnymHqOGdG",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Upgrade Wireless Version id",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4S66D13ULSCuFvWOXLLpy2BT3nQ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "properties": {
+          "value": [],
+          "scope": "local",
+          "name": "Wireless Available Versions",
+          "type": "datatype.array",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4TMCM4CecEj4KzemRnY72rjaoX6",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "local",
+          "name": "Organization Counter",
+          "type": "datatype.integer",
+          "description": "A count of the number of Organizations found that have at least one Network with the required Tag",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4Q1GM18w48gArmQcsvDzIqcyyCC",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Upgrade Time",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4QDU86fTQflRkSdYVcV2o6qmwgK",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Not Scheduled List",
+          "type": "datatype.string",
+          "description": "List of Networks where the Update NEtwork Firmware Upgrade API call failed",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4KBE70WIHtfIkbthtHrgLTBg4VO",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "properties": {
+          "value": [],
+          "scope": "local",
+          "name": "Switch Available Versions",
+          "type": "datatype.array",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4HCFH6b6xm6zP8Gyti0ByGxjXUx",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Upgrade Switch Version id",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4RGFL17O9dFzTzH133McOk2N4mN",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Appliance Current Version",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4IYAQ0bquqov8PatNqNwagbU1Xh",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Not required list",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4O7RJ1lUNRd0cR09sZopUoUkmjE",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_02MLLFTLGOG3I6ToW7dgIcnzumqbZQYVkDb",
+        "properties": {
+          "scope": "local",
+          "name": "Meraki Network Table",
+          "type": "datatype.table",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4VKD11UlB1JKiIiBux8voXR7zBZ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Output - Status Message",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4RV180jLGLEoWtornnvW4HkMpHy",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Output - Error Message",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4PQ1L7Y4fDPYAbShBcv4rLKbmEr",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Selected Switch Version ID",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4I24Z6vTME17MRvsJTMAkTCWFm2",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Appliance Upgrade Time",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4JDTC1Ce834DDZlPRrGWvVbJpOS",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "properties": {
+          "value": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"
+          ],
+          "scope": "local",
+          "name": "Months",
+          "type": "datatype.array",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4V2JI1IM3G3SCxxmGo6uXURu6Ts",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "local",
+          "name": "Network Counter",
+          "type": "datatype.integer",
+          "description": "A count of the number of Networks found with the required Tag",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4PAMI4uyG8cm2tyKWVpcJeP1OET",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Switch Current Version",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4QJHQ0EH3gEcvRd1v9006dxpkIx",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Selected Appliance Version ID",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02NZIZHN4QZQB0Z1McAF5VEPwLohJfZ2rUp",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "Custom Workflow by enovak that takes a Network Tag as input and then pauses with a User Prompt to select firmware versions for Appliance, Switch, and Wireless devices and the date and time to for the firmware update.  (User Prompts are found on the dashboard under Automation -\u003e User Tasks -\u003e Prompts) After the User Prompt has been submitted, the Workflow continues and loops through all networks that have the supplied Network Tag from all Organizations the selected Meraki Key has access to and schedules the firmware upgrades.\nNOTE: If over 500 Networks are found with a matching Network Tag, the workflow will fail with the run status of workflow_timeout due to the current limitation of only 500 iterations in a single For Each loop. See the example on using nested loops to workaround this current limitiation.",
+      "display_name": "Select and Schedule Firmware Update by Network Tag",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "meraki.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_02NZIZHTI7M0G5WZEr967MWKQXC2sfkEvGR",
+        "name": "Group",
+        "title": "Create a table of all Organizations",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "This group of activities creates a list of all Meraki Organizations the selected Meraki Account Key has access to.",
+          "display_as_suggestion": false,
+          "display_name": "Create a table of all Organizations",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02NZIZHWXR03V5YK4p1usX1Vu4JG3N1tViq",
+            "name": "Get Organizations",
+            "title": "Get Organizations",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "display_name": "Get Organizations",
+              "input": {
+                "variable_workflow_02LXK9KUOD0MH4qj4j062vm12gYmFb9y5N0": 100,
+                "variable_workflow_02LXKBG6HGMSD1YojnHQ3bM2cT6mP8A02A9": "",
+                "variable_workflow_02LXKCCX4AREX6odSHkvY5oECunJtqcLahK": ""
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "target": {
+                "target_type": "meraki.endpoint",
+                "use_workflow_target": true
+              },
+              "workflow_id": "definition_workflow_02LV5GIDUTY3X0WhuidM5ZWhkjL8wQCGAPq",
+              "workflow_name": "Meraki - Get Organizations"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02NZIZHXZIRDG7M1TtU0X6p79JcuehWz8jj",
+            "name": "Read Table from JSON",
+            "title": "Organizations Read Table from JSON",
+            "type": "corejava.read_table_from_json",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Organizations Read Table from JSON",
+              "input_json": "$activity.definition_activity_02NZIZHWXR03V5YK4p1usX1Vu4JG3N1tViq.output.variable_workflow_02LXKZA6725S35QBWMZCg1AlZnT11mbSFQi$",
+              "jsonpath_query": "$.*",
+              "persist_output": true,
+              "populate_columns": false,
+              "skip_execution": false,
+              "table_columns": [
+                {
+                  "column_name": "id",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "name",
+                  "column_type": "string"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_02NZJCAPE80946aETihBk8TI2EZ2VxrlwFg",
+        "name": "Execute Python Script",
+        "title": "Convert Network Tag string into JSON Array",
+        "type": "python3.script",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "description": "This custom Python Script activity converts the Network Tag string provided as Workflow input into a JSON Array for use later in the workflow.",
+          "display_name": "Convert Network Tag string into JSON Array",
+          "script": "import json\nimport ast\n\ndef convert_to_json_array(input_string):\n    \"\"\"\n    Converts a string representation of a list or a plain string into a proper JSON array.\n    - If it's a list (e.g. \"['A', 'B']\"), it parses and returns it as a JSON array.\n    - If it's a plain string (e.g. Demo ), wraps it in a JSON array.\n    - If empty, returns an empty array.\n    \"\"\"\n    if not input_string.strip():\n        return json.dumps([], indent=4)\n\n    try:\n        # Try evaluating the string as a Python literal\n        parsed = ast.literal_eval(input_string)\n\n        # If it's a list, return as JSON array\n        if isinstance(parsed, list):\n            return json.dumps(parsed, indent=4)\n        \n        # Otherwise, wrap the value in a list\n        return json.dumps([parsed], indent=4)\n\n    except (SyntaxError, ValueError):\n        # Fallback: treat it as a plain string\n        return json.dumps([input_string.strip()], indent=4)\n# Example input\ninput_string = '$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.input.variable_workflow_02NZIZHN4HSCG4qJCsL1e8Dy3sqmuOhswGR$'\n\n# Convert and print the JSON array\njson_output = convert_to_json_array(input_string)\nprint(json_output)",
+          "script_queries": [
+            {
+              "script_query": "json_output",
+              "script_query_name": "JSON_Array",
+              "script_query_type": "array"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02NZIZHZ8LTLT6qAxn3vxmfHfgOKBcMjMAY",
+        "name": "For Each",
+        "title": "For Each Organization Get Networks ",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "Create a table of Networks by getting the Networks from each Organization filtered by the provided input Network Tag",
+          "display_name": "For Each Organization Get Networks ",
+          "skip_execution": false,
+          "source_array": "$activity.definition_activity_02NZIZHXZIRDG7M1TtU0X6p79JcuehWz8jj.output.read_table_from_json$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02NZIZI1MTY7V6durZzcSDZbrmmvJ7OSzKZ",
+            "name": "Get Organization Networks filtered by tag",
+            "title": "Get Organization Networks filtered by tag",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "description": "Get all the Neworks from each Organization.  The returned network list is filtered by the Network Tag provided as Worfklow input that has been converted into a JSON arry.",
+              "display_name": "Get Organization Networks filtered by tag",
+              "input": {
+                "variable_workflow_02L9TZH6C81473IDtFQ0NIzW3jmXrgchtN9": "$activity.definition_activity_02NZIZHZ8LTLT6qAxn3vxmfHfgOKBcMjMAY.input.source_array[@].id$",
+                "variable_workflow_02LEUL5GOHN9T53T7jFQx3T2Yo04p5Xuz0r": false,
+                "variable_workflow_02LNK5WW0RD2A20mG7v1G7gsyE2N2RrKdQd": "",
+                "variable_workflow_02LNK5WW0RTCB1AXbOwJOBVWvUx1wdyKtkt": "withAnyTags",
+                "variable_workflow_02LNK5WW0S5E21Q9biFSXTiLbHr7cWP2K7y": false,
+                "variable_workflow_02LNK5WW0SE2H1zmchhUHyfX7L0XGvKmB7W": 1000,
+                "variable_workflow_02LNK5WW0SM7R5SjIvnnytN6vYzR7wfDHeE": "$activity.definition_activity_02NZJCAPE80946aETihBk8TI2EZ2VxrlwFg.output.script_queries.JSON_Array$",
+                "variable_workflow_02LNK5WW0STMX38BXiY2IvPQoHQliJHSCgE": [],
+                "variable_workflow_02LNK5WW0T0NX26NyApdlTn355uYJwcQGqW": "",
+                "variable_workflow_02LNK5WW0T92U1HJd1sxzFrmVvwxy7NVaQn": ""
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "target_type": "meraki.endpoint",
+                "use_workflow_target": true
+              },
+              "workflow_id": "definition_workflow_02L9TZH5W95870XebPF2g8kSyIYcawUvljX",
+              "workflow_name": "Meraki - Get Organization Networks"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02NZIZI2W6HQJ3CAKhMYV9XCDk0aT2Tm3Fd",
+            "name": "Condition Block",
+            "title": "Check for empty response",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "conditions": [],
+              "continue_on_failure": false,
+              "description": "The Query for Tagged Networks may not return anything.  Check for an empty response",
+              "display_name": "Check for empty response",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_02NZIZI3RO89P29NpdKe6NlZzsWiNFYmKNQ",
+                "name": "Condition Branch",
+                "title": "Valid Response",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_02NZIZI1MTY7V6durZzcSDZbrmmvJ7OSzKZ.output.variable_workflow_02L9TZH6C8OZI7c9t9Z0h0JHAbqCc7LuTGT$",
+                    "operator": "ne",
+                    "right_operand": "[]"
+                  },
+                  "continue_on_failure": false,
+                  "description": "One or more Networks found with the Network Tag that was provided as Workflow input",
+                  "display_name": "Valid Response",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_02NZIZI6L8ZU32E0uJyG6yazLR0cGZkfuTe",
+                    "name": "Set Variables",
+                    "title": "Update Organization Counter",
+                    "type": "core.set_multiple_variables",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "description": "Only count Organizations that have at least one Network with the required Network Tag",
+                      "display_name": "Update Organization Counter",
+                      "skip_execution": false,
+                      "variables_to_update": [
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4Q1GM18w48gArmQcsvDzIqcyyCC$",
+                          "variable_value_new": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4Q1GM18w48gArmQcsvDzIqcyyCC$+1"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02NZIZIA8M2EW0jW7Q18Xz9GWjK7u7GpViy",
+                    "name": "Read Table from JSON",
+                    "title": "Networks Read Table from JSON",
+                    "type": "corejava.read_table_from_json",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "description": "Get the Network ID, Network Name, and Network Tags ",
+                      "display_name": "Networks Read Table from JSON",
+                      "input_json": "$activity.definition_activity_02NZIZI1MTY7V6durZzcSDZbrmmvJ7OSzKZ.output.variable_workflow_02L9TZH6C8OZI7c9t9Z0h0JHAbqCc7LuTGT$",
+                      "jsonpath_query": "$.*",
+                      "persist_output": true,
+                      "populate_columns": false,
+                      "skip_execution": false,
+                      "table_columns": [
+                        {
+                          "column_name": "id",
+                          "column_type": "string"
+                        },
+                        {
+                          "column_name": "name",
+                          "column_type": "string"
+                        },
+                        {
+                          "column_name": "tags",
+                          "column_type": "string"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02NZIZICD6C9B5ESWMwQQmifiBSiP36x0EL",
+                    "name": "For Each",
+                    "title": "For Each Network",
+                    "type": "logic.for_each",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "description": "Loop through each Network that has a matching Network Tag and add it to the Network Table",
+                      "display_name": "For Each Network",
+                      "skip_execution": false,
+                      "source_array": "$activity.definition_activity_02NZIZIA8M2EW0jW7Q18Xz9GWjK7u7GpViy.output.read_table_from_json$"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_02NZIZIDXB07M3LuBT8dMqISOUeBguxh4UD",
+                        "name": "Add Row to Table",
+                        "title": "Add Row to Network Table",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "description": "Add the Network ID, Network Name, and Network Tags into the Network Table",
+                          "display_name": "Add Row to Network Table",
+                          "input_table": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4VKD11UlB1JKiIiBux8voXR7zBZ$",
+                          "row": [
+                            {
+                              "key": "name",
+                              "type": "string",
+                              "value": "$activity.definition_activity_02NZIZICD6C9B5ESWMwQQmifiBSiP36x0EL.input.source_array[@].name$"
+                            },
+                            {
+                              "key": "id",
+                              "type": "string",
+                              "value": "$activity.definition_activity_02NZIZICD6C9B5ESWMwQQmifiBSiP36x0EL.input.source_array[@].id$"
+                            },
+                            {
+                              "key": "tags",
+                              "type": "string",
+                              "value": "$activity.definition_activity_02NZIZICD6C9B5ESWMwQQmifiBSiP36x0EL.input.source_array[@].tags$"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_02NZIZIFCQHD971J6wJ4aM2tcxLSoR3r8Wy",
+                        "name": "Set Variables",
+                        "title": "Update Network Counter",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "Count the number of Networks found with the required tag",
+                          "display_name": "Update Network Counter",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4PAMI4uyG8cm2tyKWVpcJeP1OET$",
+                              "variable_value_new": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4PAMI4uyG8cm2tyKWVpcJeP1OET$+1"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_02NZIZIGBKUD54p1WRuLe8SsLXBhbqSmnCh",
+                "name": "Condition Branch",
+                "title": "Empty Response",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_02NZIZI1MTY7V6durZzcSDZbrmmvJ7OSzKZ.output.variable_workflow_02L9TZH6C8OZI7c9t9Z0h0JHAbqCc7LuTGT$",
+                    "operator": "eq",
+                    "right_operand": "[]"
+                  },
+                  "continue_on_failure": false,
+                  "description": "No Networks found with the matching tag in this Organization.  There is nothing to do.  Move on to the next Organization.\nNOTE: This condition branch check activity could be deleted, it is left in this example to provide a placeholder for the logic explanation.",
+                  "display_name": "Empty Response",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_02NZIZII85LTG4zK9D1gKcyTd5cNwKXOUcN",
+        "name": "Get Network Firmware Upgrades",
+        "title": "Get Network Firmware Upgrades",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "Get the available firmware versions from the first Network in the Network Table.\nNOTE: The assumption here is that all Networks with the same tag are alike and that the firmware versions available for one represent the firmware versions that are available for all.  If this is not the case for you, you may want to modify this activity to specify the Network to use to identify the available firmware versions.",
+          "display_name": "Get Network Firmware Upgrades",
+          "input": {
+            "variable_workflow_02LV1H3CNM5T45adfzDFwEeMjrKbmdHd58D": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4VKD11UlB1JKiIiBux8voXR7zBZ[0].id$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "target_type": "meraki.endpoint",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_02LV1H3CNM49K1df7J02ad4wyV6Jv0E23b6",
+          "workflow_name": "Meraki - Get Network Firmware Upgrades"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02NZIZIJEB7NV15SkVJqgYZkj2AO92EW5Tv",
+        "name": "Group",
+        "title": "Format the firmware data for the User Prompt",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "This group of activities gets the current firmware versions, available versions short names and version IDs and formats the data into JSON arrays.  It utilizes multiple Python Script activities that could be combined into a single activity.  \nNOTE: You can duplicate the activities and make very minor modifications to use them for additional device types",
+          "display_as_suggestion": false,
+          "display_name": "Format the firmware data for the User Prompt",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02NZNG3C7V0F769SnZOGmn9nOLjjP4QA5z6",
+            "name": "JSONPath Query",
+            "title": "Get the current and available version short names",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "description": "JSONPath Query to get the current and available version short names and available version IDs.\nNOTE: You can add additional JSON Path Queries here for additional product types",
+              "display_name": "Get the current and available version short names",
+              "input_json": "$activity.definition_activity_02NZIZII85LTG4zK9D1gKcyTd5cNwKXOUcN.output.variable_workflow_02LV1H3CNMB7K2eIEUcLniuSFXAmkGIOQJ2$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$.products.appliance.currentVersion.shortName",
+                  "jsonpath_query_name": "Appliance current version short name",
+                  "jsonpath_query_type": "string",
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                {
+                  "jsonpath_query": "$.products.appliance.availableVersions[*].shortName",
+                  "jsonpath_query_name": "Appliance available version short names",
+                  "jsonpath_query_type": "string",
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                {
+                  "jsonpath_query": "$.products.appliance.availableVersions[*].id",
+                  "jsonpath_query_name": "Appliance available version IDs",
+                  "jsonpath_query_type": "string",
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                {
+                  "jsonpath_query": "$.products.switch.currentVersion.shortName",
+                  "jsonpath_query_name": "Switch current version short name",
+                  "jsonpath_query_type": "string",
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                {
+                  "jsonpath_query": "$.products.switch.availableVersions[*].shortName",
+                  "jsonpath_query_name": "Switch available version short names",
+                  "jsonpath_query_type": "string",
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                {
+                  "jsonpath_query": "$.products.switch.availableVersions[*].id",
+                  "jsonpath_query_name": "Switch available version IDs",
+                  "jsonpath_query_type": "string",
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                {
+                  "jsonpath_query": "$.products.wireless.currentVersion.shortName",
+                  "jsonpath_query_name": "Wireless current version short name",
+                  "jsonpath_query_type": "string",
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                {
+                  "jsonpath_query": "$.products.wireless.availableVersions[*].shortName",
+                  "jsonpath_query_name": "Wireless available version short names",
+                  "jsonpath_query_type": "string",
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                {
+                  "jsonpath_query": "$.products.wireless.availableVersions[*].id",
+                  "jsonpath_query_name": "Wireless available version IDs",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02NZO2ATV0TSF6a3nFSu5UNMgFW6sQWt1XZ",
+            "name": "Execute Python Script",
+            "title": "List to JSON Array",
+            "type": "python3.script",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "description": "Custom Python Script activity that converts the strings from the preceding JSON PathQuery into JSON Arrays to be used in the User Prompt activity drop-down selections.",
+              "display_name": "List to JSON Array",
+              "script": "import json\nimport ast\n\ndef convert_to_json_array(input_string):\n    \"\"\"\n    Converts an input (stringified list, list, or single value) into a proper JSON array.\n    \"\"\"\n\n    # If it's already a list (not a string), return it\n    if isinstance(input_string, list):\n        return json.dumps(input_string, indent=4)\n\n    # Clean and prepare the string\n    input_string = str(input_string).strip()\n\n    # Strip outer quotes if present\n    if (input_string.startswith('\"') and input_string.endswith('\"')) or \\\n       (input_string.startswith(\"'\") and input_string.endswith(\"'\")):\n        input_string = input_string[1:-1]\n\n    try:\n        # Try to parse it as a list\n        parsed_list = ast.literal_eval(input_string)\n        if isinstance(parsed_list, list):\n            return json.dumps(parsed_list, indent=4)\n    except Exception:\n        pass\n\n    # Fallback: treat it as a single string item\n    return json.dumps([input_string], indent=4)\n\n# Convert the strings to a JSON array\nappliance_available_versions_shortnames = convert_to_json_array('$activity.definition_activity_02NZNG3C7V0F769SnZOGmn9nOLjjP4QA5z6.output.jsonpath_queries.Appliance available version short names$')\nappliance_available_versions_ids = convert_to_json_array('$activity.definition_activity_02NZNG3C7V0F769SnZOGmn9nOLjjP4QA5z6.output.jsonpath_queries.Appliance available version IDs$')\nswitch_available_versions_shortnames = convert_to_json_array('$activity.definition_activity_02NZNG3C7V0F769SnZOGmn9nOLjjP4QA5z6.output.jsonpath_queries.Switch available version short names$')\nswitch_available_versions_ids = convert_to_json_array('$activity.definition_activity_02NZNG3C7V0F769SnZOGmn9nOLjjP4QA5z6.output.jsonpath_queries.Switch available version IDs$')\nwireless_available_versions_shortnames = convert_to_json_array('$activity.definition_activity_02NZNG3C7V0F769SnZOGmn9nOLjjP4QA5z6.output.jsonpath_queries.Wireless available version short names$')\nwireless_available_versions_ids = convert_to_json_array('$activity.definition_activity_02NZNG3C7V0F769SnZOGmn9nOLjjP4QA5z6.output.jsonpath_queries.Wireless available version IDs$')",
+              "script_queries": [
+                {
+                  "script_query": "appliance_available_versions_shortnames",
+                  "script_query_name": "Appliance Available Version Short Names",
+                  "script_query_type": "string"
+                },
+                {
+                  "script_query": "appliance_available_versions_ids",
+                  "script_query_name": "Appliance Available Version IDs",
+                  "script_query_type": "string"
+                },
+                {
+                  "script_query": "switch_available_versions_shortnames",
+                  "script_query_name": "Switch Available Version Short Names",
+                  "script_query_type": "string"
+                },
+                {
+                  "script_query": "switch_available_versions_ids",
+                  "script_query_name": "Switch Available Version IDs",
+                  "script_query_type": "string"
+                },
+                {
+                  "script_query": "wireless_available_versions_shortnames",
+                  "script_query_name": "Wireless Available Version Short Names",
+                  "script_query_type": "string"
+                },
+                {
+                  "script_query": "wireless_available_versions_ids",
+                  "script_query_name": "Wireless Available Version IDs",
+                  "script_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02NZIZJ6PXYF37BSicAlnPE5TLu0X69gSzH",
+            "name": "Set Variables",
+            "title": "Set Selection Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "description": "Set the local variables that will be used in the following User Prompt activity",
+              "display_name": "Set Selection Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4DPNU3pO2xqdryqaLJ2G2n0yZV8$",
+                  "variable_value_new": "$activity.definition_activity_02NZO2ATV0TSF6a3nFSu5UNMgFW6sQWt1XZ.output.script_queries.Appliance Available Version Short Names$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4HCFH6b6xm6zP8Gyti0ByGxjXUx$",
+                  "variable_value_new": "$activity.definition_activity_02NZO2ATV0TSF6a3nFSu5UNMgFW6sQWt1XZ.output.script_queries.Switch Available Version Short Names$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4TMCM4CecEj4KzemRnY72rjaoX6$",
+                  "variable_value_new": "$activity.definition_activity_02NZO2ATV0TSF6a3nFSu5UNMgFW6sQWt1XZ.output.script_queries.Wireless Available Version Short Names$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4IYAQ0bquqov8PatNqNwagbU1Xh$",
+                  "variable_value_new": "$activity.definition_activity_02NZNG3C7V0F769SnZOGmn9nOLjjP4QA5z6.output.jsonpath_queries.Appliance current version short name$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4QJHQ0EH3gEcvRd1v9006dxpkIx$",
+                  "variable_value_new": "$activity.definition_activity_02NZNG3C7V0F769SnZOGmn9nOLjjP4QA5z6.output.jsonpath_queries.Switch current version short name$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4NX2520XPqskRnvnhrzh2iPAp4i$",
+                  "variable_value_new": "$activity.definition_activity_02NZNG3C7V0F769SnZOGmn9nOLjjP4QA5z6.output.jsonpath_queries.Wireless current version short name$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_02NZIZJ8FI8NP5hCWP8YzB37wbDDNLrQflz",
+        "name": "Create Prompt",
+        "title": "Firmware Version Selection",
+        "type": "task.prompt_request",
+        "base_type": "activity",
+        "properties": {
+          "assignee_roles": [
+            "admin"
+          ],
+          "assignees": [
+            "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.output.started_by$"
+          ],
+          "continue_on_failure": false,
+          "description": "This creates a User Prompt where the user will select the firmware versions from the drop down selection of available versions and the date and time for the firmware upgrade to be scheduled for.\nNOTE: The User Prompt is found at Automation -\u003e User Tasks -\u003e Prompts",
+          "display_name": "Firmware Version Selection",
+          "expiration_date": {
+            "is_relative_time": true,
+            "relative_time": {
+              "duration": 72,
+              "time_units": "hours"
+            }
+          },
+          "form_elements": [
+            {
+              "allow_multiselect": false,
+              "form_element": "select",
+              "form_label": "Select Appliance Version",
+              "form_option_label_key": "",
+              "form_source_array": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4DPNU3pO2xqdryqaLJ2G2n0yZV8$"
+            },
+            {
+              "allow_multiselect": false,
+              "form_element": "select",
+              "form_label": "Select Switch Verision",
+              "form_option_label_key": "",
+              "form_source_array": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4HCFH6b6xm6zP8Gyti0ByGxjXUx$"
+            },
+            {
+              "allow_multiselect": false,
+              "form_element": "select",
+              "form_label": "Select Wireless Verision",
+              "form_option_label_key": "",
+              "form_source_array": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4TMCM4CecEj4KzemRnY72rjaoX6$"
+            },
+            {
+              "allow_multiselect": false,
+              "form_element": "select",
+              "form_label": "Month",
+              "form_option_label_key": "",
+              "form_source_array": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4V2JI1IM3G3SCxxmGo6uXURu6Ts$"
+            },
+            {
+              "allow_multiselect": false,
+              "form_element": "select",
+              "form_label": "Day",
+              "form_option_label_key": "",
+              "form_source_array": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4PG285zXSUOyn4Ysy8qeB32hnms$"
+            },
+            {
+              "allow_multiselect": false,
+              "form_element": "select",
+              "form_label": "Year",
+              "form_option_label_key": "",
+              "form_source_array": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4C42P55J4YilVYye0ArH0R1DXVS$"
+            },
+            {
+              "allow_multiselect": false,
+              "form_element": "select",
+              "form_label": "Time",
+              "form_option_label_key": "",
+              "form_source_array": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4R5600szumZj3Cmx8XpkcamU60Z$"
+            }
+          ],
+          "prompt_body": "Found $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4PAMI4uyG8cm2tyKWVpcJeP1OET$ Networks in $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4Q1GM18w48gArmQcsvDzIqcyyCC$ Organizations that have the Network Tag: $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.input.variable_workflow_02NZIZHN4HSCG4qJCsL1e8Dy3sqmuOhswGR$\nThe current firmware versions are:\nAppliance: $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4IYAQ0bquqov8PatNqNwagbU1Xh$\nSwitch: $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4QJHQ0EH3gEcvRd1v9006dxpkIx$\nWireless: $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4NX2520XPqskRnvnhrzh2iPAp4i$",
+          "prompt_title": "Firmware Version Selection",
+          "skip_execution": false,
+          "task_owner": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.output.started_by$",
+          "task_requestor": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.output.started_by$",
+          "wait_for_prompt_response": true
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02NZIZJA7Q3MG4xKOr94pOzF71SbhyVErzn",
+        "name": "Group",
+        "title": "Format the selected firmware version IDs",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "This group of activities will get the version IDs from the selected version Short Names.  \nNOTE: This could be done in a single Python Script activity.  In this example, multiple activities are used, one for each product type.  To add additional product types, just duplicate a Python script activity and modify it to support the new product type",
+          "display_as_suggestion": false,
+          "display_name": "Format the selected firmware version IDs",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02NZIZJBQ01M962ahzMJ6zsAZbaCzKT0yB5",
+            "name": "Set Variables",
+            "title": "Set Selected Version Name Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "description": "Set the local variables to the values selected by the user in the User Prompt activity",
+              "display_name": "Set Selected Version Name Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4LJET1BhBpBSorY0VXU1WoWjtDn$",
+                  "variable_value_new": "$activity.definition_activity_02NZIZJ8FI8NP5hCWP8YzB37wbDDNLrQflz.output.prompt_response.Select Appliance Version$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4TBHM2H049ySM7RbP9g14KRdZMl$",
+                  "variable_value_new": "$activity.definition_activity_02NZIZJ8FI8NP5hCWP8YzB37wbDDNLrQflz.output.prompt_response.Select Switch Verision$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4L5G44GDZ9A3eo22vVBzqjjTPAd$",
+                  "variable_value_new": "$activity.definition_activity_02NZIZJ8FI8NP5hCWP8YzB37wbDDNLrQflz.output.prompt_response.Select Wireless Verision$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02NZIZJCWX1L015rcQ9pJ4J49vteMHkhtFB",
+            "name": "Execute Python Script",
+            "title": "Get Selected Version IDs from Short Names",
+            "type": "python3.script",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "description": "A custom Python Script activity that provides a function that takes two arrays (key, value) and a target value and returns the value from the value array that corresponds to the entry in the key array that matches the value provided in the target value argument.\nNOTE: To add support for new product types just add a line for the new product passing in the appropriate arguments.",
+              "display_name": "Get Selected Version IDs from Short Names",
+              "script": "import json\n\ndef find_matching_value(key_array, value_array, target):\n    if target in key_array:\n        index = key_array.index(target)\n        return value_array[index]\n    else:\n        return None  # Or raise an error if preferred\n\n# Run the function and print the result\nselected_appliance_version_id = find_matching_value($activity.definition_activity_02NZO2ATV0TSF6a3nFSu5UNMgFW6sQWt1XZ.output.script_queries.Appliance Available Version Short Names$, $activity.definition_activity_02NZO2ATV0TSF6a3nFSu5UNMgFW6sQWt1XZ.output.script_queries.Appliance Available Version IDs$, \"$activity.definition_activity_02NZIZJ8FI8NP5hCWP8YzB37wbDDNLrQflz.output.prompt_response.Select Appliance Version$\")\nselected_switch_version_id = find_matching_value($activity.definition_activity_02NZO2ATV0TSF6a3nFSu5UNMgFW6sQWt1XZ.output.script_queries.Switch Available Version Short Names$, $activity.definition_activity_02NZO2ATV0TSF6a3nFSu5UNMgFW6sQWt1XZ.output.script_queries.Switch Available Version IDs$, \"$activity.definition_activity_02NZIZJ8FI8NP5hCWP8YzB37wbDDNLrQflz.output.prompt_response.Select Switch Verision$\")\nselected_wireless_version_id = find_matching_value($activity.definition_activity_02NZO2ATV0TSF6a3nFSu5UNMgFW6sQWt1XZ.output.script_queries.Wireless Available Version Short Names$, $activity.definition_activity_02NZO2ATV0TSF6a3nFSu5UNMgFW6sQWt1XZ.output.script_queries.Wireless Available Version IDs$, \"$activity.definition_activity_02NZIZJ8FI8NP5hCWP8YzB37wbDDNLrQflz.output.prompt_response.Select Wireless Verision$\")",
+              "script_queries": [
+                {
+                  "script_query": "selected_appliance_version_id",
+                  "script_query_name": "Selected Appliance Version ID",
+                  "script_query_type": "string"
+                },
+                {
+                  "script_query": "selected_switch_version_id",
+                  "script_query_name": "Selected Switch Version ID",
+                  "script_query_type": "string"
+                },
+                {
+                  "script_query": "selected_wireless_version_id",
+                  "script_query_name": "Selected Wireless Version ID",
+                  "script_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02NZIZJHCEX0A2nu286wuuNeo6JA86Ma9ds",
+            "name": "Set Variables",
+            "title": "Set Selected ID Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "description": "Set the local variables for the selected version IDs to the output of the preceding Python Script activity.\nFormat the Upgrade time based on the date and time selected by the user in the User Prompt.\nNOTE: To support additional product types, a new local variable for the selected version ID will need to be defined and assigned here.",
+              "display_name": "Set Selected ID Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4QZQB0Z1McAF5VEPwLohJfZ2rUp$",
+                  "variable_value_new": "$activity.definition_activity_02NZIZJCWX1L015rcQ9pJ4J49vteMHkhtFB.output.script_queries.Selected Appliance Version ID$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4I24Z6vTME17MRvsJTMAkTCWFm2$",
+                  "variable_value_new": "$activity.definition_activity_02NZIZJCWX1L015rcQ9pJ4J49vteMHkhtFB.output.script_queries.Selected Switch Version ID$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4MJDH49tdlgpF1JBrlX8Eu14Fmf$",
+                  "variable_value_new": "$activity.definition_activity_02NZIZJCWX1L015rcQ9pJ4J49vteMHkhtFB.output.script_queries.Selected Wireless Version ID$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4QDU86fTQflRkSdYVcV2o6qmwgK$",
+                  "variable_value_new": "$activity.definition_activity_02NZIZJ8FI8NP5hCWP8YzB37wbDDNLrQflz.output.prompt_response.Year$-$activity.definition_activity_02NZIZJ8FI8NP5hCWP8YzB37wbDDNLrQflz.output.prompt_response.Month$-$activity.definition_activity_02NZIZJ8FI8NP5hCWP8YzB37wbDDNLrQflz.output.prompt_response.Day$ $activity.definition_activity_02NZIZJ8FI8NP5hCWP8YzB37wbDDNLrQflz.output.prompt_response.Time$:00"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_02NZIZJISKW280WjHSEazPClcl3LfzLXeNY",
+        "name": "For Each",
+        "title": "For Each Network with the Tag",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "Loop through each Network in the Network Table and schedule the firmware upgrade for each",
+          "display_name": "For Each Network with the Tag",
+          "skip_execution": false,
+          "source_array": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4VKD11UlB1JKiIiBux8voXR7zBZ$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02NZIZJK93HTH0sG0XF2gJhhHOTc6MY1C0u",
+            "name": "Group",
+            "title": "Check the Network for the current firmware versions",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "description": "Check each network for the current firmware version and compare that to the selected firmware version to determine if the firmware upgrade is required.  The Update firmware version activity will fail if the current version is same as the selected version, which could happen if the current version is the only available version.",
+              "display_as_suggestion": false,
+              "display_name": "Check the Network for the current firmware versions",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_02NZIZJM0L5TF5dv96TYOFJowPNYcfidXIt",
+                "name": "Get Network Firmware Upgrades",
+                "title": "Get Network Firmware Upgrades",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "description": "Get the current firmware versions from the Network",
+                  "display_name": "Get Network Firmware Upgrades",
+                  "input": {
+                    "variable_workflow_02LV1H3CNM5T45adfzDFwEeMjrKbmdHd58D": "$activity.definition_activity_02NZIZJISKW280WjHSEazPClcl3LfzLXeNY.input.source_array[@].id$"
+                  },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "target_type": "meraki.endpoint",
+                    "use_workflow_target": true
+                  },
+                  "workflow_id": "definition_workflow_02LV1H3CNM49K1df7J02ad4wyV6Jv0E23b6",
+                  "workflow_name": "Meraki - Get Network Firmware Upgrades"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_02NZKPHVPGFLG6qsgGElB9AyTsM4WiUNklF",
+                "name": "JSONPath Query",
+                "title": "Get the current version IDs",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "description": "JSONPath Query to get the current version IDs\nNOTE: You can add additional JSON Path Queries here for additional product types",
+                  "display_name": "Get the current version IDs",
+                  "input_json": "$activity.definition_activity_02NZIZJM0L5TF5dv96TYOFJowPNYcfidXIt.output.variable_workflow_02LV1H3CNMB7K2eIEUcLniuSFXAmkGIOQJ2$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$.products.appliance.currentVersion.id",
+                      "jsonpath_query_name": "Appliance current version ID",
+                      "jsonpath_query_type": "string",
+                      "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                    },
+                    {
+                      "jsonpath_query": "$.products.switch.currentVersion.id",
+                      "jsonpath_query_name": "Switch current version ID",
+                      "jsonpath_query_type": "string",
+                      "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                    },
+                    {
+                      "jsonpath_query": "$.products.wireless.currentVersion.id",
+                      "jsonpath_query_name": "Wireless current version ID",
+                      "jsonpath_query_type": "string",
+                      "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_02NZIZJR25MY41lBjfkmBWtLaO7qLUl9Xlk",
+                "name": "Condition Block",
+                "title": "Check if Appliance Update is required",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "conditions": [],
+                  "continue_on_failure": false,
+                  "display_name": "Check if Appliance Update is required",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_02NZIZJS1LA5I555QQtsjKuqLrI1FoQ6ZZ6",
+                    "name": "Condition Branch",
+                    "title": "Appliance Upgrade required",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4QZQB0Z1McAF5VEPwLohJfZ2rUp$",
+                          "operator": "ne",
+                          "right_operand": "$activity.definition_activity_02NZKPHVPGFLG6qsgGElB9AyTsM4WiUNklF.output.jsonpath_queries.Appliance current version ID$"
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_02NZKPHVPGFLG6qsgGElB9AyTsM4WiUNklF.output.jsonpath_queries.Appliance current version ID$",
+                          "operator": "eq",
+                          "right_operand": ""
+                        }
+                      },
+                      "continue_on_failure": false,
+                      "description": "Check that the current version ID is not the same as the selected version ID AND that the current version ID is not null (no product type in Network)",
+                      "display_name": "Appliance Upgrade required",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_02NZIZJTRM33K5Bxb3YflbMcBAAWTnOqwUZ",
+                        "name": "Set Variables",
+                        "title": "Set Appliance Upgrade Required, Version ID \u0026 Upgrade Time",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Appliance Upgrade Required, Version ID \u0026 Upgrade Time",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4PL340XdSgAGlcXNdpm9RTOYisA$",
+                              "variable_value_new": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4QZQB0Z1McAF5VEPwLohJfZ2rUp$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4JDTC1Ce834DDZlPRrGWvVbJpOS$",
+                              "variable_value_new": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4QDU86fTQflRkSdYVcV2o6qmwgK$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4FNA5118mVpydfnwguXUiRTLdqq$",
+                              "variable_value_new": true
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_02NZIZJUNIQWO4aJG9eZAuIIsc5GAPhy8aa",
+                "name": "Condition Block",
+                "title": "Check if Switch Upgrade is required",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "conditions": [],
+                  "continue_on_failure": false,
+                  "display_name": "Check if Switch Upgrade is required",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_02NZIZJVN4A4D4jflbEidnphoV1D4ud25wz",
+                    "name": "Condition Branch",
+                    "title": "Switch Upgrade required",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4I24Z6vTME17MRvsJTMAkTCWFm2$",
+                          "operator": "ne",
+                          "right_operand": "$activity.definition_activity_02NZKPHVPGFLG6qsgGElB9AyTsM4WiUNklF.output.jsonpath_queries.Switch current version ID$"
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_02NZKPHVPGFLG6qsgGElB9AyTsM4WiUNklF.output.jsonpath_queries.Switch current version ID$",
+                          "operator": "eq",
+                          "right_operand": ""
+                        }
+                      },
+                      "continue_on_failure": false,
+                      "description": "Check that the current version ID is not the same as the selected version ID AND that the current version ID is not null (no product type in Network)",
+                      "display_name": "Switch Upgrade required",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_02NZIZK0T322B54Hjf5tlP4sCbrTT2nMZLY",
+                        "name": "Set Variables",
+                        "title": "Set Switch Upgrade Required, Version ID \u0026 Upgrade Time",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Switch Upgrade Required, Version ID \u0026 Upgrade Time",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4RGFL17O9dFzTzH133McOk2N4mN$",
+                              "variable_value_new": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4I24Z6vTME17MRvsJTMAkTCWFm2$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4OY9P5Qw0pvP8nCRj1jigVG1vin$",
+                              "variable_value_new": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4QDU86fTQflRkSdYVcV2o6qmwgK$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4P4IP4z95c6uCuzIrFB6RvHi1NA$",
+                              "variable_value_new": true
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_02NZIZK1PAWWI08D5cH8UgPHg1zg2gYjLsL",
+                "name": "Condition Block",
+                "title": "Check if Wireless Upgrade is required",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "conditions": [],
+                  "continue_on_failure": false,
+                  "display_name": "Check if Wireless Upgrade is required",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_02NZIZK2PB3LP3LiepbX4Yr1v7tuIUNIWab",
+                    "name": "Condition Branch",
+                    "title": "Wireless Upgrade required",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4MJDH49tdlgpF1JBrlX8Eu14Fmf$",
+                          "operator": "ne",
+                          "right_operand": "$activity.definition_activity_02NZKPHVPGFLG6qsgGElB9AyTsM4WiUNklF.output.jsonpath_queries.Wireless current version ID$"
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_02NZKPHVPGFLG6qsgGElB9AyTsM4WiUNklF.output.jsonpath_queries.Wireless current version ID$",
+                          "operator": "ne",
+                          "right_operand": ""
+                        }
+                      },
+                      "continue_on_failure": false,
+                      "description": "Check that the current version ID is not the same as the selected version ID AND that the current version ID is not null (no product type in Network)",
+                      "display_name": "Wireless Upgrade required",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_02NZIZK4GZK850vqM1alrgrNMCdhqglm4wp",
+                        "name": "Set Variables",
+                        "title": "Set Wireless Upgrade Required, Version ID \u0026 Upgrade Time",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set Wireless Upgrade Required, Version ID \u0026 Upgrade Time",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4S66D13ULSCuFvWOXLLpy2BT3nQ$",
+                              "variable_value_new": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4MJDH49tdlgpF1JBrlX8Eu14Fmf$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4F5MJ07GwZK20JtmptuJxKaAH9d$",
+                              "variable_value_new": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4QDU86fTQflRkSdYVcV2o6qmwgK$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4U02V3LVi9FZuC6DgcnymHqOGdG$",
+                              "variable_value_new": true
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_02NZIZK5CTXXN3rVyPORRpHG3QhzHRg4rw3",
+                "name": "Condition Block",
+                "title": "Check if any upgrades are required",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "conditions": [],
+                  "continue_on_failure": false,
+                  "description": "Check the boolean values to see if any upgrades are required for this Network",
+                  "display_name": "Check if any upgrades are required",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_02NZIZK64EJZI4ASnubkuek8paDSwUWGdRA",
+                    "name": "Condition Branch",
+                    "title": "At least one Upgrade is required",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4FNA5118mVpydfnwguXUiRTLdqq$",
+                            "operator": "eq",
+                            "right_operand": true
+                          },
+                          "operator": "or",
+                          "right_operand": {
+                            "left_operand": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4P4IP4z95c6uCuzIrFB6RvHi1NA$",
+                            "operator": "eq",
+                            "right_operand": true
+                          }
+                        },
+                        "operator": "or",
+                        "right_operand": {
+                          "left_operand": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4U02V3LVi9FZuC6DgcnymHqOGdG$",
+                          "operator": "eq",
+                          "right_operand": true
+                        }
+                      },
+                      "continue_on_failure": false,
+                      "description": "Check if any of the boolean values are true indicating that at least one firmware version upgrade is required.",
+                      "display_name": "At least one Upgrade is required",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_02NZIZK81RTU23Vq5uAXeFMHfec0cIf97H6",
+                        "name": "Update Network Firmware Upgrades",
+                        "title": "Update Network Firmware Upgrades",
+                        "type": "workflow.atomic_workflow",
+                        "base_type": "subworkflow",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "description": "Use the Update Network Firmware Upgrades activity and pass the local variables for the upgrade firmware version IDs.  NOTE: The Upgrade version IDs will be null if no upgrade for that product is required based upon the previous workflow logic that checks the current version IDs\nTo add support for new product types, just map in the new Upgrade version ID variables\nNOTE: This activity has the Continue workflow execution on failure option selected so the workflow will continue to run should a single network upgrade action fail",
+                          "display_name": "Update Network Firmware Upgrades",
+                          "input": {
+                            "variable_workflow_02M3057KLFLIG20p3pF8ezNDO75MHqfMshf": "$activity.definition_activity_02NZIZJISKW280WjHSEazPClcl3LfzLXeNY.input.source_array[@].id$",
+                            "variable_workflow_02M4KERVOSRJQ08qXFbfM4iMYQx2FpdU2Wv": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4PL340XdSgAGlcXNdpm9RTOYisA$",
+                            "variable_workflow_02M4KERVP62GU060qFU6m1vvv9OwL3mx2dr": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4OY9P5Qw0pvP8nCRj1jigVG1vin$",
+                            "variable_workflow_02M4KERVPIWKK5qoD0mltZ2vRBwqueLtzx3": false,
+                            "variable_workflow_02M4KERVPWAVA4upg4hyDRhVSQq4gXX6sf2": "",
+                            "variable_workflow_02M4KERVQ9MZF7jg3BdAhGNZFlt3qteptmt": "",
+                            "variable_workflow_02M4KERVQMOMV7BMIPi4zaoJNiqQg4T9JvI": "",
+                            "variable_workflow_02M4KERVQZELU4R7e0vGsxOkGMXFgxCcCQA": false,
+                            "variable_workflow_02M4KERVRC3QE2OLTU4o22QEpid35nqLKxL": "",
+                            "variable_workflow_02M4KERVS2VGZ2aMw0gwig6JJIT24q4KMP3": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4F5MJ07GwZK20JtmptuJxKaAH9d$",
+                            "variable_workflow_02M4KERVSTNX04vnDZTl0xrUY7LDJa4ZdlN": "",
+                            "variable_workflow_02M4KERVT6GCB3qhldBseHG3T6lt0rMU1Mh": "",
+                            "variable_workflow_02M4KERVTJG3D6z0pR38CYPBhZD7S5rTHeL": "",
+                            "variable_workflow_02M4KERVTXNXE0VtG74iQnLYuk15EOGjdTE": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4JDTC1Ce834DDZlPRrGWvVbJpOS$",
+                            "variable_workflow_02M4KERVUAJ1V1PyguqfdoICjF1BmHR7X2b": false,
+                            "variable_workflow_02M4KERVUNIC90E9ID0hvx5GO21BmmzIs08": false,
+                            "variable_workflow_02M4KERVV09U46NNQXWhuLlgEFsBSliOUNR": false,
+                            "variable_workflow_02M4KERVVD4B80d0TNrHG17Oj0JRKQ0t1rM": "",
+                            "variable_workflow_02M4KERVVPPQ72Beed28WWzCNhfcw121KZh": "",
+                            "variable_workflow_02M4KERVW32IK323MeeO2ZRMVhqupIl3Vnf": "",
+                            "variable_workflow_02M4KERVWFXYU1hDx5aB3T8ThL6zSXFMTT3": false,
+                            "variable_workflow_02M4KERVWSKTJ4T8YMhcQ21to7TnlCqYM3l": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4RGFL17O9dFzTzH133McOk2N4mN$",
+                            "variable_workflow_02M4KERVX5OFW4pJO7lxPaQ7ocZzRKxdKfn": "",
+                            "variable_workflow_02M4KERVXJS3R2hNPsRY66qPvsx8P6I77S3": false,
+                            "variable_workflow_02M4KERVXWWZV3oInj8jFfnitnKrWUaFaX2": false,
+                            "variable_workflow_02M4KERVYC3RT6HIpeFiGsPas45oB0gD48h": false,
+                            "variable_workflow_02M4KERVYPC1E11PVRqaDjAaHJ3TRWznwFf": "",
+                            "variable_workflow_02M4KERVZ2C7F7lU7gVGO8NZOaQjYe95OZW": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4S66D13ULSCuFvWOXLLpy2BT3nQ$"
+                          },
+                          "runtime_user": {
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "target_type": "meraki.endpoint",
+                            "use_workflow_target": true
+                          },
+                          "workflow_id": "definition_workflow_02M3057KLFJ745Vm184muHicvBpdJ0s0vGF",
+                          "workflow_name": "Meraki - Update Network Firmware Upgrades"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_02NZIZK9JE58T3jHtCYVLKMFClwR65F28ui",
+                        "name": "Condition Block",
+                        "title": "Check Upgrade activity result",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "conditions": [],
+                          "continue_on_failure": false,
+                          "description": "Check the result for the preceding Update Network Firmware Upgrades activity",
+                          "display_name": "Check Upgrade activity result",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_02NZIZKAHD7IJ3HKYOPEHCXM0RIiPXHwsVF",
+                            "name": "Condition Branch",
+                            "title": "Success",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_02NZIZK81RTU23Vq5uAXeFMHfec0cIf97H6.output.variable_workflow_02M3057KLFT882CZIEPo8wIRVmx8JqaChAz$",
+                                "operator": "eq",
+                                "right_operand": 200
+                              },
+                              "continue_on_failure": false,
+                              "description": "The Upgrade activity was successful if the status code returned is 200",
+                              "display_name": "Success",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_02NZIZKC5429U61oyA9SPcmp86ZaKmgVhcl",
+                                "name": "Set Variables",
+                                "title": "Update Network List",
+                                "type": "core.set_multiple_variables",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "description": "Add the Network Name to the list of Networks that were successfully scheduled for the firmware upgrade.",
+                                  "display_name": "Update Network List",
+                                  "skip_execution": false,
+                                  "variables_to_update": [
+                                    {
+                                      "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4KOWE6kwYGByyxqnIP0TWbEKQ4p$",
+                                      "variable_value_new": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4KOWE6kwYGByyxqnIP0TWbEKQ4p$, $activity.definition_activity_02NZIZJISKW280WjHSEazPClcl3LfzLXeNY.input.source_array[@].name$"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_02NZIZKDEBYTW6lpfLYs3DWkCheOenCm4XH",
+                            "name": "Condition Branch",
+                            "title": "Update failed",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_02NZIZK81RTU23Vq5uAXeFMHfec0cIf97H6.output.variable_workflow_02M3057KLFT882CZIEPo8wIRVmx8JqaChAz$",
+                                "operator": "ne",
+                                "right_operand": 200
+                              },
+                              "continue_on_failure": false,
+                              "description": "The Upgrade activity failed if the status code returned is not 200",
+                              "display_name": "Update failed",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_02NZIZKEXKTTF49uVEnbZImP17zinAwAZWS",
+                                "name": "Set Variables",
+                                "title": "Update Not Scheduled List",
+                                "type": "core.set_multiple_variables",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "description": "Add the Network Name to the list of Networks that were not scheduled for a firmware upgrade.\nNOTE: In this conditional branch would be a good place for an action to open a ticket in ServiceNow, or take some other action to generate an alert about a network firmware upgrade schedule error",
+                                  "display_name": "Update Not Scheduled List",
+                                  "skip_execution": false,
+                                  "variables_to_update": [
+                                    {
+                                      "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4KBE70WIHtfIkbthtHrgLTBg4VO$",
+                                      "variable_value_new": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4KBE70WIHtfIkbthtHrgLTBg4VO$, $activity.definition_activity_02NZIZJISKW280WjHSEazPClcl3LfzLXeNY.input.source_array[@].name$"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_02NZIZKG36OU56qUYTTSaE0VOma8sJ55Gpf",
+                    "name": "Condition Branch",
+                    "title": "No Upgrades required",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4FNA5118mVpydfnwguXUiRTLdqq$",
+                            "operator": "eq",
+                            "right_operand": false
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4P4IP4z95c6uCuzIrFB6RvHi1NA$",
+                            "operator": "eq",
+                            "right_operand": false
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4U02V3LVi9FZuC6DgcnymHqOGdG$",
+                          "operator": "eq",
+                          "right_operand": false
+                        }
+                      },
+                      "continue_on_failure": false,
+                      "description": "If all the boolean values are false, then none of the products on this Network required an upgrade",
+                      "display_name": "No Upgrades required",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_02NZIZKHEUUDV1nmH1wYL61wQLoQnk2CsG5",
+                        "name": "Set Variables",
+                        "title": "Update the Not Required List",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "The Network did not require an Upgrade so add it to the Upgrade Not required list",
+                          "display_name": "Update the Not Required List",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4O7RJ1lUNRd0cR09sZopUoUkmjE$",
+                              "variable_value_new": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4O7RJ1lUNRd0cR09sZopUoUkmjE$, $activity.definition_activity_02NZIZJISKW280WjHSEazPClcl3LfzLXeNY.input.source_array[@].name$"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_02NZIZKIILWSN6ZtlsF5o41UrpomH9XqxCC",
+                "name": "Set Variables",
+                "title": "Reset Loop Upgrade Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "description": "Reset the loop variables for the next iteration",
+                  "display_name": "Reset Loop Upgrade Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4PL340XdSgAGlcXNdpm9RTOYisA$",
+                      "variable_value_new": ""
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4RGFL17O9dFzTzH133McOk2N4mN$",
+                      "variable_value_new": ""
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4S66D13ULSCuFvWOXLLpy2BT3nQ$",
+                      "variable_value_new": ""
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4JDTC1Ce834DDZlPRrGWvVbJpOS$",
+                      "variable_value_new": ""
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4OY9P5Qw0pvP8nCRj1jigVG1vin$",
+                      "variable_value_new": ""
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4F5MJ07GwZK20JtmptuJxKaAH9d$",
+                      "variable_value_new": ""
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4FNA5118mVpydfnwguXUiRTLdqq$",
+                      "variable_value_new": false
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4P4IP4z95c6uCuzIrFB6RvHi1NA$",
+                      "variable_value_new": false
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4U02V3LVi9FZuC6DgcnymHqOGdG$",
+                      "variable_value_new": false
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_02NZIZKKRTXVS7f4x4HvymsZA1CIz5RNjOc",
+        "name": "Set Variables",
+        "title": "Set Output Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "Format the Output status message",
+          "display_name": "Set Output Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.output.variable_workflow_02NZIZHN4VAZC3qMVI88kPtq9ZNYGYylcXp$",
+              "variable_value_new": 200
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.output.variable_workflow_02NZIZHN4RV180jLGLEoWtornnvW4HkMpHy$",
+              "variable_value_new": "Firmware upgrade for all Networks with Tag: $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.input.variable_workflow_02NZIZHN4HSCG4qJCsL1e8Dy3sqmuOhswGR$\nFrom $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4Q1GM18w48gArmQcsvDzIqcyyCC$ Organizations to Versions \nAppliance: $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4LJET1BhBpBSorY0VXU1WoWjtDn$ \nSwitch: $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4TBHM2H049ySM7RbP9g14KRdZMl$ \nWireless: $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4L5G44GDZ9A3eo22vVBzqjjTPAd$ \nScheduled for: $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4QDU86fTQflRkSdYVcV2o6qmwgK$\nNetworks scheduled for upgrade: $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4KOWE6kwYGByyxqnIP0TWbEKQ4p$\nNetworks that did not require the upgrade: $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4O7RJ1lUNRd0cR09sZopUoUkmjE$\nNetworks with upgrade error and not scheduled: $workflow.definition_workflow_02NZIZHMOVRTN5J2ZX0Lm4ZXS0guLZW85hh.local.variable_workflow_02NZIZHN4KBE70WIHtfIkbthtHrgLTBg4VO$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_02NXV6O12LF114DhKxx98npicaIPTPJql2v"
+    ]
+  },
+  "categories": {
+    "category_02NXV6O12LF114DhKxx98npicaIPTPJql2v": {
+      "unique_name": "category_02NXV6O12LF114DhKxx98npicaIPTPJql2v",
+      "name": "Community Examples",
+      "title": "Community Examples",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "Example Workflows that will be made available to the Workflows Community until the Workflows Exchange in available.",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "table_types": {
+    "tabletype_02MLLFTLGOG3I6ToW7dgIcnzumqbZQYVkDb": {
+      "unique_name": "tabletype_02MLLFTLGOG3I6ToW7dgIcnzumqbZQYVkDb",
+      "data_type": "datatype.tabletype",
+      "display_name": "Ed - Meraki Network Table",
+      "columns": [
+        {
+          "name": "tags",
+          "title": "tags",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "title": "name",
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "title": "id",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_02LV5GIDUTY3X0WhuidM5ZWhkjL8wQCGAPq",
+    "definition_workflow_02L9TZH5W95870XebPF2g8kSyIYcawUvljX",
+    "definition_workflow_02LV1H3CNM49K1df7J02ad4wyV6Jv0E23b6",
+    "definition_workflow_02M3057KLFJ745Vm184muHicvBpdJ0s0vGF"
+  ],
+  "dependent_workflows": [
+    "definition_workflow_02LV5GIDUTY3X0WhuidM5ZWhkjL8wQCGAPq",
+    "definition_workflow_02L9TZH5W95870XebPF2g8kSyIYcawUvljX",
+    "definition_workflow_02LV1H3CNM49K1df7J02ad4wyV6Jv0E23b6",
+    "definition_workflow_02M3057KLFJ745Vm184muHicvBpdJ0s0vGF"
+  ]
+}

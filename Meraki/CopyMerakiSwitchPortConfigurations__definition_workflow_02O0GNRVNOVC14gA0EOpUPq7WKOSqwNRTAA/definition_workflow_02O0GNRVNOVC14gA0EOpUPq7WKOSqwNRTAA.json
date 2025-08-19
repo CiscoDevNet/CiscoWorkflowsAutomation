@@ -1,0 +1,2242 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA",
+    "name": "Copy Meraki Switch Port Configurations",
+    "title": "Copy Meraki Switch Port Configurations",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Output - Status Message",
+          "type": "datatype.string",
+          "description": "Output message from the workflow that summarizes the configuration copy operation that took place",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5SGAO6B1WjDgikE0FZjOOpYxUzl",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Local - Target Switch Network ID",
+          "type": "datatype.string",
+          "description": " Target Switch Network ID",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02OKYC3KMF9IO4k2ywW2pwdEk2jfTogq6DH",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Local - Allowed VLANs",
+          "type": "datatype.string",
+          "description": "Local variable that allows for the conversion of Allowed VLANs from all to 1-1000 when the input variable Input - Convert Allowed VLANs from all to 1-1000 is set to True",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02OKVPYO9QWY71NlZRqaOQk5COmSVwx972P",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 1,
+          "scope": "local",
+          "name": "Loop Port ID",
+          "type": "datatype.integer",
+          "description": "Used to iterate through the Source Switch Port Configuration Table and update the Target Swtich Port",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5QX780Ph6oc6yheMIJM8otgzZwn",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "Input - Copy All Ports boolean",
+          "type": "datatype.boolean",
+          "description": "When True is selected, the workflow will copy all numeric port IDs that are \u003c= port ID from the Source Switch to the Target Switch, ignoring the provided Source and Target Port IDs.\nWhen False is selected the workflow will copy the provided Source Port ID from the Source Switch to the provided Target Port ID on the Target Switch.",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5SB8C23pivgIAriaMvsWmcWYSky",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "properties": {
+          "value": [],
+          "scope": "local",
+          "name": "Local - Tags List",
+          "type": "datatype.array",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5QJRG6uYeFwNfrbk3c4PO24lpmO",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "Output - Status Code",
+          "type": "datatype.integer",
+          "description": "will be 200 on success",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5ROVN7ka0AZNMgQvtGuoZ5M8n8n",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "properties": {
+          "value": [],
+          "scope": "local",
+          "name": "Local - MAC Allow List",
+          "type": "datatype.array",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5QECS4pjReZB4hYHLztTjXfLcW5",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 1,
+          "scope": "input",
+          "name": "Input - Source Port ID",
+          "type": "datatype.integer",
+          "description": "The Port ID of the Source Switch to copy the configuration FROM\nOnly used when the Input - Copy All Ports Boolean is set to False",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5S2222JBUJ4y3lvzYdytXz8knnw",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 1,
+          "scope": "input",
+          "name": "Input - Target Port ID",
+          "type": "datatype.integer",
+          "description": "The Port ID of the Target Switch to copy the configuration TO\nOnly used when the Input - Copy All Ports Boolean is set to False",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5T8MG2Ii5qQ6w6e1ngMmJkz4mAb",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "properties": {
+          "value": [],
+          "scope": "local",
+          "name": "Local - Stick MAC Allow List",
+          "type": "datatype.array",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5Q52G52qjjjfFNfco1Rzh6ZWMZq",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Local - Target Switch Name",
+          "type": "datatype.string",
+          "description": "Target Switch Name",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02OKYBBG3DLX162pLHkBieTn5jrfFU8Lj9F",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Input - Source Switch Serial Number",
+          "type": "datatype.string",
+          "description": "The Serial Number of the Switch to copy the configuration From.",
+          "is_required": true,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02O0GNRW5SL6R2aXdwRMSA4evs73Ob1tVjr",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "local",
+          "name": "settings - Target Port Count",
+          "type": "datatype.integer",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5R8O34QFdIHvAopqMRzd1fv7Thu",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Local - Source Switch Network ID",
+          "type": "datatype.string",
+          "description": "Source Switch Network ID",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02OKYBWPITVMM1SGGrpYYR2yDpmkCz5vpbM",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Local - Target Switch Model Number",
+          "type": "datatype.string",
+          "description": "Target Switch Model Number",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02OKYB16XYY977aXBKGw7UT62eDbtfaZLRD",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "output",
+          "name": "Output - Result",
+          "type": "datatype.boolean",
+          "description": "Output - Result will be true when a configuration copy operation has completed.",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5T1H36XMded5pO3QFD64xJOLyk0",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Local - Source Switch Model Number",
+          "type": "datatype.string",
+          "description": "Source Switch Model Number",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02OKYAT9MWJPZ2xSyXNES6Vigt1gNpCKYdQ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Input - Target Switch Serial Number",
+          "type": "datatype.string",
+          "description": "The Serial Number of the Target Switch to copy the configuration TO",
+          "is_required": true,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02O0GNRW5R3E818xTeBDrQ7aE8DgaJ41HHI",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "{}",
+          "scope": "local",
+          "name": "setttings dot3az",
+          "type": "datatype.string",
+          "description": "Bug Workaround",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5RIOH0eUoaIfspxvrGdXbDGH0UG",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Local - Source Switch Name",
+          "type": "datatype.string",
+          "description": "Source Switch Name",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02OKYBIV0FK5K07WnQuWdF6rdaze38A4DzH",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "Input - Convert Allowed VLANs from all to 1-1000",
+          "type": "datatype.boolean",
+          "description": "When selected this option will convert the Allowed VLANs setting from all to 1-1000",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02OKV23F7VSOZ5o0Mx7TkCktFsgr3OZmNfv",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "local",
+          "name": "Loop Last Switch port Updated",
+          "type": "datatype.integer",
+          "description": "Last Switch port Configuration Updated",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5RDV50zSdOQ4lWurePWXpT5oJ1C",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "local",
+          "name": "settings - Source Port Count",
+          "type": "datatype.integer",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02O0GNRW5SRFB7GeGVIRMBCvtTY5MM2zjer",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "Custom workflow created by enovak that copies the switch port configuration from one Meraki switch to another.\nIf Copy All Ports is set to True, the workflow will copy the configuration from Source Switch Ports to Target Switch Ports for all Port IDs \u003c= the Source Switch Port ID count.  The Source Switch MUST have \u003c= the ports on the Target Switch.  If the Source Switch port count is \u003e than the Target Switch port count, the workflow will stop and report an error.\nIf Copy All Ports is set to False, the workflow will copy the configuration of the provided Source Port ID to the provided Target Port ID.  The Port IDs MUST not be 0 and must be valid numeric Port IDs on the selected devices.\nNOTE: This workflow does not work for Port IDs that are not numeric., i.e. \"1_MA-MOD-2X40G_1\" or \"1_MA-MOD-8X10G_8\"\nIf Convert Allowed VLANs from all to 1-1000 is set to True, any port that is configured as a trunk with Allowed VLANs set to all will copy as Allowed VLANs set to 1-1000\n",
+      "display_name": "Copy Meraki Switch Port Configurations",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "meraki.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_02O0GNS0QESVG5qDq4H5AIj9BYp3XX08Guq",
+        "name": "Get Source Switch Ports",
+        "title": "Get Source Switch Ports",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Source Switch Ports",
+          "input": {
+            "variable_workflow_02LLUYO8DV17A22l9lor4ttg6i8GspwoAVk": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5SL6R2aXdwRMSA4evs73Ob1tVjr$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "target_type": "meraki.endpoint",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_02LLUYO87CIIF2MYkTzJpsPsYYOXZ5MUPA1",
+          "workflow_name": "Meraki - Get Device Switch Ports"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02O0GNS1ZD3QF46iq1ad6ZVylZztrCasbPq",
+        "name": "Read Table from JSON",
+        "title": "Source Read Table from JSON",
+        "type": "corejava.read_table_from_json",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Source Read Table from JSON",
+          "input_json": "$activity.definition_activity_02O0GNS0QESVG5qDq4H5AIj9BYp3XX08Guq.output.variable_workflow_02LLUYO8DUAUK5cdNbWcLbEsrzMeC5jahEc$",
+          "jsonpath_query": "$.*",
+          "persist_output": true,
+          "populate_columns": false,
+          "skip_execution": false,
+          "table_columns": [
+            {
+              "column_name": "portId",
+              "column_type": "string"
+            },
+            {
+              "column_name": "name",
+              "column_type": "string"
+            },
+            {
+              "column_name": "tags",
+              "column_type": "string"
+            },
+            {
+              "column_name": "enabled",
+              "column_type": "string"
+            },
+            {
+              "column_name": "poeEnabled",
+              "column_type": "string"
+            },
+            {
+              "column_name": "vlan",
+              "column_type": "string"
+            },
+            {
+              "column_name": "voiceVlan",
+              "column_type": "string"
+            },
+            {
+              "column_name": "allowedVlans",
+              "column_type": "string"
+            },
+            {
+              "column_name": "isolationEnabled",
+              "column_type": "string"
+            },
+            {
+              "column_name": "rstpEnabled",
+              "column_type": "string"
+            },
+            {
+              "column_name": "stpGuard",
+              "column_type": "string"
+            },
+            {
+              "column_name": "linkNegotiation",
+              "column_type": "string"
+            },
+            {
+              "column_name": "portScheduleId",
+              "column_type": "string"
+            },
+            {
+              "column_name": "schedule",
+              "column_type": "string"
+            },
+            {
+              "column_name": "udld",
+              "column_type": "string"
+            },
+            {
+              "column_name": "linkNegotiationCapabilities",
+              "column_type": "string"
+            },
+            {
+              "column_name": "accessPolicyType",
+              "column_type": "string"
+            },
+            {
+              "column_name": "daiTrusted",
+              "column_type": "string"
+            },
+            {
+              "column_name": "profile",
+              "column_type": "string"
+            },
+            {
+              "column_name": "module",
+              "column_type": "string"
+            },
+            {
+              "column_name": "mirror",
+              "column_type": "string"
+            },
+            {
+              "column_name": "stormControlEnabled",
+              "column_type": "string"
+            },
+            {
+              "column_name": "accessPolicyNumber",
+              "column_type": "string"
+            },
+            {
+              "column_name": "dot3az",
+              "column_type": "string"
+            },
+            {
+              "column_name": "adaptivePolicyGroupId",
+              "column_type": "string"
+            },
+            {
+              "column_name": "macAllowList",
+              "column_type": "string"
+            },
+            {
+              "column_name": "flexibleStackingEnabled",
+              "column_type": "string"
+            },
+            {
+              "column_name": "stickyMacAllowList",
+              "column_type": "string"
+            },
+            {
+              "column_name": "peerSgtCapable",
+              "column_type": "string"
+            },
+            {
+              "column_name": "type",
+              "column_type": "string"
+            },
+            {
+              "column_name": "stickyMacAllowListLimit",
+              "column_type": "string"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02O0GNS437DC30PD4sLdKxXCNIvxUQH12sY",
+        "name": "Get Target Switch Ports",
+        "title": "Get Target Switch Ports",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Target Switch Ports",
+          "input": {
+            "variable_workflow_02LLUYO8DV17A22l9lor4ttg6i8GspwoAVk": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5R3E818xTeBDrQ7aE8DgaJ41HHI$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "target_type": "meraki.endpoint",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_02LLUYO87CIIF2MYkTzJpsPsYYOXZ5MUPA1",
+          "workflow_name": "Meraki - Get Device Switch Ports"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02O0GNS59DVHS2iOuOyDCBMe4BGVAXHB43O",
+        "name": "Read Table from JSON",
+        "title": "Target Read Table from JSON",
+        "type": "corejava.read_table_from_json",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Target Read Table from JSON",
+          "input_json": "$activity.definition_activity_02O0GNS437DC30PD4sLdKxXCNIvxUQH12sY.output.variable_workflow_02LLUYO8DUAUK5cdNbWcLbEsrzMeC5jahEc$",
+          "jsonpath_query": "$.*",
+          "persist_output": true,
+          "populate_columns": false,
+          "skip_execution": false,
+          "table_columns": [
+            {
+              "column_name": "portId",
+              "column_type": "string"
+            },
+            {
+              "column_name": "name",
+              "column_type": "string"
+            },
+            {
+              "column_name": "tags",
+              "column_type": "string"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02O0GNS72M3TG4f2BS9Oo7aB1DZeLF4mBj8",
+        "name": "Set Variables",
+        "title": "Set Port Count Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Port Count Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5SRFB7GeGVIRMBCvtTY5MM2zjer$",
+              "variable_value_new": "$activity.definition_activity_02O0GNS1ZD3QF46iq1ad6ZVylZztrCasbPq.output.row_count$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5R8O34QFdIHvAopqMRzd1fv7Thu$",
+              "variable_value_new": "$activity.definition_activity_02O0GNS59DVHS2iOuOyDCBMe4BGVAXHB43O.output.row_count$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02O0GNS87MK8U1uxj6DmL8YAoff8lRYwiSn",
+        "name": "Condition Block",
+        "title": "Check for All Ports True",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "conditions": [],
+          "continue_on_failure": false,
+          "description": "Check if the All Poprts option was selected",
+          "display_name": "Check for All Ports True",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_02O0GNS8YM01L0ijDOExj0npSHUzAoljDXv",
+            "name": "Condition Branch",
+            "title": "All Ports",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5SB8C23pivgIAriaMvsWmcWYSky$",
+                "operator": "eq",
+                "right_operand": true
+              },
+              "continue_on_failure": false,
+              "display_name": "All Ports",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_02O0GNSA1Z29J64TwdUH9IDxicEaH9OC7wc",
+                "name": "Condition Block",
+                "title": "Check Source Port #s \u003c= Target Port #s",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "conditions": [],
+                  "continue_on_failure": false,
+                  "description": "Check that the Source switch has less than or equal number of ports as the Target swtich",
+                  "display_name": "Check Source Port #s \u003c= Target Port #s",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_02O0GNSAZA1ZI5ZNiz0CrlPisSii5HmFIE8",
+                    "name": "Condition Branch",
+                    "title": "Less than or Equal",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5SRFB7GeGVIRMBCvtTY5MM2zjer$",
+                        "operator": "lte",
+                        "right_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5R8O34QFdIHvAopqMRzd1fv7Thu$"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Less than or Equal",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2",
+                        "name": "For Each",
+                        "title": "For Each Source Switch port ID",
+                        "type": "logic.for_each",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "Update the Target switchport configuration for each port on the Source switch",
+                          "display_name": "For Each Source Switch port ID",
+                          "skip_execution": false,
+                          "source_array": "$activity.definition_activity_02O0GNS1ZD3QF46iq1ad6ZVylZztrCasbPq.output.read_table_from_json$"
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_02O0GNSDVUKTD3Rusq6BQyZ6MXlaGp6TU1q",
+                            "name": "Select from Table",
+                            "title": "Select Port ID from Target Switchport Table",
+                            "type": "core.selectfromtable",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "columns": [
+                                {
+                                  "column_name": "portId",
+                                  "column_type": "string"
+                                }
+                              ],
+                              "continue_on_failure": false,
+                              "description": "Select the Port ID from the Target Switchport Configurations Table",
+                              "display_name": "Select Port ID from Target Switchport Table",
+                              "input_table": "$activity.definition_activity_02O0GNS59DVHS2iOuOyDCBMe4BGVAXHB43O.output.read_table_from_json$",
+                              "number_of_rows": {
+                                "all_rows": true
+                              },
+                              "persist_output": true,
+                              "skip_execution": false,
+                              "sorting": {
+                                "no_sort": true
+                              },
+                              "where_clause": "portId = '$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QX780Ph6oc6yheMIJM8otgzZwn$'"
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_02O0GNSHMRISD4iua21XBQ8Q1ZrcW6TmAnD",
+                            "name": "Select from Table",
+                            "title": "Select Target Port ID from Source Switch Port ConfigurationTable",
+                            "type": "core.selectfromtable",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "columns": [
+                                {
+                                  "column_name": "portId",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "name",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "tags",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "enabled",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "poeEnabled",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "vlan",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "voiceVlan",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "allowedVlans",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "isolationEnabled",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "rstpEnabled",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "stpGuard",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "linkNegotiation",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "portScheduleId",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "schedule",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "udld",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "linkNegotiationCapabilities",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "accessPolicyType",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "daiTrusted",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "profile",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "module",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "mirror",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "stormControlEnabled",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "accessPolicyNumber",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "dot3az",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "adaptivePolicyGroupId",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "macAllowList",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "flexibleStackingEnabled",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "stickyMacAllowList",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "peerSgtCapable",
+                                  "column_type": "string"
+                                }
+                              ],
+                              "continue_on_failure": false,
+                              "description": "Select Target Port ID from Source Switch Port ConfigurationTable",
+                              "display_name": "Select Target Port ID from Source Switch Port ConfigurationTable",
+                              "input_table": "$activity.definition_activity_02O0GNS1ZD3QF46iq1ad6ZVylZztrCasbPq.output.read_table_from_json$",
+                              "number_of_rows": {
+                                "all_rows": true
+                              },
+                              "persist_output": true,
+                              "skip_execution": false,
+                              "sorting": {
+                                "no_sort": true
+                              },
+                              "where_clause": "portId = '$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QX780Ph6oc6yheMIJM8otgzZwn$'"
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_02O0GNSKDXNQD2PGFZEpIpHK4BPjnlm88Ej",
+                            "name": "Condition Block",
+                            "title": "Check for Numeric Port IDs",
+                            "type": "logic.if_else",
+                            "base_type": "activity",
+                            "properties": {
+                              "conditions": [],
+                              "continue_on_failure": false,
+                              "description": "Check that the Source and Target Port IDs are numeric.  Some uplink port IDs are Alphnumeric and that will cause the Update Switch Port Configuration API call to fail when attempting to use a numeric Port ID to update a port with a  Alphanumeric Port ID.",
+                              "display_name": "Check for Numeric Port IDs",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "blocks": [
+                              {
+                                "unique_name": "definition_activity_02O0GNSLPOUCZ7RilZdfxRBSEDzwQt6luLX",
+                                "name": "Condition Branch",
+                                "title": "Port IDs are numeric",
+                                "type": "logic.condition_block",
+                                "base_type": "activity",
+                                "properties": {
+                                  "condition": {
+                                    "left_operand": {
+                                      "left_operand": "$activity.definition_activity_02O0GNSDVUKTD3Rusq6BQyZ6MXlaGp6TU1q.output.output_table[0].portId$",
+                                      "operator": "eq",
+                                      "right_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QX780Ph6oc6yheMIJM8otgzZwn$"
+                                    },
+                                    "operator": "and",
+                                    "right_operand": {
+                                      "left_operand": "$activity.definition_activity_02O0GNSHMRISD4iua21XBQ8Q1ZrcW6TmAnD.output.output_table[0].portId$",
+                                      "operator": "eq",
+                                      "right_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QX780Ph6oc6yheMIJM8otgzZwn$"
+                                    }
+                                  },
+                                  "continue_on_failure": false,
+                                  "description": "Check that both the Source Port ID and the Target Port ID are equal to the Numeric Loop Port ID",
+                                  "display_name": "Port IDs are numeric",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity",
+                                "actions": [
+                                  {
+                                    "unique_name": "definition_activity_02O0GNSNHP0ZP6JBTOd59ePnReOcgyevf03",
+                                    "name": "Execute Python Script",
+                                    "title": "String to JSON Array",
+                                    "type": "python3.script",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "action_timeout": 180,
+                                      "continue_on_failure": false,
+                                      "description": "A custom Python Script activity to convert strings into JSON Arrays",
+                                      "display_name": "String to JSON Array",
+                                      "script": "import json\nimport ast\n\ndef convert_to_json_array(input_string):\n    \"\"\"\n    Converts a string representation of a list into a proper JSON array.\n    Handles:\n        - empty strings =\u003e []\n        - stringified lists =\u003e [\"item1\", \"item2\"]\n        - single string values =\u003e [\"value\"]\n    \"\"\"\n    if not input_string or not input_string.strip():\n        return json.dumps([], indent=4)\n\n    # Clean and prepare the string\n    input_string = input_string.strip()\n\n    # Strip outer quotes if it's wrapped\n    if (input_string.startswith('\"') and input_string.endswith('\"')) or \\\n       (input_string.startswith(\"'\") and input_string.endswith(\"'\")):\n        input_string = input_string[1:-1]\n\n    try:\n        # Attempt to evaluate as a Python literal (e.g. list)\n        parsed = ast.literal_eval(input_string)\n        if isinstance(parsed, list):\n            return json.dumps(parsed, indent=4)\n    except Exception:\n        pass\n\n    # Fallback: treat it as a single string item\n    return json.dumps([input_string], indent=4)\n\n# Convert strings to JSON arrays\nMAC_allow_list = convert_to_json_array('$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].macAllowList$')\nTags_list = convert_to_json_array('$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].tags$')\nSticky_MAC_allow_list = convert_to_json_array('$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].stickyMacAllowList$')",
+                                      "script_queries": [
+                                        {
+                                          "script_query": "MAC_allow_list",
+                                          "script_query_name": "MAC Allow List",
+                                          "script_query_type": "string"
+                                        },
+                                        {
+                                          "script_query": "Tags_list",
+                                          "script_query_name": "Tags List",
+                                          "script_query_type": "string"
+                                        },
+                                        {
+                                          "script_query": "Sticky_MAC_allow_list",
+                                          "script_query_name": "Sticky MAC Allow List",
+                                          "script_query_type": "string"
+                                        }
+                                      ],
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity"
+                                  },
+                                  {
+                                    "unique_name": "definition_activity_02O0GNSP9Y0O35KsZxPEPQ7ZOncAC1UJVF5",
+                                    "name": "Set Variables",
+                                    "title": "Set Array Variables",
+                                    "type": "core.set_multiple_variables",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "continue_on_failure": false,
+                                      "description": "The Output of the preceding Python Script activity is type String, so it must be mapped into an Array variable to be passed to the Update Switch Port Configuration Atomic action",
+                                      "display_name": "Set Array Variables",
+                                      "skip_execution": false,
+                                      "variables_to_update": [
+                                        {
+                                          "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QECS4pjReZB4hYHLztTjXfLcW5$",
+                                          "variable_value_new": "$activity.definition_activity_02O0GNSNHP0ZP6JBTOd59ePnReOcgyevf03.output.script_queries.MAC Allow List$"
+                                        },
+                                        {
+                                          "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QJRG6uYeFwNfrbk3c4PO24lpmO$",
+                                          "variable_value_new": "$activity.definition_activity_02O0GNSNHP0ZP6JBTOd59ePnReOcgyevf03.output.script_queries.Tags List$"
+                                        },
+                                        {
+                                          "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5Q52G52qjjjfFNfco1Rzh6ZWMZq$",
+                                          "variable_value_new": "$activity.definition_activity_02O0GNSNHP0ZP6JBTOd59ePnReOcgyevf03.output.script_queries.Sticky MAC Allow List$"
+                                        }
+                                      ]
+                                    },
+                                    "object_type": "definition_activity"
+                                  },
+                                  {
+                                    "unique_name": "definition_activity_02OKVT4LMT8SU0EKoX3RimgC6QquILiFYMZ",
+                                    "name": "Condition Block",
+                                    "title": "Check Convert Allowed VLANs Input setting",
+                                    "type": "logic.if_else",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "conditions": [],
+                                      "continue_on_failure": false,
+                                      "description": "Check the Input varaible Input - Convert Allowed VLANs from all to 1-1000",
+                                      "display_name": "Check Convert Allowed VLANs Input setting",
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity",
+                                    "blocks": [
+                                      {
+                                        "unique_name": "definition_activity_02OKVT4LO0HRQ35c7AwtsmMLY80U9gIGbaq",
+                                        "name": "Condition Branch",
+                                        "title": "False - Do not convert Allowed VLANs from all",
+                                        "type": "logic.condition_block",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "condition": {
+                                            "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02OKV23F7VSOZ5o0Mx7TkCktFsgr3OZmNfv$",
+                                            "operator": "eq",
+                                            "right_operand": false
+                                          },
+                                          "continue_on_failure": false,
+                                          "description": "The input variable Input- Convert Allowed VLANs from all to 1-1000 is False, do no conversions.",
+                                          "display_name": "False - Do not convert Allowed VLANs from all",
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity",
+                                        "actions": [
+                                          {
+                                            "unique_name": "definition_activity_02OKVT4LQ4G472NswYHXe990p0Z8vFrcDib",
+                                            "name": "Set Variables",
+                                            "title": "Set Allowed VLANs to match Source Port",
+                                            "type": "core.set_multiple_variables",
+                                            "base_type": "activity",
+                                            "properties": {
+                                              "continue_on_failure": false,
+                                              "description": "Set the Allowed VLANs to the Allowed VLANs from the Source Port",
+                                              "display_name": "Set Allowed VLANs to match Source Port",
+                                              "skip_execution": false,
+                                              "variables_to_update": [
+                                                {
+                                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKVPYO9QWY71NlZRqaOQk5COmSVwx972P$",
+                                                  "variable_value_new": "$activity.definition_activity_02O0GNSHMRISD4iua21XBQ8Q1ZrcW6TmAnD.output.output_table[0].allowedVlans$"
+                                                }
+                                              ]
+                                            },
+                                            "object_type": "definition_activity"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "unique_name": "definition_activity_02OKVT4LSFBBM0Hx08ihq79PvFhV7BXh5t2",
+                                        "name": "Condition Branch",
+                                        "title": "True - Convert Allowed VLANs is True AND Allowed VLANs is all",
+                                        "type": "logic.condition_block",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "condition": {
+                                            "left_operand": {
+                                              "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02OKV23F7VSOZ5o0Mx7TkCktFsgr3OZmNfv$",
+                                              "operator": "eq",
+                                              "right_operand": true
+                                            },
+                                            "operator": "and",
+                                            "right_operand": {
+                                              "left_operand": "$activity.definition_activity_02O0GNSHMRISD4iua21XBQ8Q1ZrcW6TmAnD.output.output_table[0].allowedVlans$",
+                                              "operator": "eq",
+                                              "right_operand": "all"
+                                            }
+                                          },
+                                          "continue_on_failure": false,
+                                          "description": "The input variable Input- Convert Allowed VLANs from all to 1-1000 is True\nAND the Allowed VLANs for this Source Port is set to all",
+                                          "display_name": "True - Convert Allowed VLANs is True AND Allowed VLANs is all",
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity",
+                                        "actions": [
+                                          {
+                                            "unique_name": "definition_activity_02OKVT4LVN6F35ONUWqBlp5S0vjCzPKMeCA",
+                                            "name": "Set Variables",
+                                            "title": "Set Allowed VLANs to 1-1000",
+                                            "type": "core.set_multiple_variables",
+                                            "base_type": "activity",
+                                            "properties": {
+                                              "continue_on_failure": false,
+                                              "description": "Set the Allowed VLANs to 1-1000",
+                                              "display_name": "Set Allowed VLANs to 1-1000",
+                                              "skip_execution": false,
+                                              "variables_to_update": [
+                                                {
+                                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKVPYO9QWY71NlZRqaOQk5COmSVwx972P$",
+                                                  "variable_value_new": "1-1000"
+                                                }
+                                              ]
+                                            },
+                                            "object_type": "definition_activity"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "unique_name": "definition_activity_02OL8AZD7IEJ06mPqP5b7E1i9AWdkIsLlZY",
+                                        "name": "Condition Branch",
+                                        "title": "True -Convert Allowed VLANs is True AND Allowed VLANs is NOT all",
+                                        "type": "logic.condition_block",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "condition": {
+                                            "left_operand": {
+                                              "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02OKV23F7VSOZ5o0Mx7TkCktFsgr3OZmNfv$",
+                                              "operator": "eq",
+                                              "right_operand": true
+                                            },
+                                            "operator": "and",
+                                            "right_operand": {
+                                              "left_operand": "$activity.definition_activity_02O0GNSHMRISD4iua21XBQ8Q1ZrcW6TmAnD.output.output_table[0].allowedVlans$",
+                                              "operator": "ne",
+                                              "right_operand": "all"
+                                            }
+                                          },
+                                          "continue_on_failure": false,
+                                          "description": "The input variable Input- Convert Allowed VLANs from all to 1-1000 is True\nAND the Allowed VLANs for this Source Port is NOT set to all",
+                                          "display_name": "True -Convert Allowed VLANs is True AND Allowed VLANs is NOT all",
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity",
+                                        "actions": [
+                                          {
+                                            "unique_name": "definition_activity_02OLTH2T56B263ZTGTrL8ASUNcO7CT6GAfJ",
+                                            "name": "Set Variables",
+                                            "title": "Set Allowed VLANs to match Source Port",
+                                            "type": "core.set_multiple_variables",
+                                            "base_type": "activity",
+                                            "properties": {
+                                              "continue_on_failure": false,
+                                              "description": "Set the Allowed VLANs to the Allowed VLANs from the Source Port",
+                                              "display_name": "Set Allowed VLANs to match Source Port",
+                                              "skip_execution": false,
+                                              "variables_to_update": [
+                                                {
+                                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKVPYO9QWY71NlZRqaOQk5COmSVwx972P$",
+                                                  "variable_value_new": "$activity.definition_activity_02O0GNSHMRISD4iua21XBQ8Q1ZrcW6TmAnD.output.output_table[0].allowedVlans$"
+                                                }
+                                              ]
+                                            },
+                                            "object_type": "definition_activity"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "unique_name": "definition_activity_02OKU5E2CH3IO3JebEqvhOZMupW5bg1HMZQ",
+                                    "name": "Meraki - Update Device Switch Port",
+                                    "title": "Meraki - Update Device Switch Port",
+                                    "type": "workflow.atomic_workflow",
+                                    "base_type": "subworkflow",
+                                    "properties": {
+                                      "continue_on_failure": false,
+                                      "description": "Update a switch port",
+                                      "display_name": "Meraki - Update Device Switch Port",
+                                      "input": {
+                                        "variable_workflow_02LLUSYKBX4PZ3WjZouQ7Ao1l5hT4cnAUrN": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QECS4pjReZB4hYHLztTjXfLcW5$",
+                                        "variable_workflow_02LLUSYKBXGAB7ib3NJmVRe6DqQI0M9zMH1": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5Q52G52qjjjfFNfco1Rzh6ZWMZq$",
+                                        "variable_workflow_02LLUSYKBXQ7D4xyOMMWwHZHHQ2cEOv5Wln": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QJRG6uYeFwNfrbk3c4PO24lpmO$",
+                                        "variable_workflow_02LLUSYKBXXGH34AbYGqboz3vfZqit9CPyV": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5R3E818xTeBDrQ7aE8DgaJ41HHI$",
+                                        "variable_workflow_02LLUSYKBYOQT4BOkCOQNg89WmBvlZhHiSm": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].stickyMacAllowListLimit$",
+                                        "variable_workflow_02LLUSYKBZAKG2dyFrZHNVBXEm1ya380I3m": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKVPYO9QWY71NlZRqaOQk5COmSVwx972P$",
+                                        "variable_workflow_02LLUSYKBZPQR21LS1nlDQuyg7SffMfLXYb": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].linkNegotiation$",
+                                        "variable_workflow_02LLUSYKC0PL36XDwFWuMpoBTf8gDGg7SSG": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].stpGuard$",
+                                        "variable_workflow_02LLUSYKC1CKM3aD49S4oU8KtcWlXyJq3TY": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].dot3az$",
+                                        "variable_workflow_02LLUSYKC2CX5784kkVjameEjvpseeS1mUm": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].accessPolicyType$",
+                                        "variable_workflow_02LLUSYKC2M1B6KsrKKuu6Lu3zMf9Vvkyro": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].vlan$",
+                                        "variable_workflow_02LLUSYKC3THY4wvCURJUJLZ5M0CLLRKQfC": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QX780Ph6oc6yheMIJM8otgzZwn$",
+                                        "variable_workflow_02LLUSYKC41ZV4aUwh1C0r9CG2So2fP2GFN": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].type$",
+                                        "variable_workflow_02LLUSYKC82Z16MjBoPD6gF8yttFpiuYDKn": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].udld$",
+                                        "variable_workflow_02LLUSYKC8E0T6Ak1VgZnAM4qwByic8KJPQ": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].accessPolicyNumber$",
+                                        "variable_workflow_02LLUSYKC9NKE4YHnDq0PhrjEcWt9b3kPuF": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].adaptivePolicyGroupId$",
+                                        "variable_workflow_02LLUSYKCCOLA4Bd6SfZY4wQLR7m0MD24rU": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].profile$",
+                                        "variable_workflow_02LLUSYKCECQJ5w06BHfjOyOpV99NVPsifG": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].portScheduleId$",
+                                        "variable_workflow_02LLUSYKCH02S5XRUR7mkVJFL61o2cAbnkR": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].voiceVlan$",
+                                        "variable_workflow_02LLUSYKCHV6D5y7vJDrRS0dWmotXgiEvLv": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].name$",
+                                        "variable_workflow_02LLUUS7H0GQP5g3Ta1tR3yD2Rt1wMam9T3": false,
+                                        "variable_workflow_02LMN059KPQRF5TRg53rsD0Nky9x4yFEbe0": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].enabled$",
+                                        "variable_workflow_02LMN40XI6JQR33Jqh4R4GE6xNqUpbwsAgU": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].daiTrusted$",
+                                        "variable_workflow_02LMN4K5FBKX724j9phzqKI0rQN7ubHCNYe": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].flexibleStackingEnabled$",
+                                        "variable_workflow_02LMN50RVQV360p6viNghFRsDGeegCxZPwg": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].isolationEnabled$",
+                                        "variable_workflow_02LMN5GEUI7HG2JrpTlVSeRMyiyZH9eOpGK": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].peerSgtCapable$",
+                                        "variable_workflow_02LMN5X9BBXCH6HEQMLIJKdERyfnfYBth2m": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].poeEnabled$",
+                                        "variable_workflow_02LMN6CQX60OC0GrzaJy35TAdDhmsJ54vgl": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].rstpEnabled$",
+                                        "variable_workflow_02LMN6SON75QV5HKTBA9Ex7BOP8zysAuqQ2": "$activity.definition_activity_02O0GNSC901HD7Yk77vlUXLkOlpIqWftmH2.input.source_array[@].stormControlEnabled$"
+                                      },
+                                      "runtime_user": {
+                                        "target_default": true
+                                      },
+                                      "skip_execution": false,
+                                      "target": {
+                                        "target_type": "meraki.endpoint",
+                                        "use_workflow_target": true
+                                      },
+                                      "workflow_id": "definition_workflow_02LLUSYK4J29K0l7bhU4PlTtgMFEdAMaXhi",
+                                      "workflow_name": "Meraki - Update Device Switch Port"
+                                    },
+                                    "object_type": "definition_activity"
+                                  },
+                                  {
+                                    "unique_name": "definition_activity_02O0GNSW0DX053SByYZLZmGlwvhoNgSax4Y",
+                                    "name": "Set Variables",
+                                    "title": "Update Loop variables",
+                                    "type": "core.set_multiple_variables",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "continue_on_failure": false,
+                                      "description": "Set the last Swtichport Port ID updated and increment the Loop Port ID",
+                                      "display_name": "Update Loop variables",
+                                      "skip_execution": false,
+                                      "variables_to_update": [
+                                        {
+                                          "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5RDV50zSdOQ4lWurePWXpT5oJ1C$",
+                                          "variable_value_new": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QX780Ph6oc6yheMIJM8otgzZwn$"
+                                        },
+                                        {
+                                          "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QX780Ph6oc6yheMIJM8otgzZwn$",
+                                          "variable_value_new": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QX780Ph6oc6yheMIJM8otgzZwn$+1"
+                                        }
+                                      ]
+                                    },
+                                    "object_type": "definition_activity"
+                                  }
+                                ]
+                              },
+                              {
+                                "unique_name": "definition_activity_02O0GNSXGWH4S3toRMuzCDNuvFYyID29DMb",
+                                "name": "Condition Branch",
+                                "title": "Non-Numeric Port ID",
+                                "type": "logic.condition_block",
+                                "base_type": "activity",
+                                "properties": {
+                                  "condition": {
+                                    "left_operand": {
+                                      "left_operand": "$activity.definition_activity_02O0GNSDVUKTD3Rusq6BQyZ6MXlaGp6TU1q.output.output_table[0].portId$",
+                                      "operator": "ne",
+                                      "right_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QX780Ph6oc6yheMIJM8otgzZwn$"
+                                    },
+                                    "operator": "or",
+                                    "right_operand": {
+                                      "left_operand": "$activity.definition_activity_02O0GNSHMRISD4iua21XBQ8Q1ZrcW6TmAnD.output.output_table[0].portId$",
+                                      "operator": "ne",
+                                      "right_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QX780Ph6oc6yheMIJM8otgzZwn$"
+                                    }
+                                  },
+                                  "continue_on_failure": false,
+                                  "description": "Check the Source and Target Port IDs are not equal to the Loop Port ID",
+                                  "display_name": "Non-Numeric Port ID",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity",
+                                "actions": [
+                                  {
+                                    "unique_name": "definition_activity_02O0GNSZJ4J264htqYVMu89yXtCz6OnUPa2",
+                                    "name": "Break",
+                                    "title": "Break For Loop",
+                                    "type": "logic.break",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "continue_on_failure": false,
+                                      "description": "Non-Numeric Port ID detected",
+                                      "display_name": "Break For Loop",
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_02OKYTZDW3E3T35ddOVF32BiUSjxHqV79LL",
+                        "name": "Group",
+                        "title": "Get Device Information",
+                        "type": "logic.group",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "Get the Device Model and Name along with the Network IDs for the Output Message",
+                          "display_as_suggestion": false,
+                          "display_name": "Get Device Information",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_02OKYTZDXRFT252VEFHjhUuAZmdneZZdsWV",
+                            "name": "Get Source Switch Device Info",
+                            "title": "Get Source Switch Device Info",
+                            "type": "workflow.atomic_workflow",
+                            "base_type": "subworkflow",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "**Cisco Meraki - Devices - Get Device**\n\nReturn detailed information about a specific Meraki device within the network.\n\n**Target:** A Meraki Endpoint using HTTPS \"api.meraki.com\" port 443 and no path.\n\n**Account Key:** Meraki User API Key. API Key can be generated from Merkai Dashboard -\u003e User Profile -\u003e API Access.\n\nSteps:\n[] Sends Get Device request to Meraki\n[] Check if the request was successful:\n[]\u003e If it was, attempt to extract the results and set the output variables\n[]\u003e If it wasn't, return the error and marks the workflow as failed.\n\nNOTE: Empty attributes in the request are removed from the payload before sending to Meraki. \n\nhttps://developer.cisco.com/meraki/api-v1/get-device/",
+                              "display_name": "Get Source Switch Device Info",
+                              "input": {
+                                "variable_workflow_02LA3KX0XRGFU3QzA9F6YCXnYaLxB7wtsM7": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5SL6R2aXdwRMSA4evs73Ob1tVjr$"
+                              },
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "target_type": "meraki.endpoint",
+                                "use_workflow_target": true
+                              },
+                              "workflow_id": "definition_workflow_02LA3KX0H7UMQ3yyicn2qcUy4gWmF7FBxQq",
+                              "workflow_name": "Meraki - Get Device"
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_02OKYTZE13H0G2G2JTqd7d7IRbCY7Fcmr7L",
+                            "name": "Get Target Switch Device Info",
+                            "title": "Get Target Switch Device Info",
+                            "type": "workflow.atomic_workflow",
+                            "base_type": "subworkflow",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "**Cisco Meraki - Devices - Get Device**\n\nReturn detailed information about a specific Meraki device within the network.\n\n**Target:** A Meraki Endpoint using HTTPS \"api.meraki.com\" port 443 and no path.\n\n**Account Key:** Meraki User API Key. API Key can be generated from Merkai Dashboard -\u003e User Profile -\u003e API Access.\n\nSteps:\n[] Sends Get Device request to Meraki\n[] Check if the request was successful:\n[]\u003e If it was, attempt to extract the results and set the output variables\n[]\u003e If it wasn't, return the error and marks the workflow as failed.\n\nNOTE: Empty attributes in the request are removed from the payload before sending to Meraki. \n\nhttps://developer.cisco.com/meraki/api-v1/get-device/",
+                              "display_name": "Get Target Switch Device Info",
+                              "input": {
+                                "variable_workflow_02LA3KX0XRGFU3QzA9F6YCXnYaLxB7wtsM7": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5R3E818xTeBDrQ7aE8DgaJ41HHI$"
+                              },
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "target_type": "meraki.endpoint",
+                                "use_workflow_target": true
+                              },
+                              "workflow_id": "definition_workflow_02LA3KX0H7UMQ3yyicn2qcUy4gWmF7FBxQq",
+                              "workflow_name": "Meraki - Get Device"
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_02OKYTZE4KFK56zmSe21QOzflZF1EKPONuD",
+                            "name": "Set Variables",
+                            "title": "Set Switch Device Information",
+                            "type": "core.set_multiple_variables",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "Set Variables for the swtich model numbers, names, and network IDs",
+                              "display_name": "Set Switch Device Information",
+                              "skip_execution": false,
+                              "variables_to_update": [
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYAT9MWJPZ2xSyXNES6Vigt1gNpCKYdQ$",
+                                  "variable_value_new": "$activity.definition_activity_02OKYTZDXRFT252VEFHjhUuAZmdneZZdsWV.output.variable_workflow_02LA3KX0XSG925KG01hpqKJNCK6fHUePYQ0$"
+                                },
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYBIV0FK5K07WnQuWdF6rdaze38A4DzH$",
+                                  "variable_value_new": "$activity.definition_activity_02OKYTZDXRFT252VEFHjhUuAZmdneZZdsWV.output.variable_workflow_02LA3KX0XRSSU2QUBIGrhWxVpxVcBvR3Tvu$"
+                                },
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYBWPITVMM1SGGrpYYR2yDpmkCz5vpbM$",
+                                  "variable_value_new": "$activity.definition_activity_02OKYTZDXRFT252VEFHjhUuAZmdneZZdsWV.output.variable_workflow_02LA3KX0XSRZI1ZEyBn5QAfxqZNghCJ89PX$"
+                                },
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYB16XYY977aXBKGw7UT62eDbtfaZLRD$",
+                                  "variable_value_new": "$activity.definition_activity_02OKYTZE13H0G2G2JTqd7d7IRbCY7Fcmr7L.output.variable_workflow_02LA3KX0XSG925KG01hpqKJNCK6fHUePYQ0$"
+                                },
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYBBG3DLX162pLHkBieTn5jrfFU8Lj9F$",
+                                  "variable_value_new": "$activity.definition_activity_02OKYTZE13H0G2G2JTqd7d7IRbCY7Fcmr7L.output.variable_workflow_02LA3KX0XRSSU2QUBIGrhWxVpxVcBvR3Tvu$"
+                                },
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYC3KMF9IO4k2ywW2pwdEk2jfTogq6DH$",
+                                  "variable_value_new": "$activity.definition_activity_02OKYTZE13H0G2G2JTqd7d7IRbCY7Fcmr7L.output.variable_workflow_02LA3KX0XSRZI1ZEyBn5QAfxqZNghCJ89PX$"
+                                }
+                              ]
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_02O0GNT0VG2PT73RAGUt0T4CADNHxETXgOl",
+                        "name": "Set Variables",
+                        "title": "Set result code and message",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set result code and message",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.variable_workflow_02O0GNRW5T1H36XMded5pO3QFD64xJOLyk0$",
+                              "variable_value_new": true
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.variable_workflow_02O0GNRW5ROVN7ka0AZNMgQvtGuoZ5M8n8n$",
+                              "variable_value_new": 200
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.variable_workflow_02O0GNRW5SGAO6B1WjDgikE0FZjOOpYxUzl$",
+                              "variable_value_new": "Copied all switch port configurations from port ID: 1 to Port ID: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5RDV50zSdOQ4lWurePWXpT5oJ1C$\nfrom Model: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYAT9MWJPZ2xSyXNES6Vigt1gNpCKYdQ$ \nNamed: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYBIV0FK5K07WnQuWdF6rdaze38A4DzH$ \non Network: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYBWPITVMM1SGGrpYYR2yDpmkCz5vpbM$\nto Model:  $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYB16XYY977aXBKGw7UT62eDbtfaZLRD$ \nNamed: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYBBG3DLX162pLHkBieTn5jrfFU8Lj9F$ \non Network: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYC3KMF9IO4k2ywW2pwdEk2jfTogq6DH$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.workflow_results_code$",
+                              "variable_value_new": "completed-successfully"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.workflow_results$",
+                              "variable_value_new": "true"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_02O0GNT27I10G6IgdQqW6qJ1oxNwKEAhwI4",
+                    "name": "Condition Branch",
+                    "title": "Greater than",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5SRFB7GeGVIRMBCvtTY5MM2zjer$",
+                        "operator": "gt",
+                        "right_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5R8O34QFdIHvAopqMRzd1fv7Thu$"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Greater than",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_02O0GNT3SMZEY0XIS13KvRCHp248gsqu0AT",
+                        "name": "Set Variables",
+                        "title": "Set error message and status code",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "Set error message and status code",
+                          "display_name": "Set error message and status code",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.variable_workflow_02O0GNRW5SGAO6B1WjDgikE0FZjOOpYxUzl$",
+                              "variable_value_new": "Error: Source switch has more ports than the Target swtich"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.variable_workflow_02O0GNRW5ROVN7ka0AZNMgQvtGuoZ5M8n8n$",
+                              "variable_value_new": 400
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.variable_workflow_02O0GNRW5T1H36XMded5pO3QFD64xJOLyk0$",
+                              "variable_value_new": false
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.workflow_results_code$",
+                              "variable_value_new": "workflow-errored"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.workflow_results$",
+                              "variable_value_new": "Error: Source switch has more ports than the Target swtich"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_02O0GNT4XZZ007TvRKi8o7v5rliYshK8UcX",
+            "name": "Condition Branch",
+            "title": "Single Port",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5SB8C23pivgIAriaMvsWmcWYSky$",
+                "operator": "eq",
+                "right_operand": false
+              },
+              "continue_on_failure": false,
+              "display_name": "Single Port",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_02O0GNT65D65V69FsgGcHlzD4eDLZFnIAw1",
+                "name": "Condition Block",
+                "title": "Check for valid Port #s",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "conditions": [],
+                  "continue_on_failure": false,
+                  "description": "Check that the provided port numbers are valid for the Source and Target switches",
+                  "display_name": "Check for valid Port #s",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_02O0GNT7BL31S5N6Kd5zemJhQKMJPehsz1w",
+                    "name": "Condition Branch",
+                    "title": "Valid Port Numbers",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": {
+                              "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5S2222JBUJ4y3lvzYdytXz8knnw$",
+                              "operator": "lte",
+                              "right_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5SRFB7GeGVIRMBCvtTY5MM2zjer$"
+                            },
+                            "operator": "and",
+                            "right_operand": {
+                              "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5T8MG2Ii5qQ6w6e1ngMmJkz4mAb$",
+                              "operator": "lte",
+                              "right_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5R8O34QFdIHvAopqMRzd1fv7Thu$"
+                            }
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5S2222JBUJ4y3lvzYdytXz8knnw$",
+                            "operator": "ne",
+                            "right_operand": 0
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5T8MG2Ii5qQ6w6e1ngMmJkz4mAb$",
+                          "operator": "ne",
+                          "right_operand": 0
+                        }
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Valid Port Numbers",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ",
+                        "name": "Select from Table",
+                        "title": "Select Target Port ID from Source Switch Port ConfigurationTable",
+                        "type": "core.selectfromtable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "columns": [
+                            {
+                              "column_name": "portId",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "name",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "tags",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "enabled",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "poeEnabled",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "vlan",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "voiceVlan",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "allowedVlans",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "isolationEnabled",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "rstpEnabled",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "stpGuard",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "linkNegotiation",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "portScheduleId",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "schedule",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "udld",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "linkNegotiationCapabilities",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "accessPolicyType",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "daiTrusted",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "profile",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "module",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "mirror",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "stormControlEnabled",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "accessPolicyNumber",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "dot3az",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "adaptivePolicyGroupId",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "macAllowList",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "flexibleStackingEnabled",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "stickyMacAllowList",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "peerSgtCapable",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "type",
+                              "column_type": "string"
+                            },
+                            {
+                              "column_name": "stickyMacAllowListLimit",
+                              "column_type": "string"
+                            }
+                          ],
+                          "continue_on_failure": false,
+                          "description": "Select Target Port ID from Source Switch Port ConfigurationTable",
+                          "display_name": "Select Target Port ID from Source Switch Port ConfigurationTable",
+                          "input_table": "$activity.definition_activity_02O0GNS1ZD3QF46iq1ad6ZVylZztrCasbPq.output.read_table_from_json$",
+                          "number_of_rows": {
+                            "all_rows": true
+                          },
+                          "persist_output": true,
+                          "skip_execution": false,
+                          "sorting": {
+                            "no_sort": true
+                          },
+                          "where_clause": "portId = '$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5S2222JBUJ4y3lvzYdytXz8knnw$'"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_02O0GNTAJPYOM0ExHjyxhYpScvTe9BM24qt",
+                        "name": "Execute Python Script",
+                        "title": "String to JSON Array",
+                        "type": "python3.script",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "description": "A custom Python Script activity to convert strings into JSON Arrays",
+                          "display_name": "String to JSON Array",
+                          "script": "import json\nimport ast\n\ndef convert_to_json_array(input_string):\n    \"\"\"\n    Converts a string representation of a list into a proper JSON array.\n    Handles:\n        - empty strings =\u003e []\n        - stringified lists =\u003e [\"item1\", \"item2\"]\n        - single string values =\u003e [\"value\"]\n    \"\"\"\n    if not input_string or not input_string.strip():\n        return json.dumps([], indent=4)\n\n    # Clean and prepare the string\n    input_string = input_string.strip()\n\n    # Strip outer quotes if it's wrapped\n    if (input_string.startswith('\"') and input_string.endswith('\"')) or \\\n       (input_string.startswith(\"'\") and input_string.endswith(\"'\")):\n        input_string = input_string[1:-1]\n\n    try:\n        # Attempt to evaluate as a Python literal (e.g. list)\n        parsed = ast.literal_eval(input_string)\n        if isinstance(parsed, list):\n            return json.dumps(parsed, indent=4)\n    except Exception:\n        pass\n\n    # Fallback: treat it as a single string item\n    return json.dumps([input_string], indent=4)\n\n# Convert strings to JSON arrays\nMAC_allow_list = convert_to_json_array('$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].macAllowList$')\nTags_list = convert_to_json_array('$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].tags$')\nSticky_MAC_allow_list = convert_to_json_array('$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].stickyMacAllowList$')",
+                          "script_queries": [
+                            {
+                              "script_query": "MAC_allow_list",
+                              "script_query_name": "MAC Allow List",
+                              "script_query_type": "string"
+                            },
+                            {
+                              "script_query": "Tags_list",
+                              "script_query_name": "Tags List",
+                              "script_query_type": "string"
+                            },
+                            {
+                              "script_query": "Sticky_MAC_allow_list",
+                              "script_query_name": "Sticky MAC Allow List",
+                              "script_query_type": "string"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_02O0GNTCEHRCH34NCEbWrgLZm0SF6x5E27W",
+                        "name": "Set Variables",
+                        "title": "Set Array Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "The Output of the preceding Python Script activity is type String, so it must be mapped into an Array variable to be passed to the Update Switch Port Configuration Atomic action",
+                          "display_name": "Set Array Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QECS4pjReZB4hYHLztTjXfLcW5$",
+                              "variable_value_new": "$activity.definition_activity_02O0GNTAJPYOM0ExHjyxhYpScvTe9BM24qt.output.script_queries.MAC Allow List$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QJRG6uYeFwNfrbk3c4PO24lpmO$",
+                              "variable_value_new": "$activity.definition_activity_02O0GNTAJPYOM0ExHjyxhYpScvTe9BM24qt.output.script_queries.Tags List$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5Q52G52qjjjfFNfco1Rzh6ZWMZq$",
+                              "variable_value_new": "$activity.definition_activity_02O0GNTAJPYOM0ExHjyxhYpScvTe9BM24qt.output.script_queries.Sticky MAC Allow List$"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_02OKV2GAUWCVI14cAcGhntIZyubQDGfMZAg",
+                        "name": "Condition Block",
+                        "title": "Check Convert Allowed VLANs Input setting",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "conditions": [],
+                          "continue_on_failure": false,
+                          "description": "Check the Input varaible Input - Convert Allowed VLANs from all to 1-1000",
+                          "display_name": "Check Convert Allowed VLANs Input setting",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_02OKV2GDDA8BZ1TX906Zy9ABwgz2M5veVOn",
+                            "name": "Condition Branch",
+                            "title": "False - Do not convert Allowed VLANs from all",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02OKV23F7VSOZ5o0Mx7TkCktFsgr3OZmNfv$",
+                                "operator": "eq",
+                                "right_operand": false
+                              },
+                              "continue_on_failure": false,
+                              "description": "The input variable Input- Convert Allowed VLANs from all to 1-1000 is False, do no conversions.",
+                              "display_name": "False - Do not convert Allowed VLANs from all",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_02OKVKXUG1Q3R1Jv2BKDJp24ZeLtZCUFaIu",
+                                "name": "Set Variables",
+                                "title": "Set Allowed VLANs to match Source Port",
+                                "type": "core.set_multiple_variables",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "description": "Set the Allowed VLANs to the Allowed VLANs from the Source Port",
+                                  "display_name": "Set Allowed VLANs to match Source Port",
+                                  "skip_execution": false,
+                                  "variables_to_update": [
+                                    {
+                                      "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKVPYO9QWY71NlZRqaOQk5COmSVwx972P$",
+                                      "variable_value_new": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].allowedVlans$"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_02OKV2GEJ8O3W5m83Mc1Ok0HFSZvQ7ggJY3",
+                            "name": "Condition Branch",
+                            "title": "True - Convert Allowed VLANs is True AND Allowed VLANs is all",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": {
+                                  "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02OKV23F7VSOZ5o0Mx7TkCktFsgr3OZmNfv$",
+                                  "operator": "eq",
+                                  "right_operand": true
+                                },
+                                "operator": "and",
+                                "right_operand": {
+                                  "left_operand": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].allowedVlans$",
+                                  "operator": "eq",
+                                  "right_operand": "all"
+                                }
+                              },
+                              "continue_on_failure": false,
+                              "description": "The input variable Input- Convert Allowed VLANs from all to 1-1000 is True\nAND the Allowed VLANs for this Source Port is set to all",
+                              "display_name": "True - Convert Allowed VLANs is True AND Allowed VLANs is all",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_02OKVL02WVQYH2V1YAShh7NMipCOQQvFLU3",
+                                "name": "Set Variables",
+                                "title": "Set Allowed VLANs to 1-1000",
+                                "type": "core.set_multiple_variables",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "description": "Set the Allowed VLANs to 1-1000",
+                                  "display_name": "Set Allowed VLANs to 1-1000",
+                                  "skip_execution": false,
+                                  "variables_to_update": [
+                                    {
+                                      "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKVPYO9QWY71NlZRqaOQk5COmSVwx972P$",
+                                      "variable_value_new": "1-1000"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_02OL892MEC44T72BAjHvcS5ckP5JTq6eYsJ",
+                            "name": "Condition Branch",
+                            "title": "True -Convert Allowed VLANs is True AND Allowed VLANs is NOT all",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": {
+                                  "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02OKV23F7VSOZ5o0Mx7TkCktFsgr3OZmNfv$",
+                                  "operator": "eq",
+                                  "right_operand": true
+                                },
+                                "operator": "and",
+                                "right_operand": {
+                                  "left_operand": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].allowedVlans$",
+                                  "operator": "ne",
+                                  "right_operand": "all"
+                                }
+                              },
+                              "continue_on_failure": false,
+                              "description": "The input variable Input- Convert Allowed VLANs from all to 1-1000 is True\nAND the Allowed VLANs for this Source Port is NOT set to all",
+                              "display_name": "True -Convert Allowed VLANs is True AND Allowed VLANs is NOT all",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_02OL8ACOI1T7T5HqJvNM7eBf0dUvtuWi1km",
+                                "name": "Set Variables",
+                                "title": "Set Allowed VLANs to match Source Port",
+                                "type": "core.set_multiple_variables",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "description": "Set the Allowed VLANs to the Allowed VLANs from the Source Port",
+                                  "display_name": "Set Allowed VLANs to match Source Port",
+                                  "skip_execution": false,
+                                  "variables_to_update": [
+                                    {
+                                      "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKVPYO9QWY71NlZRqaOQk5COmSVwx972P$",
+                                      "variable_value_new": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].allowedVlans$"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_02O0GP6K8NQJC7TJfFMMI1dGQKsEwOg50yw",
+                        "name": "Meraki - Update Device Switch Port",
+                        "title": "Meraki - Update Device Switch Port",
+                        "type": "workflow.atomic_workflow",
+                        "base_type": "subworkflow",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "Update a switch port",
+                          "display_name": "Meraki - Update Device Switch Port",
+                          "input": {
+                            "variable_workflow_02LLUSYKBX4PZ3WjZouQ7Ao1l5hT4cnAUrN": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QECS4pjReZB4hYHLztTjXfLcW5$",
+                            "variable_workflow_02LLUSYKBXGAB7ib3NJmVRe6DqQI0M9zMH1": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5Q52G52qjjjfFNfco1Rzh6ZWMZq$",
+                            "variable_workflow_02LLUSYKBXQ7D4xyOMMWwHZHHQ2cEOv5Wln": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5QJRG6uYeFwNfrbk3c4PO24lpmO$",
+                            "variable_workflow_02LLUSYKBXXGH34AbYGqboz3vfZqit9CPyV": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5R3E818xTeBDrQ7aE8DgaJ41HHI$",
+                            "variable_workflow_02LLUSYKBYOQT4BOkCOQNg89WmBvlZhHiSm": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].stickyMacAllowListLimit$",
+                            "variable_workflow_02LLUSYKBZAKG2dyFrZHNVBXEm1ya380I3m": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKVPYO9QWY71NlZRqaOQk5COmSVwx972P$",
+                            "variable_workflow_02LLUSYKBZPQR21LS1nlDQuyg7SffMfLXYb": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].linkNegotiation$",
+                            "variable_workflow_02LLUSYKC0PL36XDwFWuMpoBTf8gDGg7SSG": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].stpGuard$",
+                            "variable_workflow_02LLUSYKC1CKM3aD49S4oU8KtcWlXyJq3TY": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].dot3az$",
+                            "variable_workflow_02LLUSYKC2CX5784kkVjameEjvpseeS1mUm": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].accessPolicyType$",
+                            "variable_workflow_02LLUSYKC2M1B6KsrKKuu6Lu3zMf9Vvkyro": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].vlan$",
+                            "variable_workflow_02LLUSYKC3THY4wvCURJUJLZ5M0CLLRKQfC": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5T8MG2Ii5qQ6w6e1ngMmJkz4mAb$",
+                            "variable_workflow_02LLUSYKC41ZV4aUwh1C0r9CG2So2fP2GFN": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].type$",
+                            "variable_workflow_02LLUSYKC82Z16MjBoPD6gF8yttFpiuYDKn": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].udld$",
+                            "variable_workflow_02LLUSYKC8E0T6Ak1VgZnAM4qwByic8KJPQ": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].accessPolicyNumber$",
+                            "variable_workflow_02LLUSYKC9NKE4YHnDq0PhrjEcWt9b3kPuF": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].adaptivePolicyGroupId$",
+                            "variable_workflow_02LLUSYKCCOLA4Bd6SfZY4wQLR7m0MD24rU": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].profile$",
+                            "variable_workflow_02LLUSYKCECQJ5w06BHfjOyOpV99NVPsifG": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].portScheduleId$",
+                            "variable_workflow_02LLUSYKCH02S5XRUR7mkVJFL61o2cAbnkR": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].voiceVlan$",
+                            "variable_workflow_02LLUSYKCHV6D5y7vJDrRS0dWmotXgiEvLv": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].name$",
+                            "variable_workflow_02LLUUS7H0GQP5g3Ta1tR3yD2Rt1wMam9T3": false,
+                            "variable_workflow_02LMN059KPQRF5TRg53rsD0Nky9x4yFEbe0": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].enabled$",
+                            "variable_workflow_02LMN40XI6JQR33Jqh4R4GE6xNqUpbwsAgU": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].daiTrusted$",
+                            "variable_workflow_02LMN4K5FBKX724j9phzqKI0rQN7ubHCNYe": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].flexibleStackingEnabled$",
+                            "variable_workflow_02LMN50RVQV360p6viNghFRsDGeegCxZPwg": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].isolationEnabled$",
+                            "variable_workflow_02LMN5GEUI7HG2JrpTlVSeRMyiyZH9eOpGK": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].peerSgtCapable$",
+                            "variable_workflow_02LMN5X9BBXCH6HEQMLIJKdERyfnfYBth2m": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].poeEnabled$",
+                            "variable_workflow_02LMN6CQX60OC0GrzaJy35TAdDhmsJ54vgl": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].rstpEnabled$",
+                            "variable_workflow_02LMN6SON75QV5HKTBA9Ex7BOP8zysAuqQ2": "$activity.definition_activity_02O0GNT8V3X1B2iAcytYa3qgRvfR2bS10aQ.output.output_table[0].stormControlEnabled$"
+                          },
+                          "runtime_user": {
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "target_type": "meraki.endpoint",
+                            "use_workflow_target": true
+                          },
+                          "workflow_id": "definition_workflow_02LLUSYK4J29K0l7bhU4PlTtgMFEdAMaXhi",
+                          "workflow_name": "Meraki - Update Device Switch Port"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_02OKXK02F9CUO6yWhGAItncHl3yzGNzBkUv",
+                        "name": "Group",
+                        "title": "Get Device Information",
+                        "type": "logic.group",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "Get the Device Model and Name along with the Network IDs for the Output Message",
+                          "display_as_suggestion": false,
+                          "display_name": "Get Device Information",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_02OKXK02J0C874BkMBJtMFmPXlUMCfkPAX3",
+                            "name": "Get Source Switch Device Info",
+                            "title": "Get Source Switch Device Info",
+                            "type": "workflow.atomic_workflow",
+                            "base_type": "subworkflow",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "**Cisco Meraki - Devices - Get Device**\n\nReturn detailed information about a specific Meraki device within the network.\n\n**Target:** A Meraki Endpoint using HTTPS \"api.meraki.com\" port 443 and no path.\n\n**Account Key:** Meraki User API Key. API Key can be generated from Merkai Dashboard -\u003e User Profile -\u003e API Access.\n\nSteps:\n[] Sends Get Device request to Meraki\n[] Check if the request was successful:\n[]\u003e If it was, attempt to extract the results and set the output variables\n[]\u003e If it wasn't, return the error and marks the workflow as failed.\n\nNOTE: Empty attributes in the request are removed from the payload before sending to Meraki. \n\nhttps://developer.cisco.com/meraki/api-v1/get-device/",
+                              "display_name": "Get Source Switch Device Info",
+                              "input": {
+                                "variable_workflow_02LA3KX0XRGFU3QzA9F6YCXnYaLxB7wtsM7": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5SL6R2aXdwRMSA4evs73Ob1tVjr$"
+                              },
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "target_type": "meraki.endpoint",
+                                "use_workflow_target": true
+                              },
+                              "workflow_id": "definition_workflow_02LA3KX0H7UMQ3yyicn2qcUy4gWmF7FBxQq",
+                              "workflow_name": "Meraki - Get Device"
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_02OKXK02MWX9Q6srH5ksqmVb6T30xCqKNMV",
+                            "name": "Get Target Switch Device Info",
+                            "title": "Get Target Switch Device Info",
+                            "type": "workflow.atomic_workflow",
+                            "base_type": "subworkflow",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "**Cisco Meraki - Devices - Get Device**\n\nReturn detailed information about a specific Meraki device within the network.\n\n**Target:** A Meraki Endpoint using HTTPS \"api.meraki.com\" port 443 and no path.\n\n**Account Key:** Meraki User API Key. API Key can be generated from Merkai Dashboard -\u003e User Profile -\u003e API Access.\n\nSteps:\n[] Sends Get Device request to Meraki\n[] Check if the request was successful:\n[]\u003e If it was, attempt to extract the results and set the output variables\n[]\u003e If it wasn't, return the error and marks the workflow as failed.\n\nNOTE: Empty attributes in the request are removed from the payload before sending to Meraki. \n\nhttps://developer.cisco.com/meraki/api-v1/get-device/",
+                              "display_name": "Get Target Switch Device Info",
+                              "input": {
+                                "variable_workflow_02LA3KX0XRGFU3QzA9F6YCXnYaLxB7wtsM7": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5R3E818xTeBDrQ7aE8DgaJ41HHI$"
+                              },
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "target_type": "meraki.endpoint",
+                                "use_workflow_target": true
+                              },
+                              "workflow_id": "definition_workflow_02LA3KX0H7UMQ3yyicn2qcUy4gWmF7FBxQq",
+                              "workflow_name": "Meraki - Get Device"
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_02OKYCN259O990BWX8B46LPDFMqxR1Jao0H",
+                            "name": "Set Variables",
+                            "title": "Set Switch Device Information",
+                            "type": "core.set_multiple_variables",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "Set Variables for the swtich model numbers, names, and network IDs",
+                              "display_name": "Set Switch Device Information",
+                              "skip_execution": false,
+                              "variables_to_update": [
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYAT9MWJPZ2xSyXNES6Vigt1gNpCKYdQ$",
+                                  "variable_value_new": "$activity.definition_activity_02OKXK02J0C874BkMBJtMFmPXlUMCfkPAX3.output.variable_workflow_02LA3KX0XSG925KG01hpqKJNCK6fHUePYQ0$"
+                                },
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYBIV0FK5K07WnQuWdF6rdaze38A4DzH$",
+                                  "variable_value_new": "$activity.definition_activity_02OKXK02J0C874BkMBJtMFmPXlUMCfkPAX3.output.variable_workflow_02LA3KX0XRSSU2QUBIGrhWxVpxVcBvR3Tvu$"
+                                },
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYBWPITVMM1SGGrpYYR2yDpmkCz5vpbM$",
+                                  "variable_value_new": "$activity.definition_activity_02OKXK02J0C874BkMBJtMFmPXlUMCfkPAX3.output.variable_workflow_02LA3KX0XSRZI1ZEyBn5QAfxqZNghCJ89PX$"
+                                },
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYB16XYY977aXBKGw7UT62eDbtfaZLRD$",
+                                  "variable_value_new": "$activity.definition_activity_02OKXK02MWX9Q6srH5ksqmVb6T30xCqKNMV.output.variable_workflow_02LA3KX0XSG925KG01hpqKJNCK6fHUePYQ0$"
+                                },
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYBBG3DLX162pLHkBieTn5jrfFU8Lj9F$",
+                                  "variable_value_new": "$activity.definition_activity_02OKXK02MWX9Q6srH5ksqmVb6T30xCqKNMV.output.variable_workflow_02LA3KX0XRSSU2QUBIGrhWxVpxVcBvR3Tvu$"
+                                },
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYC3KMF9IO4k2ywW2pwdEk2jfTogq6DH$",
+                                  "variable_value_new": "$activity.definition_activity_02OKXK02MWX9Q6srH5ksqmVb6T30xCqKNMV.output.variable_workflow_02LA3KX0XSRZI1ZEyBn5QAfxqZNghCJ89PX$"
+                                }
+                              ]
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_02O0GNTKW8A672dpLn0f8TqTVoc8HTGFMhR",
+                        "name": "Set Variables",
+                        "title": "Set result code and message",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Set result code and message",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.variable_workflow_02O0GNRW5ROVN7ka0AZNMgQvtGuoZ5M8n8n$",
+                              "variable_value_new": "$activity.definition_activity_02O0GP6K8NQJC7TJfFMMI1dGQKsEwOg50yw.output.variable_workflow_02LLUSYKCF95S33yYavGIG4eJENDyKtykdT$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.variable_workflow_02O0GNRW5SGAO6B1WjDgikE0FZjOOpYxUzl$",
+                              "variable_value_new": "Copied Source Port ID: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5S2222JBUJ4y3lvzYdytXz8knnw$ \nfrom Model: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYAT9MWJPZ2xSyXNES6Vigt1gNpCKYdQ$ \nNamed: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYBIV0FK5K07WnQuWdF6rdaze38A4DzH$ \non Network: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYBWPITVMM1SGGrpYYR2yDpmkCz5vpbM$\nto Target Port ID: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5T8MG2Ii5qQ6w6e1ngMmJkz4mAb$ \non Model:  $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYB16XYY977aXBKGw7UT62eDbtfaZLRD$ \nNamed: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYBBG3DLX162pLHkBieTn5jrfFU8Lj9F$ \non Network: $workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02OKYC3KMF9IO4k2ywW2pwdEk2jfTogq6DH$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.variable_workflow_02O0GNRW5T1H36XMded5pO3QFD64xJOLyk0$",
+                              "variable_value_new": "$activity.definition_activity_02O0GP6K8NQJC7TJfFMMI1dGQKsEwOg50yw.output.succeeded$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.workflow_results$",
+                              "variable_value_new": "$activity.definition_activity_02O0GP6K8NQJC7TJfFMMI1dGQKsEwOg50yw.output.succeeded$"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.workflow_results_code$",
+                              "variable_value_new": "completed-successfully"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_02O0GNTMGW7YF1aISleJMAwhuUk294huIt1",
+                    "name": "Condition Branch",
+                    "title": "Invalid Port #s",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5S2222JBUJ4y3lvzYdytXz8knnw$",
+                          "operator": "gt",
+                          "right_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5SRFB7GeGVIRMBCvtTY5MM2zjer$"
+                        },
+                        "operator": "or",
+                        "right_operand": {
+                          "left_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.input.variable_workflow_02O0GNRW5T8MG2Ii5qQ6w6e1ngMmJkz4mAb$",
+                          "operator": "gt",
+                          "right_operand": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.local.variable_workflow_02O0GNRW5R8O34QFdIHvAopqMRzd1fv7Thu$"
+                        }
+                      },
+                      "continue_on_failure": false,
+                      "description": "The provided port # for the Source or Target is not valid",
+                      "display_name": "Invalid Port #s",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_02O0GNTOCB7FT2eFUrvnD4BtP032XwgOxYQ",
+                        "name": "Set Variables",
+                        "title": "Set error message and status code",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "Set error message and status code",
+                          "display_name": "Set error message and status code",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.variable_workflow_02O0GNRW5SGAO6B1WjDgikE0FZjOOpYxUzl$",
+                              "variable_value_new": "Error: Invalid Port IDs entered"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.variable_workflow_02O0GNRW5ROVN7ka0AZNMgQvtGuoZ5M8n8n$",
+                              "variable_value_new": 400
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.variable_workflow_02O0GNRW5T1H36XMded5pO3QFD64xJOLyk0$",
+                              "variable_value_new": false
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.workflow_results$",
+                              "variable_value_new": "Error: Invalid Port IDs entered"
+                            },
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02O0GNRVNOVC14gA0EOpUPq7WKOSqwNRTAA.output.workflow_results_code$",
+                              "variable_value_new": "workflow-errored"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_02NXV6O12LF114DhKxx98npicaIPTPJql2v"
+    ]
+  },
+  "categories": {
+    "category_02NXV6O12LF114DhKxx98npicaIPTPJql2v": {
+      "unique_name": "category_02NXV6O12LF114DhKxx98npicaIPTPJql2v",
+      "name": "Community Examples",
+      "title": "Community Examples",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "Example Workflows that will be made available to the Workflows Community until the Workflows Exchange in available.",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_02LLUYO87CIIF2MYkTzJpsPsYYOXZ5MUPA1",
+    "definition_workflow_02LLUSYK4J29K0l7bhU4PlTtgMFEdAMaXhi",
+    "definition_workflow_02LA3KX0H7UMQ3yyicn2qcUy4gWmF7FBxQq"
+  ],
+  "dependent_workflows": [
+    "definition_workflow_02LLUYO87CIIF2MYkTzJpsPsYYOXZ5MUPA1",
+    "definition_workflow_02LLUSYK4J29K0l7bhU4PlTtgMFEdAMaXhi",
+    "definition_workflow_02LA3KX0H7UMQ3yyicn2qcUy4gWmF7FBxQq"
+  ]
+}

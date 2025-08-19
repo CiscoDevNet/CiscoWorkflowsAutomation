@@ -1,0 +1,341 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_02O33E72I77MB3UDjiyOGI7dGDn6V7NCPYS",
+    "name": "JSON Placeholder Web Service++ ",
+    "title": "JSON Placeholder Web Service++ ",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Matching Result",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02O3B16J8TVX41Vge8CzNjVBB1LhwLzVNgp",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Output - Results",
+          "type": "datatype.string",
+          "description": "Holds the complete JSON Body from the Web Service",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "json"
+        },
+        "unique_name": "variable_workflow_02O33PIEUDJ701zq7ET7ZNtEiT61KqwL5ml",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "users",
+          "scope": "input",
+          "name": "operation",
+          "type": "datatype.string",
+          "description": "What Operation do you want to run against our JSON Placeholder Service",
+          "is_required": true,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02O33GBQMTBCR2rUnRfCQfzB7bfeDPgxAL3",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "automation_rules": {
+        "type": [
+          "webhook.rule_event"
+        ]
+      },
+      "delete_workflow_instance": false,
+      "description": "This workflow using automation to call the JSON Placeholder Web Service\nThis supports both \"Users\" and \"Post\" operations as an input option",
+      "display_name": "JSON Placeholder Web Service++ ",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_02O32E6O7CZ734kTsSOj5TNayxWqgl7lH6W",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_02O33E74K5B4459g0PrnM6DAjTglliw4wFD",
+        "name": "HTTP Request",
+        "title": "JSON Placeholder Web Service Request",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "allow_headers_redirect": false,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": true,
+          "description": "HTTP Request",
+          "display_name": "JSON Placeholder Web Service Request",
+          "method": "GET",
+          "relative_url": "/$workflow.definition_workflow_02O33E72I77MB3UDjiyOGI7dGDn6V7NCPYS.input.variable_workflow_02O33GBQMTBCR2rUnRfCQfzB7bfeDPgxAL3$",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02O340WDTMM8I2w4PQslR6VGKDLBUIvQp1K",
+        "name": "Condition Block",
+        "title": "Validate Web Service Response",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "conditions": [],
+          "continue_on_failure": false,
+          "description": "If-Else condition block",
+          "display_name": "Validate Web Service Response",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_02O340WEMFYED2C0pDVKw48vkGd5X0XyfC1",
+            "name": "Condition Branch",
+            "title": "Operation Not Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_02O33E74K5B4459g0PrnM6DAjTglliw4wFD.output.error.code$",
+                "operator": "eq",
+                "right_operand": "404"
+              },
+              "continue_on_failure": false,
+              "display_name": "Operation Not Found",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_02O341RLHB72O3cjNipDCx9nDQqCHM5BFyh",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "description": "Set Variables",
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_02O33E72I77MB3UDjiyOGI7dGDn6V7NCPYS.output.variable_workflow_02O33PIEUDJ701zq7ET7ZNtEiT61KqwL5ml$",
+                      "variable_value_new": "Invalid Operation Passed to Workflow : $workflow.definition_workflow_02O33E72I77MB3UDjiyOGI7dGDn6V7NCPYS.input.variable_workflow_02O33GBQMTBCR2rUnRfCQfzB7bfeDPgxAL3$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_02O3424PLO8ZK43wki0tSzrK1DQSl3VbMHM",
+                "name": "Completed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "failed-completed",
+                  "continue_on_failure": false,
+                  "description": "Completed action",
+                  "display_name": "Completed",
+                  "result_message": "Invalid Operation",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_02O33K2WZ8L1C2XmubKKKgSH1mNxZCs9oCf",
+        "name": "Condition Block",
+        "title": "Parse Results Based on Operation Type",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "conditions": [],
+          "continue_on_failure": false,
+          "description": "If-Else condition block",
+          "display_name": "Parse Results Based on Operation Type",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_02O33K2Y0L6XY4OGr9ntLKhqNuIPG94aFB6",
+            "name": "Condition Branch",
+            "title": "Users Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_02O33E72I77MB3UDjiyOGI7dGDn6V7NCPYS.input.variable_workflow_02O33GBQMTBCR2rUnRfCQfzB7bfeDPgxAL3$",
+                "operator": "eq",
+                "right_operand": "users"
+              },
+              "continue_on_failure": false,
+              "display_name": "Users Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_02O33E75AY3C757LQMz2xFReWaCx0BVrFpJ",
+                "name": "JSONPath Query",
+                "title": "JSONPath Query",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "description": "JSONPath Query to get value in JSON",
+                  "display_name": "JSONPath Query",
+                  "input_json": "$activity.definition_activity_02O33E74K5B4459g0PrnM6DAjTglliw4wFD.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$[*].name",
+                      "jsonpath_query_name": "name",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_02O33K2Z179781pFVsLFYjm6o0uhFy26lSM",
+            "name": "Condition Branch",
+            "title": "Posts Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_02O33E72I77MB3UDjiyOGI7dGDn6V7NCPYS.input.variable_workflow_02O33GBQMTBCR2rUnRfCQfzB7bfeDPgxAL3$",
+                "operator": "eq",
+                "right_operand": "posts"
+              },
+              "continue_on_failure": false,
+              "display_name": "Posts Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_02O33M0AR1UNB3csTOyMJZAwRrAgbizZtth",
+                "name": "JSONPath Query",
+                "title": "JSONPath Query",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "description": "JSONPath Query to get value in JSON",
+                  "display_name": "JSONPath Query",
+                  "input_json": "$activity.definition_activity_02O33E74K5B4459g0PrnM6DAjTglliw4wFD.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$[*].title",
+                      "jsonpath_query_name": "title",
+                      "jsonpath_query_type": "string",
+                      "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_02O33PRMHROFW6PhojxElSow2c7wMEoZs6p",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "Set Variables",
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_02O33E72I77MB3UDjiyOGI7dGDn6V7NCPYS.output.variable_workflow_02O33PIEUDJ701zq7ET7ZNtEiT61KqwL5ml$",
+              "variable_value_new": "$activity.definition_activity_02O33E74K5B4459g0PrnM6DAjTglliw4wFD.output.response_body$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_02O32GPTBKD5U26i29OH5ZwyRqy6fZMhMFz"
+    ]
+  },
+  "categories": {
+    "category_02O32GPTBKD5U26i29OH5ZwyRqy6fZMhMFz": {
+      "unique_name": "category_02O32GPTBKD5U26i29OH5ZwyRqy6fZMhMFz",
+      "name": "Learning Series",
+      "title": "Learning Series",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "This is our learning series workflows",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_02O32E6O7CZ734kTsSOj5TNayxWqgl7lH6W": {
+      "unique_name": "definition_target_02O32E6O7CZ734kTsSOj5TNayxWqgl7lH6W",
+      "name": "JSON Placeholder Web Service",
+      "title": "JSON Placeholder Web Service",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "This is for our learning series",
+        "disable_certificate_validation": true,
+        "display_name": "JSON Placeholder Web Service",
+        "host": "jsonplaceholder.typicode.com",
+        "ignore_proxy": false,
+        "is_https_proxy": false,
+        "no_runtime_user": true,
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  }
+}

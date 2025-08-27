@@ -29,26 +29,16 @@ This repository provides automation workflows for Cisco Meraki network managemen
 
 ### Workflow Descriptions
 
-1. **Check Available Firmware for Network**
-   - Quickly view which firmware versions are available for a selected Meraki network. Useful for planning upgrades and ensuring compatibility.
-
-2. **Get Organization Devices Statuses**
-   - Instantly fetch the operational status of all devices in your organization. Helps monitor device health and spot issues.
-
-3. **Schedule Firmware Upgrade for Network**
-   - Automate scheduling of firmware upgrades for a specific network. Set the date and time to keep devices up-to-date with minimal disruption.
-
-4. **Schedule Firmware Upgrade for Networks by Tag**
-   - Schedule upgrades across multiple networks by specifying tags. Ideal for batch updates in large organizations.
-
-5. **Site Checklist by Tags**
-   - Generate a customizable checklist for sites based on network tags. Ensures all required steps are completed for tagged locations.
-
-6. **Site Handoff Checklist**
-   - Provides a step-by-step checklist for handing off a site, ensuring all network setup and documentation is complete.
-
-7. **Unused Device Checker**
-   - Identify devices that haven’t been used for a specified number of days. Helps with asset management and cleanup.
+| Workflow Name                                      | Workflow Description                                                                                       | Workflow Type |
+|----------------------------------------------------|-----------------------------------------------------------------------------------------------------------|--------------|
+| Check Available Firmware for Network               | Quickly view which firmware versions are available for a selected Meraki network. Useful for planning upgrades and ensuring compatibility. | Atomic       |
+| Find Tagged Networks Across Multiple Orgs          | Find all networks with specific tags across multiple organizations. Useful for cross-org asset management and reporting. |              |
+| Get Organization Devices Statuses                  | Instantly fetch the operational status of all devices in your organization. Helps monitor device health and spot issues. | Atomic       |
+| Schedule Firmware Upgrade for Network              | Automate scheduling of firmware upgrades for a specific network. Set the date and time to keep devices up-to-date with minimal disruption. | Atomic       |
+| Schedule Firmware Upgrade for Networks by Tag      | Schedule upgrades across multiple networks by specifying tags. Ideal for batch updates in large organizations. | Atomic       |
+| Site Checklist by Tags                             | Generate a customizable checklist for sites based on network tags. Ensures all required steps are completed for tagged locations. |              |
+| Site Handoff Checklist                            | Provides a step-by-step checklist for handing off a site, ensuring all network setup and documentation is complete. |              |
+| Unused Device Checker                             | Identify devices that haven’t been used for a specified number of days. Helps with asset management and cleanup. | Atomic       |
 
 ## Prerequisites
 

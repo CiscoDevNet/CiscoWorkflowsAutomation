@@ -10,6 +10,22 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
+          "scope": "output",
+          "name": "Result",
+          "type": "datatype.string",
+          "description": "Comprehensive summary of firmware upgrade scheduling results, including successful and failed network upgrades with detailed information.",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02MLIQ98QXVS92qpmOxIVvAtEREVZqkc0Ay",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
           "scope": "input",
           "name": "Appliance Version ID to Upgrade",
           "type": "datatype.string",
@@ -36,6 +52,22 @@
           "variable_string_format": "text"
         },
         "unique_name": "variable_workflow_02Q0RX6R2LYDU17lJxlhjIjzrYGgemnddxA",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "properties": {
+          "value": [],
+          "scope": "input",
+          "name": "Network Tags to Search",
+          "type": "datatype.array",
+          "description": "Provide a list of network tags to search. Only networks in the user's organization with at least one matching tag from this list will be included. Note: The filtering is case-sensitive.\nExample:\n[\n  \"example-tag\", \"another-tag\"\n]",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02M7ZT2FW7KP67B68QGgkYqXkJDUxuhPU0Y",
         "object_type": "variable_workflow"
       },
       {
@@ -70,19 +102,51 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "variable_type_array_01JhSTW61I3ZU2IfL7dwQox83eFDzE1qUiA",
+        "schema_id": "datatype.string",
         "properties": {
-          "value": [],
-          "scope": "input",
-          "name": "Network Tags to Search",
-          "type": "datatype.array",
-          "description": "Provide a list of network tags to search. Only networks in the user's organization with at least one matching tag from this list will be included. Note: The filtering is case-sensitive.\nExample:\n[\n  \"example-tag\", \"another-tag\"\n]",
+          "value": "",
+          "scope": "output",
+          "name": "Status Message",
+          "type": "datatype.string",
+          "description": "The status message of the workflow execution.",
           "is_required": false,
           "display_on_wizard": false,
           "is_invisible": false,
-          "variable_string_format": ""
+          "variable_string_format": "text"
         },
-        "unique_name": "variable_workflow_02M7ZT2FW7KP67B68QGgkYqXkJDUxuhPU0Y",
+        "unique_name": "variable_workflow_02Q0RX6R2M6L34pYKn5ELjrxxOI5k8ralWJ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Status Code",
+          "type": "datatype.string",
+          "description": "The HTTP status code of the workflow execution.",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02Q0RX6R2LHQP2DiJMpvoWSg7M1gkVzmFGi",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Upgrade Date Time",
+          "type": "datatype.string",
+          "description": "The date and time for the next firmware upgrade in the network. The upgrade for network devices is scheduled using the network's timezone to ensure they get the latest updates. If no date-time is given, it will be set to the next 5 minutes. The upgrade can be scheduled up to 1 month from today, and all devices will use the same date and time. \nExample: YYYY-MM-DD HH:MM:SS",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02M80QZ2QQFQZ2qdsJZEcSzZrj7mzQs8QDM",
         "object_type": "variable_workflow"
       },
       {
@@ -116,70 +180,6 @@
         },
         "unique_name": "variable_workflow_02M80Q4SYT9IL3tmfMRYvFyBHUB7jGJinNn",
         "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Upgrade Date Time",
-          "type": "datatype.string",
-          "description": "The date and time for the next firmware upgrade in the network. The upgrade for network devices is scheduled using the network's timezone to ensure they get the latest updates. If no date-time is given, it will be set to the next 5 minutes. The upgrade can be scheduled up to 1 month from today, and all devices will use the same date and time. \nExample: YYYY-MM-DD HH:MM:SS",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false,
-          "variable_string_format": "text"
-        },
-        "unique_name": "variable_workflow_02M80QZ2QQFQZ2qdsJZEcSzZrj7mzQs8QDM",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Status Message",
-          "type": "datatype.string",
-          "description": "The status message of the workflow execution.",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false,
-          "variable_string_format": "text"
-        },
-        "unique_name": "variable_workflow_02Q0RX6R2M6L34pYKn5ELjrxxOI5k8ralWJ",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Result",
-          "type": "datatype.string",
-          "description": "Comprehensive summary of firmware upgrade scheduling results, including successful and failed network upgrades with detailed information.",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false,
-          "variable_string_format": "text"
-        },
-        "unique_name": "variable_workflow_02MLIQ98QXVS92qpmOxIVvAtEREVZqkc0Ay",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Status Code",
-          "type": "datatype.string",
-          "description": "The HTTP status code of the workflow execution.",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false,
-          "variable_string_format": "text"
-        },
-        "unique_name": "variable_workflow_02Q0RX6R2LHQP2DiJMpvoWSg7M1gkVzmFGi",
-        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -190,7 +190,7 @@
         "type": []
       },
       "delete_workflow_instance": false,
-      "description": "This workflow allows users to schedule firmware upgrades for one or more networks based on input tags. The workflow first identifies networks that have the input tags, then queries networks across organizations that the user has access to.\n\nThe workflow currently provides firmware upgrade options for Appliance, Switch, and Wireless devices in the network. All networks are upgraded on the same date and time.\n\nPrerequisites:\n- Valid Meraki API access credentials\n- User must have network admin privileges for target organizations\n- Target networks must exist and have the specified tags\n\nLimitations:\n- Maximum 1000 networks per organization query\n- Upgrades scheduled for same date/time across all networks\n- Case-sensitive tag matching\n- Requires existing firmware version IDs",
+      "description": "This workflow allows users to schedule firmware upgrades for one or more networks based on input tags. The workflow first identifies networks that have the input tags, then queries networks across organizations that the user has access to.\n\nThe workflow currently provides firmware upgrade options for Appliance, Switch, and Wireless devices in the network. All networks are upgraded on the same date and time.\n\nPrerequisites:\n- User must have network admin privileges for target organizations\n- Target networks must exist and have the specified tags\n\nLimitations:\n- Maximum 1000 networks per organization query\n- Upgrades scheduled for same date/time across all networks\n- Case-sensitive tag matching\n- Requires existing firmware version IDs",
       "display_name": "Schedule Firmware Upgrade for Networks by Tag",
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -1100,6 +1100,102 @@
             "properties": {
               "value": "",
               "scope": "input",
+              "name": "Appliance Version ID to Upgrade",
+              "type": "datatype.string",
+              "description": "Specific firmware version ID for Meraki Security Appliance (MX) devices to upgrade to. This must be a valid version ID available for the appliances in your network. Use the 'Check Available Firmware for Network' workflow to identify compatible version IDs. Leave empty to use the latest available firmware version. Example: 4727 for MX firmware v18.107.2.",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02M6JG0JY44ZB2J10JOQI8CsqtK0hhn1SBp",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Wireless Version ID to Upgrade",
+              "type": "datatype.string",
+              "description": "Specific firmware version ID for Meraki Wireless Access Points (MR) devices to upgrade to. This must be a valid version ID available for the wireless devices in your network. Use the 'Check Available Firmware for Network' workflow to identify compatible version IDs. Leave empty to use the latest available firmware version. Example: 4952 for MR firmware v29.7.",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02M6JG70GBGQG7HoqTfGf5aqzeOeDO3N0OT",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Organization ID or Name",
+              "type": "datatype.string",
+              "description": "Meraki organization identifier - provide either the organization name (e.g., 'Acme Corporation') or the organization ID (e.g., '123456'). The workflow automatically detects the input type and resolves to the correct organization ID. Organization names are case-sensitive and must match exactly as they appear in the Meraki Dashboard.",
+              "is_required": true,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02M312TNV48D362Qqex9PTw1USYd7QlgbfQ",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Result",
+              "type": "datatype.string",
+              "description": "Complete JSON response from the Meraki Dashboard API containing detailed firmware upgrade scheduling results. Includes upgrade confirmation details, scheduled times, affected devices, and any warnings or additional information returned by the API for troubleshooting and audit purposes.",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02M6L3TQUAWOC1fCLGxNZgjlFeD9xgkJoHr",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Error Message",
+              "type": "datatype.string",
+              "description": "Detailed error information when firmware upgrade scheduling fails. Contains specific API error messages, validation failures, or system issues to enable effective troubleshooting. Empty when workflow completes successfully, populated with diagnostic details when errors occur.",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02M6L3FIK1MB054rZdfPQcAYgBDONPSlwN6",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.boolean",
+            "properties": {
+              "value": false,
+              "scope": "input",
+              "name": "Ignore Errors",
+              "type": "datatype.boolean",
+              "description": "Controls workflow behavior when encountering API errors or validation failures. When set to false (default), the workflow will terminate on first error with detailed error information. When set to true, the workflow continues processing and provides best-effort results despite errors.",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": ""
+            },
+            "unique_name": "variable_workflow_02M7XBLKG0QUX0Rem8WlG1RekFxSh8w3YWo",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
               "name": "Upgrade Date Time",
               "type": "datatype.string",
               "description": "Scheduled date and time for the firmware upgrade in 'YYYY-MM-DD HH:MM:SS' format using the network's timezone. All devices in the network will be upgraded simultaneously at this time. If left empty, the upgrade will be scheduled for 5 minutes from now. Maximum scheduling window is 30 days from current date. Examples: '2025-05-20 14:30:00' for 2:30 PM on May 20th, '2025-12-15 02:00:00' for 2:00 AM maintenance window.",
@@ -1130,22 +1226,6 @@
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "input",
-              "name": "Switch Version ID to Upgrade",
-              "type": "datatype.string",
-              "description": "Specific firmware version ID for Meraki Switch (MS) devices to upgrade to. This must be a valid version ID available for the switches in your network. Use the 'Check Available Firmware for Network' workflow to identify compatible version IDs. Leave empty to use the latest available firmware version. Example: 4758 for MS firmware v15.21.1.",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": "text"
-            },
-            "unique_name": "variable_workflow_02M6J1XSPTOPF32pVY3YOG8khAHZh9c1W2N",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
               "scope": "local",
               "name": "MR ID",
               "type": "datatype.string",
@@ -1155,22 +1235,6 @@
               "variable_string_format": "text"
             },
             "unique_name": "variable_workflow_02PZZOBV3C7K00njLjGN4Zjj0wjpCW0SGhM",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Status Message",
-              "type": "datatype.string",
-              "description": "Human-readable status message describing the firmware upgrade scheduling operation outcome. Provides clear success confirmation, partial completion details, or failure reasons. Essential for user feedback and workflow orchestration decision-making in automated deployments.",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": "text"
-            },
-            "unique_name": "variable_workflow_02M6L319PNRLE5UnZJlJVqWYILq8SQZe8nV",
             "object_type": "variable_workflow"
           },
           {
@@ -1187,85 +1251,6 @@
               "variable_string_format": ""
             },
             "unique_name": "variable_workflow_02M6L2QUMXRS66QznqbbhESCOI6BVQ5KLP8",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Result",
-              "type": "datatype.string",
-              "description": "Complete JSON response from the Meraki Dashboard API containing detailed firmware upgrade scheduling results. Includes upgrade confirmation details, scheduled times, affected devices, and any warnings or additional information returned by the API for troubleshooting and audit purposes.",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": "text"
-            },
-            "unique_name": "variable_workflow_02M6L3TQUAWOC1fCLGxNZgjlFeD9xgkJoHr",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Appliance Version ID to Upgrade",
-              "type": "datatype.string",
-              "description": "Specific firmware version ID for Meraki Security Appliance (MX) devices to upgrade to. This must be a valid version ID available for the appliances in your network. Use the 'Check Available Firmware for Network' workflow to identify compatible version IDs. Leave empty to use the latest available firmware version. Example: 4727 for MX firmware v18.107.2.",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": "text"
-            },
-            "unique_name": "variable_workflow_02M6JG0JY44ZB2J10JOQI8CsqtK0hhn1SBp",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Organization ID or Name",
-              "type": "datatype.string",
-              "description": "Meraki organization identifier - provide either the organization name (e.g., 'Acme Corporation') or the organization ID (e.g., '123456'). The workflow automatically detects the input type and resolves to the correct organization ID. Organization names are case-sensitive and must match exactly as they appear in the Meraki Dashboard.",
-              "is_required": true,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": "text"
-            },
-            "unique_name": "variable_workflow_02M312TNV48D362Qqex9PTw1USYd7QlgbfQ",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "local",
-              "name": "MX ID",
-              "type": "datatype.string",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": "text"
-            },
-            "unique_name": "variable_workflow_02PZZO7WI1FZX3TWhd6HR5Vuhw8CFIEZ4Jq",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Error Message",
-              "type": "datatype.string",
-              "description": "Detailed error information when firmware upgrade scheduling fails. Contains specific API error messages, validation failures, or system issues to enable effective troubleshooting. Empty when workflow completes successfully, populated with diagnostic details when errors occur.",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": "text"
-            },
-            "unique_name": "variable_workflow_02M6L3FIK1MB054rZdfPQcAYgBDONPSlwN6",
             "object_type": "variable_workflow"
           },
           {
@@ -1289,6 +1274,53 @@
             "properties": {
               "value": "",
               "scope": "local",
+              "name": "MX ID",
+              "type": "datatype.string",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02PZZO7WI1FZX3TWhd6HR5Vuhw8CFIEZ4Jq",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Status Message",
+              "type": "datatype.string",
+              "description": "Human-readable status message describing the firmware upgrade scheduling operation outcome. Provides clear success confirmation, partial completion details, or failure reasons. Essential for user feedback and workflow orchestration decision-making in automated deployments.",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02M6L319PNRLE5UnZJlJVqWYILq8SQZe8nV",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Switch Version ID to Upgrade",
+              "type": "datatype.string",
+              "description": "Specific firmware version ID for Meraki Switch (MS) devices to upgrade to. This must be a valid version ID available for the switches in your network. Use the 'Check Available Firmware for Network' workflow to identify compatible version IDs. Leave empty to use the latest available firmware version. Example: 4758 for MS firmware v15.21.1.",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02M6J1XSPTOPF32pVY3YOG8khAHZh9c1W2N",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "local",
               "name": "Local Organization ID",
               "type": "datatype.string",
               "description": "Internal variable that stores the resolved Meraki organization ID after processing the input (organization name or ID). This variable ensures consistent organization identification throughout the workflow regardless of input format.",
@@ -1298,38 +1330,6 @@
               "variable_string_format": "text"
             },
             "unique_name": "variable_workflow_02M6HQJ239YBT6VFBUlUndyY9WWtNOYImuT",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.boolean",
-            "properties": {
-              "value": false,
-              "scope": "input",
-              "name": "Ignore Errors",
-              "type": "datatype.boolean",
-              "description": "Controls workflow behavior when encountering API errors or validation failures. When set to false (default), the workflow will terminate on first error with detailed error information. When set to true, the workflow continues processing and provides best-effort results despite errors.",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": ""
-            },
-            "unique_name": "variable_workflow_02M7XBLKG0QUX0Rem8WlG1RekFxSh8w3YWo",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Wireless Version ID to Upgrade",
-              "type": "datatype.string",
-              "description": "Specific firmware version ID for Meraki Wireless Access Points (MR) devices to upgrade to. This must be a valid version ID available for the wireless devices in your network. Use the 'Check Available Firmware for Network' workflow to identify compatible version IDs. Leave empty to use the latest available firmware version. Example: 4952 for MR firmware v29.7.",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": "text"
-            },
-            "unique_name": "variable_workflow_02M6JG70GBGQG7HoqTfGf5aqzeOeDO3N0OT",
             "object_type": "variable_workflow"
           }
         ],
@@ -2611,6 +2611,22 @@
                 "properties": {
                   "value": "",
                   "scope": "output",
+                  "name": "Output - Appliance - Available Firmware Versions",
+                  "type": "datatype.string",
+                  "description": "JSON formatted list of available firmware versions for Meraki Security Appliances (MX) in the network. Returns 'Running the latest firmware.' if no upgrades are available.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": "json"
+                },
+                "unique_name": "variable_workflow_02M3MYCAE4Z471oBd6zU3dI7HlwvXsNtZ4q",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "output",
                   "name": "Error Message",
                   "type": "datatype.string",
                   "description": "Detailed error information when workflow fails. Empty for successful executions, contains specific error details for troubleshooting failures.",
@@ -2620,6 +2636,38 @@
                   "variable_string_format": "text"
                 },
                 "unique_name": "variable_workflow_02PYK5VBTIZ1M25E7SGVpt8SrknI56VrtMl",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "local",
+                  "name": "Organization ID",
+                  "type": "datatype.string",
+                  "description": "Internal variable to store the resolved Meraki organization ID, determined from either the organization name lookup or direct ID input.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": "text"
+                },
+                "unique_name": "variable_workflow_02M6H1GEN4C263m1V94LPMCQNjGf0OG5ZG2",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.integer",
+                "properties": {
+                  "value": 0,
+                  "scope": "output",
+                  "name": "Status Code",
+                  "type": "datatype.integer",
+                  "description": "HTTP status code or workflow completion status. Returns 200 for success, 4xx/5xx for various error conditions.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": ""
+                },
+                "unique_name": "variable_workflow_02PYK5VBTIPF36xAo4ekXNelumZ8N2XzZdG",
                 "object_type": "variable_workflow"
               },
               {
@@ -2643,143 +2691,15 @@
                 "properties": {
                   "value": "",
                   "scope": "output",
-                  "name": "Output - Appliance - Available Firmware Versions",
+                  "name": "Status Message",
                   "type": "datatype.string",
-                  "description": "JSON formatted list of available firmware versions for Meraki Security Appliances (MX) in the network. Returns 'Running the latest firmware.' if no upgrades are available.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": "json"
-                },
-                "unique_name": "variable_workflow_02M3MYCAE4Z471oBd6zU3dI7HlwvXsNtZ4q",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "output",
-                  "name": "Output - Wireless - Current Version",
-                  "type": "datatype.string",
-                  "description": "The current firmware version running on Meraki Wireless Access Points (MR) in the network, displayed as 'ShortName (ID: VersionID)' format.",
+                  "description": "Brief status description of workflow execution result. 'Success' for successful completion or error summary for failures.",
                   "is_required": false,
                   "display_on_wizard": false,
                   "is_invisible": false,
                   "variable_string_format": "text"
                 },
-                "unique_name": "variable_workflow_02M3MZEFROAQL7kpDMAgvAu62wWwqTwJmqJ",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "input",
-                  "name": "Input - Network Name",
-                  "type": "datatype.string",
-                  "description": "The name of the Meraki network to check for firmware updates. Must be an exact match for an existing network within the specified organization.",
-                  "is_required": true,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": "text"
-                },
-                "unique_name": "variable_workflow_02M30H9ZWVYG97Ddcta3xu7rrVUZsl8ifwq",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "output",
-                  "name": "Output - Switch - Available Firmware Versions",
-                  "type": "datatype.string",
-                  "description": "JSON formatted list of available firmware versions for Meraki Switches (MS) in the network. Returns 'Running the latest firmware.' if no upgrades are available.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": "json"
-                },
-                "unique_name": "variable_workflow_02M3MZ49LWOK23aGQRbYOcYcm8ivPEZ2mVf",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.boolean",
-                "properties": {
-                  "value": false,
-                  "scope": "output",
-                  "name": "Appliance Has Upgrade Available",
-                  "type": "datatype.boolean",
-                  "description": "Boolean flag for Security Appliances (MX): true = firmware upgrades are available, false = running latest firmware or no upgrade versions available.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": ""
-                },
-                "unique_name": "variable_workflow_02PYYLS61FZLF0ryAp4sqcDyP4E8mhuheHl",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.integer",
-                "properties": {
-                  "value": 0,
-                  "scope": "output",
-                  "name": "Status Code",
-                  "type": "datatype.integer",
-                  "description": "HTTP status code or workflow completion status. Returns 200 for success, 4xx/5xx for various error conditions.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": ""
-                },
-                "unique_name": "variable_workflow_02PYK5VBTIPF36xAo4ekXNelumZ8N2XzZdG",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.boolean",
-                "properties": {
-                  "value": false,
-                  "scope": "output",
-                  "name": "Wireless Has Upgrade Available",
-                  "type": "datatype.boolean",
-                  "description": "Boolean flag for Wireless Access Points (MR): true = firmware upgrades are available, false = running latest firmware or no upgrade versions available.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": ""
-                },
-                "unique_name": "variable_workflow_02M3N4E7F0NST1AHjKl5MoQpR3UvW4xY5zA",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "input",
-                  "name": "Input - Organization ID or Name",
-                  "type": "datatype.string",
-                  "description": "Provide the Organization Name or Organization ID.",
-                  "is_required": true,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": "text"
-                },
-                "unique_name": "variable_workflow_02M30IM5VO2AS4WKLy2VYN1plX7frJeH1qw",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "local",
-                  "name": "Organization ID",
-                  "type": "datatype.string",
-                  "description": "Internal variable to store the resolved Meraki organization ID, determined from either the organization name lookup or direct ID input.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": "text"
-                },
-                "unique_name": "variable_workflow_02M6H1GEN4C263m1V94LPMCQNjGf0OG5ZG2",
+                "unique_name": "variable_workflow_02PYK5VBTJ5NE1O23tXaKnEe0XOOGEJ4zH7",
                 "object_type": "variable_workflow"
               },
               {
@@ -2803,15 +2723,63 @@
                 "properties": {
                   "value": "",
                   "scope": "output",
-                  "name": "Output - Switch - Current Version",
+                  "name": "Output - Wireless - Current Version",
                   "type": "datatype.string",
-                  "description": "The current firmware version running on Meraki Switches (MS) in the network, displayed as 'ShortName (ID: VersionID)' format.",
+                  "description": "The current firmware version running on Meraki Wireless Access Points (MR) in the network, displayed as 'ShortName (ID: VersionID)' format.",
                   "is_required": false,
                   "display_on_wizard": false,
                   "is_invisible": false,
                   "variable_string_format": "text"
                 },
-                "unique_name": "variable_workflow_02M3MYR7I3LS64vFgpXcAidxLtVMy50gOdZ",
+                "unique_name": "variable_workflow_02M3MZEFROAQL7kpDMAgvAu62wWwqTwJmqJ",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.boolean",
+                "properties": {
+                  "value": false,
+                  "scope": "output",
+                  "name": "Switch Has Upgrade Available",
+                  "type": "datatype.boolean",
+                  "description": "Boolean flag for Switches (MS): true = firmware upgrades are available, false = running latest firmware or no upgrade versions available.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": ""
+                },
+                "unique_name": "variable_workflow_02M3N3D6E9MRS0zGiJk4LnOpQ2TuV3wX4yZ",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.boolean",
+                "properties": {
+                  "value": false,
+                  "scope": "output",
+                  "name": "Appliance Has Upgrade Available",
+                  "type": "datatype.boolean",
+                  "description": "Boolean flag for Security Appliances (MX): true = firmware upgrades are available, false = running latest firmware or no upgrade versions available.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": ""
+                },
+                "unique_name": "variable_workflow_02PYYLS61FZLF0ryAp4sqcDyP4E8mhuheHl",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "input",
+                  "name": "Input - Network Name",
+                  "type": "datatype.string",
+                  "description": "The name of the Meraki network to check for firmware updates. Must be an exact match for an existing network within the specified organization.",
+                  "is_required": true,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": "text"
+                },
+                "unique_name": "variable_workflow_02M30H9ZWVYG97Ddcta3xu7rrVUZsl8ifwq",
                 "object_type": "variable_workflow"
               },
               {
@@ -2835,15 +2803,47 @@
                 "properties": {
                   "value": "",
                   "scope": "output",
-                  "name": "Status Message",
+                  "name": "Output - Switch - Current Version",
                   "type": "datatype.string",
-                  "description": "Brief status description of workflow execution result. 'Success' for successful completion or error summary for failures.",
+                  "description": "The current firmware version running on Meraki Switches (MS) in the network, displayed as 'ShortName (ID: VersionID)' format.",
                   "is_required": false,
                   "display_on_wizard": false,
                   "is_invisible": false,
                   "variable_string_format": "text"
                 },
-                "unique_name": "variable_workflow_02PYK5VBTJ5NE1O23tXaKnEe0XOOGEJ4zH7",
+                "unique_name": "variable_workflow_02M3MYR7I3LS64vFgpXcAidxLtVMy50gOdZ",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "output",
+                  "name": "Output - Switch - Available Firmware Versions",
+                  "type": "datatype.string",
+                  "description": "JSON formatted list of available firmware versions for Meraki Switches (MS) in the network. Returns 'Running the latest firmware.' if no upgrades are available.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": "json"
+                },
+                "unique_name": "variable_workflow_02M3MZ49LWOK23aGQRbYOcYcm8ivPEZ2mVf",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "input",
+                  "name": "Input - Organization ID or Name",
+                  "type": "datatype.string",
+                  "description": "Provide the Organization Name or Organization ID.",
+                  "is_required": true,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": "text"
+                },
+                "unique_name": "variable_workflow_02M30IM5VO2AS4WKLy2VYN1plX7frJeH1qw",
                 "object_type": "variable_workflow"
               },
               {
@@ -2851,15 +2851,15 @@
                 "properties": {
                   "value": false,
                   "scope": "output",
-                  "name": "Switch Has Upgrade Available",
+                  "name": "Wireless Has Upgrade Available",
                   "type": "datatype.boolean",
-                  "description": "Boolean flag for Switches (MS): true = firmware upgrades are available, false = running latest firmware or no upgrade versions available.",
+                  "description": "Boolean flag for Wireless Access Points (MR): true = firmware upgrades are available, false = running latest firmware or no upgrade versions available.",
                   "is_required": false,
                   "display_on_wizard": false,
                   "is_invisible": false,
                   "variable_string_format": ""
                 },
-                "unique_name": "variable_workflow_02M3N3D6E9MRS0zGiJk4LnOpQ2TuV3wX4yZ",
+                "unique_name": "variable_workflow_02M3N4E7F0NST1AHjKl5MoQpR3UvW4xY5zA",
                 "object_type": "variable_workflow"
               }
             ],

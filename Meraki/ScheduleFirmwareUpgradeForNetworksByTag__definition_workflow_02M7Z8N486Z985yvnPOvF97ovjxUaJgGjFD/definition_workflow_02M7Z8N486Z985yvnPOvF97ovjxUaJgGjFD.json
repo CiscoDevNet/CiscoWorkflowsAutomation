@@ -10,6 +10,38 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
+          "scope": "input",
+          "name": "Wireless Version ID to Upgrade",
+          "type": "datatype.string",
+          "description": "The Version ID is a unique identifier for a specific firmware version in the Cisco Meraki system. Leave the field empty to skip scheduling the product type.\n\nTo find the available Version IDs for your network, use the \"Check Available Firmware for Network\" workflow.\n\nExample: 4532 might correspond to firmware version MR 15.1.1.",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02M80QC4GKP121LnGTN1qZd0Y8MmbDofKGt",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Upgrade Date Time",
+          "type": "datatype.string",
+          "description": "The date and time for the next firmware upgrade in the network. The upgrade for network devices is scheduled using the network's timezone to ensure they get the latest updates. If no date-time is given, it will be set to the next 5 minutes. The upgrade can be scheduled up to 1 month from today, and all devices will use the same date and time. \nExample: YYYY-MM-DD HH:MM:SS",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02M80QZ2QQFQZ2qdsJZEcSzZrj7mzQs8QDM",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
           "scope": "output",
           "name": "Result",
           "type": "datatype.string",
@@ -20,6 +52,54 @@
           "variable_string_format": "text"
         },
         "unique_name": "variable_workflow_02MLIQ98QXVS92qpmOxIVvAtEREVZqkc0Ay",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "Status Code",
+          "type": "datatype.integer",
+          "description": "The HTTP status code of the workflow execution.",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02Q0RX6R2LHQP2DiJMpvoWSg7M1gkVzmFGi",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Status Message",
+          "type": "datatype.string",
+          "description": "The status message of the workflow execution.",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02Q0RX6R2M6L34pYKn5ELjrxxOI5k8ralWJ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Temp Message",
+          "type": "datatype.string",
+          "description": "Temporary variable used to accumulate and format output messages from multiple network processing operations.",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO",
         "object_type": "variable_workflow"
       },
       {
@@ -36,6 +116,22 @@
           "variable_string_format": "text"
         },
         "unique_name": "variable_workflow_02M80PYJ5OJOQ1TZAtY1z1PcWdWbFsoSpTz",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Switch Version ID to Upgrade",
+          "type": "datatype.string",
+          "description": "The Version ID is a unique identifier for a specific firmware version in the Cisco Meraki system. Leave the field empty to skip scheduling the product type.\n\nTo find the available Version IDs for your network, use the \"Check Available Firmware for Network\" workflow.\n\nExample: 4531 might correspond to firmware version MS 15.1.1.",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02M80Q4SYT9IL3tmfMRYvFyBHUB7jGJinNn",
         "object_type": "variable_workflow"
       },
       {
@@ -68,117 +164,6 @@
           "variable_string_format": ""
         },
         "unique_name": "variable_workflow_02M7ZT2FW7KP67B68QGgkYqXkJDUxuhPU0Y",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Validate Tags",
-          "type": "datatype.string",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false,
-          "variable_string_format": "text"
-        },
-        "unique_name": "variable_workflow_02Q0TBFZ7W6AE0cFMwGW4dzjaK4uoGyjKAE",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Temp Message",
-          "type": "datatype.string",
-          "description": "Temporary variable used to accumulate and format output messages from multiple network processing operations.",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false,
-          "variable_string_format": "text"
-        },
-        "unique_name": "variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Status Message",
-          "type": "datatype.string",
-          "description": "The status message of the workflow execution.",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false,
-          "variable_string_format": "text"
-        },
-        "unique_name": "variable_workflow_02Q0RX6R2M6L34pYKn5ELjrxxOI5k8ralWJ",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Status Code",
-          "type": "datatype.string",
-          "description": "The HTTP status code of the workflow execution.",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false,
-          "variable_string_format": "text"
-        },
-        "unique_name": "variable_workflow_02Q0RX6R2LHQP2DiJMpvoWSg7M1gkVzmFGi",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Upgrade Date Time",
-          "type": "datatype.string",
-          "description": "The date and time for the next firmware upgrade in the network. The upgrade for network devices is scheduled using the network's timezone to ensure they get the latest updates. If no date-time is given, it will be set to the next 5 minutes. The upgrade can be scheduled up to 1 month from today, and all devices will use the same date and time. \nExample: YYYY-MM-DD HH:MM:SS",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false,
-          "variable_string_format": "text"
-        },
-        "unique_name": "variable_workflow_02M80QZ2QQFQZ2qdsJZEcSzZrj7mzQs8QDM",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Wireless Version ID to Upgrade",
-          "type": "datatype.string",
-          "description": "The Version ID is a unique identifier for a specific firmware version in the Cisco Meraki system. Leave the field empty to skip scheduling the product type.\n\nTo find the available Version IDs for your network, use the \"Check Available Firmware for Network\" workflow.\n\nExample: 4532 might correspond to firmware version MR 15.1.1.",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false,
-          "variable_string_format": "text"
-        },
-        "unique_name": "variable_workflow_02M80QC4GKP121LnGTN1qZd0Y8MmbDofKGt",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Switch Version ID to Upgrade",
-          "type": "datatype.string",
-          "description": "The Version ID is a unique identifier for a specific firmware version in the Cisco Meraki system. Leave the field empty to skip scheduling the product type.\n\nTo find the available Version IDs for your network, use the \"Check Available Firmware for Network\" workflow.\n\nExample: 4531 might correspond to firmware version MS 15.1.1.",
-          "is_required": false,
-          "display_on_wizard": false,
-          "is_invisible": false,
-          "variable_string_format": "text"
-        },
-        "unique_name": "variable_workflow_02M80Q4SYT9IL3tmfMRYvFyBHUB7jGJinNn",
         "object_type": "variable_workflow"
       }
     ],
@@ -304,8 +289,8 @@
                             "right_operand": false
                           },
                           "continue_on_failure": false,
-                          "description": "Handle validation failure when no firmware version IDs are provided by the user.",
-                          "display_name": "No Version IDs Provided",
+                          "description": "Handle validation failure when no network tags are provided by the user.",
+                          "display_name": "No Tags Provided",
                           "skip_execution": false
                         },
                         "object_type": "definition_activity",
@@ -646,365 +631,357 @@
         ]
       },
       {
-        "unique_name": "definition_activity_02M7ZE6UBFLC30u6gAWymgglirsvu7TPGM2",
-        "name": "Get Organizations",
-        "title": "Get Organizations",
-        "type": "workflow.atomic_workflow",
-        "base_type": "subworkflow",
-        "properties": {
-          "continue_on_failure": false,
-          "description": "Retrieve a list of organizations that the authenticated user has access to within their Meraki account. \n",
-          "display_name": "Get Organizations",
-          "input": {
-            "variable_workflow_02LXK9KUOD0MH4qj4j062vm12gYmFb9y5N0": 100,
-            "variable_workflow_02LXKBG6HGMSD1YojnHQ3bM2cT6mP8A02A9": "",
-            "variable_workflow_02LXKCCX4AREX6odSHkvY5oECunJtqcLahK": ""
-          },
-          "runtime_user": {
-            "target_default": true
-          },
-          "skip_execution": false,
-          "target": {
-            "target_type": "meraki.endpoint",
-            "use_workflow_target": true
-          },
-          "workflow_id": "definition_workflow_02LV5GIDUTY3X0WhuidM5ZWhkjL8wQCGAPq",
-          "workflow_name": "Meraki - Get Organizations"
-        },
-        "object_type": "definition_activity"
-      },
-      {
-        "unique_name": "definition_activity_02MI1ZCW9HIBS2B2s0fnDlr6tGk7KinmDME",
-        "name": "Condition Block",
-        "title": "Has Orgs?",
-        "type": "logic.if_else",
+        "unique_name": "definition_activity_02Q1OAEJCTBWF1w3jaCg2JON4HBb7UHHXeW",
+        "name": "Group",
+        "title": "Find Organizations",
+        "type": "logic.group",
         "base_type": "activity",
         "properties": {
-          "conditions": [],
           "continue_on_failure": false,
-          "description": "Error checks to proceed with next steps only when Orgs are found for the Target selected.",
-          "display_name": "Has Orgs?",
+          "description": "Retrieve all organizations accessible to the authenticated API key and identify those containing networks with the specified tags for firmware upgrade targeting.",
+          "display_as_suggestion": false,
+          "display_name": "Find Organizations",
           "skip_execution": false
         },
         "object_type": "definition_activity",
-        "blocks": [
+        "actions": [
           {
-            "unique_name": "definition_activity_02MI1ZCWFHN3C5Dauno8f354ls7gmFFLCn1",
-            "name": "Condition Branch",
-            "title": "Yes",
-            "type": "logic.condition_block",
+            "unique_name": "definition_activity_02M7ZE6UBFLC30u6gAWymgglirsvu7TPGM2",
+            "name": "Get Organizations",
+            "title": "Get Organizations",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "description": "Retrieve a list of organizations that the authenticated user has access to within their Meraki account. \n",
+              "display_name": "Get Organizations",
+              "input": {
+                "variable_workflow_02LXK9KUOD0MH4qj4j062vm12gYmFb9y5N0": 100,
+                "variable_workflow_02LXKBG6HGMSD1YojnHQ3bM2cT6mP8A02A9": "",
+                "variable_workflow_02LXKCCX4AREX6odSHkvY5oECunJtqcLahK": ""
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "target_type": "meraki.endpoint",
+                "use_workflow_target": true
+              },
+              "workflow_id": "definition_workflow_02LV5GIDUTY3X0WhuidM5ZWhkjL8wQCGAPq",
+              "workflow_name": "Meraki - Get Organizations"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02MI1ZCW9HIBS2B2s0fnDlr6tGk7KinmDME",
+            "name": "Condition Block",
+            "title": "No Organizations Found?",
+            "type": "logic.if_else",
             "base_type": "activity",
             "properties": {
-              "condition": {
-                "left_operand": "$activity.definition_activity_02M7ZE6UBFLC30u6gAWymgglirsvu7TPGM2.output.variable_workflow_02LXKZA6725S35QBWMZCg1AlZnT11mbSFQi$",
-                "operator": "ne",
-                "right_operand": "[]"
-              },
+              "conditions": [],
               "continue_on_failure": false,
-              "description": "Process organizations when at least one organization is found for the authenticated user.",
-              "display_name": "Yes",
+              "description": "Validate that organizations are available before proceeding with network discovery and firmware upgrade scheduling.",
+              "display_name": "No Organizations Found?",
               "skip_execution": false
             },
             "object_type": "definition_activity",
-            "actions": [
+            "blocks": [
               {
-                "unique_name": "definition_activity_02MI772R0CRCI5654Lsjjx5fGjJPyAW1IdC",
-                "name": "Group",
-                "title": "Fetch Networks",
-                "type": "logic.group",
+                "unique_name": "definition_activity_02MI1ZCWFHN3C5Dauno8f354ls7gmFFLCn1",
+                "name": "Condition Branch",
+                "title": "Yes",
+                "type": "logic.condition_block",
                 "base_type": "activity",
                 "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_02M7ZE6UBFLC30u6gAWymgglirsvu7TPGM2.output.variable_workflow_02LXKZA6725S35QBWMZCg1AlZnT11mbSFQi$",
+                    "operator": "eq",
+                    "right_operand": "[]"
+                  },
                   "continue_on_failure": false,
-                  "description": "Find Network matching input Tags.",
-                  "display_as_suggestion": false,
-                  "display_name": "Fetch Networks",
+                  "description": "Process organizations when at least one organization is found for the authenticated user.",
+                  "display_name": "Yes",
                   "skip_execution": false
                 },
                 "object_type": "definition_activity",
                 "actions": [
                   {
-                    "unique_name": "definition_activity_02M7ZEYFJSPJ27IvL5DEET1taQhSeE3TImo",
-                    "name": "Read Table from JSON",
-                    "title": "Read Organizations from JSON",
-                    "type": "corejava.read_table_from_json",
+                    "unique_name": "definition_activity_02Q1OCAZBQFCD5aj0Gns82nYcFsQXEwHoO7",
+                    "name": "Completed",
+                    "title": "Completed",
+                    "type": "logic.completed",
                     "base_type": "activity",
                     "properties": {
-                      "action_timeout": 180,
+                      "completion_type": "failed-completed",
                       "continue_on_failure": false,
-                      "description": "Parse the JSON response containing organizations to extract organization IDs and names for network discovery.",
-                      "display_name": "Read Organizations from JSON",
-                      "input_json": "$activity.definition_activity_02M7ZE6UBFLC30u6gAWymgglirsvu7TPGM2.output.variable_workflow_02LXKZA6725S35QBWMZCg1AlZnT11mbSFQi$",
-                      "jsonpath_query": "$.*",
-                      "persist_output": true,
-                      "populate_columns": false,
-                      "skip_execution": false,
-                      "table_columns": [
-                        {
-                          "column_name": "id",
-                          "column_type": "string"
-                        },
-                        {
-                          "column_name": "name",
-                          "column_type": "string"
-                        }
-                      ]
+                      "description": "Terminate workflow execution when no organizations are found for the authenticated user.",
+                      "display_name": "Completed",
+                      "result_message": "No Organizations found.",
+                      "skip_execution": false
                     },
                     "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_02MI772R0CRCI5654Lsjjx5fGjJPyAW1IdC",
+        "name": "Group",
+        "title": "Network Discovery and Firmware Scheduling",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "Iterate through each organization to discover networks with matching tags, then schedule firmware upgrades for all qualifying networks. Handles both successful scheduling and organizations with no matching networks.",
+          "display_as_suggestion": false,
+          "display_name": "Network Discovery and Firmware Scheduling",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02M7ZEYFJSPJ27IvL5DEET1taQhSeE3TImo",
+            "name": "Read Table from JSON",
+            "title": "Read Organizations from JSON",
+            "type": "corejava.read_table_from_json",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "description": "Parse the JSON response containing organizations to extract organization IDs and names for network discovery.",
+              "display_name": "Read Organizations from JSON",
+              "input_json": "$activity.definition_activity_02M7ZE6UBFLC30u6gAWymgglirsvu7TPGM2.output.variable_workflow_02LXKZA6725S35QBWMZCg1AlZnT11mbSFQi$",
+              "jsonpath_query": "$.*",
+              "persist_output": true,
+              "populate_columns": false,
+              "skip_execution": false,
+              "table_columns": [
+                {
+                  "column_name": "id",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "name",
+                  "column_type": "string"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02M7ZGCH2FDLC5R9eeSbhahJ7kO4VDNNZXf",
+            "name": "For Each",
+            "title": "For Each Org",
+            "type": "logic.for_each",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "description": "Iterate through each organization to discover networks with matching tags for firmware upgrade scheduling.",
+              "display_name": "For Each Org",
+              "skip_execution": false,
+              "source_array": "$activity.definition_activity_02M7ZEYFJSPJ27IvL5DEET1taQhSeE3TImo.output.read_table_from_json$"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_02M7ZOCUTOH5H3lJR3l5kVRBM3K1ale6WJd",
+                "name": "Get Organization Networks",
+                "title": "Get Organization Networks",
+                "type": "workflow.atomic_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "continue_on_failure": false,
+                  "description": "List the networks that the user has privileges on in an organization",
+                  "display_name": "Get Organization Networks",
+                  "input": {
+                    "variable_workflow_02L9TZH6C81473IDtFQ0NIzW3jmXrgchtN9": "$activity.definition_activity_02M7ZGCH2FDLC5R9eeSbhahJ7kO4VDNNZXf.input.source_array[@].id$",
+                    "variable_workflow_02LEUL5GOHN9T53T7jFQx3T2Yo04p5Xuz0r": false,
+                    "variable_workflow_02LNK5WW0RD2A20mG7v1G7gsyE2N2RrKdQd": "",
+                    "variable_workflow_02LNK5WW0RTCB1AXbOwJOBVWvUx1wdyKtkt": "withAnyTags",
+                    "variable_workflow_02LNK5WW0S5E21Q9biFSXTiLbHr7cWP2K7y": "false",
+                    "variable_workflow_02LNK5WW0SE2H1zmchhUHyfX7L0XGvKmB7W": 1000,
+                    "variable_workflow_02LNK5WW0SM7R5SjIvnnytN6vYzR7wfDHeE": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M7ZT2FW7KP67B68QGgkYqXkJDUxuhPU0Y$",
+                    "variable_workflow_02LNK5WW0STMX38BXiY2IvPQoHQliJHSCgE": [],
+                    "variable_workflow_02LNK5WW0T0NX26NyApdlTn355uYJwcQGqW": "",
+                    "variable_workflow_02LNK5WW0T92U1HJd1sxzFrmVvwxy7NVaQn": ""
                   },
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "target_type": "meraki.endpoint",
+                    "use_workflow_target": true
+                  },
+                  "workflow_id": "definition_workflow_02L9TZH5W95870XebPF2g8kSyIYcawUvljX",
+                  "workflow_name": "Meraki - Get Organization Networks"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_02MI24QT6XBHB54dHZreEhjcB72R3EkXH6d",
+                "name": "Condition Block",
+                "title": "Has Networks matching Tag?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "conditions": [],
+                  "continue_on_failure": false,
+                  "description": "Validate that networks with matching tags exist in the current organization before proceeding with firmware upgrade scheduling.",
+                  "display_name": "Has Networks matching Tag?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
                   {
-                    "unique_name": "definition_activity_02M7ZGCH2FDLC5R9eeSbhahJ7kO4VDNNZXf",
-                    "name": "For Each",
-                    "title": "For Each Org",
-                    "type": "logic.for_each",
+                    "unique_name": "definition_activity_02MI24QT6Y0G03ACodDNeIB5md4qt7SW6Ky",
+                    "name": "Condition Branch",
+                    "title": "Yes",
+                    "type": "logic.condition_block",
                     "base_type": "activity",
                     "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_02M7ZOCUTOH5H3lJR3l5kVRBM3K1ale6WJd.output.variable_workflow_02L9TZH6C8OZI7c9t9Z0h0JHAbqCc7LuTGT$",
+                        "operator": "ne",
+                        "right_operand": "[]"
+                      },
                       "continue_on_failure": false,
-                      "description": "Iterate through each organization to discover networks with matching tags for firmware upgrade scheduling.",
-                      "display_name": "For Each Org",
-                      "skip_execution": false,
-                      "source_array": "$activity.definition_activity_02M7ZEYFJSPJ27IvL5DEET1taQhSeE3TImo.output.read_table_from_json$"
+                      "description": "Process networks when at least one network with matching tags is found in the current organization.",
+                      "display_name": "Yes",
+                      "skip_execution": false
                     },
                     "object_type": "definition_activity",
                     "actions": [
                       {
-                        "unique_name": "definition_activity_02M7ZOCUTOH5H3lJR3l5kVRBM3K1ale6WJd",
-                        "name": "Get Organization Networks",
-                        "title": "Get Organization Networks",
-                        "type": "workflow.atomic_workflow",
-                        "base_type": "subworkflow",
-                        "properties": {
-                          "continue_on_failure": false,
-                          "description": "List the networks that the user has privileges on in an organization",
-                          "display_name": "Get Organization Networks",
-                          "input": {
-                            "variable_workflow_02L9TZH6C81473IDtFQ0NIzW3jmXrgchtN9": "$activity.definition_activity_02M7ZGCH2FDLC5R9eeSbhahJ7kO4VDNNZXf.input.source_array[@].id$",
-                            "variable_workflow_02LEUL5GOHN9T53T7jFQx3T2Yo04p5Xuz0r": false,
-                            "variable_workflow_02LNK5WW0RD2A20mG7v1G7gsyE2N2RrKdQd": "",
-                            "variable_workflow_02LNK5WW0RTCB1AXbOwJOBVWvUx1wdyKtkt": "withAnyTags",
-                            "variable_workflow_02LNK5WW0S5E21Q9biFSXTiLbHr7cWP2K7y": false,
-                            "variable_workflow_02LNK5WW0SE2H1zmchhUHyfX7L0XGvKmB7W": 1000,
-                            "variable_workflow_02LNK5WW0SM7R5SjIvnnytN6vYzR7wfDHeE": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M7ZT2FW7KP67B68QGgkYqXkJDUxuhPU0Y$",
-                            "variable_workflow_02LNK5WW0STMX38BXiY2IvPQoHQliJHSCgE": [],
-                            "variable_workflow_02LNK5WW0T0NX26NyApdlTn355uYJwcQGqW": "",
-                            "variable_workflow_02LNK5WW0T92U1HJd1sxzFrmVvwxy7NVaQn": ""
-                          },
-                          "runtime_user": {
-                            "target_default": true
-                          },
-                          "skip_execution": false,
-                          "target": {
-                            "target_type": "meraki.endpoint",
-                            "use_workflow_target": true
-                          },
-                          "workflow_id": "definition_workflow_02L9TZH5W95870XebPF2g8kSyIYcawUvljX",
-                          "workflow_name": "Meraki - Get Organization Networks"
-                        },
-                        "object_type": "definition_activity"
-                      },
-                      {
-                        "unique_name": "definition_activity_02MI24QT6XBHB54dHZreEhjcB72R3EkXH6d",
-                        "name": "Condition Block",
-                        "title": "Has Networks matching Tag?",
-                        "type": "logic.if_else",
+                        "unique_name": "definition_activity_02MI781PG8D074obqHQS8sGyDHPsYupUjDD",
+                        "name": "Group",
+                        "title": "Schedule Network Firmware",
+                        "type": "logic.group",
                         "base_type": "activity",
                         "properties": {
-                          "conditions": [],
                           "continue_on_failure": false,
-                          "description": "Error check to proceed with next step only when there are matching networks.",
-                          "display_name": "Has Networks matching Tag?",
+                          "description": "Schedule firmware upgrades for each network found with matching tags. Calls the sub-workflow for each network and aggregates results.",
+                          "display_name": "Schedule Network Firmware",
                           "skip_execution": false
                         },
                         "object_type": "definition_activity",
-                        "blocks": [
+                        "actions": [
                           {
-                            "unique_name": "definition_activity_02MI24QT6Y0G03ACodDNeIB5md4qt7SW6Ky",
-                            "name": "Condition Branch",
-                            "title": "Yes",
-                            "type": "logic.condition_block",
+                            "unique_name": "definition_activity_02MIU3K2YL8AH0Sr894iDzuvtwlPFwYiJWa",
+                            "name": "Set Variables",
+                            "title": "Set Output Messages",
+                            "type": "core.set_multiple_variables",
                             "base_type": "activity",
                             "properties": {
-                              "condition": {
-                                "left_operand": "$activity.definition_activity_02M7ZOCUTOH5H3lJR3l5kVRBM3K1ale6WJd.output.variable_workflow_02L9TZH6C8OZI7c9t9Z0h0JHAbqCc7LuTGT$",
-                                "operator": "ne",
-                                "right_operand": "[]"
-                              },
                               "continue_on_failure": false,
-                              "description": "Process networks when at least one network with matching tags is found in the current organization.",
-                              "display_name": "Yes",
-                              "skip_execution": false
+                              "description": "Initialize the output message with the current organization name being processed for network scheduling results.",
+                              "display_name": "Set Output Messages",
+                              "skip_execution": false,
+                              "variables_to_update": [
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$",
+                                  "variable_value_new": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$ \nResults for Organization: $activity.definition_activity_02M7ZGCH2FDLC5R9eeSbhahJ7kO4VDNNZXf.input.source_array[@].name$ "
+                                }
+                              ]
                             },
-                            "object_type": "definition_activity",
-                            "actions": [
-                              {
-                                "unique_name": "definition_activity_02MI781PG8D074obqHQS8sGyDHPsYupUjDD",
-                                "name": "Group",
-                                "title": "Schedule Network",
-                                "type": "logic.group",
-                                "base_type": "activity",
-                                "properties": {
-                                  "continue_on_failure": false,
-                                  "description": "Schedule firmware upgrades for each network found with matching tags. Calls the sub-workflow for each network and aggregates results.",
-                                  "display_name": "Schedule Network",
-                                  "skip_execution": false
-                                },
-                                "object_type": "definition_activity",
-                                "actions": [
-                                  {
-                                    "unique_name": "definition_activity_02MIU3K2YL8AH0Sr894iDzuvtwlPFwYiJWa",
-                                    "name": "Set Variables",
-                                    "title": "Set Ouput Messages",
-                                    "type": "core.set_multiple_variables",
-                                    "base_type": "activity",
-                                    "properties": {
-                                      "continue_on_failure": false,
-                                      "description": "Initialize the output message with the current organization name being processed for network scheduling results.",
-                                      "display_name": "Set Ouput Messages",
-                                      "skip_execution": false,
-                                      "variables_to_update": [
-                                        {
-                                          "variable_to_update": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$",
-                                          "variable_value_new": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$ \nResults for Organization: $activity.definition_activity_02M7ZGCH2FDLC5R9eeSbhahJ7kO4VDNNZXf.input.source_array[@].name$ "
-                                        }
-                                      ]
-                                    },
-                                    "object_type": "definition_activity"
-                                  },
-                                  {
-                                    "unique_name": "definition_activity_02M7ZX7M3A87B5OQBKHfla6GUhcTCD4CUvL",
-                                    "name": "Read Table from JSON",
-                                    "title": "Read Networks from JSON",
-                                    "type": "corejava.read_table_from_json",
-                                    "base_type": "activity",
-                                    "properties": {
-                                      "action_timeout": 180,
-                                      "continue_on_failure": false,
-                                      "description": "Parse the JSON response containing networks to extract network IDs and names for firmware upgrade scheduling.",
-                                      "display_name": "Read Networks from JSON",
-                                      "input_json": "$activity.definition_activity_02M7ZOCUTOH5H3lJR3l5kVRBM3K1ale6WJd.output.variable_workflow_02L9TZH6C8OZI7c9t9Z0h0JHAbqCc7LuTGT$",
-                                      "jsonpath_query": "$.*",
-                                      "persist_output": true,
-                                      "populate_columns": false,
-                                      "skip_execution": false,
-                                      "table_columns": [
-                                        {
-                                          "column_name": "id",
-                                          "column_type": "string"
-                                        },
-                                        {
-                                          "column_name": "name",
-                                          "column_type": "string"
-                                        }
-                                      ]
-                                    },
-                                    "object_type": "definition_activity"
-                                  },
-                                  {
-                                    "unique_name": "definition_activity_02M7ZWG3EFUQ12yJ8JMkR6BfZYCzQUGVj8f",
-                                    "name": "For Each",
-                                    "title": "For Each Network",
-                                    "type": "logic.for_each",
-                                    "base_type": "activity",
-                                    "properties": {
-                                      "continue_on_failure": false,
-                                      "description": "Iterate through each discovered network to schedule firmware upgrades for all matching networks in the current organization.",
-                                      "display_name": "For Each Network",
-                                      "skip_execution": false,
-                                      "source_array": "$activity.definition_activity_02M7ZX7M3A87B5OQBKHfla6GUhcTCD4CUvL.output.read_table_from_json$"
-                                    },
-                                    "object_type": "definition_activity",
-                                    "actions": [
-                                      {
-                                        "unique_name": "definition_activity_02M80271512QX6j2En2tSjJy4UfqV8maAVI",
-                                        "name": "Schedule Firmware Upgrade for Network",
-                                        "title": "Schedule Firmware Upgrade for Network",
-                                        "type": "workflow.sub_workflow",
-                                        "base_type": "subworkflow",
-                                        "properties": {
-                                          "continue_on_failure": true,
-                                          "description": "Call the sub-workflow to schedule firmware upgrade for the current network, passing all required version IDs and scheduling parameters.",
-                                          "display_name": "Schedule Firmware Upgrade for Network",
-                                          "input": {
-                                            "variable_workflow_02M312TNUWBWB54vet49qWU74z2yohx7ssJ": "$activity.definition_activity_02M7ZWG3EFUQ12yJ8JMkR6BfZYCzQUGVj8f.input.source_array[@].name$",
-                                            "variable_workflow_02M312TNV48D362Qqex9PTw1USYd7QlgbfQ": "$activity.definition_activity_02M7ZGCH2FDLC5R9eeSbhahJ7kO4VDNNZXf.input.source_array[@].id$",
-                                            "variable_workflow_02M6ITCWL1UEH2ROmXLUwyaAtxN0s8yb5Xq": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80QZ2QQFQZ2qdsJZEcSzZrj7mzQs8QDM$",
-                                            "variable_workflow_02M6J1XSPTOPF32pVY3YOG8khAHZh9c1W2N": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80Q4SYT9IL3tmfMRYvFyBHUB7jGJinNn$",
-                                            "variable_workflow_02M6JG0JY44ZB2J10JOQI8CsqtK0hhn1SBp": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80PYJ5OJOQ1TZAtY1z1PcWdWbFsoSpTz$",
-                                            "variable_workflow_02M6JG70GBGQG7HoqTfGf5aqzeOeDO3N0OT": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80QC4GKP121LnGTN1qZd0Y8MmbDofKGt$",
-                                            "variable_workflow_02M7XBLKG0QUX0Rem8WlG1RekFxSh8w3YWo": false
-                                          },
-                                          "runtime_user": {
-                                            "target_default": true
-                                          },
-                                          "skip_execution": false,
-                                          "target": {
-                                            "target_type": "meraki.endpoint",
-                                            "use_workflow_target": true
-                                          },
-                                          "workflow_id": "definition_workflow_02M312TMR8LMG3UJlEY07a3HLYWHV8awf3M",
-                                          "workflow_name": "Schedule Firmware Upgrade for Network"
-                                        },
-                                        "object_type": "definition_activity"
-                                      },
-                                      {
-                                        "unique_name": "definition_activity_02MIU392M8EM14vrZdoVHhXRzec8p0FJWu8",
-                                        "name": "Set Variables",
-                                        "title": "Set Ouput Messages",
-                                        "type": "core.set_multiple_variables",
-                                        "base_type": "activity",
-                                        "properties": {
-                                          "continue_on_failure": false,
-                                          "description": "Append the network upgrade result (success or failure) to the accumulated output message for summary reporting.",
-                                          "display_name": "Set Ouput Messages",
-                                          "skip_execution": false,
-                                          "variables_to_update": [
-                                            {
-                                              "variable_to_update": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$",
-                                              "variable_value_new": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$ \nNetwork: $activity.definition_activity_02M80271512QX6j2En2tSjJy4UfqV8maAVI.output.variable_workflow_02M6L3TQUAWOC1fCLGxNZgjlFeD9xgkJoHr$$activity.definition_activity_02M80271512QX6j2En2tSjJy4UfqV8maAVI.output.variable_workflow_02M6L3FIK1MB054rZdfPQcAYgBDONPSlwN6$"
-                                            }
-                                          ]
-                                        },
-                                        "object_type": "definition_activity"
-                                      }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
+                            "object_type": "definition_activity"
                           },
                           {
-                            "unique_name": "definition_activity_02MITCURRS2SA53eC37hZny8ECUR2iDpJQZ",
-                            "name": "Condition Branch",
-                            "title": "No",
-                            "type": "logic.condition_block",
+                            "unique_name": "definition_activity_02M7ZX7M3A87B5OQBKHfla6GUhcTCD4CUvL",
+                            "name": "Read Table from JSON",
+                            "title": "Read Networks from JSON",
+                            "type": "corejava.read_table_from_json",
                             "base_type": "activity",
                             "properties": {
-                              "condition": {
-                                "left_operand": "$activity.definition_activity_02M7ZOCUTOH5H3lJR3l5kVRBM3K1ale6WJd.output.variable_workflow_02L9TZH6C8OZI7c9t9Z0h0JHAbqCc7LuTGT$",
-                                "operator": "eq",
-                                "right_operand": "[]"
-                              },
+                              "action_timeout": 180,
                               "continue_on_failure": false,
-                              "description": "Handle the case when no networks with matching tags are found in the current organization.",
-                              "display_name": "No",
-                              "skip_execution": false
+                              "description": "Parse the JSON response containing networks to extract network IDs and names for firmware upgrade scheduling.",
+                              "display_name": "Read Networks from JSON",
+                              "input_json": "$activity.definition_activity_02M7ZOCUTOH5H3lJR3l5kVRBM3K1ale6WJd.output.variable_workflow_02L9TZH6C8OZI7c9t9Z0h0JHAbqCc7LuTGT$",
+                              "jsonpath_query": "$.*",
+                              "persist_output": true,
+                              "populate_columns": false,
+                              "skip_execution": false,
+                              "table_columns": [
+                                {
+                                  "column_name": "id",
+                                  "column_type": "string"
+                                },
+                                {
+                                  "column_name": "name",
+                                  "column_type": "string"
+                                }
+                              ]
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_02M7ZWG3EFUQ12yJ8JMkR6BfZYCzQUGVj8f",
+                            "name": "For Each",
+                            "title": "For Each Network",
+                            "type": "logic.for_each",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "Iterate through each discovered network to schedule firmware upgrades for all matching networks in the current organization.",
+                              "display_name": "For Each Network",
+                              "skip_execution": false,
+                              "source_array": "$activity.definition_activity_02M7ZX7M3A87B5OQBKHfla6GUhcTCD4CUvL.output.read_table_from_json$"
                             },
                             "object_type": "definition_activity",
                             "actions": [
                               {
-                                "unique_name": "definition_activity_02MITL87GEAQ63xDo6biCQruWNKMSBei7WP",
+                                "unique_name": "definition_activity_02M80271512QX6j2En2tSjJy4UfqV8maAVI",
+                                "name": "Schedule Firmware Upgrade for Network",
+                                "title": "Schedule Firmware Upgrade for Network",
+                                "type": "workflow.sub_workflow",
+                                "base_type": "subworkflow",
+                                "properties": {
+                                  "continue_on_failure": true,
+                                  "description": "Call the sub-workflow to schedule firmware upgrade for the current network, passing all required version IDs and scheduling parameters.",
+                                  "display_name": "Schedule Firmware Upgrade for Network",
+                                  "input": {
+                                    "variable_workflow_02M312TNUWBWB54vet49qWU74z2yohx7ssJ": "$activity.definition_activity_02M7ZWG3EFUQ12yJ8JMkR6BfZYCzQUGVj8f.input.source_array[@].name$",
+                                    "variable_workflow_02M312TNV48D362Qqex9PTw1USYd7QlgbfQ": "$activity.definition_activity_02M7ZGCH2FDLC5R9eeSbhahJ7kO4VDNNZXf.input.source_array[@].id$",
+                                    "variable_workflow_02M6ITCWL1UEH2ROmXLUwyaAtxN0s8yb5Xq": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80QZ2QQFQZ2qdsJZEcSzZrj7mzQs8QDM$",
+                                    "variable_workflow_02M6J1XSPTOPF32pVY3YOG8khAHZh9c1W2N": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80Q4SYT9IL3tmfMRYvFyBHUB7jGJinNn$",
+                                    "variable_workflow_02M6JG0JY44ZB2J10JOQI8CsqtK0hhn1SBp": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80PYJ5OJOQ1TZAtY1z1PcWdWbFsoSpTz$",
+                                    "variable_workflow_02M6JG70GBGQG7HoqTfGf5aqzeOeDO3N0OT": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80QC4GKP121LnGTN1qZd0Y8MmbDofKGt$",
+                                    "variable_workflow_02M7XBLKG0QUX0Rem8WlG1RekFxSh8w3YWo": false
+                                  },
+                                  "runtime_user": {
+                                    "target_default": true
+                                  },
+                                  "skip_execution": false,
+                                  "target": {
+                                    "target_type": "meraki.endpoint",
+                                    "use_workflow_target": true
+                                  },
+                                  "workflow_id": "definition_workflow_02M312TMR8LMG3UJlEY07a3HLYWHV8awf3M",
+                                  "workflow_name": "Schedule Firmware Upgrade for Network"
+                                },
+                                "object_type": "definition_activity"
+                              },
+                              {
+                                "unique_name": "definition_activity_02MIU392M8EM14vrZdoVHhXRzec8p0FJWu8",
                                 "name": "Set Variables",
-                                "title": "Set Ouput Messages",
+                                "title": "Set Output Messages",
                                 "type": "core.set_multiple_variables",
                                 "base_type": "activity",
                                 "properties": {
                                   "continue_on_failure": false,
-                                  "description": "Record when an organization has no networks matching the specified tags for informational reporting.",
-                                  "display_name": "Set Ouput Messages",
+                                  "description": "Append the network upgrade result (success or failure) to the accumulated output message for summary reporting.",
+                                  "display_name": "Set Output Messages",
                                   "skip_execution": false,
                                   "variables_to_update": [
                                     {
                                       "variable_to_update": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$",
-                                      "variable_value_new": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$ \nOrganization: $activity.definition_activity_02M7ZGCH2FDLC5R9eeSbhahJ7kO4VDNNZXf.input.source_array[@].name$ has no matching tags."
+                                      "variable_value_new": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$ \nNetwork: $activity.definition_activity_02M80271512QX6j2En2tSjJy4UfqV8maAVI.output.variable_workflow_02M6L3TQUAWOC1fCLGxNZgjlFeD9xgkJoHr$$activity.definition_activity_02M80271512QX6j2En2tSjJy4UfqV8maAVI.output.variable_workflow_02M6L3FIK1MB054rZdfPQcAYgBDONPSlwN6$"
                                     }
                                   ]
                                 },
@@ -1015,6 +992,47 @@
                         ]
                       }
                     ]
+                  },
+                  {
+                    "unique_name": "definition_activity_02MITCURRS2SA53eC37hZny8ECUR2iDpJQZ",
+                    "name": "Condition Branch",
+                    "title": "No",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_02M7ZOCUTOH5H3lJR3l5kVRBM3K1ale6WJd.output.variable_workflow_02L9TZH6C8OZI7c9t9Z0h0JHAbqCc7LuTGT$",
+                        "operator": "eq",
+                        "right_operand": "[]"
+                      },
+                      "continue_on_failure": false,
+                      "description": "Handle the case when no networks with matching tags are found in the current organization.",
+                      "display_name": "No",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_02MITL87GEAQ63xDo6biCQruWNKMSBei7WP",
+                        "name": "Set Variables",
+                        "title": "Set Output Messages",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "Record when an organization has no networks matching the specified tags for informational reporting.",
+                          "display_name": "Set Output Messages",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$",
+                              "variable_value_new": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$ \nOrganization: $activity.definition_activity_02M7ZGCH2FDLC5R9eeSbhahJ7kO4VDNNZXf.input.source_array[@].name$ has no matching tags."
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
                   }
                 ]
               }
@@ -1023,63 +1041,80 @@
         ]
       },
       {
-        "unique_name": "definition_activity_02MLI8JZX2NZG6HQCpfmGCpavVKhlpOi3jg",
-        "name": "Execute Python Script",
-        "title": "Prepare Summary Output",
-        "type": "python3.script",
+        "unique_name": "definition_activity_02Q1OJDB49Y3I5taWbMVIS4EzxJKUveFIRB",
+        "name": "Group",
+        "title": "Summarize Outputs",
+        "type": "logic.group",
         "base_type": "activity",
         "properties": {
-          "action_timeout": 180,
           "continue_on_failure": false,
-          "description": "Process and format the workflow results into a user-friendly summary report showing successful and failed firmware upgrades by organization and network.",
-          "display_name": "Prepare Summary Output",
-          "script": "import re\nimport sys\n\n# Note: When you have one item as input you need extra comma - it's not a mistake\n(input_text, mxID, msID, mrID, dtime, tagsArr) = sys.argv[1:7]\n\n# If dtime is empty, set as text \"5 minutes from now\"\nif not dtime:\n    dtime = \"5 minutes from now\"\n\n# If tagsArr should be a string, keep as is. If you expect a list, split by comma:\n# tagsArr = tagsArr.split(\",\") if tagsArr else []\n\n# Summary information \nsummary_info = {\n    \"time_date\": dtime,\n    \"appliance_version\": mxID, \n    \"switch_version\": msID,  \n    \"wireless_version\": mrID,\n    \"tags\": tagsArr\n}\n\ndef parse_meraki_output(text):\n    results = {\n        \"scheduled_upgrades\": [],\n        \"failed_upgrades\": [],\n        \"no_matching_tags\": []\n    }\n\n    current_organization = None\n    lines = text.splitlines()\n\n    for line in lines:\n        if line.startswith(\"Results for Organization:\"):\n            # Extract current organization name\n            current_organization = line.split(\"Results for Organization:\")[1].strip()\n        elif line.startswith(\"Network:\") and \"upgrade is scheduled\" in line:\n            # Extract scheduled network name\n            network_name = re.search(r\"Network:\\s(.+?)\\supgrade is scheduled\", line)\n            if network_name:\n                results[\"scheduled_upgrades\"].append({\n                    \"organization\": current_organization,\n                    \"network\": network_name.group(1)\n                })\n        elif line.startswith(\"Network:\") and \"upgrade failed to schedule\" in line:\n            # Extract failed network name and reason\n            failed_match = re.search(r\"Network:\\s(.+?)\\supgrade failed to schedule\\.(.+)\", line)\n            if failed_match:\n                results[\"failed_upgrades\"].append({\n                    \"organization\": current_organization,\n                    \"network\": failed_match.group(1),\n                    \"reason\": failed_match.group(2).strip(\"[]\")\n                })\n        elif re.match(r\"Organization: .+ has no matching tags\\.\", line):\n            # Extract organization name and add to no_matching_tags\n            org_match = re.match(r\"Organization:\\s(.+)\\shas no matching tags\\.\", line)\n            if org_match:\n                org_name = org_match.group(1).strip()\n                results[\"no_matching_tags\"].append(org_name)\n\n    return results\n\ndef display_results(results, summary_info):\n    sys.stdout.write(\"Network Firmware Schedule Output Summary:\")\n    sys.stdout.write(f\"Schedule Time/Date: {summary_info['time_date']}\")\n    sys.stdout.write(f\"Upgrade to Appliance version: {summary_info['appliance_version']}\")\n    sys.stdout.write(f\"Upgrade to Switch version: {summary_info['switch_version']}\")\n    sys.stdout.write(f\"Upgrade to Wireless version: {summary_info['wireless_version']}\")\n    sys.stdout.write(f\"Matched Tags: {summary_info['tags']}\\n\")\n\n    if results[\"scheduled_upgrades\"]:\n        sys.stdout.write(\"Successfully Scheduled Firmware for: Organization Name - Network Name\\n\")\n        for item in results[\"scheduled_upgrades\"]:\n            organization = item['organization'].strip()\n            network = item['network'].strip()\n            sys.stdout.write(f\"{organization} - {network}\")\n        sys.stdout.write(\"\\n\")\n\n    if results[\"failed_upgrades\"]:\n        sys.stdout.write(\"Failed to Schedule Firmware for: Organization Name - Network Name - Failure Reason\\n\")\n        for item in results[\"failed_upgrades\"]:\n            organization = item['organization'].strip()\n            network = item['network'].strip()\n            reason = item['reason'].strip()\n            sys.stdout.write(f\"{organization} - {network} - {reason}\")\n        sys.stdout.write(\"\\n\")\n\n    # Section for Organizations with No Matching Tags\n    if results.get(\"no_matching_tags\"):\n        sys.stdout.write(\"No Tags match in Organizations:\\n\")\n        for org in results[\"no_matching_tags\"]:\n            sys.stdout.write(f\"{org}\")\n        sys.stdout.write(\"\\n\")\n\n# Parse and display results\nresults = parse_meraki_output(input_text)\ndisplay_results(results, summary_info)",
-          "script_arguments": [
-            "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$",
-            "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80PYJ5OJOQ1TZAtY1z1PcWdWbFsoSpTz$",
-            "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80Q4SYT9IL3tmfMRYvFyBHUB7jGJinNn$",
-            "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80QC4GKP121LnGTN1qZd0Y8MmbDofKGt$",
-            "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80QZ2QQFQZ2qdsJZEcSzZrj7mzQs8QDM$",
-            "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M7ZT2FW7KP67B68QGgkYqXkJDUxuhPU0Y$"
-          ],
-          "script_queries": [
-            {
-              "script_query": "results",
-              "script_query_name": "results",
-              "script_query_type": "string"
-            }
-          ],
+          "description": "Process workflow execution results and generate a comprehensive summary report showing successful firmware upgrades, failures, and organizations without matching tags in a user-friendly format.",
+          "display_as_suggestion": false,
+          "display_name": "Summarize Outputs",
           "skip_execution": false
         },
-        "object_type": "definition_activity"
-      },
-      {
-        "unique_name": "definition_activity_02MMCPFEXN77P0cvk2zHdDwKM5IF3woK7VJ",
-        "name": "Set Variables",
-        "title": "Set Summary Output",
-        "type": "core.set_multiple_variables",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "description": "Set the final output variables with workflow execution results, including the formatted summary, status indicators, and error information.",
-          "display_name": "Set Summary Output",
-          "skip_execution": false,
-          "variables_to_update": [
-            {
-              "variable_to_update": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.output.variable_workflow_02MLIQ98QXVS92qpmOxIVvAtEREVZqkc0Ay$",
-              "variable_value_new": "$activity.definition_activity_02MLI8JZX2NZG6HQCpfmGCpavVKhlpOi3jg.output.response_body$"
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02MLI8JZX2NZG6HQCpfmGCpavVKhlpOi3jg",
+            "name": "Execute Python Script",
+            "title": "Prepare Summary Output",
+            "type": "python3.script",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "description": "Process and format the workflow results into a user-friendly summary report showing successful and failed firmware upgrades by organization and network.",
+              "display_name": "Prepare Summary Output",
+              "script": "import re\nimport sys\n\n# Note: When you have one item as input you need extra comma - it's not a mistake\n(input_text, mxID, msID, mrID, dtime, tagsArr) = sys.argv[1:7]\n\n# If dtime is empty, set as text \"5 minutes from now\"\nif not dtime:\n    dtime = \"5 minutes from now\"\n\n# If tagsArr should be a string, keep as is. If you expect a list, split by comma:\n# tagsArr = tagsArr.split(\",\") if tagsArr else []\n\n# Summary information \nsummary_info = {\n    \"time_date\": dtime,\n    \"appliance_version\": mxID, \n    \"switch_version\": msID,  \n    \"wireless_version\": mrID,\n    \"tags\": tagsArr\n}\n\ndef parse_meraki_output(text):\n    results = {\n        \"scheduled_upgrades\": [],\n        \"failed_upgrades\": [],\n        \"no_matching_tags\": []\n    }\n\n    current_organization = None\n    lines = text.splitlines()\n\n    for line in lines:\n        if line.startswith(\"Results for Organization:\"):\n            # Extract current organization name\n            current_organization = line.split(\"Results for Organization:\")[1].strip()\n        elif line.startswith(\"Network:\") and \"upgrade is scheduled\" in line:\n            # Extract scheduled network name\n            network_name = re.search(r\"Network:\\s(.+?)\\supgrade is scheduled\", line)\n            if network_name:\n                results[\"scheduled_upgrades\"].append({\n                    \"organization\": current_organization,\n                    \"network\": network_name.group(1)\n                })\n        elif line.startswith(\"Network:\") and \"upgrade failed to schedule\" in line:\n            # Extract failed network name and reason\n            failed_match = re.search(r\"Network:\\s(.+?)\\supgrade failed to schedule\\.(.+)\", line)\n            if failed_match:\n                results[\"failed_upgrades\"].append({\n                    \"organization\": current_organization,\n                    \"network\": failed_match.group(1),\n                    \"reason\": failed_match.group(2).strip(\"[]\")\n                })\n        elif re.match(r\"Organization: .+ has no matching tags\\.\", line):\n            # Extract organization name and add to no_matching_tags\n            org_match = re.match(r\"Organization:\\s(.+)\\shas no matching tags\\.\", line)\n            if org_match:\n                org_name = org_match.group(1).strip()\n                results[\"no_matching_tags\"].append(org_name)\n\n    return results\n\ndef display_results(results, summary_info):\n    sys.stdout.write(\"Network Firmware Schedule Output Summary:\")\n    sys.stdout.write(f\"Schedule Time/Date: {summary_info['time_date']}\")\n    sys.stdout.write(f\"Upgrade to Appliance version: {summary_info['appliance_version']}\")\n    sys.stdout.write(f\"Upgrade to Switch version: {summary_info['switch_version']}\")\n    sys.stdout.write(f\"Upgrade to Wireless version: {summary_info['wireless_version']}\")\n    sys.stdout.write(f\"Matched Tags: {summary_info['tags']}\\n\")\n\n    if results[\"scheduled_upgrades\"]:\n        sys.stdout.write(\"Successfully Scheduled Firmware for: Organization Name - Network Name\\n\")\n        for item in results[\"scheduled_upgrades\"]:\n            organization = item['organization'].strip()\n            network = item['network'].strip()\n            sys.stdout.write(f\"{organization} - {network}\")\n        sys.stdout.write(\"\\n\")\n\n    if results[\"failed_upgrades\"]:\n        sys.stdout.write(\"Failed to Schedule Firmware for: Organization Name - Network Name - Failure Reason\\n\")\n        for item in results[\"failed_upgrades\"]:\n            organization = item['organization'].strip()\n            network = item['network'].strip()\n            reason = item['reason'].strip()\n            sys.stdout.write(f\"{organization} - {network} - {reason}\")\n        sys.stdout.write(\"\\n\")\n\n    # Section for Organizations with No Matching Tags\n    if results.get(\"no_matching_tags\"):\n        sys.stdout.write(\"No Tags match in Organizations:\\n\")\n        for org in results[\"no_matching_tags\"]:\n            sys.stdout.write(f\"{org}\")\n        sys.stdout.write(\"\\n\")\n\n# Parse and display results\nresults = parse_meraki_output(input_text)\ndisplay_results(results, summary_info)",
+              "script_arguments": [
+                "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.local.variable_workflow_02MITDWATP3K83S7N0YHmU1k4Oz0ZF9tuFO$",
+                "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80PYJ5OJOQ1TZAtY1z1PcWdWbFsoSpTz$",
+                "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80Q4SYT9IL3tmfMRYvFyBHUB7jGJinNn$",
+                "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80QC4GKP121LnGTN1qZd0Y8MmbDofKGt$",
+                "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M80QZ2QQFQZ2qdsJZEcSzZrj7mzQs8QDM$",
+                "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.input.variable_workflow_02M7ZT2FW7KP67B68QGgkYqXkJDUxuhPU0Y$"
+              ],
+              "script_queries": [
+                {
+                  "script_query": "results",
+                  "script_query_name": "results",
+                  "script_query_type": "string"
+                }
+              ],
+              "skip_execution": false
             },
-            {
-              "variable_to_update": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.output.variable_workflow_02Q0RX6R2M6L34pYKn5ELjrxxOI5k8ralWJ$",
-              "variable_value_new": "Success"
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02MMCPFEXN77P0cvk2zHdDwKM5IF3woK7VJ",
+            "name": "Set Variables",
+            "title": "Set Summary Output",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "description": "Set the final output variables with workflow execution results, including the formatted summary, status indicators, and error information.",
+              "display_name": "Set Summary Output",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.output.variable_workflow_02MLIQ98QXVS92qpmOxIVvAtEREVZqkc0Ay$",
+                  "variable_value_new": "$activity.definition_activity_02MLI8JZX2NZG6HQCpfmGCpavVKhlpOi3jg.output.response_body$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.output.variable_workflow_02Q0RX6R2M6L34pYKn5ELjrxxOI5k8ralWJ$",
+                  "variable_value_new": "Success"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.output.variable_workflow_02Q0RX6R2LHQP2DiJMpvoWSg7M1gkVzmFGi$",
+                  "variable_value_new": "200"
+                }
+              ]
             },
-            {
-              "variable_to_update": "$workflow.definition_workflow_02M7Z8N486Z985yvnPOvF97ovjxUaJgGjFD.output.variable_workflow_02Q0RX6R2LHQP2DiJMpvoWSg7M1gkVzmFGi$",
-              "variable_value_new": "200"
-            }
-          ]
-        },
-        "object_type": "definition_activity"
+            "object_type": "definition_activity"
+          }
+        ]
       }
     ],
     "categories": [
@@ -1100,6 +1135,38 @@
             "properties": {
               "value": "",
               "scope": "input",
+              "name": "Switch Version ID to Upgrade",
+              "type": "datatype.string",
+              "description": "Specific firmware version ID for Meraki Switch (MS) devices to upgrade to. This must be a valid version ID available for the switches in your network. Use the 'Check Available Firmware for Network' workflow to identify compatible version IDs. Leave empty to use the latest available firmware version. Example: 4758 for MS firmware v15.21.1.",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02M6J1XSPTOPF32pVY3YOG8khAHZh9c1W2N",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Status Message",
+              "type": "datatype.string",
+              "description": "Human-readable status message describing the firmware upgrade scheduling operation outcome. Provides clear success confirmation, partial completion details, or failure reasons. Essential for user feedback and workflow orchestration decision-making in automated deployments.",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02M6L319PNRLE5UnZJlJVqWYILq8SQZe8nV",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
               "name": "Appliance Version ID to Upgrade",
               "type": "datatype.string",
               "description": "Specific firmware version ID for Meraki Security Appliance (MX) devices to upgrade to. This must be a valid version ID available for the appliances in your network. Use the 'Check Available Firmware for Network' workflow to identify compatible version IDs. Leave empty to use the latest available firmware version. Example: 4727 for MX firmware v18.107.2.",
@@ -1109,22 +1176,6 @@
               "variable_string_format": "text"
             },
             "unique_name": "variable_workflow_02M6JG0JY44ZB2J10JOQI8CsqtK0hhn1SBp",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Wireless Version ID to Upgrade",
-              "type": "datatype.string",
-              "description": "Specific firmware version ID for Meraki Wireless Access Points (MR) devices to upgrade to. This must be a valid version ID available for the wireless devices in your network. Use the 'Check Available Firmware for Network' workflow to identify compatible version IDs. Leave empty to use the latest available firmware version. Example: 4952 for MR firmware v29.7.",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": "text"
-            },
-            "unique_name": "variable_workflow_02M6JG70GBGQG7HoqTfGf5aqzeOeDO3N0OT",
             "object_type": "variable_workflow"
           },
           {
@@ -1163,16 +1214,31 @@
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "output",
-              "name": "Error Message",
+              "scope": "input",
+              "name": "Wireless Version ID to Upgrade",
               "type": "datatype.string",
-              "description": "Detailed error information when firmware upgrade scheduling fails. Contains specific API error messages, validation failures, or system issues to enable effective troubleshooting. Empty when workflow completes successfully, populated with diagnostic details when errors occur.",
+              "description": "Specific firmware version ID for Meraki Wireless Access Points (MR) devices to upgrade to. This must be a valid version ID available for the wireless devices in your network. Use the 'Check Available Firmware for Network' workflow to identify compatible version IDs. Leave empty to use the latest available firmware version. Example: 4952 for MR firmware v29.7.",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false,
               "variable_string_format": "text"
             },
-            "unique_name": "variable_workflow_02M6L3FIK1MB054rZdfPQcAYgBDONPSlwN6",
+            "unique_name": "variable_workflow_02M6JG70GBGQG7HoqTfGf5aqzeOeDO3N0OT",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "local",
+              "name": "MS ID",
+              "type": "datatype.string",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02PZZOFQTFANI5LoBVWZnJdR7p6CL07k1i5",
             "object_type": "variable_workflow"
           },
           {
@@ -1189,6 +1255,21 @@
               "variable_string_format": ""
             },
             "unique_name": "variable_workflow_02M7XBLKG0QUX0Rem8WlG1RekFxSh8w3YWo",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "local",
+              "name": "MR ID",
+              "type": "datatype.string",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02PZZOBV3C7K00njLjGN4Zjj0wjpCW0SGhM",
             "object_type": "variable_workflow"
           },
           {
@@ -1212,29 +1293,15 @@
             "properties": {
               "value": "",
               "scope": "local",
-              "name": "MS ID",
+              "name": "Local Organization ID",
               "type": "datatype.string",
+              "description": "Internal variable that stores the resolved Meraki organization ID after processing the input (organization name or ID). This variable ensures consistent organization identification throughout the workflow regardless of input format.",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false,
               "variable_string_format": "text"
             },
-            "unique_name": "variable_workflow_02PZZOFQTFANI5LoBVWZnJdR7p6CL07k1i5",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "local",
-              "name": "MR ID",
-              "type": "datatype.string",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": "text"
-            },
-            "unique_name": "variable_workflow_02PZZOBV3C7K00njLjGN4Zjj0wjpCW0SGhM",
+            "unique_name": "variable_workflow_02M6HQJ239YBT6VFBUlUndyY9WWtNOYImuT",
             "object_type": "variable_workflow"
           },
           {
@@ -1289,47 +1356,15 @@
             "properties": {
               "value": "",
               "scope": "output",
-              "name": "Status Message",
+              "name": "Error Message",
               "type": "datatype.string",
-              "description": "Human-readable status message describing the firmware upgrade scheduling operation outcome. Provides clear success confirmation, partial completion details, or failure reasons. Essential for user feedback and workflow orchestration decision-making in automated deployments.",
+              "description": "Detailed error information when firmware upgrade scheduling fails. Contains specific API error messages, validation failures, or system issues to enable effective troubleshooting. Empty when workflow completes successfully, populated with diagnostic details when errors occur.",
               "is_required": false,
               "display_on_wizard": false,
               "is_invisible": false,
               "variable_string_format": "text"
             },
-            "unique_name": "variable_workflow_02M6L319PNRLE5UnZJlJVqWYILq8SQZe8nV",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Switch Version ID to Upgrade",
-              "type": "datatype.string",
-              "description": "Specific firmware version ID for Meraki Switch (MS) devices to upgrade to. This must be a valid version ID available for the switches in your network. Use the 'Check Available Firmware for Network' workflow to identify compatible version IDs. Leave empty to use the latest available firmware version. Example: 4758 for MS firmware v15.21.1.",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": "text"
-            },
-            "unique_name": "variable_workflow_02M6J1XSPTOPF32pVY3YOG8khAHZh9c1W2N",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "local",
-              "name": "Local Organization ID",
-              "type": "datatype.string",
-              "description": "Internal variable that stores the resolved Meraki organization ID after processing the input (organization name or ID). This variable ensures consistent organization identification throughout the workflow regardless of input format.",
-              "is_required": false,
-              "display_on_wizard": false,
-              "is_invisible": false,
-              "variable_string_format": "text"
-            },
-            "unique_name": "variable_workflow_02M6HQJ239YBT6VFBUlUndyY9WWtNOYImuT",
+            "unique_name": "variable_workflow_02M6L3FIK1MB054rZdfPQcAYgBDONPSlwN6",
             "object_type": "variable_workflow"
           }
         ],
@@ -1777,13 +1812,13 @@
             "actions": [
               {
                 "unique_name": "definition_activity_02MGBK77HJ5SF71aVNGCAJ7Bifn5QSUdozA",
-                "name": "Get Organization By Name",
-                "title": "Get Organization By Name",
+                "name": "Get Organization By Name or ID",
+                "title": "Get Organization By Name or ID",
                 "type": "workflow.sub_workflow",
                 "base_type": "subworkflow",
                 "properties": {
                   "continue_on_failure": true,
-                  "display_name": "Get Organization By Name",
+                  "display_name": "Get Organization By Name or ID",
                   "input": {
                     "variable_workflow_02M605GTHU5L72i8goD4nuYixYOvQEFV7rN": "$workflow.definition_workflow_02M312TMR8LMG3UJlEY07a3HLYWHV8awf3M.input.variable_workflow_02M312TNV48D362Qqex9PTw1USYd7QlgbfQ$",
                     "variable_workflow_02M605GTI1LUG737lDLyzxnE9jwENJNQ08W": false
@@ -1797,20 +1832,20 @@
                     "use_workflow_target": true
                   },
                   "workflow_id": "definition_workflow_02M605GS81XN44qr4RBWrJ6Zazk7k0ArIYX",
-                  "workflow_name": "Meraki - Get Organization By Name"
+                  "workflow_name": "Meraki - Get Organization By Name or ID"
                 },
                 "object_type": "definition_activity"
               },
               {
                 "unique_name": "definition_activity_02M6HPRJG1K7U41B1j5MHl3N7AhJpHF4ul8",
                 "name": "Condition Block",
-                "title": "Was Input Org Name?",
+                "title": "Was the Request Successful?",
                 "type": "logic.if_else",
                 "base_type": "activity",
                 "properties": {
                   "conditions": [],
                   "continue_on_failure": false,
-                  "display_name": "Was Input Org Name?",
+                  "display_name": "Was the Request Successful?",
                   "skip_execution": false
                 },
                 "object_type": "definition_activity",
@@ -1857,7 +1892,7 @@
                   {
                     "unique_name": "definition_activity_02M6HPRJQWZ2Z5e27Q83OcHNA47AU8yTHof",
                     "name": "Condition Branch",
-                    "title": "No, Set ID from Input",
+                    "title": "No, Org Match",
                     "type": "logic.condition_block",
                     "base_type": "activity",
                     "properties": {
@@ -1867,27 +1902,24 @@
                         "right_operand": 200
                       },
                       "continue_on_failure": false,
-                      "display_name": "No, Set ID from Input",
+                      "display_name": "No, Org Match",
                       "skip_execution": false
                     },
                     "object_type": "definition_activity",
                     "actions": [
                       {
-                        "unique_name": "definition_activity_02M6HSB8V83YX5CLExsB7hICBo11No4pZkD",
-                        "name": "Set Variables",
-                        "title": "Set Local Org ID Variable",
-                        "type": "core.set_multiple_variables",
+                        "unique_name": "definition_activity_02Q1V2KM0348261SvnzSSFlzR6FlJ5WY3I2",
+                        "name": "Completed",
+                        "title": "Completed",
+                        "type": "logic.completed",
                         "base_type": "activity",
                         "properties": {
+                          "completion_type": "failed-completed",
                           "continue_on_failure": false,
-                          "display_name": "Set Local Org ID Variable",
-                          "skip_execution": false,
-                          "variables_to_update": [
-                            {
-                              "variable_to_update": "$workflow.definition_workflow_02M312TMR8LMG3UJlEY07a3HLYWHV8awf3M.local.variable_workflow_02M6HQJ239YBT6VFBUlUndyY9WWtNOYImuT$",
-                              "variable_value_new": "$workflow.definition_workflow_02M312TMR8LMG3UJlEY07a3HLYWHV8awf3M.input.variable_workflow_02M312TNV48D362Qqex9PTw1USYd7QlgbfQ$"
-                            }
-                          ]
+                          "description": "Completed action",
+                          "display_name": "Completed",
+                          "result_message": "No Org Match.",
+                          "skip_execution": false
                         },
                         "object_type": "definition_activity"
                       }
@@ -2308,29 +2340,29 @@
                     "variable_workflow_02M3057KLFLIG20p3pF8ezNDO75MHqfMshf": "$activity.definition_activity_02M312TTTNDIE7iqfUDnANBR4WCbYfp3fdy.output.variable_workflow_02LCRLPN6EZY51pb3GRpQG7QdKWS452YyuL$",
                     "variable_workflow_02M4KERVOSRJQ08qXFbfM4iMYQx2FpdU2Wv": "$workflow.definition_workflow_02M312TMR8LMG3UJlEY07a3HLYWHV8awf3M.local.variable_workflow_02PZZO7WI1FZX3TWhd6HR5Vuhw8CFIEZ4Jq$",
                     "variable_workflow_02M4KERVP62GU060qFU6m1vvv9OwL3mx2dr": "$workflow.definition_workflow_02M312TMR8LMG3UJlEY07a3HLYWHV8awf3M.input.variable_workflow_02M6ITCWL1UEH2ROmXLUwyaAtxN0s8yb5Xq$",
-                    "variable_workflow_02M4KERVPIWKK5qoD0mltZ2vRBwqueLtzx3": false,
+                    "variable_workflow_02M4KERVPIWKK5qoD0mltZ2vRBwqueLtzx3": "false",
                     "variable_workflow_02M4KERVPWAVA4upg4hyDRhVSQq4gXX6sf2": "",
                     "variable_workflow_02M4KERVQ9MZF7jg3BdAhGNZFlt3qteptmt": "",
                     "variable_workflow_02M4KERVQMOMV7BMIPi4zaoJNiqQg4T9JvI": "",
-                    "variable_workflow_02M4KERVQZELU4R7e0vGsxOkGMXFgxCcCQA": false,
+                    "variable_workflow_02M4KERVQZELU4R7e0vGsxOkGMXFgxCcCQA": "false",
                     "variable_workflow_02M4KERVRC3QE2OLTU4o22QEpid35nqLKxL": "",
                     "variable_workflow_02M4KERVS2VGZ2aMw0gwig6JJIT24q4KMP3": "$workflow.definition_workflow_02M312TMR8LMG3UJlEY07a3HLYWHV8awf3M.input.variable_workflow_02M6ITCWL1UEH2ROmXLUwyaAtxN0s8yb5Xq$",
                     "variable_workflow_02M4KERVSTNX04vnDZTl0xrUY7LDJa4ZdlN": "",
                     "variable_workflow_02M4KERVT6GCB3qhldBseHG3T6lt0rMU1Mh": "",
                     "variable_workflow_02M4KERVTJG3D6z0pR38CYPBhZD7S5rTHeL": "",
                     "variable_workflow_02M4KERVTXNXE0VtG74iQnLYuk15EOGjdTE": "$workflow.definition_workflow_02M312TMR8LMG3UJlEY07a3HLYWHV8awf3M.input.variable_workflow_02M6ITCWL1UEH2ROmXLUwyaAtxN0s8yb5Xq$",
-                    "variable_workflow_02M4KERVUAJ1V1PyguqfdoICjF1BmHR7X2b": false,
-                    "variable_workflow_02M4KERVUNIC90E9ID0hvx5GO21BmmzIs08": false,
-                    "variable_workflow_02M4KERVV09U46NNQXWhuLlgEFsBSliOUNR": false,
+                    "variable_workflow_02M4KERVUAJ1V1PyguqfdoICjF1BmHR7X2b": "false",
+                    "variable_workflow_02M4KERVUNIC90E9ID0hvx5GO21BmmzIs08": "false",
+                    "variable_workflow_02M4KERVV09U46NNQXWhuLlgEFsBSliOUNR": "false",
                     "variable_workflow_02M4KERVVD4B80d0TNrHG17Oj0JRKQ0t1rM": "",
                     "variable_workflow_02M4KERVVPPQ72Beed28WWzCNhfcw121KZh": "",
                     "variable_workflow_02M4KERVW32IK323MeeO2ZRMVhqupIl3Vnf": "",
-                    "variable_workflow_02M4KERVWFXYU1hDx5aB3T8ThL6zSXFMTT3": false,
+                    "variable_workflow_02M4KERVWFXYU1hDx5aB3T8ThL6zSXFMTT3": "false",
                     "variable_workflow_02M4KERVWSKTJ4T8YMhcQ21to7TnlCqYM3l": "$workflow.definition_workflow_02M312TMR8LMG3UJlEY07a3HLYWHV8awf3M.local.variable_workflow_02PZZOFQTFANI5LoBVWZnJdR7p6CL07k1i5$",
                     "variable_workflow_02M4KERVX5OFW4pJO7lxPaQ7ocZzRKxdKfn": "",
-                    "variable_workflow_02M4KERVXJS3R2hNPsRY66qPvsx8P6I77S3": false,
-                    "variable_workflow_02M4KERVXWWZV3oInj8jFfnitnKrWUaFaX2": false,
-                    "variable_workflow_02M4KERVYC3RT6HIpeFiGsPas45oB0gD48h": false,
+                    "variable_workflow_02M4KERVXJS3R2hNPsRY66qPvsx8P6I77S3": "false",
+                    "variable_workflow_02M4KERVXWWZV3oInj8jFfnitnKrWUaFaX2": "false",
+                    "variable_workflow_02M4KERVYC3RT6HIpeFiGsPas45oB0gD48h": "false",
                     "variable_workflow_02M4KERVYPC1E11PVRqaDjAaHJ3TRWznwFf": "",
                     "variable_workflow_02M4KERVZ2C7F7lU7gVGO8NZOaQjYe95OZW": "$workflow.definition_workflow_02M312TMR8LMG3UJlEY07a3HLYWHV8awf3M.local.variable_workflow_02PZZOBV3C7K00njLjGN4Zjj0wjpCW0SGhM$"
                   },
@@ -2611,15 +2643,31 @@
                 "properties": {
                   "value": "",
                   "scope": "output",
-                  "name": "Output - Appliance - Available Firmware Versions",
+                  "name": "Output - Switch - Available Firmware Versions",
                   "type": "datatype.string",
-                  "description": "JSON formatted list of available firmware versions for Meraki Security Appliances (MX) in the network. Returns 'Running the latest firmware.' if no upgrades are available.",
+                  "description": "JSON formatted list of available firmware versions for Meraki Switches (MS) in the network. Returns 'Running the latest firmware.' if no upgrades are available.",
                   "is_required": false,
                   "display_on_wizard": false,
                   "is_invisible": false,
                   "variable_string_format": "json"
                 },
-                "unique_name": "variable_workflow_02M3MYCAE4Z471oBd6zU3dI7HlwvXsNtZ4q",
+                "unique_name": "variable_workflow_02M3MZ49LWOK23aGQRbYOcYcm8ivPEZ2mVf",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "output",
+                  "name": "Output - Switch - Current Version",
+                  "type": "datatype.string",
+                  "description": "The current firmware version running on Meraki Switches (MS) in the network, displayed as 'ShortName (ID: VersionID)' format.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": "text"
+                },
+                "unique_name": "variable_workflow_02M3MYR7I3LS64vFgpXcAidxLtVMy50gOdZ",
                 "object_type": "variable_workflow"
               },
               {
@@ -2642,16 +2690,48 @@
                 "schema_id": "datatype.string",
                 "properties": {
                   "value": "",
-                  "scope": "local",
-                  "name": "Organization ID",
+                  "scope": "output",
+                  "name": "Output - Result",
                   "type": "datatype.string",
-                  "description": "Internal variable to store the resolved Meraki organization ID, determined from either the organization name lookup or direct ID input.",
+                  "description": "Comprehensive summary report containing current firmware versions and available upgrades for all device types (Appliance, Switch, Wireless) in a human-readable format.",
                   "is_required": false,
                   "display_on_wizard": false,
                   "is_invisible": false,
                   "variable_string_format": "text"
                 },
-                "unique_name": "variable_workflow_02M6H1GEN4C263m1V94LPMCQNjGf0OG5ZG2",
+                "unique_name": "variable_workflow_02M6KC1YUN2E21oTPUAWTuiigLqni8IaiMR",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "output",
+                  "name": "Output - Wireless - Current Version",
+                  "type": "datatype.string",
+                  "description": "The current firmware version running on Meraki Wireless Access Points (MR) in the network, displayed as 'ShortName (ID: VersionID)' format.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": "text"
+                },
+                "unique_name": "variable_workflow_02M3MZEFROAQL7kpDMAgvAu62wWwqTwJmqJ",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.boolean",
+                "properties": {
+                  "value": false,
+                  "scope": "output",
+                  "name": "Appliance Has Upgrade Available",
+                  "type": "datatype.boolean",
+                  "description": "Boolean flag for Security Appliances (MX): true = firmware upgrades are available, false = running latest firmware or no upgrade versions available.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": ""
+                },
+                "unique_name": "variable_workflow_02PYYLS61FZLF0ryAp4sqcDyP4E8mhuheHl",
                 "object_type": "variable_workflow"
               },
               {
@@ -2668,6 +2748,118 @@
                   "variable_string_format": ""
                 },
                 "unique_name": "variable_workflow_02PYK5VBTIPF36xAo4ekXNelumZ8N2XzZdG",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "output",
+                  "name": "Output - Wireless - Available Firmware Versions",
+                  "type": "datatype.string",
+                  "description": "JSON formatted list of available firmware versions for Meraki Wireless Access Points (MR) in the network. Returns 'Running the latest firmware.' if no upgrades are available.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": "json"
+                },
+                "unique_name": "variable_workflow_02M3MZOEXMFJN34Sue1HxX2IRzkVMmDXuMz",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.boolean",
+                "properties": {
+                  "value": false,
+                  "scope": "output",
+                  "name": "Switch Has Upgrade Available",
+                  "type": "datatype.boolean",
+                  "description": "Boolean flag for Switches (MS): true = firmware upgrades are available, false = running latest firmware or no upgrade versions available.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": ""
+                },
+                "unique_name": "variable_workflow_02M3N3D6E9MRS0zGiJk4LnOpQ2TuV3wX4yZ",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.boolean",
+                "properties": {
+                  "value": false,
+                  "scope": "output",
+                  "name": "Wireless Has Upgrade Available",
+                  "type": "datatype.boolean",
+                  "description": "Boolean flag for Wireless Access Points (MR): true = firmware upgrades are available, false = running latest firmware or no upgrade versions available.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": ""
+                },
+                "unique_name": "variable_workflow_02M3N4E7F0NST1AHjKl5MoQpR3UvW4xY5zA",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "input",
+                  "name": "Input - Network Name",
+                  "type": "datatype.string",
+                  "description": "The name of the Meraki network to check for firmware updates. Must be an exact match for an existing network within the specified organization.",
+                  "is_required": true,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": "text"
+                },
+                "unique_name": "variable_workflow_02M30H9ZWVYG97Ddcta3xu7rrVUZsl8ifwq",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "input",
+                  "name": "Input - Organization ID or Name",
+                  "type": "datatype.string",
+                  "description": "Provide the Organization Name or Organization ID.",
+                  "is_required": true,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": "text"
+                },
+                "unique_name": "variable_workflow_02M30IM5VO2AS4WKLy2VYN1plX7frJeH1qw",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "local",
+                  "name": "Organization ID",
+                  "type": "datatype.string",
+                  "description": "Internal variable to store the resolved Meraki organization ID, determined from either the organization name lookup or direct ID input.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": "text"
+                },
+                "unique_name": "variable_workflow_02M6H1GEN4C263m1V94LPMCQNjGf0OG5ZG2",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "output",
+                  "name": "Output - Appliance - Available Firmware Versions",
+                  "type": "datatype.string",
+                  "description": "JSON formatted list of available firmware versions for Meraki Security Appliances (MX) in the network. Returns 'Running the latest firmware.' if no upgrades are available.",
+                  "is_required": false,
+                  "display_on_wizard": false,
+                  "is_invisible": false,
+                  "variable_string_format": "json"
+                },
+                "unique_name": "variable_workflow_02M3MYCAE4Z471oBd6zU3dI7HlwvXsNtZ4q",
                 "object_type": "variable_workflow"
               },
               {
@@ -2700,166 +2892,6 @@
                   "variable_string_format": "text"
                 },
                 "unique_name": "variable_workflow_02PYK5VBTJ5NE1O23tXaKnEe0XOOGEJ4zH7",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "output",
-                  "name": "Output - Wireless - Available Firmware Versions",
-                  "type": "datatype.string",
-                  "description": "JSON formatted list of available firmware versions for Meraki Wireless Access Points (MR) in the network. Returns 'Running the latest firmware.' if no upgrades are available.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": "json"
-                },
-                "unique_name": "variable_workflow_02M3MZOEXMFJN34Sue1HxX2IRzkVMmDXuMz",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "output",
-                  "name": "Output - Wireless - Current Version",
-                  "type": "datatype.string",
-                  "description": "The current firmware version running on Meraki Wireless Access Points (MR) in the network, displayed as 'ShortName (ID: VersionID)' format.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": "text"
-                },
-                "unique_name": "variable_workflow_02M3MZEFROAQL7kpDMAgvAu62wWwqTwJmqJ",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.boolean",
-                "properties": {
-                  "value": false,
-                  "scope": "output",
-                  "name": "Switch Has Upgrade Available",
-                  "type": "datatype.boolean",
-                  "description": "Boolean flag for Switches (MS): true = firmware upgrades are available, false = running latest firmware or no upgrade versions available.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": ""
-                },
-                "unique_name": "variable_workflow_02M3N3D6E9MRS0zGiJk4LnOpQ2TuV3wX4yZ",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.boolean",
-                "properties": {
-                  "value": false,
-                  "scope": "output",
-                  "name": "Appliance Has Upgrade Available",
-                  "type": "datatype.boolean",
-                  "description": "Boolean flag for Security Appliances (MX): true = firmware upgrades are available, false = running latest firmware or no upgrade versions available.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": ""
-                },
-                "unique_name": "variable_workflow_02PYYLS61FZLF0ryAp4sqcDyP4E8mhuheHl",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "input",
-                  "name": "Input - Network Name",
-                  "type": "datatype.string",
-                  "description": "The name of the Meraki network to check for firmware updates. Must be an exact match for an existing network within the specified organization.",
-                  "is_required": true,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": "text"
-                },
-                "unique_name": "variable_workflow_02M30H9ZWVYG97Ddcta3xu7rrVUZsl8ifwq",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "output",
-                  "name": "Output - Result",
-                  "type": "datatype.string",
-                  "description": "Comprehensive summary report containing current firmware versions and available upgrades for all device types (Appliance, Switch, Wireless) in a human-readable format.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": "text"
-                },
-                "unique_name": "variable_workflow_02M6KC1YUN2E21oTPUAWTuiigLqni8IaiMR",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "output",
-                  "name": "Output - Switch - Current Version",
-                  "type": "datatype.string",
-                  "description": "The current firmware version running on Meraki Switches (MS) in the network, displayed as 'ShortName (ID: VersionID)' format.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": "text"
-                },
-                "unique_name": "variable_workflow_02M3MYR7I3LS64vFgpXcAidxLtVMy50gOdZ",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "output",
-                  "name": "Output - Switch - Available Firmware Versions",
-                  "type": "datatype.string",
-                  "description": "JSON formatted list of available firmware versions for Meraki Switches (MS) in the network. Returns 'Running the latest firmware.' if no upgrades are available.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": "json"
-                },
-                "unique_name": "variable_workflow_02M3MZ49LWOK23aGQRbYOcYcm8ivPEZ2mVf",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "input",
-                  "name": "Input - Organization ID or Name",
-                  "type": "datatype.string",
-                  "description": "Provide the Organization Name or Organization ID.",
-                  "is_required": true,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": "text"
-                },
-                "unique_name": "variable_workflow_02M30IM5VO2AS4WKLy2VYN1plX7frJeH1qw",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.boolean",
-                "properties": {
-                  "value": false,
-                  "scope": "output",
-                  "name": "Wireless Has Upgrade Available",
-                  "type": "datatype.boolean",
-                  "description": "Boolean flag for Wireless Access Points (MR): true = firmware upgrades are available, false = running latest firmware or no upgrade versions available.",
-                  "is_required": false,
-                  "display_on_wizard": false,
-                  "is_invisible": false,
-                  "variable_string_format": ""
-                },
-                "unique_name": "variable_workflow_02M3N4E7F0NST1AHjKl5MoQpR3UvW4xY5zA",
                 "object_type": "variable_workflow"
               }
             ],
@@ -2900,14 +2932,14 @@
                 "actions": [
                   {
                     "unique_name": "definition_activity_02MGBB1XV74T14vch1JymK78sjVAG8XLMPg",
-                    "name": "Get Organization By Name",
-                    "title": "Get Organization By Name",
+                    "name": "Get Organization By Name or ID",
+                    "title": "Get Organization By Name or ID",
                     "type": "workflow.sub_workflow",
                     "base_type": "subworkflow",
                     "properties": {
                       "continue_on_failure": true,
-                      "description": "Tries organization name lookup first; non-200 response indicates input was likely an organization ID.",
-                      "display_name": "Get Organization By Name",
+                      "description": "Lookup the Organization by Name or ID",
+                      "display_name": "Get Organization By Name or ID",
                       "input": {
                         "variable_workflow_02M605GTHU5L72i8goD4nuYixYOvQEFV7rN": "$workflow.definition_workflow_02M30GYJJSYJL0wQPPnkQgIcavBkG6796mF.input.variable_workflow_02M30IM5VO2AS4WKLy2VYN1plX7frJeH1qw$",
                         "variable_workflow_02M605GTI1LUG737lDLyzxnE9jwENJNQ08W": false
@@ -2921,21 +2953,21 @@
                         "use_workflow_target": true
                       },
                       "workflow_id": "definition_workflow_02M605GS81XN44qr4RBWrJ6Zazk7k0ArIYX",
-                      "workflow_name": "Meraki - Get Organization By Name"
+                      "workflow_name": "Meraki - Get Organization By Name or ID"
                     },
                     "object_type": "definition_activity"
                   },
                   {
                     "unique_name": "definition_activity_02M6GWLTHB0QQ2tHfY1ZO36K4S9uzgqt7gD",
                     "name": "Condition Block",
-                    "title": "Was Input Org Name?",
+                    "title": "Was the Request Successful?",
                     "type": "logic.if_else",
                     "base_type": "activity",
                     "properties": {
                       "conditions": [],
                       "continue_on_failure": false,
                       "description": "Routes logic based on lookup success to set organization ID from either lookup result or original input.",
-                      "display_name": "Was Input Org Name?",
+                      "display_name": "Was the Request Successful?",
                       "skip_execution": false
                     },
                     "object_type": "definition_activity",
@@ -2984,7 +3016,7 @@
                       {
                         "unique_name": "definition_activity_02M6H2KH6P4Q56cig9mkjsWMHaANAfb03Z8",
                         "name": "Condition Branch",
-                        "title": "No, Set ID from Input",
+                        "title": "No, Org Match",
                         "type": "logic.condition_block",
                         "base_type": "activity",
                         "properties": {
@@ -2995,28 +3027,24 @@
                           },
                           "continue_on_failure": false,
                           "description": "Non-200 response indicates input was likely already an organization ID - use original input.",
-                          "display_name": "No, Set ID from Input",
+                          "display_name": "No, Org Match",
                           "skip_execution": false
                         },
                         "object_type": "definition_activity",
                         "actions": [
                           {
-                            "unique_name": "definition_activity_02M6H2LYL9JDM1hNqkdynS5BTrc5sKm6G8G",
-                            "name": "Set Variables",
-                            "title": "Set Local Org ID",
-                            "type": "core.set_multiple_variables",
+                            "unique_name": "definition_activity_02Q1UNZE489PT5GCm8gQpGtyfoTzenSEocF",
+                            "name": "Completed",
+                            "title": "Completed",
+                            "type": "logic.completed",
                             "base_type": "activity",
                             "properties": {
+                              "completion_type": "failed-completed",
                               "continue_on_failure": false,
-                              "description": "Use original input as organization ID.",
-                              "display_name": "Set Local Org ID",
-                              "skip_execution": false,
-                              "variables_to_update": [
-                                {
-                                  "variable_to_update": "$workflow.definition_workflow_02M30GYJJSYJL0wQPPnkQgIcavBkG6796mF.local.variable_workflow_02M6H1GEN4C263m1V94LPMCQNjGf0OG5ZG2$",
-                                  "variable_value_new": "$workflow.definition_workflow_02M30GYJJSYJL0wQPPnkQgIcavBkG6796mF.input.variable_workflow_02M30IM5VO2AS4WKLy2VYN1plX7frJeH1qw$"
-                                }
-                              ]
+                              "description": "Completed action",
+                              "display_name": "Completed",
+                              "result_message": "No Organization Match.",
+                              "skip_execution": false
                             },
                             "object_type": "definition_activity"
                           }

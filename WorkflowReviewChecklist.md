@@ -6,7 +6,7 @@ This checklist is designed for LLM agents to systematically review JSON workflow
 
 **JSON Elements to Inspect:** `definition_workflow.properties.input_groups`, `definition_workflow.properties.inputs`
 
-- [ ] **Input Validation**: Check each input in `inputs` array has `name`, `type`, `description`, and appropriate `required` flag
+- [ ] **Input Validation**: **If inputs exist**, check each input in `inputs` array has `name`, `type`, `description`, and appropriate `required` flag - **Note**: Workflows with no inputs are valid for automated/scheduled workflows
 - [ ] **Secure String Review**: For inputs with `type: "SecureString"`, verify `name` is descriptive and `scope` is documented in description
 - [ ] **Standard Outputs Present**: Verify outputs include `Result`, `Status Code`, `Status Message`, `Error Message` in `outputs` array
 - [ ] **Default Values Safety**: Scan `default_value` fields for production data (real IPs, device serials, org IDs, passwords) - should be generic placeholders only
@@ -144,19 +144,29 @@ Tone: Crisp, not too verbose.
 ### ⚠️ Issues Found: [Count by severity]
 
 #### Critical Issues:
-- [Issue description with JSON path and fix recommendation]
+- [Issue description using user-friendly field names and business terminology with specific location and fix recommendation]
 
 #### High Priority Issues:
-- [Issue description with JSON path and fix recommendation]
+- [Issue description using user-friendly field names and business terminology with specific location and fix recommendation]
 
 #### Medium Priority Issues:
-- [Issue description with JSON path and fix recommendation]
+- [Issue description using user-friendly field names and business terminology with specific location and fix recommendation]
 
 #### Low Priority Issues:
-- [Issue description with JSON path and fix recommendation]
+- [Issue description using user-friendly field names and business terminology with specific location and fix recommendation]
 
 ### Summary:
-[Overall assessment and key recommendations]
+[Overall assessment and key recommendations using terminology end users understand]
+
+### Example Issue Descriptions:
+- Instead of: "Variable 'hostIPAddress' in definition_workflow.properties.inputs lacks proper naming convention"
+- Use: "Input field 'Server IP Address' should use a more user-friendly display name"
+
+- Instead of: "Missing continue_on_failure flag in activity uuid-1234"
+- Use: "Step 'Device Registration' needs error handling to continue if the device already exists"
+
+- Instead of: "SecureString variable 'authToken' missing scope documentation"
+- Use: "Password field 'API Authentication Token' needs usage description for end users"
 ```
 
 ---

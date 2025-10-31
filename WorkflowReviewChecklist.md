@@ -108,7 +108,7 @@ Tone: Crisp, not too verbose.
 3. **Pattern Recognition**: Look for common anti-patterns like hardcoded values, missing error handling, or security vulnerabilities
 4. **Cross-Reference Analysis**: Verify consistency between definitions and actual usage throughout the workflow
 5. **Report Findings**: For each failed check, provide:
-   - Specific JSON path where issue was found
+   - **Specific Location**: Clearly identify the workflow element (e.g., "Workflow Variable 'Variable Name'", "Activity 'Activity Title'", "Workflow's main 'Variables' section"). If a specific property within an element is relevant, include it (e.g., "Description of Activity 'Activity Title'").
    - Description of the problem
    - Recommended fix or improvement
    - Severity level (Critical, High, Medium, Low)
@@ -167,8 +167,19 @@ Tone: Crisp, not too verbose.
 
 - Instead of: "SecureString variable 'authToken' missing scope documentation"
 - Use: "Password field 'API Authentication Token' needs usage description for end users"
-```
 
+**- For Location Clarity:**
+- Instead of: "Location: `definition_workflow.variables`"
+- Use: "Location: Workflow's main `Variables` section."
+
+- Instead of: "Location: `variable_workflow_02O427U6E0UKK4pPkgaKcbm9H3Y1Oy4eUhF`"
+- Use: "Location: Output variable `Output - Filtered JSON` in the Workflow's `Variables` section."
+
+- Instead of: "Location: `definition_activity_02O427U9YGQD32G3ACkUh3TgKs9D2TyfwVd`"
+- Use: "Location: Activity `Check the HTTP Request for Errors`."
+
+- Instead of: "Location: `definition_activity_02O427U95N2YX0AbAR87yYHC6aDfWC3Ky8f.properties.description`"
+- Use: "Location: Description of activity `JSON Placeholder Web Request`."
 ---
 
 *This checklist enables systematic, automated review of workflow JSON files to ensure quality, security, and consistency across the CiscoWorkflowsAutomation repository.*

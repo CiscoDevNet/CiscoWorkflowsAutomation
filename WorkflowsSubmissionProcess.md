@@ -15,10 +15,11 @@ The LLM will apply the critera against your workflow highlighting:
 - Error Handling
 - Essential Hygiene & Security
 
-Please use this Checklist with Cisco's Circuit LLM (recommendation of Claude 4.5) and the exported JSON Workflow from your Workfspace.
+Please use this Checklist with your LLM of choice. We have tested with Cisco's Circuit LLM (recommendation of Claude 4.5) however you are not
+retricted in your LLM selection. The LLM will be used against the exported JSON Workflow from your Workfspace.
 
 Here is an example Prompt: 
-- "Please perform an anlysis of the Cisco Workflow provided in the JSON file using the criteria checklist found in the included markdown file."
+- "Please perform an analysis of the Cisco Workflow provided in the JSON file using the criteria checklist found in the included markdown file."
 
 ## Understanding Analysis Results
 

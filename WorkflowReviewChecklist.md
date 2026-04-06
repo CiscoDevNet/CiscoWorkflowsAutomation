@@ -90,6 +90,23 @@ Objective: Validate the Workflow with the Workflow-Review-Checklist items so tha
 
 Workflow: [Workflow Name]
 
+MANDATORY MULTI-PHASE REVIEW PROCESS:
+
+PHASE 1 - ENUMERATION (Complete this FIRST):
+- Identify and list ALL workflows in the JSON file
+- For each workflow, document: name, type (parent/embedded), line range
+- Present the enumeration list before proceeding
+- Count: X workflows found (1 parent + Y embedded subworkflows)
+
+PHASE 2 - DETAILED REVIEW (One workflow at a time):
+- Review each workflow individually against all 7 checklist categories
+- Complete all categories for Workflow N before starting Workflow N+1
+- Report findings for each workflow separately
+
+PHASE 3 - AGGREGATE ASSESSMENT:
+- Compile findings across all workflows
+- Provide overall quality score and recommendations
+
 Audience: The feedback will be for workflow developers with technical expertise seeking approval of their workflows. Suggest improvements for the findings.
 
 Style: Provide a bulleted list of issues for each Checklist Category.
@@ -103,11 +120,20 @@ Tone: Crisp, not too verbose.
 - `Severity Threshold: [Critical/High/Medium/Low]` - To filter noise for mature workflows
 
 ### Analysis Process:
-1. **Parse JSON Structure**: Load the workflow JSON file and navigate to the specified JSON elements for each section
-2. **Systematic Validation**: Go through each checklist item, inspecting the relevant JSON paths and values
-3. **Pattern Recognition**: Look for common anti-patterns like hardcoded values, missing error handling, or security vulnerabilities
-4. **Cross-Reference Analysis**: Verify consistency between definitions and actual usage throughout the workflow
-5. **Report Findings**: For each failed check, provide:
+1. **Parse Full JSON Structure**: Load the workflow JSON and identify the parent workflow plus all embedded subworkflows in the file.
+2. **Enumerate Review Scope - MANDATORY FIRST STEP**:
+   - Build a complete list of ALL workflows to review BEFORE starting validation
+   - For each workflow, document: name, unique_name, line range, and type (parent/subworkflow)
+   - Present this enumeration to the reviewer/user for confirmation
+   - DO NOT proceed to validation until enumeration is complete and confirmed
+3. **Systematic Validation - One Workflow at a Time**:
+   - Review workflows sequentially (parent first, then each subworkflow)
+   - For EACH workflow, apply ALL 7 checklist categories completely
+   - Mark each workflow as complete individually before moving to the next
+   - Report findings for each workflow separately, not in aggregate
+4. **Pattern Recognition**: Look for anti-patterns such as hardcoded values, missing error handling, weak idempotency, and security vulnerabilities across parent and embedded workflows.
+5. **Cross-Reference Analysis**: Verify consistency between definitions and actual usage within each workflow, and between parent/subworkflow interfaces.
+6. **Report Findings**: For each failed check, provide:
    - **Specific Location**: Clearly identify the workflow element (e.g., "Workflow Variable 'Variable Name'", "Activity 'Activity Title'", "Workflow's main 'Variables' section"). If a specific property within an element is relevant, include it (e.g., "Description of Activity 'Activity Title'").
    - Description of the problem
    - Recommended fix or improvement
@@ -130,10 +156,25 @@ Tone: Crisp, not too verbose.
 
 ### Important Notes for Reviewers:
 
+- **Definition - Embedded Subworkflow**: Any workflow logic invoked from the parent workflow (for example, activities with `type: "atomic_workflow"` or equivalent nested workflow references in the same JSON context).
+- **Default Review Scope**: Comprehensive reviews must include the parent workflow and all embedded subworkflows within the JSON file.
+- **Coverage Expectation**: Do not mark a review complete until all embedded subworkflows have been validated against the checklist.
+- **No Shortcuts**: Do not summarize or skip embedded subworkflow reviews. Each must be read and validated completely.
+- **Sequential Completion**: Do not mark multiple review categories as "complete" simultaneously without actual validation.
+- **Evidence Required**: For each finding, cite specific workflow name, activity name, or variable that demonstrates the issue.
 - **System-Generated IDs**: Don't flag random alphanumeric `unique_name` fields - these are XDR-generated
 - **Target Groups**: Some workflows legitimately require specific target configurations
 - **Idempotency**: Not all workflows need to be idempotent - consider the use case
 - **Context Matters**: Always consider the workflow's intended purpose and deployment scenario
+
+### Pre-Submission Verification:
+
+Before submitting your review, confirm:
+- [ ] Enumerated all workflows in the file (parent + embedded subworkflows)
+- [ ] Read the full definition of each enumerated workflow
+- [ ] Applied all 7 checklist categories to each workflow
+- [ ] Reported workflow-specific findings (not just parent workflow issues)
+- [ ] Did not batch-complete validation steps without thorough review
 
 ### Expected Output Format:
 
@@ -183,4 +224,3 @@ Tone: Crisp, not too verbose.
 ---
 
 *This checklist enables systematic, automated review of workflow JSON files to ensure quality, security, and consistency across the CiscoWorkflowsAutomation repository.*
-

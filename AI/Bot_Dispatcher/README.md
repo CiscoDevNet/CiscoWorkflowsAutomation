@@ -4,7 +4,7 @@ This directory contains Cisco Workflows assets for a Webex-driven workflow dispa
 
 ## Contents
 
-- `Webinar_Workflow_Dispatcher_Actual.json`: Main dispatcher workflow. This workflow processes inbound Webex webhook payloads, retrieves the original message from Webex, performs basic authorization checks, uses an LLM to interpret the request, and sends responses back into the originating Webex room or thread.
+- `Workflow_Dispatcher.json`: Main dispatcher workflow. This workflow processes inbound Webex webhook payloads, retrieves the original message from Webex, performs basic authorization checks, uses an LLM to interpret the request, and sends responses back into the originating Webex room or thread.
 - `Create_Workflow_Variable_Structure_for_Dispatcher.json`: Helper workflow that looks up another Cisco Workflow by name, retrieves its start configuration, and reduces the input variable schema into a compact JSON structure that can be reused by the dispatcher.
 - `Bot_Association_Curl_Commmands`: Example `curl` commands for associating a Webex bot webhook with a Cisco Workflows webhook endpoint, listing existing webhook associations, and deleting associations.
 

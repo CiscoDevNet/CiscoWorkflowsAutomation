@@ -1,0 +1,1993 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0",
+    "name": "Webinar Workflow Dispatcher Actual",
+    "title": "Webinar Workflow Dispatcher Actual",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "- Generate ISE Device Report\nHelp Data:\n- workflow_skill: Generate ISE Device Report\n- description: \"Generate a Report of ISE Device or Get a Report on a Single Device \"\n- required_data\n- Optional: Device Name\n\nExecute Request:\n{\n\"request_type\": \"execute\",\n\"request_data\": {\n\"workflow_id\": \"02U5L011BVZTF5cKt0EsDgIiCvYrKGVWqC1\",\n\"run_data\": {\n\"input_variables\": [\n{\n\"id\": \"02U5M3LYMSBC83kU4qvbnjbdS0o7geUysQ0\",\n\"properties\": {\n\"value\": \"<Optional: Device Name>\"\n}\n},\n{\n\"id\": \"02U6F1A3VR2C00xRArhMydBBmUIv321tvS1\",\n\"properties\": {\n\"value\": \"<Optional: WebEx ParentID>\"\n}\n},\n{\n\"id\": \"02U6F0Y4VY8LM7WloKUVPvxwl0szbWP27T0\",\n\"properties\": {\n\"value\": \"<WebEx Room ID>\"\n}\n}\n]\n}\n}\n}",
+          "scope": "local",
+          "name": "Generate ISE Device Report",
+          "type": "datatype.string",
+          "description": "This is the definition for a workflow to generate a report of devices within Cisco ISE. If a device name is provided, then a detailed report on that device is created. ",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02UWTZWMX0TLB7cDKjhl1ioHrcTK9ZWpLce",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "*****",
+          "scope": "local",
+          "name": "WebEx Bot Bearer Token",
+          "type": "datatype.secure_string",
+          "description": "This is your unique Webex BOT bearer token to allow API requests. ",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": ""
+        },
+        "unique_name": "variable_workflow_02UWTZWMX1JVW01ZQ4vPznfdzSz2Zul8H2k",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "mkeohane@cisco.com",
+          "scope": "local",
+          "name": "RBAC Allowed List",
+          "type": "datatype.string",
+          "description": "Users in this database are allowed to make requests",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX10WP7BNvoHuKr5aicTlmOKY333",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Bot Message",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX1FGC63tG86xGwkQKfLO5NGsPFU",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "- Meraki - Get Network Configuration Changes Summary\nHelp Data:\n- workflow_skill: Meraki - Get Network Configuration Changes Summary Workflow\n- description: \"Calculate changes to a Meraki Network Configuration over a period of time\",\n- required_data\n- Meraki Network Name\n- Lookback Period in Hours\nExecute Request:\n{\n\"request_type\": \"execute\",\n\"request_data\": {\n\"workflow_id\": \"02U3IB9VJAAVY494ixBQwaLX63dXbPtfcIV\",\n\"run_data\": {\n\"input_variables\": [\n{\n\"id\": \"02U3JHB64KK397LwB0PSKT6WqXJ3ICHVqon\",\n\"properties\": {\n\"value\": \"<WebEx Room ID>\"\n}\n},\n{\n\"id\": \"02U3VGZR5Q38V3rE2HwTlX8Bvpg1rAAkdWS\",\n\"properties\": {\n\"value\": \"<Optional: Webex Session ParentID>\"\n}\n},\n{\n\"id\": \"02U3IB9WQNDN30CY24tTPGaEeCCFBwp8p2C\",\n\"properties\": {\n\"value\": \"<Meraki Network Name>\"\n}\n},\n{\n\"id\": \"02U3IB9WQR7XC1Z8OmrCNKBI5cx1wCpuEql\",\n\"properties\": {\n\"value\": <Lookback Period in Hours>\n}\n}\n]\n}\n}\n}",
+          "scope": "local",
+          "name": "Get Network Configuration Changes Summary",
+          "type": "datatype.string",
+          "description": "This is the Skill definition for this workflow",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX0FDD3MDB9zKYENJngNOJDkhIHA",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "markdown_response",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX0OW52YPa5x7GZZbz8vDtv690vb",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Z test",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX0KF659uGNYJiWYphR1L3Fp6Jry",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "615867249042917302",
+          "scope": "local",
+          "name": "Meraki Organization ID",
+          "type": "datatype.string",
+          "description": "This could be automated with a call from the Meraki API to get organization by name, but simplifying here. ",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX1X4K4O76OOqQFvW9rBOPkZEoII",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "- Meraki Access Point Diagnostic Check\nHelp Data:\n- workflow_skill: Meraki Access Point Diagnostic Check\n- description: \"Run a Diagnostic Check for the Access Points on a Meraki Network\"\n- required_data\n- Meraki Network Name\n\n{\n\"request_type\": \"execute\",\n\"request_data\": {\n\"workflow_id\": \"02U5M8JRHX8CX1B67TucN6F6Qb1BOH8FKQW\",\n\"run_data\": {\n\"input_variables\": [\n{\n\"id\": \"02U5M8JUCX4OM0bKkNj3jbZ77fa9SjiX4xW\",\n\"properties\": {\n\"value\": \"<Network Name>\"\n}\n},\n{\n\"id\": \"02U6HY1EXQU9325jOZAk9tKhV9eTk8FBuab\",\n\"properties\": {\n\"value\": \"<WebEx Room ID>\"\n}\n},\n{\n\"id\": \"02U6HYD2SNSZF6X3KyoKfj2c1WKIP0HHugM\",\n\"properties\": {\n\"value\": \"<Optional WebEx ParentID>\"\n}\n}\n]\n}\n}\n}",
+          "scope": "local",
+          "name": "Meraki Access Point Diagnostic Check",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX2RLZ2Zjoye0mEZ9crWGJKBNdax",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "- Meraki - Scan and List Unconfigured SSIDs\nHelp Data:\n- workflow_skill: Meraki - Scan and List Unconfigured SSIDs\n- description: \"Provide a list all Available WiFI SSIDs on a Meraki Network\",\n- required_data\n- Meraki Network Name\n\nExecute Request:\n{\n\"request_type\": \"execute\",\n\"request_data\": {\n\"workflow_id\": \"02U4XJ4N9BMN32CRrH3szN3cCW8Tsg7eqnV\",\n\"run_data\": {\n\"input_variables\": [\n{\n\"id\": \"02U4XJ4OL7P657OlPxs753ppe71VTIE7tXc\",\n\"properties\": {\n\"value\": \"<Network Name>\"\n}\n},\n{\n\"id\": \"02U4Y5JF2GJ781Qh35pLasDxk9jK9a1C0rs\",\n\"properties\": {\n\"value\": \"<Optional: WebEx Threaded ParentId>\"\n}\n},\n{\n\"id\": \"02U4Y54HWMVSO6gKHHeIJZDZpMIBy8o7SIG\",\n\"properties\": {\n\"value\": \"<WebEx Room ID>\"\n}\n}\n]\n}\n}\n}",
+          "scope": "local",
+          "name": "Meraki - Scan and List Unconfigured SSIDs",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX2DVB6huilqclJZcRpZlu89JgS3",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "- Update Device information in Cisco ISE for Radius\nHelp Data:\n- workflow_skill: Update ISE Device\n- description: \"Update a Device in Cisco ISE with Information Provided\"\n- required_data\n- Optional: Radius Shared Secret\n- Device Name\n- Enable Radius is either true or false. No quotes on a boolean\n\n{\n\"request_type\": \"execute\",\n\"request_data\": {\n\"workflow_id\": \"02U6EMBEE5N5W47IdD82hkoj4IFpkdC54hQ\",\n\"run_data\": {\n\"input_variables\": [\n{\n\"id\": \"02U6EU32D37AY0VaEJUVZOyFITDesekmKa4\",\n\"properties\": {\n\"value\": \"<Optional: Radius Shared Secret>\"\n}\n},\n{\n\"id\": \"02U6EMBFDCHXF2caAO4HHFljHRFYthI49wi\",\n\"properties\": {\n\"value\": \"<Device Name>\"\n}\n},\n{\n\"id\": \"02U6ETGL4B45I6sVRv2GkEGzv17Oe8G6vgg\",\n\"properties\": {\n\"value\": \"<Enable Radius: true | false>\"\n}\n},\n{\n\"id\": \"02U7CDSTOBAEQ3cYAEse3qbFwV0RvvGV65r\",\n\"properties\": {\n\"value\": \"<WebEx Room ID>\"\n}\n},\n{\n\"id\": \"02U7CE1RL3P4H1eTDIX29t6ftwOfXJfv06j\",\n\"properties\": {\n\"value\": \"<Optional: WebEx Parent Thread ID>\"\n}\n}\n]\n}\n}\n}",
+          "scope": "local",
+          "name": "Update ISE Device",
+          "type": "datatype.string",
+          "description": "This workflow will update a Cisco ISE device with new information. To add more parameters, simply add them to the data structure below. ",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX2NAS1UeC2EknBo1ztyRZj0P7Fk",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "- WiFI on Demand with PSK and QR Code Generation\nHelp Data:\n- workflow_skill: WiFI on Demand with PSK and QR Code Generation\n- description: \"Create WiFi Wireless Network and Return QR Code for Access\",\n- required_data\n- WiFi SSID Number\n- WiFi Network Name\n- Meraki Network Name\n\n\nExecute Request:\n{\n\"request_type\": \"execute\",\n\"request_data\": {\n\"workflow_id\": \"02U4U3TGAM24T54PILAYpHCc5BaiLox5gg0\",\n\"run_data\": {\n\"input_variables\": [\n{\n\"id\": \"02U4VE894AHHI4Y8TdU6UTv9dJrebRMrjS4\",\n\"properties\": {\n\"value\": \"<WiFi SSID Number>\"\n}\n},\n{\n\"id\": \"02U4WQUUOSABB7GBSo3ZMYdcNAo8mhNfarp\",\n\"properties\": {\n\"value\": \"<Optional WebEx Thread ParentId>\"\n}\n},\n{\n\"id\": \"02U4VIM8BCXU14ADn5SzRWzeNwfi95xAMei\",\n\"properties\": {\n\"value\": \"<WiFi Name>\"\n}\n},\n{\n\"id\": \"02U4WQNFF7KF56h0RdQMS4YWEEX5oJdRsLV\",\n\"properties\": {\n\"value\": \"<WebEx Room ID>\"\n}\n},\n{\n\"id\": \"02U4U3THLG9VA7gDrACGDIIAQiQmoFqRpHq\",\n\"properties\": {\n\"name\": \"Meraki Network Name\",\n\"value\": \"\"\n}\n}\n]\n}\n}\n}",
+          "scope": "local",
+          "name": "WiFI on Demand with PSK and QR Code Generation",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX1SR1024wggQ2egvPnuOHFFcCaU",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "- Update ServiceNow Incident\nHelp Data:\n- workflow_skill: Update ServiceNow Incident\n- description: \"Updates and existing ServiceNow Ticket with new information\",\n- required_data\n- Incident Number\n- Incident Notes\n\nExecute Request:\n{\n\"request_type\": \"execute\",\n\"request_data\": {\n\"workflow_id\": \"02U4XRE0HXTIA2hPnIlU5UBGB52wxprdCmM\",\n\"run_data\": {\n\"input_variables\": [\n{\n\"id\": \"02U4XRE135VPP0TAvbNZEPeOnQ1qAiTRS9F\",\n\"properties\": {\n\"value\": \"<Incident Number>\"\n}\n},\n{\n\"id\": \"02U57C7TGA1M37EaAb9kR1JBcWJfF2Ga8LH\",\n\"properties\": {\n\"value\": \"<Optional: Webex Thread ParentId>\"\n}\n},\n{\n\"id\": \"02U57BWUKXXHI3ram06t4BcrlHLV0WPLOQa\",\n\"properties\": {\n\"value\": \"<Webex Room Id>\"\n}\n},\n{\n\"id\": \"02U4XRE134I9Q0SQaOHND07LlssxasnCgu3\",\n\"properties\": {\n\"value\": \"<Incident Notes>\"\n}\n}\n]\n}\n}\n}",
+          "scope": "local",
+          "name": "Update ServiceNow Incident",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX04ZD7gejuGvVfFA6I3YKNSRdkc",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "- Meraki - Meraki SSID Diagnostic Analysis\nHelp Data:\n- workflow_skill: Meraki SSID Diagnostic Analysis\n- description: \"Runs a Diagnostic on a Meraki SSID for Debugging purposes\"\n- required_data\n- SSID Name\n- Network Name\n\nExecute Request:\n\n{\n\"request_type\": \"execute\",\n\"request_data\": {\n\"workflow_id\": \"02U5NJJBXW6CR1jjSHowYVLjiwetQYyCp7N\",\n\"run_data\": {\n\"input_variables\": [\n{\n\"id\": \"02U5NJJDESZUD18KhIJpsuol0d0mPuz3FKc\",\n\"properties\": {\n\"value\": \"<SSID Name>\"\n}\n},\n{\n\"id\": \"02U5O9G3MZFQ62aBWEmXP9EzRrNYyAcvBmG\",\n\"properties\": {\n\"value\": \"<WebEx Room ID>\"\n}\n},\n{\n\"id\": \"02U5NJJDETGMD0fLOCwnfxGjZBZ7udk0ovB\",\n\"properties\": {\n\"value\": \"<Network Name>\"\n}\n},\n{\n\"id\": \"02U5OGB6SAWT41j8lol8hrMSNrvDnjEnQMe\",\n\"properties\": {\n\"value\": \"<Optional: WebEx Parent Thread ID>\"\n}\n}\n]\n}\n}\n}",
+          "scope": "local",
+          "name": "Meraki SSID Diagnostic Analysis",
+          "type": "datatype.string",
+          "description": "This is the logic required by the LLM to run this Workflow",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX15EO2HIFzjjXIhlwyqOKKcr5Js",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "- Meraki - Modify VLAN Subnet and DHCP Pool\nHelp Data:\n- workflow_skill: Meraki - Modify VLAN Subnet and DHCP Pool\n- description: \"Change the DHCP Pool Size for a Given Network VLAN\",\n- required_data\n- New Subnet e.g. 10.10.10.0/24\n- Network Name\n- VLAN ID\nExecute Request:\n{\n\"request_type\": \"execute\",\n\"request_data\": {\n\"workflow_id\": \"02U39VDLUSF8U5aXbAJBsst6sQ2xVSThJrd\",\n\"run_data\": {\n\"input_variables\": [\n{\n\"id\": \"02U39VDNEMXF60YOtGX9EgRiVNEPYelsLwV\",\n\"properties\": {\n\"value\": \"<New Subnet: 10.10.10.0/24>\"\n}\n},\n{\n\"id\": \"02U39VDNERBT64GbUBLgtWJzKgKMAtqGDG8\",\n\"properties\": {\n\"value\": \"<Network Name>\"\n}\n},\n{\n\"id\": \"02U39VDNEQTP54yMPWAz4lZeXq2V8EDElSk\",\n\"properties\": {\n\"value\": \"<VLAN ID>\"\n}\n},\n{\n\"id\": \"02U4C4QSZGXND4O2R4yK2FT30JPAaME7rc6\",\n\"properties\": {\n\"value\": \"<WebEx Room ID>\"\n}\n},\n{\n\"id\": \"02U4C54PH3C371q2VcAtDVlsRdRdBtJvAI6\",\n\"properties\": {\n\"value\": \"<Optional: WebEx Session ParentID>\"\n}\n}\n]\n}\n}\n}",
+          "scope": "local",
+          "name": "Meraki - Modify VLAN Subnet and DHCP Pool",
+          "type": "datatype.string",
+          "description": "This is the Definitions for the workflow",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX2IXV6K7cD2q9twLIPdzeZ3TtXK",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "- Create ServiceNow Ticket\nHelp Data:\n- workflow_skill: Create ServiceNow Ticket\n- description: \"Create a new ServiceNow Ticket with Description\",\n- required_data\n- Reporting User\n- Incident Description\n\nExecute Request:\n{\n\"request_type\": \"execute\",\n\"request_data\": {\n\"workflow_id\": \"02U4XPVUZ5CHM6yqbawdnGeZ3WC4W1Tf8cW\",\n\"run_data\": {\n\"input_variables\": [\n{\n\"id\": \"02U5391E44FL52kAbXNZCllY6Y9LVCS67OE\",\n\"properties\": {\n\"value\": \"<Reporting User>\"\n}\n},\n{\n\"id\": \"02U53L5LWTD6N1nN1sHVYRCxZr4iKZweNUo\",\n\"properties\": {\n\"value\": \"<WebEx Room ID>\"\n}\n},\n{\n\"id\": \"02U4XPVVDBVY22H2m1p8vb4K06GqRjUTjlp\",\n\"properties\": {\n\"value\": \"<Incident Description>\"\n}\n},\n{\n\"id\": \"02U53LWZ0EWEN0kiGiKVR2DreNPkGmVUCWz\",\n\"properties\": {\n\"value\": \"<Optional: WebEx Thread ParentId>\"\n}\n}\n]\n}\n}\n}",
+          "scope": "local",
+          "name": "Create ServiceNow Ticket",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX21LJ3SD3ekC2WyWvlmuz2jyiHJ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Payload",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "json"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX1OE924s7xBzQBFnOUSxA1LdoWC",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "- Meraki Switch Port Control with Webex Reporting\nHelp Data:\n- workflow_skill: Meraki Switch Port Control with Webex Reporting\n- description: \"Enable or Disable a Switch Port on a Meraki Network\"\n- required_data\n- The name of the Meraki Network\n- The switch port number\n- The name of the Meraki Organization\n- enable or disable\n- The serial number of the switch\n\n{\n\"request_type\": \"execute\",\n\"request_data\": {\n\"workflow_id\": \"02UGOXW1SHKJP0r3niaBUE558ewEVHlNGDf\",\n\"run_data\": {\n\"input_variables\": [\n{\n\"id\": \"02UGOXW3DS4LB6AUTrityGa6W52qUCUt9nc\",\n\"properties\": {\n\"value\": \"<string: The name of the Meraki Network>\"\n}\n},\n{\n\"id\": \"02UGOXW3DW10Q1CAQpSIuArF9p7KT1rTXw7\",\n\"properties\": {\n\"value\": \"<string: The switch port number>\"\n}\n},\n{\n\"id\": \"02UGOXW3DPK6C2rSuXHSDDfKcwKRatNfMMN\",\n\"properties\": {\n\"value\": \"<string: The name of the Meraki Organization>\"\n}\n},\n{\n\"id\": \"02UGP5YIFNUTG0T0aNEEKCRcDUp55J5cGAc\",\n\"properties\": {\n\"value\": \"<Optional string: WebEx Thread ParentId>\"\n}\n},\n{\n\"id\": \"02UGOXW3DXG6Q5p9uGbqGck6TrpdwrYJgdF\",\n\"properties\": {\n\"value\": \"<string: enable or disable>\"\n}\n},\n{\n\"id\": \"02UGOXW3DW56N5RPaXeGQmhjI6Ktv8QFADh\",\n\"properties\": {\n\"value\": \"<string: The serial number of the switch>\"\n}\n},\n{\n\"id\": \"02UGP5IJH0RVC7LhPNrPPJuvPQ3i8MJKaR9\",\n\"properties\": {\n\"value\": \"<string: WebEx Room ID>\"\n}\n}\n]\n}\n}\n}",
+          "scope": "local",
+          "name": "Meraki Switch Port Control with Webex Reporting",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false,
+          "variable_string_format": "text"
+        },
+        "unique_name": "variable_workflow_02UWTZWMX28KZ5yIgzBI6IARVymH48pPZYl",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "automation_rules": {
+        "type": [
+          "webhook.rule_event"
+        ]
+      },
+      "delete_workflow_instance": false,
+      "description": "This workflow processes a WebEx Bot\nrequest to dispatch workflow ~~skills.~~\n\nThis workflow is capable of listing workflows, running workflows,\n\nYour Targets Need to be Setup\n    Workflows HTTP\n    AI LLM\n    WebEx HTTP\n  Meraki Org ID Variable for API Calls\n  Your Webex BOT Bearer Token Variable",
+      "display_name": "Webinar Workflow Dispatcher Actual",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_02U87OQCQQGNM2myGC8hZUCzHSxyp4jRFnD",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_02UWTZWUHRB1B53pGYcVRYPBJ7HTfCwba9b",
+        "name": "Group",
+        "title": "Process Webhook Message from BOT",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "When a webhook launches a workflow, we are able to retrieve any parameters passed to that workflow by referencing a global variable that has been passed along ",
+          "display_as_suggestion": false,
+          "display_name": "Process Webhook Message from BOT",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02UWTZWYGRX4Q5XCZ0C4Sx6m31jdstoA4Mb",
+            "name": "Set Variables",
+            "title": "Get WebEx Bot Parameters",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "description": "Set Variables",
+              "display_name": "Get WebEx Bot Parameters",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX1OE924s7xBzQBFnOUSxA1LdoWC$",
+                  "variable_value_new": "$rule.webhook rule_event.output.request_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02UWTZX0UGGTH1GbAR60jro67jmk6jKu3h2",
+            "name": "JSONPath Query",
+            "title": "Get the WebEx Channel Ids from the Bot",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "description": "We are going to use a JSON path query to pull out the IDs of the WebEx channel that sent us a request. \n\nThe message ID is the unique message received from the WebEx Bot\n\nWe are not using parent ID, even though I am pulling it out of the JSON body. This is more for testing, and I'm leaving it in here for that purpose. ",
+              "display_name": "Get the WebEx Channel Ids from the Bot",
+              "input_json": "$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX1OE924s7xBzQBFnOUSxA1LdoWC$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$.data.id",
+                  "jsonpath_query_name": "botMessageId",
+                  "jsonpath_query_type": "string",
+                  "set_default_value": false,
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                {
+                  "default_value": "NULL",
+                  "jsonpath_query": "$.data.parentId",
+                  "jsonpath_query_name": "parentId",
+                  "jsonpath_query_type": "string",
+                  "set_default_value": true,
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_02UWTZX379IS360ewLBMhQg8Uybst6bY18F",
+        "name": "Group",
+        "title": "Derive WebEx Message from the Bot",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "The way a WebEx bot works is it will send you a notification, but then you have to ask it for the actual message that it is passing. ",
+          "display_as_suggestion": false,
+          "display_name": "Derive WebEx Message from the Bot",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02UWTZX7HEF2F4IPMvOGr0L1eYzwxewUh9v",
+            "name": "HTTP Request",
+            "title": "Retrieve WebEx Bot Message",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "allow_headers_redirect": false,
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "custom_headers": [
+                {
+                  "name": "Authorization",
+                  "value": "Bearer $workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX1JVW01ZQ4vPznfdzSz2Zul8H2k$"
+                }
+              ],
+              "description": "Issue an HTTP request to Webex, passing in the message ID we received in the initial call \n\nFor the bearer token, use the Webex Bot API key you received when you created the bot initially. We are using that key as a local variable in a secure string. ",
+              "display_name": "Retrieve WebEx Bot Message",
+              "method": "GET",
+              "relative_url": "/v1/messages/$activity.definition_activity_02UWTZX0UGGTH1GbAR60jro67jmk6jKu3h2.output.jsonpath_queries.botMessageId$",
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_02PTC9GZK4CAZ1XTzn7pRaLDlMt2e04uWPp"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3",
+            "name": "JSONPath Query",
+            "title": "Retrieve the Message Text and Room Info and Requestor",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "description": "Webex will send you back the contents of the original message sent from the bot. It will also include the room ID from where the message originated, and if it originated inside a thread, it will give you the parent ID of that thread. We will use these later to send messages back to the Webex room. \n\nWe can also tell who sent us this message from the channel, and we will store that. ",
+              "display_name": "Retrieve the Message Text and Room Info and Requestor",
+              "input_json": "$activity.definition_activity_02UWTZX7HEF2F4IPMvOGr0L1eYzwxewUh9v.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$.text",
+                  "jsonpath_query_name": "messageText",
+                  "jsonpath_query_type": "string",
+                  "set_default_value": false,
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                {
+                  "jsonpath_query": "$.roomId",
+                  "jsonpath_query_name": "roomId",
+                  "jsonpath_query_type": "string",
+                  "set_default_value": false,
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                {
+                  "default_value": "null",
+                  "jsonpath_query": "$.parentId",
+                  "jsonpath_query_name": "parentid",
+                  "jsonpath_query_type": "string",
+                  "set_default_value": true,
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                {
+                  "jsonpath_query": "$.personEmail",
+                  "jsonpath_query_name": "personEmail",
+                  "jsonpath_query_type": "string",
+                  "set_default_value": false,
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02UWTZXCMDE6Y2GO0Z2n3VyIlsN8VLNItK8",
+            "name": "Split String",
+            "title": "Remove the Bot Name from the Message",
+            "type": "core.splitstring",
+            "base_type": "activity",
+            "properties": {
+              "boundaries": [
+                {
+                  "boundary": "^\\S+\\s*"
+                }
+              ],
+              "continue_on_failure": false,
+              "description": "Split String",
+              "display_name": "Remove the Bot Name from the Message",
+              "input_string": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.messageText$",
+              "skip_execution": false,
+              "use_regexp": true
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_02UWTZXEXWBF53mqNoTuflnxctvV40WFoCU",
+        "name": "Group",
+        "title": "Process the Request",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "Group",
+          "display_as_suggestion": false,
+          "display_name": "Process the Request",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02UWTZXIV811Q2q30tCZdtpEe2AWwcAmCM7",
+            "name": "Find String",
+            "title": "Authorization Check",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "description": "Validate that the user making the WebEx bot request is authorized to do so. \n\nWe use a local variable with the names of the users that we will allow to run this bot. ",
+              "display_name": "Authorization Check",
+              "searched_string": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.personEmail$",
+              "skip_execution": false,
+              "source": "$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX10WP7BNvoHuKr5aicTlmOKY333$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02UWTZXLFJSO20oiSLFvZsgLaIV1TyMehts",
+            "name": "Condition Block",
+            "title": "Authorization Enforcement",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "conditions": [],
+              "continue_on_failure": false,
+              "description": "If the user is not authorized to be running workflow scripts, we will catch that here. ",
+              "display_name": "Authorization Enforcement",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_02UWTZXNRZ1HX7fnUPPFWaCSmQWAX7DDKXA",
+                "name": "Condition Branch",
+                "title": "Sorry, no Soup for you!!!",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_02UWTZXIV811Q2q30tCZdtpEe2AWwcAmCM7.output.has_match$",
+                    "operator": "eq",
+                    "right_operand": false
+                  },
+                  "continue_on_failure": false,
+                  "description": "The person requesting commands from the WebEx bot is not on our allowed list. ",
+                  "display_name": "Sorry, no Soup for you!!!",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_02UWTZXRFWD9C3BFPMl5QKzYX5xPVFu4Xxe",
+                    "name": "WebEx Message Service",
+                    "title": "WebEx Message Service",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "description": "This Service is Used by the WebEx Bot Dispatcher to send messages back to WebEx Rooms",
+                      "display_name": "WebEx Message Service",
+                      "input": {
+                        "variable_workflow_02U4RTBWK6QR52Al9b5whDZzRKHf7fAVU5M": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.roomId$",
+                        "variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.parentid$",
+                        "variable_workflow_02U4RYQ99O98L2BDMPIHZPl1roUbv1v3YPg": "text",
+                        "variable_workflow_02U4S5E7RRJ5T1bjZKLriFCKvvHryKYJGHE": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.personEmail$does not have required permissions"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "execute_on_this_target": true,
+                        "target_id": "definition_target_02PTC9GZK4CAZ1XTzn7pRaLDlMt2e04uWPp",
+                        "target_type": "web-service.endpoint"
+                      },
+                      "workflow_id": "definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk",
+                      "workflow_name": "WebEx Message Service"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02UWTZXUN8YIM04MzeIaA4p2k62jXmnu7TO",
+                    "name": "Completed",
+                    "title": "Dispatch Completed",
+                    "type": "logic.completed",
+                    "base_type": "activity",
+                    "properties": {
+                      "completion_type": "succeeded",
+                      "continue_on_failure": false,
+                      "description": "Completed action",
+                      "display_name": "Dispatch Completed",
+                      "result_message": "User Denied Access",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_02UWTZXXDWWWT1KL6dRzY9ZRoO1teAjq6DL",
+            "name": "WebEx Message Service",
+            "title": "WebEx Message Service",
+            "type": "workflow.sub_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "description": "Inform the sender that we are calculating their request. ",
+              "display_name": "WebEx Message Service",
+              "input": {
+                "variable_workflow_02U4RTBWK6QR52Al9b5whDZzRKHf7fAVU5M": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.roomId$",
+                "variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.parentid$",
+                "variable_workflow_02U4RYQ99O98L2BDMPIHZPl1roUbv1v3YPg": "text",
+                "variable_workflow_02U4S5E7RRJ5T1bjZKLriFCKvvHryKYJGHE": "Working on it...."
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "execute_on_this_target": true,
+                "target_id": "definition_target_02PTC9GZK4CAZ1XTzn7pRaLDlMt2e04uWPp",
+                "target_type": "web-service.endpoint"
+              },
+              "workflow_id": "definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk",
+              "workflow_name": "WebEx Message Service"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_02UWTZY0LYOPB2AdG8I3LUPgVdmKaM2fl3V",
+        "name": "LLM Prompt",
+        "title": "Calculate Specific Request from Bot",
+        "type": "activity.openai_structured_output_agent",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "chat_messages": [
+            {
+              "content": "Please process this Webex Bot request using the parameters below and the rules from the System Prompt provided. \n\nWebEx Bot Request: $activity.definition_activity_02UWTZXCMDE6Y2GO0Z2n3VyIlsN8VLNItK8.output.parts[-1]$\nWebEx Room Id: $activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.roomId$\nWebex Session ParentID: $activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.parentid$\n\n\nExample JSON Data Structures to return:\n    Help Request:\n    {\n        \"request_type\": \"help\",\n        \"request_data\": {\n            \"workflow_skill\": \"Meraki - Get Network Configuration Changes Summary\",\n            \"help_data\": {\n                \"description\": \"This is a help request for the Workflow Skill, 'Meraki - Get Network Configuration Changes Summary Workflow.'\",\n                \"required_data\": {\n                    \"network_name\": \"The name of the network to get the configuration changes summary for.\",\n                    \"time_period\": \"The length of time in hours to look back for configuration changes.\"\n                }\n            }\n        }\n    }\n    Execute Request:\n    {\n        \"request_type\": \"execute\",\n        \"request_data\": {\n            \"workflow_skill\": \"Meraki - Get Network Configuration Changes Summary\",\n            \"run_data\": {\n                \"input_variables\": [\n                    {\n                        \"id\": \"02Q8JAJK4GR7I6gP2Ou3PqdPGj5nMeyaLvQ\",\n                        \"properties\": {\n                            \"value\": \"<IP Subnet for example: 10.10.10.1/30>\"\n                        }\n                    }\n                ]\n            }\n        }\n    }\n\n+++++++++++++++++++++++++++++++++\n\nWorkflow Skills:\n\n\n    \n$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX0FDD3MDB9zKYENJngNOJDkhIHA$\n\n$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX2IXV6K7cD2q9twLIPdzeZ3TtXK$\n\n$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX1SR1024wggQ2egvPnuOHFFcCaU$\n\n$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX2DVB6huilqclJZcRpZlu89JgS3$\n\n$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX21LJ3SD3ekC2WyWvlmuz2jyiHJ$\n\n$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX04ZD7gejuGvVfFA6I3YKNSRdkc$\n\n$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX15EO2HIFzjjXIhlwyqOKKcr5Js$\n\n$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX0TLB7cDKjhl1ioHrcTK9ZWpLce$\n\n$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX2NAS1UeC2EknBo1ztyRZj0P7Fk$\n\n$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX2RLZ2Zjoye0mEZ9crWGJKBNdax$\n\n$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX28KZ5yIgzBI6IARVymH48pPZYl$",
+              "role": "user"
+            }
+          ],
+          "continue_on_failure": false,
+          "description": "This is the decision brain of the dispatcher. We will pass in all the information we received from the WebEx bot, then we will provide all the descriptions of the workflows that we want to include in our dispatcher. \n\nThe system prompt describes the guardrails for what this LLM should do, and the user prompt is the specific ask. ",
+          "display_name": "Calculate Specific Request from Bot",
+          "modelName": "gpt-5-mini",
+          "output_format": [],
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "systemPrompt": "You are a Workflow Dispatcher. You process incoming requests from WebEx Bots sending Webhook messages.\n\nYour job is to:\n\n    1. Parse the incoming request from the WebEx Bot. The Request ask will be in the variable \"WebEx Bot Request\" below.\n    2. Your goal is to return a JSON Data Structure that matches exactly one of the request schemas below.\n    3. There are 5 type of Requests this could be:\n      - Help Request - User is asking a question for help\n      - Execute a Workflow Request - User is asking to run a workflow\n      - Plan Request - User is asking for a Plan. We build a structure for the next LLM to solve.\n      - Generate a Workflow - User is asking to Generate or Build a workflow and will pass in a specific ID value as part of the request\n      - Search for matching Workfows - This request specifically has \"Search for\" in the request\n    4. There are many Workflow Skills potentially listed below in the section \"Workflow Skills:\". You need to determine the most relevant skill based on \"Webex Bot Request\" below, but only for Help and Execute requests. Do not select or include a workflow skill for Plan or Generate requests.\n        - If there is no correct match to a workflow skill from the \"WebEx Bot Request\":\n            - Indicate \"No Match\" in the \"workflow_skill\"\n            - In \"description\" try and answer the question asked as best you can assuming no Workflow Skill matched.\n            - Required Data fields can remain empty (as if no parameters) when no skill has been found\n        - If a request comes asking for a list of supported or available \"workflows\", \"skills\", or \"capabilities\":\n            - Treat as a help message and return back each of the values in the description fields for each of \"Workflow Skills\" from thesection below, as a list.\n              Provide it in the \"Description\" field of the Return Help Message\n    5. Return a properly formatted JSON Structure that has the section filled out appropriately for the request type (Help, Execute, Plan, Generate).\n      - The format of each type is provided in the Examples Section below.\n      - Never combine fields from different request types.\n      - Use only the fields explicitly allowed for the detected request type.\n    6. If the request is an Execute request, and there is not enough data to fill out the variable structure, return instead a help message indicating which fields need to be provided.\n    7. The information on each Workflow Skill is provied in the Section below called \"Workflow Skills\".\n    8. Two Parameters will be included in the execute request that are not explicitly sent by the WebEx Bot. These are:\n        - WebEx Room ID\n        - Optional: WebEx Session ParentID \n        Please automatically include them as specified in the Execute Request Section for Each Workflow Skill.\n        If no Webex Session ParentID is provided, that entry in the input_variables JSON should be ommitted.\n    9. In an Execute Request, if an optional parameter is not provided by user, then that input_variable should be ommitted. Do not send an empty string.\n    10. If this is Plan Request, then the type will be \"plan\" and the user request will be passed on in \"message_prompt\" in the data structure as shown below in \"Example JSON Data Structures\" under \"Plan Request\".\n      - Important: The data structure generated for Plan is different than Help or Execute Requests.\n      - A Plan Request does not match, select, or include any workflow skill.\n      - Only create the structure using the exact fields provided in the example \"Plan Request\". Do not add additional fields.\n      - For Plan Requests, do not generate any of the following fields: \"workflow_skill\", \"workflow_id\", \"help_data\", \"run_data\", \"plan_data\", \"description\", \"steps\", \"notes\", \"required_data\", or \"input_variables\".\n      - Do not try to solve the question being asked by the user when the type is \"Plan\". Your job is only to create the data structure.\n      - Copy the user's original request text into \"message_prompt\".\n      - If the request is classified as \"plan\", output only the Plan Request object and nothing else.\n    11. If this is Generate Request, then the type will be \"generate\" and the user request will be passed on in \"message_prompt\" in the data structure as shown below in \"Example JSON Data Structures\" under \"Generate Request\".\n      - Important: The data structure generated for Generate is different than Help, Execute, or Plan Requests.\n      - Here is an example prompt, \"Generate a workflow based on ID: 23a27e8d-c847-4f23-bd59-965d7ff1d25f\"\n      - A Generate Request does not match, select, or include any workflow skill.\n      - Only create the structure using the exact fields provided in the example \"Generate Request\". Do not add additional fields.\n      - Important Copy the thread_id from original request text. The format will look something like this: \"f8941ca8-a574-4a89-91a6-57182131df7e\"\n      - Use that ID as request_data.thread_id below.\n\nRequest-type-specific allowed fields:\n    - Help Request:\n      - \"request_type\"\n      - \"request_data.workflow_skill\"\n      - \"request_data.help_data\"\n    - Execute Request:\n      - \"request_type\"\n      - \"request_data.workflow_skill\"\n      - \"request_data.workflow_id\"\n      - \"request_data.run_data\"\n    - Plan Request:\n      - \"request_type\"\n      - \"request_data.message_prompt\"\n    - Generate Request:\n      - \"request_type\"\n      - \"request_data.thread_id\"",
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_02OGWOA691Y2R6SenTABdjAhM0VxK5p6Bov"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02UWTZY6NJ0FQ0OZM9mx4IUpoCptDLD7jkN",
+        "name": "Group",
+        "title": "Calculate Response",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "Group",
+          "display_as_suggestion": false,
+          "display_name": "Calculate Response",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02UWTZYALKC7W6gBdqYoe71pFbOKYwKSpGv",
+            "name": "JSONPath Query",
+            "title": "Determine Operation",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "description": "Extract from the request calculations what exact operation we are going to perform. ",
+              "display_name": "Determine Operation",
+              "input_json": "$activity.definition_activity_02UWTZY0LYOPB2AdG8I3LUPgVdmKaM2fl3V.output.content$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$.request_type",
+                  "jsonpath_query_name": "request_type",
+                  "jsonpath_query_type": "string",
+                  "set_default_value": false,
+                  "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_02UWTZYCYWO6807jnngqpjwqO76nKQ1DgJe",
+            "name": "Condition Block",
+            "title": "Help, Execution, or Plan",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "conditions": [],
+              "continue_on_failure": false,
+              "description": "If-Else condition block",
+              "display_name": "Help, Execution, or Plan",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_02UWTZYF4XBES6IaVWx24JEo1C7ZS7TWQjW",
+                "name": "Condition Branch",
+                "title": "Help Branch",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_02UWTZYALKC7W6gBdqYoe71pFbOKYwKSpGv.output.jsonpath_queries.request_type$",
+                    "operator": "eq",
+                    "right_operand": "help"
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "Help Branch",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_02UWTZYHRUZ3F0oc6xGuobfTBgjJNzG9yEU",
+                    "name": "Execute Python Script",
+                    "title": "Generates a WebEx-safe Markdown summary",
+                    "type": "python3.script",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "description": "Execute Python Script",
+                      "display_name": "Generates a WebEx-safe Markdown summary",
+                      "script": "\"\"\"\nWorkflow Help Formatter Script\n\nPurpose:\n    Generates a WebEx-safe Markdown summary for workflow help requests. \n    The script parses an input JSON payload, extracts workflow metadata, \n    and formats it into a structured Markdown response suitable for chat delivery.\n\nInput:\n    - Expects a JSON string passed via sys.argv[1]\n    - Payload structure:\n        {\n            \"request_type\": \"help\",\n            \"request_data\": {\n                \"workflow_skill\": \"<name>\",\n                \"help_data\": {\n                    \"description\": \"<text>\",\n                    \"required_data\": { \"<param>\": \"<description>\" },\n                    \"missing_fields\": [\"<param1>\", \"<param2>\"],\n                    \"note\": \"<optional next step>\"\n                }\n            }\n        }\n\nBehavior:\n    - Validates request_type == \"help\"\n    - Safely escapes characters for Markdown compatibility\n    - Separates parameters into:\n        • Provided Parameters\n        • Missing Required Parameters\n    - Falls back to generic required parameter listing if none provided\n    - Adds optional \"Next Step\" guidance if present\n    - Outputs a newline-escaped Markdown string for WebEx delivery\n\nOutput:\n    - Sets `result` variable to a fully formatted Markdown string\n    - Newlines are escaped (\"\\\\n\") to ensure compatibility with downstream APIs\n\nNotes:\n    - Designed for use in automation/workflow engines (e.g., WebEx bots, Cisco Workflows)\n    - Prevents malformed Markdown issues by sanitizing input values\n    - Handles missing or malformed JSON input gracefully\n\"\"\"\n\nimport sys\nimport json\n\n\ndef safe(val):\n    if val is None:\n        return \"\"\n    val = str(val)\n    val = val.replace(\"\\\\\", \"\\\\\\\\\")\n    val = val.replace('\"', '\\\\\"')\n    return val\n\n\ntry:\n    payload = json.loads(sys.argv[1]) if len(sys.argv) > 1 else {}\nexcept Exception:\n    payload = {}\n\n\nif payload.get(\"request_type\") != \"help\":\n    markdown_summary = \"Invalid help request.\"\n\nelse:\n\n    data = payload.get(\"request_data\", {})\n    skill = safe(data.get(\"workflow_skill\", \"Unknown Skill\"))\n\n    help_data = data.get(\"help_data\", {})\n    description = safe(help_data.get(\"description\", \"No description available.\"))\n\n    required_data = help_data.get(\"required_data\", {})\n    missing_fields = help_data.get(\"missing_fields\", [])\n    note = safe(help_data.get(\"note\", \"\"))\n\n    block = \"\"\n    block += \"### 🤖 Workflow Help\\n\\n\"\n    block += f\"**Skill:** {skill}\\n\\n\"\n    block += f\"**Description**\\n{description}\\n\\n\"\n\n    if required_data:\n\n        block += \"---\\n\\n\"\n\n        provided = []\n        missing = []\n\n        for param, val in required_data.items():\n\n            param_safe = safe(param)\n            val_safe = safe(val)\n\n            if param in missing_fields:\n                missing.append((param_safe, val_safe))\n            else:\n                provided.append((param_safe, val_safe))\n\n        if provided:\n            block += \"✅ **Provided Parameters**\\n\\n\"\n            for p, v in provided:\n                block += f\"• **{p}**\\n  {v}\\n\\n\"\n\n        if missing:\n            block += \"⚠️ **Missing Parameters (Required)**\\n\\n\"\n            for p, v in missing:\n                block += f\"• **{p}**\\n  {v}\\n\\n\"\n\n        # Generic help case (nothing missing yet)\n        if not provided and not missing:\n            block += \"**Required Parameters**\\n\\n\"\n            for param, desc in required_data.items():\n                block += f\"• **{safe(param)}**\\n  {safe(desc)}\\n\\n\"\n\n    else:\n        block += \"This workflow does not require any parameters.\\n\\n\"\n\n    if note:\n        block += \"---\\n\\n\"\n        block += f\"📝 **Next Step**\\n{note}\\n\"\n\n    markdown_summary = block\n\n\nmarkdown_summary = markdown_summary.replace(\"\\n\", \"\\\\n\")\n\nresult = markdown_summary",
+                      "script_arguments": [
+                        "$activity.definition_activity_02UWTZY0LYOPB2AdG8I3LUPgVdmKaM2fl3V.output.content$"
+                      ],
+                      "script_queries": [
+                        {
+                          "script_query": "result",
+                          "script_query_name": "markdown_summary",
+                          "script_query_type": "string"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02UWTZYK90Z970xAHrD9mCa4iHY4kCVbAHS",
+                    "name": "Set Variables",
+                    "title": "Set Variables",
+                    "type": "core.set_multiple_variables",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "description": "Set Variables",
+                      "display_name": "Set Variables",
+                      "skip_execution": false,
+                      "variables_to_update": [
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX0OW52YPa5x7GZZbz8vDtv690vb$",
+                          "variable_value_new": "$activity.definition_activity_02UWTZYHRUZ3F0oc6xGuobfTBgjJNzG9yEU.output.script_queries.markdown_summary$"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_02UWTZYMPI8TY2PaYRwy37CyW5oDNY4Lpad",
+                "name": "Condition Branch",
+                "title": "Execution Branch",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_02UWTZYALKC7W6gBdqYoe71pFbOKYwKSpGv.output.jsonpath_queries.request_type$",
+                    "operator": "eq",
+                    "right_operand": "execute"
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "Execution Branch",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_02UWTZYPEGAYK4ZLx1VuTPISVGLyAS6Ce97",
+                    "name": "JSONPath Query",
+                    "title": "Get Execution Parameters",
+                    "type": "corejava.jsonpathquery",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "description": "JSONPath Query to get value in JSON",
+                      "display_name": "Get Execution Parameters",
+                      "input_json": "$activity.definition_activity_02UWTZY0LYOPB2AdG8I3LUPgVdmKaM2fl3V.output.content$",
+                      "jsonpath_queries": [
+                        {
+                          "jsonpath_query": "$..workflow_id",
+                          "jsonpath_query_name": "workflow_id",
+                          "jsonpath_query_type": "string",
+                          "set_default_value": false,
+                          "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                        },
+                        {
+                          "jsonpath_query": "$.request_data.run_data",
+                          "jsonpath_query_name": "input_variables",
+                          "jsonpath_query_type": "string",
+                          "set_default_value": false,
+                          "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02UWTZYRS2FWN0aff5SueQlEnPZUqpF369U",
+                    "name": "HTTP Request",
+                    "title": "Launch Workflows via API Request (HTTP)",
+                    "type": "web-service.http_request",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "allow_auto_redirect": true,
+                      "allow_headers_redirect": false,
+                      "body": "$activity.definition_activity_02UWTZYPEGAYK4ZLx1VuTPISVGLyAS6Ce97.output.jsonpath_queries.input_variables$",
+                      "continue_on_error_status_code": false,
+                      "continue_on_failure": false,
+                      "description": "HTTP Request",
+                      "display_name": "Launch Workflows via API Request (HTTP)",
+                      "method": "POST",
+                      "relative_url": "/api/automate/organizations/$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX1X4K4O76OOqQFvW9rBOPkZEoII$/v1/workflows/start?workflow_id=$activity.definition_activity_02UWTZYPEGAYK4ZLx1VuTPISVGLyAS6Ce97.output.jsonpath_queries.workflow_id$",
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target": true
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02UWTZYUEUZLT0W1G4vZ7A4pi6zayw9idW4",
+                    "name": "Group",
+                    "title": "Need to Add Error Checking here ",
+                    "type": "logic.group",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "description": "Group",
+                      "display_as_suggestion": false,
+                      "display_name": "Need to Add Error Checking here ",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_02UWTZYZ691336MHRRQnQcKHnLpc4StGZjY",
+                        "name": "WebEx Message Service",
+                        "title": "WebEx Message Service",
+                        "type": "workflow.sub_workflow",
+                        "base_type": "subworkflow",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "description": "Inform the sender that we are calculating their request. ",
+                          "display_name": "WebEx Message Service",
+                          "input": {
+                            "variable_workflow_02U4RTBWK6QR52Al9b5whDZzRKHf7fAVU5M": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.roomId$",
+                            "variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.parentid$",
+                            "variable_workflow_02U4RYQ99O98L2BDMPIHZPl1roUbv1v3YPg": "text",
+                            "variable_workflow_02U4S5E7RRJ5T1bjZKLriFCKvvHryKYJGHE": "Executing Workflow..."
+                          },
+                          "runtime_user": {
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "execute_on_this_target": true,
+                            "target_id": "definition_target_02PTC9GZK4CAZ1XTzn7pRaLDlMt2e04uWPp",
+                            "target_type": "web-service.endpoint"
+                          },
+                          "workflow_id": "definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk",
+                          "workflow_name": "WebEx Message Service"
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_02UWTZZ24FOJI1o6FQuiKTDrsNBxHhNwlb8",
+                    "name": "Completed",
+                    "title": "Execution continues in Each Skill. Dispatch Complete.",
+                    "type": "logic.completed",
+                    "base_type": "activity",
+                    "properties": {
+                      "completion_type": "succeeded",
+                      "continue_on_failure": false,
+                      "description": "The Workflow Called will send a response",
+                      "display_name": "Execution continues in Each Skill. Dispatch Complete.",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_02UWU00RK4JC43ClHxrAIdMP3Hgso79jBMB",
+                "name": "Condition Branch",
+                "title": "Search for Workflow",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_02UWTZYALKC7W6gBdqYoe71pFbOKYwKSpGv.output.jsonpath_queries.request_type$",
+                    "operator": "eq",
+                    "right_operand": "search"
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "Search for Workflow",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_02UWU00UWOG7A6SF1c5FyVmeIzKxduoTfjk",
+                    "name": "WebEx Message Service",
+                    "title": "WebEx Message Service",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "description": "Inform the sender that we are calculating their request. ",
+                      "display_name": "WebEx Message Service",
+                      "input": {
+                        "variable_workflow_02U4RTBWK6QR52Al9b5whDZzRKHf7fAVU5M": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.roomId$",
+                        "variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.parentid$",
+                        "variable_workflow_02U4RYQ99O98L2BDMPIHZPl1roUbv1v3YPg": "text",
+                        "variable_workflow_02U4S5E7RRJ5T1bjZKLriFCKvvHryKYJGHE": "Searching All Workflows...."
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "execute_on_this_target": true,
+                        "target_id": "definition_target_02PTC9GZK4CAZ1XTzn7pRaLDlMt2e04uWPp",
+                        "target_type": "web-service.endpoint"
+                      },
+                      "workflow_id": "definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk",
+                      "workflow_name": "WebEx Message Service"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02UWU00XXIPM173BaPHq85wPe2swqL8fcku",
+                    "name": "JSONPath Query",
+                    "title": "JSONPath Query",
+                    "type": "corejava.jsonpathquery",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "description": "JSONPath Query to get value in JSON",
+                      "display_name": "JSONPath Query",
+                      "input_json": "$activity.definition_activity_02UWTZY0LYOPB2AdG8I3LUPgVdmKaM2fl3V.output.content$",
+                      "jsonpath_queries": [
+                        {
+                          "jsonpath_query": "$..message_prompt",
+                          "jsonpath_query_name": "message_prompt",
+                          "jsonpath_query_type": "string",
+                          "set_default_value": false,
+                          "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02UWU010HU0L54DNwDdpciatEDY8HJfCpD1",
+                    "name": "HTTP Request",
+                    "title": "Get all Workflows",
+                    "type": "web-service.http_request",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "allow_auto_redirect": true,
+                      "allow_headers_redirect": false,
+                      "continue_on_error_status_code": false,
+                      "continue_on_failure": false,
+                      "description": "HTTP Request",
+                      "display_name": "Get all Workflows",
+                      "method": "POST",
+                      "relative_url": "/api/automate/organizations/$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX1X4K4O76OOqQFvW9rBOPkZEoII$/v1.1/workflows?limit=600",
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "use_workflow_target": true
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02UWU012VN6MA5Jc0ShToevXqdfTh90Ozt9",
+                    "name": "LLM Prompt",
+                    "title": "LLM Prompt",
+                    "type": "activity.openai_structured_output_agent",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "chat_messages": [
+                        {
+                          "content": "Here is the API of all available workflows:\n$activity.definition_activity_02UWU010HU0L54DNwDdpciatEDY8HJfCpD1.output.response_body$\n\nHere is what the user wants to find:\n$activity.definition_activity_02UWU00XXIPM173BaPHq85wPe2swqL8fcku.output.jsonpath_queries.message_prompt$",
+                          "role": "user"
+                        }
+                      ],
+                      "continue_on_failure": false,
+                      "description": "This Activity facilitates comprehensive interaction with Large Language Models (LLMs), allowing users to craft detailed prompts, manage conversational context through chat messages, and precisely define the structure of the expected output. It is designed to enable the generation and extraction of structured data from LLMs, supporting integration with various LLM providers like OpenAI and Azure AI.",
+                      "display_name": "LLM Prompt",
+                      "modelName": "gpt-5-mini",
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "systemPrompt": "You are a processor of Workflow APIs to help find information on behalf of the user.\n\nGiven a large API result and a query from the user, your job is to find as many Workflows, name and description, from that API response and return this in a well formed manner back to the user. \n\nCreate a markdown file that contains as many matches to the provided query as is relevant. Provide back:\n1. Name of Workflow\n2. Description of the Worfklow.\n\nThe Markdown should be in a format that can be sent in a WebEx Message,meaning newlines applied and anything that requires escapes are accounted for.",
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_02OGWOA691Y2R6SenTABdjAhM0VxK5p6Bov"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02UWU015QO4E40ks7QKxUZsojldHrHWhjeM",
+                    "name": "Execute Python Script",
+                    "title": "Execute Python Script",
+                    "type": "python3.script",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "description": "Execute Python Script",
+                      "display_name": "Execute Python Script",
+                      "script": "import sys\nimport re\nimport json\n\nraw_input = sys.argv[1]\n\ntext = raw_input.strip()\n\n# Normalize unicode\ntext = text.replace(\"“\", '\"').replace(\"”\", '\"').replace(\"’\", \"'\").replace(\"–\", \"-\")\n\n# Normalize whitespace\ntext = re.sub(r'\\s+', ' ', text)\n\n# ---- STRUCTURE HEURISTICS ----\n\n# Headers\ntext = re.sub(r'(#{1,6}\\s*)', r'\\n\\1', text)\n\n# Bold sections (often workflow names)\ntext = re.sub(r'\\s(\\*\\*[^*]+\\*\\*)', r'\\n\\n\\1', text)\n\n# Numbered lists\ntext = re.sub(r'\\s(\\d+\\.\\s+)', r'\\n\\1', text)\n\n# Bullet points\ntext = re.sub(r'\\s([-*]\\s+)', r'\\n\\1', text)\n\n# Common section labels\ntext = re.sub(\n    r'\\s(Description:|Features:|Prerequisites:|Notes:|Required Inputs:|Limitations:)',\n    r'\\n\\1',\n    text\n)\n\n# Light sentence splitting (prevents blobs)\ntext = re.sub(r'\\.\\s+(?=[A-Z])', '.\\n', text)\n\n# Cleanup\ntext = re.sub(r'\\n{3,}', '\\n\\n', text).strip()\n\n# JSON safe\nwebex_markdown = json.dumps(text)[1:-1]\n\nprint(webex_markdown)",
+                      "script_arguments": [
+                        "$activity.definition_activity_02UWU012VN6MA5Jc0ShToevXqdfTh90Ozt9.output.content$"
+                      ],
+                      "script_queries": [
+                        {
+                          "script_query": "webex_markdown",
+                          "script_query_name": "webex_safe",
+                          "script_query_type": "string"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02UWU018DY6JG6KIuRXVSTeTm7sQb0AKC7d",
+                    "name": "Set Variables",
+                    "title": "Set Variables",
+                    "type": "core.set_multiple_variables",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "description": "Set Variables",
+                      "display_name": "Set Variables",
+                      "skip_execution": false,
+                      "variables_to_update": [
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX0OW52YPa5x7GZZbz8vDtv690vb$",
+                          "variable_value_new": "$activity.definition_activity_02UWU015QO4E40ks7QKxUZsojldHrHWhjeM.output.script_queries.webex_safe$"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02UWU01BM18QF6pJHJdi3YuqRZuBCBlrDAV",
+                    "name": "WebEx Message Service",
+                    "title": "WebEx Message Service",
+                    "type": "workflow.sub_workflow",
+                    "base_type": "subworkflow",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "description": "Inform the sender that we are calculating their request. ",
+                      "display_name": "WebEx Message Service",
+                      "input": {
+                        "variable_workflow_02U4RTBWK6QR52Al9b5whDZzRKHf7fAVU5M": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.roomId$",
+                        "variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.parentid$",
+                        "variable_workflow_02U4RYQ99O98L2BDMPIHZPl1roUbv1v3YPg": "markdown",
+                        "variable_workflow_02U4S5E7RRJ5T1bjZKLriFCKvvHryKYJGHE": "$activity.definition_activity_02UWU012VN6MA5Jc0ShToevXqdfTh90Ozt9.output.content$"
+                      },
+                      "runtime_user": {
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "execute_on_this_target": true,
+                        "target_id": "definition_target_02PTC9GZK4CAZ1XTzn7pRaLDlMt2e04uWPp",
+                        "target_type": "web-service.endpoint"
+                      },
+                      "workflow_id": "definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk",
+                      "workflow_name": "WebEx Message Service"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_02UWU01EQVI4J70pPbXmZoxntr6Xipo6H4v",
+        "name": "Group",
+        "title": "Generate Response",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "Group",
+          "display_as_suggestion": false,
+          "display_name": "Generate Response",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02UWU01JJSYO321wiGsOLG14oXY88zBskec",
+            "name": "WebEx Message Service",
+            "title": "WebEx Message Service",
+            "type": "workflow.sub_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "description": "Inform the sender that we are calculating their request. ",
+              "display_name": "WebEx Message Service",
+              "input": {
+                "variable_workflow_02U4RTBWK6QR52Al9b5whDZzRKHf7fAVU5M": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.roomId$",
+                "variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz": "$activity.definition_activity_02UWTZXA7AP281u05GE9FdqOXyGcPAuC0U3.output.jsonpath_queries.parentid$",
+                "variable_workflow_02U4RYQ99O98L2BDMPIHZPl1roUbv1v3YPg": "markdown",
+                "variable_workflow_02U4S5E7RRJ5T1bjZKLriFCKvvHryKYJGHE": "$workflow.definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0.local.variable_workflow_02UWTZWMX0OW52YPa5x7GZZbz8vDtv690vb$"
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "execute_on_this_target": true,
+                "target_id": "definition_target_02PTC9GZK4CAZ1XTzn7pRaLDlMt2e04uWPp",
+                "target_type": "web-service.endpoint"
+              },
+              "workflow_id": "definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk",
+              "workflow_name": "WebEx Message Service"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_02UW00FACYB0N0l514FfQuUA2JufKgqoubS"
+    ]
+  },
+  "categories": {
+    "category_02U53272QRRHY1fh0ylDRTa3tbw5OAMZn1v": {
+      "unique_name": "category_02U53272QRRHY1fh0ylDRTa3tbw5OAMZn1v",
+      "name": "WebEx Bot Dispatcher",
+      "title": "WebEx Bot Dispatcher",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "Workflows related to the WebEx Bot Dispatcher functions",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_02UW00FACYB0N0l514FfQuUA2JufKgqoubS": {
+      "unique_name": "category_02UW00FACYB0N0l514FfQuUA2JufKgqoubS",
+      "name": "Webinar Building Webex Bot",
+      "title": "Webinar Building Webex Bot",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "All the Workflows Associated with this Webinar",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "rules": {
+    "ruleevent_02OQYCQQC6V1F3vZlKhchCg6I0mGHthOL6k": {
+      "name": "Demo Webhook Rule",
+      "title": "Demo Webhook Rule",
+      "type": "webhook.rule_event",
+      "rule_type": "rule_event",
+      "base_type": "rule",
+      "object_type": "ruleevent",
+      "version": "1.0.0",
+      "properties": {
+        "description": "",
+        "disabled": false,
+        "display_name": "Demo Webhook Rule",
+        "group_by": false,
+        "rule_type": "rule_event",
+        "title": "Demo Webhook Rule",
+        "webhook_id": "webhook_02OQYC93XA2NN0F4VoOnqhoBRpyfbv6TzhS",
+        "workflows_config": [
+          {
+            "disabled": false,
+            "ref_id": "definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0",
+            "status": {
+              "state": "started-polling",
+              "prev_state": "started-polling",
+              "error_msg": ""
+            }
+          }
+        ]
+      },
+      "disabled": false,
+      "unique_name": "ruleevent_02OQYCQQC6V1F3vZlKhchCg6I0mGHthOL6k"
+    },
+    "ruleevent_02U35BT6EXQLZ2KcYPhZI3aSCkVRmz7WM6O": {
+      "name": "MyWorkflowsBot",
+      "title": "MyWorkflowsBot",
+      "description": "This Rule is kicked off from a WebEx Bot to be received by a Workflow Dispatcher to handle request.\n",
+      "type": "webhook.rule_event",
+      "rule_type": "rule_event",
+      "base_type": "rule",
+      "object_type": "ruleevent",
+      "version": "1.0.0",
+      "properties": {
+        "description": "This Rule is kicked off from a WebEx Bot to be received by a Workflow Dispatcher to handle request.\n",
+        "disabled": false,
+        "display_name": "MyWorkflowsBot",
+        "group_by": false,
+        "rule_type": "rule_event",
+        "title": "MyWorkflowsBot",
+        "webhook_id": "webhook_02U3565TJ0YF26szafkAjIEXvbAwKofSU1B",
+        "workflows_config": [
+          {
+            "disabled": false,
+            "ref_id": "definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0",
+            "status": {
+              "state": "started-polling",
+              "prev_state": "started-polling",
+              "error_msg": ""
+            }
+          }
+        ]
+      },
+      "disabled": false,
+      "unique_name": "ruleevent_02U35BT6EXQLZ2KcYPhZI3aSCkVRmz7WM6O"
+    },
+    "ruleevent_02UW1TAWRATNQ0nT2QKkKDWJiUTEfPwE6rd": {
+      "name": "Webinar Webex Bot Dispatcher",
+      "title": "Webinar Webex Bot Dispatcher",
+      "description": "Webinar Webhook to Workflow",
+      "type": "webhook.rule_event",
+      "rule_type": "rule_event",
+      "base_type": "rule",
+      "object_type": "ruleevent",
+      "version": "1.0.0",
+      "properties": {
+        "description": "Webinar Webhook to Workflow",
+        "disabled": false,
+        "display_name": "Webinar Webex Bot Dispatcher",
+        "group_by": false,
+        "rule_type": "rule_event",
+        "title": "Webinar Webex Bot Dispatcher",
+        "webhook_id": "webhook_02UW15K8QCW3963V8LyYJq4vs0MoDidxSK1",
+        "workflows_config": [
+          {
+            "disabled": false,
+            "ref_id": "definition_workflow_02UWTZWME67F53bpHlnsPbIXEG9t7RJeuq0",
+            "status": {
+              "state": "started-polling",
+              "prev_state": "started-polling",
+              "error_msg": ""
+            }
+          }
+        ]
+      },
+      "disabled": false,
+      "unique_name": "ruleevent_02UW1TAWRATNQ0nT2QKkKDWJiUTEfPwE6rd"
+    }
+  },
+  "targets": {
+    "definition_target_02OGWOA691Y2R6SenTABdjAhM0VxK5p6Bov": {
+      "unique_name": "definition_target_02OGWOA691Y2R6SenTABdjAhM0VxK5p6Bov",
+      "name": "OpenAI Account Target",
+      "title": "OpenAI Account Target",
+      "type": "target.openai_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_02OGWO7LBCKDE6U6tjixS0xXLTpAGx0jAJV",
+        "description": "",
+        "display_name": "OpenAI Account Target"
+      }
+    },
+    "definition_target_02PTC9GZK4CAZ1XTzn7pRaLDlMt2e04uWPp": {
+      "unique_name": "definition_target_02PTC9GZK4CAZ1XTzn7pRaLDlMt2e04uWPp",
+      "name": "Webex HTTP Target",
+      "title": "Webex HTTP Target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "description": "",
+        "disable_certificate_validation": false,
+        "display_name": "Webex HTTP Target",
+        "host": "webexapis.com",
+        "ignore_proxy": false,
+        "is_https_proxy": false,
+        "no_runtime_user": true,
+        "port": 443,
+        "protocol": "https"
+      }
+    },
+    "definition_target_02U87OQCQQGNM2myGC8hZUCzHSxyp4jRFnD": {
+      "unique_name": "definition_target_02U87OQCQQGNM2myGC8hZUCzHSxyp4jRFnD",
+      "name": "Workflows HTTP Target",
+      "title": "Workflows HTTP Target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_02U87NPFNOQTC5j86zs3XdSxqr4IcZkxo3j",
+        "description": "",
+        "disable_certificate_validation": false,
+        "display_name": "Workflows HTTP Target",
+        "host": "api.meraki.com",
+        "ignore_proxy": false,
+        "is_https_proxy": false,
+        "no_runtime_user": false,
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_02OGWO7LBCKDE6U6tjixS0xXLTpAGx0jAJV": {
+      "unique_name": "definition_runtime_user_02OGWO7LBCKDE6U6tjixS0xXLTpAGx0jAJV",
+      "name": "OpenAI Account Keys",
+      "title": "OpenAI Account Keys",
+      "type": "runtime_user.openai_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "OpenAI Account Keys",
+        "key": "*****"
+      }
+    },
+    "definition_runtime_user_02U87NPFNOQTC5j86zs3XdSxqr4IcZkxo3j": {
+      "unique_name": "definition_runtime_user_02U87NPFNOQTC5j86zs3XdSxqr4IcZkxo3j",
+      "name": "Workflows Org Bearer Authorization",
+      "title": "Workflows Org Bearer Authorization",
+      "type": "runtime_user.web-service_bearer_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "bearer_token": "*****",
+        "display_name": "Workflows Org Bearer Authorization"
+      }
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk",
+        "name": "WebEx Message Service",
+        "title": "WebEx Message Service",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "WebEx Thread ParentID",
+              "type": "datatype.string",
+              "description": "Optional ParentId if this message is going to a thread.",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "WebEx Room ID",
+              "type": "datatype.string",
+              "description": "The Room to where we will send this messae",
+              "is_required": true,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02U4RTBWK6QR52Al9b5whDZzRKHf7fAVU5M",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Result",
+              "type": "datatype.string",
+              "description": "Output Results",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02U4TZBTPFD3S4b9m1WTIVCPPlX1ScXRQMS",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "*****",
+              "scope": "local",
+              "name": "WebEx Secure Token",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": ""
+            },
+            "unique_name": "variable_workflow_02U4RYDL0O4166dXgz1GBZCgfSjkfkag1gx",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "WebEx Message",
+              "type": "datatype.string",
+              "is_required": true,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": "text"
+            },
+            "unique_name": "variable_workflow_02U4S5E7RRJ5T1bjZKLriFCKvvHryKYJGHE",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "WebEx Message Format",
+              "type": "datatype.string",
+              "description": "\"text\" of \"mardown\"",
+              "is_required": true,
+              "display_on_wizard": false,
+              "is_invisible": false,
+              "variable_string_format": ""
+            },
+            "unique_name": "variable_workflow_02U4RYQ99O98L2BDMPIHZPl1roUbv1v3YPg",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "description": "This Service is Used by the WebEx Bot Dispatcher to send messages back to WebEx Rooms",
+          "display_name": "WebEx Message Service",
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "target_type": "web-service.endpoint",
+            "target_id": "definition_target_02PTC9GZK4CAZ1XTzn7pRaLDlMt2e04uWPp",
+            "execute_on_workflow_target": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_02U4RZ3YDLSAC73dILMBuj1mQW41fj0l83U",
+            "name": "Condition Block",
+            "title": "Break out by Message Formats",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "conditions": [],
+              "continue_on_failure": false,
+              "description": "If-Else condition block",
+              "display_name": "Break out by Message Formats",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_02U4RZ41J9ELT1SlBfx6B2A0nvTW73gfUTV",
+                "name": "Condition Branch",
+                "title": "Markdown Branch",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4RYQ99O98L2BDMPIHZPl1roUbv1v3YPg$",
+                    "operator": "eqi",
+                    "right_operand": "markdown"
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "Markdown Branch",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_02UF1CN8KWOKG3mBYweJbmQEEO9saLjvO33",
+                    "name": "Execute Python Script",
+                    "title": "Ensure Markdown is Safe",
+                    "type": "python3.script",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "description": "Execute Python Script",
+                      "display_name": "Ensure Markdown is Safe",
+                      "script": "import sys\nimport re\nimport json\n\n# -----------------------------\n# Validate input\n# -----------------------------\nif len(sys.argv) != 2:\n    print(\"Usage: python3 sanitize_markdown.py '<markdown>'\", file=sys.stderr)\n    sys.exit(1)\n\nraw_markdown = sys.argv[1]\n\n# -----------------------------\n# Ensure string\n# -----------------------------\nmarkdown = str(raw_markdown)\n\n# -----------------------------\n# 0. Handle JSON-wrapped markdown\n# -----------------------------\ntry:\n    parsed = json.loads(markdown)\n    if isinstance(parsed, dict):\n        if \"preview\" in parsed:\n            markdown = parsed[\"preview\"]\n        elif \"markdown\" in parsed:\n            markdown = parsed[\"markdown\"]\nexcept:\n    pass  # Not JSON, continue\n\n# -----------------------------\n# 1. Normalize newlines\n# -----------------------------\nmarkdown = markdown.replace(\"\\r\\n\", \"\\n\").replace(\"\\r\", \"\\n\")\n\n# -----------------------------\n# 2. Remove problematic constructs\n# -----------------------------\n# Remove triple backticks (Webex can choke on them)\nmarkdown = markdown.replace(\"```\", \"\")\n\n# Reduce excessive indentation\nmarkdown = re.sub(r'^\\s{4,}', '  ', markdown, flags=re.MULTILINE)\n\n# -----------------------------\n# 3. Escape for JSON transport (CRITICAL)\n# -----------------------------\n# Escape backslashes FIRST\nmarkdown = markdown.replace(\"\\\\\", \"\\\\\\\\\")\n\n# Escape quotes\nmarkdown = markdown.replace('\"', '\\\\\"')\n\n# Escape newlines\nmarkdown = markdown.replace(\"\\n\", \"\\\\n\")\n\n# -----------------------------\n# 4. Enforce safe length (Webex ~7439 limit)\n# -----------------------------\nMAX_LEN = 7000\nif len(markdown) > MAX_LEN:\n    markdown = markdown[:MAX_LEN - 50] + \"\\\\n\\\\n... (truncated)\"\n\n# -----------------------------\n# Output variable for workflow\n# -----------------------------\nsafe_markdown = markdown",
+                      "script_arguments": [
+                        "$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4S5E7RRJ5T1bjZKLriFCKvvHryKYJGHE$"
+                      ],
+                      "script_queries": [
+                        {
+                          "script_query": "safe_markdown",
+                          "script_query_name": "safe_markdown",
+                          "script_query_type": "string"
+                        }
+                      ],
+                      "skip_execution": true
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_02U4S1JSRX6IA4M9EkhDLrjtWwQJNH8b6on",
+                    "name": "Condition Block",
+                    "title": "ParentID or Not",
+                    "type": "logic.if_else",
+                    "base_type": "activity",
+                    "properties": {
+                      "conditions": [],
+                      "continue_on_failure": false,
+                      "description": "If-Else condition block",
+                      "display_name": "ParentID or Not",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "blocks": [
+                      {
+                        "unique_name": "definition_activity_02U4S1JST32YQ1TB85Cde2byPRyCLD842ii",
+                        "name": "Condition Branch",
+                        "title": "No ParentID",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz$",
+                            "operator": "eq",
+                            "right_operand": "null"
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "No ParentID",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_02U4S668U4HR14NkrG8bqLUiHU6a6OPJLvI",
+                            "name": "HTTP Request",
+                            "title": "WebEx Message Send",
+                            "type": "web-service.http_request",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "allow_auto_redirect": true,
+                              "allow_headers_redirect": false,
+                              "body": "{\n  \"roomId\": \"$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4RTBWK6QR52Al9b5whDZzRKHf7fAVU5M$\",\n  \"markdown\": \"$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4S5E7RRJ5T1bjZKLriFCKvvHryKYJGHE$\"\n}",
+                              "content_type": "application/json",
+                              "continue_on_error_status_code": false,
+                              "continue_on_failure": true,
+                              "custom_headers": [
+                                {
+                                  "name": "Authorization",
+                                  "value": "Bearer $workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.local.variable_workflow_02U4RYDL0O4166dXgz1GBZCgfSjkfkag1gx$"
+                                }
+                              ],
+                              "description": "HTTP Request",
+                              "display_name": "WebEx Message Send",
+                              "method": "POST",
+                              "relative_url": "/v1/messages",
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "use_workflow_target": true
+                              }
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_02U4TZGQ4TEJL5AcESn7n7bIlJ7FlgGP8sO",
+                            "name": "Set Variables",
+                            "title": "Set Variables",
+                            "type": "core.set_multiple_variables",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "Set Variables",
+                              "display_name": "Set Variables",
+                              "skip_execution": false,
+                              "variables_to_update": [
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.output.variable_workflow_02U4TZBTPFD3S4b9m1WTIVCPPlX1ScXRQMS$",
+                                  "variable_value_new": "$activity.definition_activity_02U4S668U4HR14NkrG8bqLUiHU6a6OPJLvI.output.status_code$"
+                                }
+                              ]
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_02U4S1JSUKGIS3wMTxL7bphgn6JEYkFkmLK",
+                        "name": "Condition Branch",
+                        "title": "ParentID",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz$",
+                            "operator": "ne",
+                            "right_operand": "null"
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "ParentID",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_02U4S8B4F13B454oo11Vj8VIX3mXoEIZrOT",
+                            "name": "HTTP Request",
+                            "title": "WebEx Message Send",
+                            "type": "web-service.http_request",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "allow_auto_redirect": true,
+                              "allow_headers_redirect": false,
+                              "body": "{\n  \"roomId\": \"$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4RTBWK6QR52Al9b5whDZzRKHf7fAVU5M$\",\n  \"markdown\": \"$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4S5E7RRJ5T1bjZKLriFCKvvHryKYJGHE$\",\n  \"parentId\": \"$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz$\"\n}",
+                              "content_type": "application/json",
+                              "continue_on_error_status_code": false,
+                              "continue_on_failure": true,
+                              "custom_headers": [
+                                {
+                                  "name": "Authorization",
+                                  "value": "Bearer $workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.local.variable_workflow_02U4RYDL0O4166dXgz1GBZCgfSjkfkag1gx$"
+                                }
+                              ],
+                              "description": "HTTP Request",
+                              "display_name": "WebEx Message Send",
+                              "method": "POST",
+                              "relative_url": "/v1/messages",
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "use_workflow_target": true
+                              }
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_02U4TZRJJG5YL3Usn4KQrGqgU6Ei1lD4whj",
+                            "name": "Set Variables",
+                            "title": "Set Variables",
+                            "type": "core.set_multiple_variables",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "Set Variables",
+                              "display_name": "Set Variables",
+                              "skip_execution": false,
+                              "variables_to_update": [
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.output.variable_workflow_02U4TZBTPFD3S4b9m1WTIVCPPlX1ScXRQMS$",
+                                  "variable_value_new": "$activity.definition_activity_02U4S8B4F13B454oo11Vj8VIX3mXoEIZrOT.output.status_code$"
+                                }
+                              ]
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_02U4RZ45PZEEE7fPcfvnhgSkCPsu3atRqqk",
+                "name": "Condition Branch",
+                "title": "Text Branch",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4RYQ99O98L2BDMPIHZPl1roUbv1v3YPg$",
+                    "operator": "eqi",
+                    "right_operand": "text"
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "Text Branch",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_02U4S13Y8ADJY17hxMsLWjhpP0eLMTmfGUy",
+                    "name": "Condition Block",
+                    "title": "Threaded or Not",
+                    "type": "logic.if_else",
+                    "base_type": "activity",
+                    "properties": {
+                      "conditions": [],
+                      "continue_on_failure": false,
+                      "description": "If-Else condition block",
+                      "display_name": "Threaded or Not",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "blocks": [
+                      {
+                        "unique_name": "definition_activity_02U4S1411VJEA5nqTNKxYDUQZZulhnHx9p3",
+                        "name": "Condition Branch",
+                        "title": "No ParentID",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz$",
+                            "operator": "eq",
+                            "right_operand": "null"
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "No ParentID",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_02U4S8TXSAF316wOAvbOiYuLMmQ8t23LMTq",
+                            "name": "HTTP Request",
+                            "title": "WebEx Message Send",
+                            "type": "web-service.http_request",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "allow_auto_redirect": true,
+                              "allow_headers_redirect": false,
+                              "body": "{\n  \"roomId\": \"$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4RTBWK6QR52Al9b5whDZzRKHf7fAVU5M$\",\n  \"text\": \"$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4S5E7RRJ5T1bjZKLriFCKvvHryKYJGHE$\"\n}",
+                              "content_type": "application/json",
+                              "continue_on_error_status_code": false,
+                              "continue_on_failure": true,
+                              "custom_headers": [
+                                {
+                                  "name": "Authorization",
+                                  "value": "Bearer $workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.local.variable_workflow_02U4RYDL0O4166dXgz1GBZCgfSjkfkag1gx$"
+                                }
+                              ],
+                              "description": "HTTP Request",
+                              "display_name": "WebEx Message Send",
+                              "method": "POST",
+                              "relative_url": "/v1/messages",
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "use_workflow_target": true
+                              }
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_02U4U03FWV1L42WkDhD7TJc6YNEg1vemZxS",
+                            "name": "Set Variables",
+                            "title": "Set Variables",
+                            "type": "core.set_multiple_variables",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "Set Variables",
+                              "display_name": "Set Variables",
+                              "skip_execution": false,
+                              "variables_to_update": [
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.output.variable_workflow_02U4TZBTPFD3S4b9m1WTIVCPPlX1ScXRQMS$",
+                                  "variable_value_new": "$activity.definition_activity_02U4S8TXSAF316wOAvbOiYuLMmQ8t23LMTq.output.status_code$"
+                                }
+                              ]
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_02U4S1442NRXN4wrPDaYAz7k8RUuIED0puE",
+                        "name": "Condition Branch",
+                        "title": "ParentId",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz$",
+                            "operator": "ne",
+                            "right_operand": "null"
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "ParentId",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_02U4S8W6CWRR41bYQghJNL5qnuXaBrEyzT1",
+                            "name": "HTTP Request",
+                            "title": "WebEx Message Send",
+                            "type": "web-service.http_request",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "allow_auto_redirect": true,
+                              "allow_headers_redirect": false,
+                              "body": "{\n  \"roomId\": \"$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4RTBWK6QR52Al9b5whDZzRKHf7fAVU5M$\",\n  \"markdown\": \"$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4S5E7RRJ5T1bjZKLriFCKvvHryKYJGHE$\",\n  \"parentId\": \"$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.input.variable_workflow_02U4RTUE940LA15yeWJ2Q8bYJp4Gz65g8gz$\"\n}",
+                              "content_type": "application/json",
+                              "continue_on_error_status_code": false,
+                              "continue_on_failure": true,
+                              "custom_headers": [
+                                {
+                                  "name": "Authorization",
+                                  "value": "Bearer $workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.local.variable_workflow_02U4RYDL0O4166dXgz1GBZCgfSjkfkag1gx$"
+                                }
+                              ],
+                              "description": "HTTP Request",
+                              "display_name": "WebEx Message Send",
+                              "method": "POST",
+                              "relative_url": "/v1/messages",
+                              "runtime_user": {
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "use_workflow_target": true
+                              }
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_02U4U0E1Z6RLF6e9fUg3v1GwNnHZBtyhmBX",
+                            "name": "Set Variables",
+                            "title": "Set Variables",
+                            "type": "core.set_multiple_variables",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "description": "Set Variables",
+                              "display_name": "Set Variables",
+                              "skip_execution": false,
+                              "variables_to_update": [
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk.output.variable_workflow_02U4TZBTPFD3S4b9m1WTIVCPPlX1ScXRQMS$",
+                                  "variable_value_new": "$activity.definition_activity_02U4S8W6CWRR41bYQghJNL5qnuXaBrEyzT1.output.status_code$"
+                                }
+                              ]
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "categories": [
+          "category_02U53272QRRHY1fh0ylDRTa3tbw5OAMZn1v"
+        ]
+      }
+    }
+  ],
+  "webhooks": {
+    "webhook_02OQYC93XA2NN0F4VoOnqhoBRpyfbv6TzhS": {
+      "name": "Demo Webhook",
+      "title": "Demo Webhook",
+      "type": "generic.webhook",
+      "base_type": "webhook",
+      "object_type": "webhook",
+      "version": "1.0.0",
+      "properties": {
+        "display_name": "Demo Webhook",
+        "request_content_type": "application/json; charset=utf-8"
+      },
+      "unique_name": "webhook_02OQYC93XA2NN0F4VoOnqhoBRpyfbv6TzhS",
+      "expires_on": "2027-03-11T00:34:56.569Z"
+    },
+    "webhook_02U3565TJ0YF26szafkAjIEXvbAwKofSU1B": {
+      "name": "WebEx Dispatcher",
+      "title": "WebEx Dispatcher",
+      "type": "generic.webhook",
+      "base_type": "webhook",
+      "object_type": "webhook",
+      "version": "1.0.0",
+      "properties": {
+        "description": "This will received WebEx Requests from WebEx Bots",
+        "display_name": "WebEx Dispatcher",
+        "request_content_type": "application/json; charset=utf-8"
+      },
+      "unique_name": "webhook_02U3565TJ0YF26szafkAjIEXvbAwKofSU1B",
+      "expires_on": "2027-03-11T16:43:49.143Z"
+    },
+    "webhook_02UW15K8QCW3963V8LyYJq4vs0MoDidxSK1": {
+      "name": "Webinar Webhook",
+      "title": "Webinar Webhook",
+      "type": "generic.webhook",
+      "base_type": "webhook",
+      "object_type": "webhook",
+      "version": "1.0.0",
+      "properties": {
+        "display_name": "Webinar Webhook",
+        "request_content_type": "application/json; charset=utf-8"
+      },
+      "unique_name": "webhook_02UW15K8QCW3963V8LyYJq4vs0MoDidxSK1",
+      "expires_on": "2027-04-14T16:36:53.645Z"
+    }
+  },
+  "dependent_workflows": [
+    "definition_workflow_02U4RS47LW44V63v4u6JNyPbPQQRPX5Hruk"
+  ]
+}

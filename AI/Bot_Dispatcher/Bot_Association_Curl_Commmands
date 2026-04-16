@@ -30,7 +30,7 @@ id: ... Returned from Curl command identifying the Association
 
 List all Webex Bot Associations
 
-```sh
+```
 curl -X GET "https://webexapis.com/v1/webhooks" \
   -H "Authorization: Bearer <BOT_ACCESS_TOKEN>" \
   -H "Content-Type: application/json"
@@ -38,7 +38,7 @@ curl -X GET "https://webexapis.com/v1/webhooks" \
 
 Delete an Association
 
-```sh
+```
 curl -X DELETE "https://webexapis.com/v1/webhooks/<ID_RETURNED_FROM_ASSOCIATION>" \
   -H "Authorization: Bearer <BOT_ACCESS_TOKEN>"
 ```

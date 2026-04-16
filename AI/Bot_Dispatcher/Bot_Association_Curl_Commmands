@@ -13,7 +13,7 @@ Encoded Webhook URL: Replacing the API Key with the Encoded API Key above
 
 Associate a Bot to a Cisco Workflows Webhook
 
-```sh
+```
 curl -X POST "https://webexapis.com/v1/webhooks" \
   -H "Authorization: Bearer <BOT_ACCESS_TOKEN>" \
   -H "Content-Type: application/json" \

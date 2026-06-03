@@ -6,6 +6,12 @@
 A Markdown file has been created and checked into the Public Repo which contains criterial for Workflow review prior to submission. This file can be provided to your LLM of choice as well as the JSON payload representing your workflow.  
 https://github.com/CiscoDevNet/CiscoWorkflowsAutomation/blob/main/WorkflowReviewChecklist.md
 
+The public `Toolkit/` directory in this repository now provides three ways to apply that checklist:
+
+- `Toolkit/cli/` for command-line review helpers
+- `Toolkit/cursor/` for installable Cursor wrappers
+- `Toolkit/mcp/` for a thin stdio MCP path
+
 The LLM will apply the critera against your workflow highlighting:
 - Workflow Inputs & Parameters
 - Targets & Target Groups

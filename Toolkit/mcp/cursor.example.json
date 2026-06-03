@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "cisco-workflow-review": {
+      "command": "python3",
+      "args": [
+        "-m",
+        "workflow_review.mcp_server"
+      ],
+      "cwd": "/path/to/CiscoWorkflowsAutomation/Toolkit/cli",
+      "env": {
+        "PYTHONPATH": "/path/to/CiscoWorkflowsAutomation/Toolkit/cli/src",
+        "WORKFLOW_REVIEW_CHECKLIST": "/path/to/CiscoWorkflowsAutomation/WorkflowReviewChecklist.md"
+      }
+    }
+  }
+}

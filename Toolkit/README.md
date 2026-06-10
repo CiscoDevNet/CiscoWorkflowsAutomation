@@ -1,8 +1,8 @@
 # Workflow Toolkit
 
-This toolkit turns the public workflow review checklist in this repository into reusable review and remediation paths for multiple audiences.
+This toolkit turns the internal workflow review standard into reusable review and remediation paths for the team.
 
-The canonical review contract remains the root-level `WorkflowReviewChecklist.md`. Everything in `Toolkit/` is designed to help contributors apply that checklist more consistently.
+The packaged internal review standard is the default source for review and remediation helpers. Everything in `Toolkit/` is designed to help contributors apply that standard more consistently, while still allowing repo-based development overrides when needed.
 
 ## Who It Is For
 
@@ -39,7 +39,7 @@ Toolkit/
 
 ## Layering
 
-- Layer 1: the CLI is the shared core for enumeration, checklist resolution, review preparation, and remediation planning.
+- Layer 1: the CLI is the shared core for enumeration, checklist resolution, review preparation with remediation suggestions, and remediation planning.
 - Layer 2: Cursor skills stay thin and delegate deterministic work to the CLI.
 - Layer 3: the MCP server wraps the same core instead of re-implementing logic.
 
@@ -59,12 +59,20 @@ python3 -m workflow_review prepare-review "/path/to/workflow.json" --json
 bash Toolkit/cursor/install_cursor_skills.sh
 ```
 
+### Install the workflow review MCP
+
+```bash
+bash Toolkit/mcp/install_mcp.sh
+```
+
 ### Run the stdio MCP scaffold
 
 ```bash
 cd Toolkit/cli
 python3 -m workflow_review.mcp_server
 ```
+
+For installed-client usage, see `Toolkit/mcp/README.md` for Cursor, VS Code, and generic stdio MCP examples that point at `workflow-review-mcp` directly and start with `review`; `inspect_export` is available as an advanced helper.
 
 ## Scope
 

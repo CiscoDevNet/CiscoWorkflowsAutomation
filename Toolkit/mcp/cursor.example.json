@@ -1,6 +1,11 @@
 {
   "mcpServers": {
     "cisco-workflow-review": {
+      "command": "workflow-review-mcp",
+      "args": [],
+      "env": {}
+    },
+    "cisco-workflow-review-dev": {
       "command": "python3",
       "args": [
         "-m",

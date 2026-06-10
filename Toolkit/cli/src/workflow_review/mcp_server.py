@@ -12,11 +12,17 @@ from workflow_review.review import prepare_review
 
 PROTOCOL_VERSION = "2024-11-05"
 
+CAPABILITIES = {
+    "tools": {"listChanged": False},
+    "resources": {"subscribe": False, "listChanged": False},
+    "prompts": {"listChanged": False},
+}
+
 
 TOOLS = [
     {
-        "name": "workflow_inspect_export",
-        "description": "Inspect a workflow export and list the parent workflow plus any embedded subworkflows.",
+        "name": "inspect_export",
+        "description": "Advanced helper that lists the parent workflow and any embedded subworkflows in a JSON export.",
         "inputSchema": {
             "type": "object",
             "required": ["workflow_path"],
@@ -26,8 +32,8 @@ TOOLS = [
         },
     },
     {
-        "name": "workflow_resolve_checklist",
-        "description": "Resolve the canonical workflow review checklist path.",
+        "name": "load_checklist",
+        "description": "Resolve and load the internal review standard used by the workflow review toolkit.",
         "inputSchema": {
             "type": "object",
             "properties": {
@@ -36,8 +42,8 @@ TOOLS = [
         },
     },
     {
-        "name": "workflow_prepare_review",
-        "description": "Prepare a structured review brief for a workflow export without performing the full LLM review.",
+        "name": "review",
+        "description": "Review a workflow export end to end: enumerate workflows first, then return the review brief that leads into findings, severity, and remediation suggestions.",
         "inputSchema": {
             "type": "object",
             "required": ["workflow_path"],
@@ -50,7 +56,7 @@ TOOLS = [
         },
     },
     {
-        "name": "workflow_plan_remediation",
+        "name": "plan_remediation",
         "description": "Prepare a remediation plan without writing to disk.",
         "inputSchema": {
             "type": "object",
@@ -102,12 +108,17 @@ def _result_content(payload: Any) -> dict[str, Any]:
 
 
 def _handle_tool_call(name: str, arguments: dict[str, Any]) -> dict[str, Any]:
-    if name in {"workflow_inspect_export", "workflow_enumerate"}:
+    if name == "inspect_export":
         return _result_content(enumerate_workflows(arguments["workflow_path"]))
-    if name == "workflow_resolve_checklist":
+    if name == "load_checklist":
         checklist_path = resolve_checklist_path(arguments.get("checklist_path"))
-        return _result_content({"checklist_path": str(checklist_path)})
-    if name == "workflow_prepare_review":
+        return _result_content(
+            {
+                "checklist_path": str(checklist_path),
+                "description": "Internal review standard used by the workflow review toolkit.",
+            }
+        )
+    if name == "review":
         return _result_content(
             prepare_review(
                 workflow_path=arguments["workflow_path"],
@@ -116,7 +127,7 @@ def _handle_tool_call(name: str, arguments: dict[str, Any]) -> dict[str, Any]:
                 severity_threshold=arguments.get("severity_threshold"),
             )
         )
-    if name == "workflow_plan_remediation":
+    if name == "plan_remediation":
         return _result_content(
             plan_remediation(
                 workflow_path=arguments["workflow_path"],
@@ -152,7 +163,7 @@ def handle_message(message: dict[str, Any]) -> dict[str, Any] | None:
             {
                 "protocolVersion": PROTOCOL_VERSION,
                 "serverInfo": {"name": "cisco-workflow-review", "version": "0.1.0"},
-                "capabilities": {"tools": {}},
+                "capabilities": CAPABILITIES,
             },
         )
 
@@ -161,6 +172,15 @@ def handle_message(message: dict[str, Any]) -> dict[str, Any] | None:
 
     if method == "tools/list":
         return _success(message_id, {"tools": TOOLS})
+
+    if method == "resources/list":
+        return _success(message_id, {"resources": []})
+
+    if method == "resources/templates/list":
+        return _success(message_id, {"resourceTemplates": []})
+
+    if method == "prompts/list":
+        return _success(message_id, {"prompts": []})
 
     if method == "tools/call":
         try:

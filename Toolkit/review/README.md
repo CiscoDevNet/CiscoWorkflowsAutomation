@@ -1,6 +1,12 @@
 # Workflow Review Guide
 
-Use this guide when you want to review a workflow export against the canonical `WorkflowReviewChecklist.md`.
+Use this guide when you want to review a workflow export against the internal workflow review standard.
+
+## Start here prompts
+
+- Review this workflow export.
+- Review this file against the internal review standard.
+- Review this export and include remediation suggestions.
 
 The recommended flow is:
 
@@ -8,7 +14,7 @@ The recommended flow is:
 2. Review the parent workflow.
 3. Review each embedded workflow.
 4. Aggregate findings by severity.
-5. End with an approval-readiness summary and next actions.
+5. End with an approval-readiness summary, next actions, and remediation suggestions.
 
 ## CLI-first path
 
@@ -24,13 +30,14 @@ The `prepare-review` output is intentionally structured so it can be handed to a
 
 If you are using another LLM directly:
 
-1. Attach `WorkflowReviewChecklist.md`
+1. Use the internal review standard used by the team
 2. Attach the workflow JSON export
 3. Use the reference in `reference.md` to keep the review sequence and output format consistent
 
 ## Expectations
 
 - Do not skip embedded subworkflows.
-- Keep the public checklist as the source of truth.
+- Keep the internal review standard as the source of truth.
 - Lead with findings, sorted by severity.
+- Include remediation suggestions in the first review output.
 - Use user-facing names instead of raw internal IDs whenever possible.

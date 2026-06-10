@@ -2,9 +2,9 @@
 
 ## Source of truth
 
-The canonical review standard is the root-level `WorkflowReviewChecklist.md` in this repository.
+The canonical review standard is the packaged internal review standard used by the workflow review CLI and MCP server.
 
-Use that file whenever it is available. This reference is the lightweight companion for tools and wrappers in `Toolkit/`.
+Use the packaged standard whenever it is available. This reference is the lightweight companion for tools and wrappers in `Toolkit/`, with repo-root overrides only for team development.
 
 ## Mandatory sequence
 
@@ -12,7 +12,7 @@ Use that file whenever it is available. This reference is the lightweight compan
 2. Present the parent workflow and every embedded workflow before deeper review.
 3. Review one workflow at a time across all 7 checklist categories.
 4. Lead with findings ordered by severity.
-5. End with an overall assessment and next actions.
+5. End with an overall assessment, next actions, and remediation suggestions.
 
 ## Checklist categories
 
@@ -52,6 +52,7 @@ Suggested sections:
 - Low priority issues
 - Workflow-by-workflow notes
 - Overall assessment
+- Remediation suggestions
 
 ## Useful commands
 
@@ -60,3 +61,5 @@ cd Toolkit/cli
 PYTHONPATH=src python3 -m workflow_review inspect-workflow-export "/path/to/workflow.json"
 PYTHONPATH=src python3 -m workflow_review prepare-review "/path/to/workflow.json" --json
 ```
+
+When installed, the CLI resolves the packaged internal review standard automatically unless `--checklist` or `WORKFLOW_REVIEW_CHECKLIST` is provided.

@@ -20,3 +20,6 @@ workflow-review-mcp = "workflow_review.mcp_server:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/workflow_review"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"../../WorkflowReviewChecklist.md" = "src/workflow_review/data/WorkflowReviewChecklist.md"

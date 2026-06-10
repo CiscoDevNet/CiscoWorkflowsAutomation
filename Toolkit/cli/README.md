@@ -48,6 +48,8 @@ PYTHONPATH=src python3 -m workflow_review checklist
 PYTHONPATH=src python3 -m workflow_review checklist --show
 ```
 
+When installed, the CLI resolves the packaged internal review standard automatically if neither `--checklist` nor `WORKFLOW_REVIEW_CHECKLIST` is set.
+
 ### Prepare a review run
 
 ```bash
@@ -69,16 +71,19 @@ The CLI resolves the checklist in this order:
 
 1. `--checklist /path/to/file.md`
 2. `WORKFLOW_REVIEW_CHECKLIST=/path/to/file.md`
-3. the repo-root `WorkflowReviewChecklist.md`
+3. the packaged internal review standard
+4. the repo-root `WorkflowReviewChecklist.md`
 
-That keeps the root file canonical while still allowing external users to point at another checked-in copy if needed.
+That keeps the packaged internal standard available by default while still allowing the team to point at another checked-in copy during development.
 
 ## MCP
 
 The stdio MCP scaffold is implemented in the same package and exposed through:
 
 ```bash
-PYTHONPATH=src python3 -m workflow_review.mcp_server
+workflow-review-mcp
 ```
+
+For the easiest MCP setup, run `bash Toolkit/mcp/install_mcp.sh` from the repo root. It installs the package and prints the exact command path to use.
 
 See `../mcp/README.md` for client configuration examples.

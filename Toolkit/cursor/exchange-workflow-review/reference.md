@@ -15,4 +15,5 @@ PYTHONPATH="<repo-root>/Toolkit/cli/src" python3 -m workflow_review prepare-revi
 - Review parent workflow first.
 - Cover all embedded workflows.
 - Lead with findings.
-- Keep the root `WorkflowReviewChecklist.md` canonical.
+- Include remediation suggestions in the first pass output.
+- Keep the packaged internal review standard canonical, with repo-root overrides only for team development.

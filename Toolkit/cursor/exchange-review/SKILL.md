@@ -1,15 +1,15 @@
 ---
-name: exchange-workflow-review
-description: Review exported Cisco workflow JSON against the internal workflow review standard, enumerate the export first, and produce severity-ranked findings plus remediation suggestions and an overall readiness assessment.
+name: exchange-review
+description: Review exported Cisco workflow JSON against the canonical workflow review standard, enumerate the export first, and produce severity-ranked findings plus remediation suggestions and an overall readiness assessment.
 ---
 
-# Exchange Workflow Review
+# Exchange Review
 
 ## When to use
 
 - The user provides a workflow export JSON file.
 - The user wants Exchange review, standards validation, or approval-readiness feedback.
-- The user wants findings aligned to the internal workflow review standard.
+- The user wants findings aligned to the canonical workflow review standard.
 
 ## Start here prompts
 
@@ -23,7 +23,7 @@ description: Review exported Cisco workflow JSON against the internal workflow r
 
 ## Required flow
 
-1. Use the packaged internal review standard when available. Fall back to the repo-root `WorkflowReviewChecklist.md` only for team development overrides.
+1. Use `WorkflowReviewChecklist.md` from the repository root when this repo is checked out. Fall back to the packaged checklist only when the toolkit is installed outside the repo.
 2. Resolve the real skill directory and the repo root from this skill's file location. Do not assume the current working directory is the repo.
 3. Run the shared CLI first to review the export and establish scope:
    - The review flow should enumerate first and return remediation suggestions in the first pass.
@@ -39,7 +39,7 @@ description: Review exported Cisco workflow JSON against the internal workflow r
 - Do not skip embedded subworkflows.
 - Prefer user-facing names over raw internal IDs.
 - Use `reference.md` for the local review sequence and severity guidance.
-- Keep the internal review standard as the source of truth if there is any conflict.
+- Keep the canonical review standard as the source of truth if there is any conflict.
 
 ## Output sections
 
@@ -50,3 +50,4 @@ description: Review exported Cisco workflow JSON against the internal workflow r
 - Low priority issues
 - Workflow-by-workflow notes
 - Overall assessment
+- Remediation suggestions

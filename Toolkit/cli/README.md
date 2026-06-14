@@ -48,7 +48,7 @@ PYTHONPATH=src python3 -m workflow_review checklist
 PYTHONPATH=src python3 -m workflow_review checklist --show
 ```
 
-When installed, the CLI resolves the packaged internal review standard automatically if neither `--checklist` nor `WORKFLOW_REVIEW_CHECKLIST` is set.
+When run from this repository, the CLI resolves `WorkflowReviewChecklist.md` at the repo root first. If the repo-root file is not available, it falls back to the packaged checklist that ships with the installed package.
 
 ### Prepare a review run
 
@@ -71,10 +71,10 @@ The CLI resolves the checklist in this order:
 
 1. `--checklist /path/to/file.md`
 2. `WORKFLOW_REVIEW_CHECKLIST=/path/to/file.md`
-3. the packaged internal review standard
-4. the repo-root `WorkflowReviewChecklist.md`
+3. the repo-root `WorkflowReviewChecklist.md`
+4. the packaged internal review standard
 
-That keeps the packaged internal standard available by default while still allowing the team to point at another checked-in copy during development.
+That keeps the repository copy canonical while still allowing the team to point at another checklist during development or use the packaged fallback when installed elsewhere.
 
 ## MCP
 

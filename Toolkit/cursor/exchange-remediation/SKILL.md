@@ -1,10 +1,10 @@
 ---
-name: workflow-review-remediation
+name: exchange-remediation
 description: Apply approved workflow review fixes safely by building a remediation plan, honoring remediation and safety modes, and preserving workflow identity unless the user explicitly approves structural changes.
 disable-model-invocation: true
 ---
 
-# Workflow Review Remediation
+# Exchange Remediation
 
 ## When to use
 

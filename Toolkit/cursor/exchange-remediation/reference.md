@@ -1,4 +1,4 @@
-# Cursor Remediation Wrapper Reference
+# Exchange Remediation Wrapper Reference
 
 Use this wrapper with the shared CLI in `Toolkit/cli/`.
 
@@ -15,3 +15,4 @@ PYTHONPATH="<repo-root>/Toolkit/cli/src" python3 -m workflow_review plan-remedia
 - Stay inside the chosen remediation scope.
 - Treat branch, output, target, and category changes as potentially major.
 - Re-review after edits.
+- Keep `WorkflowReviewChecklist.md` at the repository root as the canonical source for the checklist, with the packaged copy as the installed fallback.

@@ -22,4 +22,4 @@ PYTHONPATH=src python3 -m workflow_review plan-remediation "../../Meraki/CheckAv
 
 ## Sample output
 
-See `review-output.md` for the intended structure of a reviewer-facing summary.
+See `review-output.md` for the intended structure of a reviewer-facing summary. The actual review contract lives in `WorkflowReviewChecklist.md` at the repository root.

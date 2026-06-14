@@ -1,10 +1,8 @@
-# Workflow Review Reference
+# Exchange Review Reference
 
 ## Source of truth
 
-The canonical review standard is the packaged internal review standard used by the workflow review CLI and MCP server.
-
-Use the packaged standard whenever it is available. This reference is the lightweight companion for tools and wrappers in `Toolkit/`, with repo-root overrides only for team development.
+The canonical review standard is `WorkflowReviewChecklist.md` at the repository root. The CLI ships a packaged copy for installed environments, but checked-out work in this repo should reference the root file first.
 
 ## Mandatory sequence
 
@@ -62,4 +60,4 @@ PYTHONPATH=src python3 -m workflow_review inspect-workflow-export "/path/to/work
 PYTHONPATH=src python3 -m workflow_review prepare-review "/path/to/workflow.json" --json
 ```
 
-When installed, the CLI resolves the packaged internal review standard automatically unless `--checklist` or `WORKFLOW_REVIEW_CHECKLIST` is provided.
+When installed, the CLI resolves `WorkflowReviewChecklist.md` from the repository root first. If you run the toolkit outside a checkout, the packaged checklist is used as the fallback.

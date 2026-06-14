@@ -1,30 +1,37 @@
 # Sample Review Output
 
 ```markdown
-## Workflow Review Results
+## Exchange Review Results
 
 ### Enumeration
 - Workflow 1: Parent Workflow
 - Workflow 2: Embedded Workflow
 
-### High Priority Issues
+### Critical issues
+- None.
+
+### High priority issues
 - Activity "Submit API Request" does not surface failure details in the workflow outputs.
 
-### Low Priority Issues
+### Medium priority issues
+- None.
+
+### Low priority issues
 - The main workflow description is too thin for Exchange reviewers.
 
-### Workflow-by-Workflow Notes
+### Workflow-by-workflow notes
 #### Parent Workflow
-- Error Handling: Add explicit success and failure output updates.
+- Logic & Flow: Add explicit success and failure output updates.
 
 #### Embedded Workflow
 - Essential Hygiene & Security: Replace a real org ID default with a placeholder.
 
-### Overall Assessment
+### Overall assessment
 - Score: 7/10
 - Approval readiness: approve with suggestions
-- Top improvements:
-  - improve output handling
-  - remove production-like defaults
-  - strengthen reviewer-facing descriptions
+
+### Remediation suggestions
+- Improve output handling.
+- Remove production-like defaults.
+- Strengthen reviewer-facing descriptions.
 ```

@@ -2,7 +2,7 @@
 
 This toolkit turns the internal workflow review standard into reusable review and remediation paths for the team.
 
-The packaged internal review standard is the default source for review and remediation helpers. Everything in `Toolkit/` is designed to help contributors apply that standard more consistently, while still allowing repo-based development overrides when needed.
+`WorkflowReviewChecklist.md` at the repository root is the canonical review contract. The CLI ships a packaged fallback copy for installed environments, but everything in `Toolkit/` should reference the root checklist first so the source of truth stays in one place.
 
 ## Who It Is For
 
@@ -12,14 +12,14 @@ Use `Toolkit/cursor/` to install thin Cursor skill wrappers that call the shared
 
 ### Other LLM users
 
-Use `Toolkit/review/` and `Toolkit/remediation/` as copyable playbooks, then run the CLI in `Toolkit/cli/` for deterministic enumeration and checklist resolution.
+Use `Toolkit/exchange-review/` and `Toolkit/exchange-remediation/` as copyable playbooks, then run the CLI in `Toolkit/cli/` for deterministic enumeration and checklist resolution.
 
 ### External contributors
 
 Start with:
 
 1. `WorkflowReviewChecklist.md`
-2. `Toolkit/review/README.md`
+2. `Toolkit/exchange-review/README.md`
 3. `Toolkit/cli/README.md`
 
 That path does not require Cursor.
@@ -33,8 +33,8 @@ Toolkit/
 ├── cursor/         # Layer 2: thin Cursor skill wrappers
 ├── examples/       # Example commands and sample output
 ├── mcp/            # Layer 3: stdio MCP guidance
-├── remediation/    # Public remediation guidance and mode reference
-└── review/         # Public review guidance and checklist companion
+├── exchange-remediation/ # Public remediation guidance and mode reference
+└── exchange-review/      # Public review guidance and checklist companion
 ```
 
 ## Layering

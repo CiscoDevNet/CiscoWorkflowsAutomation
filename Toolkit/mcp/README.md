@@ -55,7 +55,7 @@ If your MCP client supports stdio servers, use the installed command directly an
 {
   "mcpServers": {
     "cisco-workflow-review": {
-      "command": "/Users/christyaajones/Library/Python/3.9/bin/workflow-review-mcp",
+    "command": "/path/to/installed/workflow-review-mcp",
       "args": [],
       "env": {}
     }

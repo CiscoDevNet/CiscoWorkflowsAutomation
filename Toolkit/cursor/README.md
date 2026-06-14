@@ -12,12 +12,12 @@ From the repository root:
 bash Toolkit/cursor/install_cursor_skills.sh
 ```
 
-This installs the public workflow-review skills into `~/.cursor/skills`.
+This installs the public `exchange-review` and `exchange-remediation` skills into `~/.cursor/skills`.
 
 ## Included wrappers
 
-- `exchange-workflow-review`
-- `workflow-review-remediation`
+- `exchange-review`
+- `exchange-remediation`
 
 ## Design rule
 

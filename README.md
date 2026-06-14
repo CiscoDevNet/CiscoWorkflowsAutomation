@@ -29,7 +29,7 @@ The `Toolkit/` area provides reusable helpers for the workflow review checklist 
 - solution engineers or contributors using another LLM
 - external contributors who want a documented CLI and MCP-based path
 
-See `Toolkit/README.md` for the audience guide and `WorkflowReviewChecklist.md` for the canonical review contract.
+See `Toolkit/README.md` for the audience guide and `WorkflowReviewChecklist.md` for the canonical review contract. The toolkit’s review and remediation guides now live under `Toolkit/exchange-review/` and `Toolkit/exchange-remediation/` so the folder naming matches the installable Cursor skills.
 
 ## Contributing
 

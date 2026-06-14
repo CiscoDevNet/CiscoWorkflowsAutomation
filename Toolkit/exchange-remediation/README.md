@@ -1,4 +1,4 @@
-# Workflow Remediation Guide
+# Exchange Remediation Guide
 
 Use this guide after a review has identified accepted findings to fix.
 

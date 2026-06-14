@@ -1,6 +1,10 @@
-# Workflow Review Guide
+# Exchange Review Guide
 
-Use this guide when you want to review a workflow export against the internal workflow review standard.
+Use this guide when you want to review a workflow export against the canonical workflow review standard.
+
+## Source of truth
+
+`WorkflowReviewChecklist.md` at the repository root is the canonical review contract. The CLI also ships a packaged copy for installed environments, but this repo should reference the root checklist first.
 
 ## Start here prompts
 
@@ -30,14 +34,14 @@ The `prepare-review` output is intentionally structured so it can be handed to a
 
 If you are using another LLM directly:
 
-1. Use the internal review standard used by the team
-2. Attach the workflow JSON export
-3. Use the reference in `reference.md` to keep the review sequence and output format consistent
+1. Use `WorkflowReviewChecklist.md` from the repository root.
+2. Attach the workflow JSON export.
+3. Use the reference in `reference.md` to keep the review sequence and output format consistent.
 
 ## Expectations
 
 - Do not skip embedded subworkflows.
-- Keep the internal review standard as the source of truth.
+- Keep the canonical review standard as the source of truth.
 - Lead with findings, sorted by severity.
 - Include remediation suggestions in the first review output.
 - Use user-facing names instead of raw internal IDs whenever possible.

@@ -1,4 +1,4 @@
-# Cursor Review Wrapper Reference
+# Exchange Review Wrapper Reference
 
 Use this wrapper with the shared CLI in `Toolkit/cli/`.
 
@@ -16,4 +16,4 @@ PYTHONPATH="<repo-root>/Toolkit/cli/src" python3 -m workflow_review prepare-revi
 - Cover all embedded workflows.
 - Lead with findings.
 - Include remediation suggestions in the first pass output.
-- Keep the packaged internal review standard canonical, with repo-root overrides only for team development.
+- Keep `WorkflowReviewChecklist.md` at the repository root canonical, with the packaged checklist as the fallback for installed environments.

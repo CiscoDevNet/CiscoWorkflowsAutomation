@@ -1,8 +1,8 @@
-# Workflow Remediation Reference
+# Exchange Remediation Reference
 
 ## Prerequisite
 
-Use workflow review first unless you already have an approved findings list.
+Use exchange review first unless you already have an approved findings list.
 
 ## Remediation modes
 

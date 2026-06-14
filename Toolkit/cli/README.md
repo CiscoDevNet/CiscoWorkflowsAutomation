@@ -86,4 +86,4 @@ workflow-review-mcp
 
 For the easiest MCP setup, run `bash Toolkit/mcp/install_mcp.sh` from the repo root. It installs the package and prints the exact command path to use.
 
-See `../mcp/README.md` for client configuration examples.
+See `../mcp/README.md` for client configuration examples. For VS Code and Cursor, MCP is the recommended editor-facing install path; the Cursor skill wrappers are optional thin helpers on top of the same core.

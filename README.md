@@ -17,7 +17,7 @@ CiscoWorkflowsAutomation/
 ├── LICENSE                               # Repository license terms
 ├── Meraki/                               # Cisco Meraki automation workflows and integrations
 ├── Restful_WebService/                   # RESTful API integration workflows and examples
-├── Toolkit/                              # Public review, remediation, CLI, MCP, and Cursor helpers
+├── Toolkit/                              # Public review, remediation, CLI, primary MCP integration, and optional Cursor helpers
 └── SECURITY.md                           # Security policies and reporting procedures
 ```
 
@@ -25,11 +25,11 @@ CiscoWorkflowsAutomation/
 
 The `Toolkit/` area provides reusable helpers for the workflow review checklist in this repository. It is intended for:
 
-- Cursor and VS Code users who want installable skill wrappers
+- VS Code and Cursor users who want a user-level MCP integration that works across workspaces
 - solution engineers or contributors using another LLM
 - external contributors who want a documented CLI and MCP-based path
 
-See `Toolkit/README.md` for the audience guide and `WorkflowReviewChecklist.md` for the canonical review contract. The toolkit’s review and remediation guides now live under `Toolkit/exchange-review/` and `Toolkit/exchange-remediation/` so the folder naming matches the installable Cursor skills.
+See `Toolkit/README.md` for the audience guide and `WorkflowReviewChecklist.md` for the canonical review contract. The recommended editor integration is the MCP path in `Toolkit/mcp/`, while the review and remediation guides live under `Toolkit/exchange-review/` and `Toolkit/exchange-remediation/`.
 
 ## Contributing
 

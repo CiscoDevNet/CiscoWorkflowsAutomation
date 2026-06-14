@@ -1,8 +1,12 @@
 # Workflow Review MCP
 
-This directory documents the Layer 3 stdio MCP path for the public toolkit.
+This directory documents the primary stdio MCP path for the public toolkit.
 
 The MCP server is intentionally thin. It wraps the same core package used by the CLI instead of re-implementing workflow review logic.
+
+## Recommended path
+
+For VS Code and Cursor, this is the primary integration surface. MCP is the recommended default because it can be configured once at the user level and then used across all workspaces.
 
 ## Current tools
 
@@ -40,7 +44,7 @@ Use one of these simple prompts to kick off the review:
 
 ### Cursor
 
-Use `review` as the starting action. Cursor will enumerate the export first, then return findings and remediation suggestions.
+Use `review` as the starting action. Cursor will enumerate the export first, then return findings and remediation suggestions. Prefer this MCP path over workspace-local skill wrappers when you want the toolkit available everywhere.
 
 See `cursor.example.json`. It includes both:
 
@@ -55,7 +59,7 @@ If your MCP client supports stdio servers, use the installed command directly an
 {
   "mcpServers": {
     "cisco-workflow-review": {
-    "command": "/path/to/installed/workflow-review-mcp",
+      "command": "/path/to/installed/workflow-review-mcp",
       "args": [],
       "env": {}
     }
@@ -85,6 +89,7 @@ If the command is not on `PATH`, replace it with the full path to the installed 
 
 ## Design intent
 
+- User-level editor integration first
 - Local stdio transport first
 - Shared core with the CLI
 - Narrow tools with explicit scope

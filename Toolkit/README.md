@@ -6,9 +6,11 @@ This toolkit turns the internal workflow review standard into reusable review an
 
 ## Who It Is For
 
-### Cursor and VS Code users
+### VS Code and Cursor users
 
-Use `Toolkit/cursor/` to install thin Cursor skill wrappers that call the shared CLI.
+Start with `Toolkit/mcp/` for the primary cross-workspace install path. The MCP server is the recommended integration for VS Code and Cursor because one user-level configuration can make it available in every workspace.
+
+Use `Toolkit/cursor/` only if you also want optional thin skill wrappers that call the shared CLI.
 
 ### Other LLM users
 
@@ -30,9 +32,9 @@ That path does not require Cursor.
 Toolkit/
 ├── README.md
 ├── cli/            # Layer 1: shared Python CLI and core helpers
-├── cursor/         # Layer 2: thin Cursor skill wrappers
+├── mcp/            # Layer 2: primary stdio MCP integration for editors
+├── cursor/         # Layer 3: optional thin Cursor skill wrappers
 ├── examples/       # Example commands and sample output
-├── mcp/            # Layer 3: stdio MCP guidance
 ├── exchange-remediation/ # Public remediation guidance and mode reference
 └── exchange-review/      # Public review guidance and checklist companion
 ```
@@ -40,8 +42,8 @@ Toolkit/
 ## Layering
 
 - Layer 1: the CLI is the shared core for enumeration, checklist resolution, review preparation with remediation suggestions, and remediation planning.
-- Layer 2: Cursor skills stay thin and delegate deterministic work to the CLI.
-- Layer 3: the MCP server wraps the same core instead of re-implementing logic.
+- Layer 2: the MCP server wraps the same core instead of re-implementing logic and is the recommended editor integration.
+- Layer 3: Cursor skills stay thin, optional, and delegate deterministic work to the CLI.
 
 ## Quick Start
 
@@ -53,16 +55,18 @@ python3 -m workflow_review inspect-workflow-export "/path/to/workflow.json"
 python3 -m workflow_review prepare-review "/path/to/workflow.json" --json
 ```
 
-### Install the public Cursor wrappers
-
-```bash
-bash Toolkit/cursor/install_cursor_skills.sh
-```
-
 ### Install the workflow review MCP
 
 ```bash
 bash Toolkit/mcp/install_mcp.sh
+```
+
+This is the recommended setup for VS Code and Cursor because it is configured at the user level rather than tied to a single workspace.
+
+### Install the optional Cursor wrappers
+
+```bash
+bash Toolkit/cursor/install_cursor_skills.sh
 ```
 
 ### Run the stdio MCP scaffold
@@ -72,7 +76,7 @@ cd Toolkit/cli
 python3 -m workflow_review.mcp_server
 ```
 
-For installed-client usage, see `Toolkit/mcp/README.md` for Cursor, VS Code, and generic stdio MCP examples that point at `workflow-review-mcp` directly and start with `review`; `inspect_export` is available as an advanced helper.
+For installed-client usage, see `Toolkit/mcp/README.md` for Cursor, VS Code, and generic stdio MCP examples that point at `workflow-review-mcp` directly and start with `review`; `inspect_export` is available as an advanced helper. Treat `Toolkit/cursor/` as an optional convenience layer rather than the primary install surface.
 
 ## Scope
 

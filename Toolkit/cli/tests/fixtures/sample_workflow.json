@@ -1,0 +1,22 @@
+{
+  "workflow": {
+    "object_type": "definition_workflow",
+    "unique_name": "definition_workflow_parent",
+    "name": "Parent Workflow",
+    "title": "Parent Workflow",
+    "properties": {
+      "display_name": "Parent Workflow"
+    },
+    "embedded": [
+      {
+        "object_type": "definition_workflow",
+        "unique_name": "definition_workflow_child",
+        "name": "Child Workflow",
+        "title": "Child Workflow",
+        "properties": {
+          "display_name": "Child Workflow"
+        }
+      }
+    ]
+  }
+}

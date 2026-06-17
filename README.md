@@ -1,6 +1,6 @@
 # Cisco Workflows Automation
 
-This repository contains automation workflows organized by target platform and functionality as described in the following repository structure:
+This repository contains automation workflows organized by target platform and functionality, plus a public toolkit for reviewing and improving workflow exports before submission.
 
 
 ## Repository Structure
@@ -11,14 +11,25 @@ CiscoWorkflowsAutomation/
 ├── CONTRIBUTING.md                       # Contribution guidelines and procedures
 ├── README.md                             # This file - repository overview
 ├── AI/                                   # AI-powered automation workflows and integrations
-├── Catalyst Center/                      # Cisco Catalyst Center automation workflows
-├── Cross Domain/                         # Multi-platform and cross-domain integration workflows
-├── Learning Series/                      # Educational workflows and training materials
+├── Catalyst_Center/                      # Cisco Catalyst Center automation workflows
+├── Cross_Domain/                         # Multi-platform and cross-domain integration workflows
+├── Learning_Series/                      # Educational workflows and training materials
 ├── LICENSE                               # Repository license terms
 ├── Meraki/                               # Cisco Meraki automation workflows and integrations
-├── Restful WebService/                   # RESTful API integration workflows and examples
+├── Restful_WebService/                   # RESTful API integration workflows and examples
+├── Toolkit/                              # Public review, remediation, CLI, primary MCP integration, and optional Cursor helpers
 └── SECURITY.md                           # Security policies and reporting procedures
 ```
+
+## Public Toolkit
+
+The `Toolkit/` area provides reusable helpers for the workflow review checklist in this repository. It is intended for:
+
+- VS Code and Cursor users who want a user-level MCP integration that works across workspaces
+- solution engineers or contributors using another LLM
+- external contributors who want a documented CLI and MCP-based path
+
+See `Toolkit/README.md` for the audience guide and `WorkflowReviewChecklist.md` for the canonical review contract. The recommended editor integration is the MCP path in `Toolkit/mcp/`, while the review and remediation guides live under `Toolkit/exchange-review/` and `Toolkit/exchange-remediation/`.
 
 ## Contributing
 

@@ -21,11 +21,11 @@ Apply low-risk cleanup and readability fixes only.
 ### `proposal-only`
 Produce a concrete plan without editing files.
 
-### `improve-activity-descriptions`
-Improve activity titles and descriptions only. This must remain non-structural.
+### `improve-workflow-readability`
+Improve user-facing descriptions across the main workflow, activities, groups, loops, and input/output variables where present. Keep description edits within the 1024-character platform limit. This must remain non-structural.
 
 ### `improve-workflow-description`
-Improve only the main workflow description. This must remain non-structural.
+Improve only the main workflow description. Keep the edited description within the 1024-character platform limit. This must remain non-structural.
 
 ## Safety modes
 

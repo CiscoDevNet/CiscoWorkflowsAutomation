@@ -12,7 +12,7 @@ REMEDIATION_MODES = {
     "fix-high-only": "Apply only approved high-severity findings.",
     "fix-low-only": "Apply low-risk cleanup and readability fixes only.",
     "proposal-only": "Plan the work without editing files.",
-    "improve-activity-descriptions": "Improve activity titles and descriptions only.",
+    "improve-workflow-readability": "Improve user-facing descriptions across the workflow without changing workflow logic.",
     "improve-workflow-description": "Improve the main workflow description only.",
 }
 
@@ -25,7 +25,7 @@ SAFETY_MODES = {
 LOW_RISK_MODES = {
     "fix-low-only",
     "proposal-only",
-    "improve-activity-descriptions",
+    "improve-workflow-readability",
     "improve-workflow-description",
 }
 
@@ -61,10 +61,17 @@ def plan_remediation(
     enumeration = enumerate_workflows(workflow_path)
     requires_major_change_review = major_change_risk(remediation_mode)
 
-    if remediation_mode in {"improve-activity-descriptions", "improve-workflow-description"}:
+    if remediation_mode == "improve-workflow-readability":
         planned_fixes = [
-            "Limit changes to user-facing descriptions and readability improvements.",
-            "Preserve workflow logic, outputs, categories, and targets.",
+            "Limit changes to user-facing readability improvements across workflow descriptions, activity descriptions, group and loop descriptions, and input/output variable descriptions where present.",
+            "Keep each edited description within the platform length limit of 1024 characters.",
+            "Preserve workflow logic, control flow, target behavior, categories, and output semantics.",
+        ]
+    elif remediation_mode == "improve-workflow-description":
+        planned_fixes = [
+            "Limit changes to the main workflow description only.",
+            "Keep the edited workflow description within the platform length limit of 1024 characters.",
+            "Preserve workflow logic, activity text, variables, outputs, categories, and targets.",
         ]
     elif remediation_mode == "proposal-only":
         planned_fixes = ["Generate a remediation plan only. No file edits should be applied."]

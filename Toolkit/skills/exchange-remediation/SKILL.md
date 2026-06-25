@@ -40,6 +40,7 @@ disable-model-invocation: true
 - No rewrite-by-default.
 - Preserve `name`, `title`, `unique_name`, and core intent unless the user explicitly approves otherwise.
 - Keep changes inside the selected remediation mode.
+- For description-focused modes, keep edits non-structural and keep each edited description within the 1024-character platform limit.
 - Stop if JSON validity or post-edit review fails.
 - Description-only modes must remain non-structural.
 

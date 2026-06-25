@@ -6,11 +6,10 @@ This legacy guide has been superseded by the public toolkit.
 
 - `WorkflowReviewChecklist.md` for the review contract
 - `Toolkit/README.md` for the toolkit overview and source-of-truth chain
-- `Toolkit/mcp/README.md` for the recommended VS Code and Cursor install path
+- `Toolkit/skills/README.md` for the recommended Cursor and Codex install path
 - `Toolkit/exchange-review/README.md` for review guidance
 - `Toolkit/exchange-remediation/README.md` for remediation guidance
 - `Toolkit/cli/README.md` for command-line usage
-- `Toolkit/cursor/README.md` for optional Cursor skill wrappers
 
 ## Why this file stays short
 

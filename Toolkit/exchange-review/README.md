@@ -28,7 +28,7 @@ PYTHONPATH=src python3 -m workflow_review inspect-workflow-export "/path/to/work
 PYTHONPATH=src python3 -m workflow_review prepare-review "/path/to/workflow.json" --json
 ```
 
-The `prepare-review` output is intentionally structured so it can be handed to another LLM or used by a thin Cursor or MCP wrapper.
+The `prepare-review` output is intentionally structured so it can be handed to another LLM or used by a thin skill wrapper.
 
 ## Manual/LLM path
 

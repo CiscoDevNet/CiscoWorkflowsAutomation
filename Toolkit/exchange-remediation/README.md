@@ -25,7 +25,7 @@ PYTHONPATH=src python3 -m workflow_review plan-remediation "/path/to/workflow.js
 That plan can then drive:
 
 - a human review pass
-- a Cursor skill invocation
+- a skill invocation in Cursor or Codex
 - or a future automated remediation engine
 
 ## Modes
@@ -35,6 +35,11 @@ See `reference.md` for:
 - remediation modes such as `fix-all` or `improve-workflow-description`
 - safety modes such as `update-in-place` or `ask-before-major-change`
 - the public definition of a major change
+
+The description-focused modes are intentionally split:
+
+- `improve-workflow-description` for the main workflow description only
+- `improve-workflow-readability` for broader readability cleanup across descriptions in activities, groups, loops, and variables
 
 ## Guardrails
 

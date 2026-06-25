@@ -29,7 +29,7 @@ The `Toolkit/` area provides reusable helpers for the workflow review checklist 
 - solution engineers or contributors using another LLM
 - external contributors who want a documented CLI and skill-based path
 
-See `Toolkit/README.md` for the audience guide and `WorkflowReviewChecklist.md` for the canonical review contract. The recommended agent integration is the skill path in `Toolkit/skills/`, while the review and remediation guides live under `Toolkit/exchange-review/` and `Toolkit/exchange-remediation/`.
+See `Toolkit/README.md` for the audience guide and `WorkflowReviewChecklist.md` for the canonical review contract. The recommended agent integration is the skill path in `Toolkit/skills/`, backed by the shared CLI in `Toolkit/cli/`.
 
 ## Contributing
 

@@ -12,14 +12,14 @@ Start with `Toolkit/skills/` for the primary install path. The public skills are
 
 ### Other LLM users
 
-Use `Toolkit/exchange-review/` and `Toolkit/exchange-remediation/` as copyable playbooks, then run the CLI in `Toolkit/cli/` for deterministic enumeration and checklist resolution.
+Use `Toolkit/skills/README.md` for prompt patterns and workflow shape, then run the CLI in `Toolkit/cli/` for deterministic enumeration, review preparation, and remediation planning.
 
 ### External contributors
 
 Start with:
 
 1. `WorkflowReviewChecklist.md`
-2. `Toolkit/exchange-review/README.md`
+2. `Toolkit/skills/README.md`
 3. `Toolkit/cli/README.md`
 
 That path does not require Cursor or Codex.
@@ -30,11 +30,10 @@ That path does not require Cursor or Codex.
 Toolkit/
 ├── README.md
 ├── cli/            # Layer 1: shared Python CLI and core helpers
-├── skills/         # Layer 2: thin shared skills for Cursor and Codex
-├── examples/       # Example commands and sample output
-├── exchange-remediation/ # Public remediation guidance and mode reference
-└── exchange-review/      # Public review guidance and checklist companion
+└── skills/         # Layer 2: thin shared skills for Cursor and Codex
 ```
+
+The canonical checklist itself lives at `WorkflowReviewChecklist.md` in the repository root.
 
 ## Layering
 

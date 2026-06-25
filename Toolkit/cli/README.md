@@ -2,7 +2,7 @@
 
 This directory contains the Layer 1 core for the public toolkit.
 
-The initial CLI focuses on deterministic tasks that are useful across Cursor, other LLMs, and MCP-capable clients:
+The CLI focuses on deterministic tasks that are useful across skill-based agents and direct command-line use:
 
 - inspect a workflow export and list its parent and embedded workflows
 - validate that an export can be parsed
@@ -76,14 +76,11 @@ The CLI resolves the checklist in this order:
 
 That keeps the repository copy canonical while still allowing the team to point at another checklist during development or use the packaged fallback when installed elsewhere.
 
-## MCP
+## Skills
 
-The stdio MCP scaffold is implemented in the same package and exposed through:
+The CLI is the shared execution layer underneath the public skills in `../skills/`.
 
-```bash
-workflow-review-mcp
-```
+- Use `bash Toolkit/skills/install_cursor_skills.sh` to install the skills into Cursor.
+- Use `bash Toolkit/skills/install_codex_skills.sh` to install the same skills into Codex.
 
-For the easiest MCP setup, run `bash Toolkit/mcp/install_mcp.sh` from the repo root. It installs the package and prints the exact command path to use.
-
-See `../mcp/README.md` for client configuration examples. For VS Code and Cursor, MCP is the recommended editor-facing install path; the Cursor skill wrappers are optional thin helpers on top of the same core.
+Those skills stay thin on purpose. They collect inputs, choose the right CLI commands, and present the results in a reviewer-friendly format without re-implementing the deterministic review logic.

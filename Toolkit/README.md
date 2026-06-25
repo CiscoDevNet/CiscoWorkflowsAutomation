@@ -6,25 +6,23 @@ This toolkit turns the internal workflow review standard into reusable review an
 
 ## Who It Is For
 
-### VS Code and Cursor users
+### Cursor and Codex users
 
-Start with `Toolkit/mcp/` for the primary cross-workspace install path. The MCP server is the recommended integration for VS Code and Cursor because one user-level configuration can make it available in every workspace.
-
-Use `Toolkit/cursor/` only if you also want optional thin skill wrappers that call the shared CLI.
+Start with `Toolkit/skills/` for the primary install path. The public skills are the recommended agent integration right now, and they delegate deterministic work to the shared CLI.
 
 ### Other LLM users
 
-Use `Toolkit/exchange-review/` and `Toolkit/exchange-remediation/` as copyable playbooks, then run the CLI in `Toolkit/cli/` for deterministic enumeration and checklist resolution.
+Use `Toolkit/skills/README.md` for prompt patterns and workflow shape, then run the CLI in `Toolkit/cli/` for deterministic enumeration, review preparation, and remediation planning.
 
 ### External contributors
 
 Start with:
 
 1. `WorkflowReviewChecklist.md`
-2. `Toolkit/exchange-review/README.md`
+2. `Toolkit/skills/README.md`
 3. `Toolkit/cli/README.md`
 
-That path does not require Cursor.
+That path does not require Cursor or Codex.
 
 ## Layout
 
@@ -32,51 +30,39 @@ That path does not require Cursor.
 Toolkit/
 ├── README.md
 ├── cli/            # Layer 1: shared Python CLI and core helpers
-├── mcp/            # Layer 2: primary stdio MCP integration for editors
-├── cursor/         # Layer 3: optional thin Cursor skill wrappers
-├── examples/       # Example commands and sample output
-├── exchange-remediation/ # Public remediation guidance and mode reference
-└── exchange-review/      # Public review guidance and checklist companion
+└── skills/         # Layer 2: thin shared skills for Cursor and Codex
 ```
+
+The canonical checklist itself lives at `WorkflowReviewChecklist.md` in the repository root.
 
 ## Layering
 
 - Layer 1: the CLI is the shared core for enumeration, checklist resolution, review preparation with remediation suggestions, and remediation planning.
-- Layer 2: the MCP server wraps the same core instead of re-implementing logic and is the recommended editor integration.
-- Layer 3: Cursor skills stay thin, optional, and delegate deterministic work to the CLI.
+- Layer 2: the public skills stay thin and delegate deterministic work to the CLI.
 
 ## Quick Start
+
+### Install the skills for Cursor
+
+```bash
+bash Toolkit/skills/install_cursor_skills.sh
+```
+
+### Install the skills for Codex
+
+```bash
+bash Toolkit/skills/install_codex_skills.sh
+```
 
 ### Review a workflow export with the CLI
 
 ```bash
 cd Toolkit/cli
-python3 -m workflow_review inspect-workflow-export "/path/to/workflow.json"
-python3 -m workflow_review prepare-review "/path/to/workflow.json" --json
+PYTHONPATH=src python3 -m workflow_review inspect-workflow-export "/path/to/workflow.json"
+PYTHONPATH=src python3 -m workflow_review prepare-review "/path/to/workflow.json" --json
 ```
 
-### Install the workflow review MCP
-
-```bash
-bash Toolkit/mcp/install_mcp.sh
-```
-
-This is the recommended setup for VS Code and Cursor because it is configured at the user level rather than tied to a single workspace.
-
-### Install the optional Cursor wrappers
-
-```bash
-bash Toolkit/cursor/install_cursor_skills.sh
-```
-
-### Run the stdio MCP scaffold
-
-```bash
-cd Toolkit/cli
-python3 -m workflow_review.mcp_server
-```
-
-For installed-client usage, see `Toolkit/mcp/README.md` for Cursor, VS Code, and generic stdio MCP examples that point at `workflow-review-mcp` directly and start with `review`; `inspect_export` is available as an advanced helper. Treat `Toolkit/cursor/` as an optional convenience layer rather than the primary install surface.
+The current public toolkit intentionally stops at the skill layer. The CLI remains the stable backend so the team can gather practical feedback before deciding whether another integration layer is worth adding on top.
 
 ## Scope
 

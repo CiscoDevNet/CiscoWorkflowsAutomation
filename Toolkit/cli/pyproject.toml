@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "cisco-workflow-review"
 version = "0.1.0"
-description = "Public CLI and MCP helpers for Cisco workflow review and remediation."
+description = "Public CLI helpers for Cisco workflow review and remediation."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "Cisco Sample Code License" }
@@ -16,7 +16,6 @@ dependencies = []
 
 [project.scripts]
 workflow-review = "workflow_review.cli:main"
-workflow-review-mcp = "workflow_review.mcp_server:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/workflow_review"]

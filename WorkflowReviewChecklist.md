@@ -7,6 +7,7 @@ This checklist is designed for LLM agents to systematically review JSON workflow
 **JSON Elements to Inspect:** `definition_workflow.properties.input_groups`, `definition_workflow.properties.inputs`
 
 - [ ] **Input Validation**: **If inputs exist**, check each input in `inputs` array has `name`, `type`, `description`, and appropriate `required` flag - **Note**: Workflows with no inputs are valid for automated/scheduled workflows
+- [ ] **Exchange-Compatible Input Types**: Check each input in the `inputs` array for `type: "enum"` - **Note**: `enum` inputs are supported by the workflow runtime but are not supported by the Exchange; flag them as a submission-blocking issue and recommend replacing them with a supported type such as `String` plus workflow validation for the allowed values
 - [ ] **Secure String Review**: For inputs with `type: "SecureString"`, verify `name` is descriptive and `scope` is documented in description
 - [ ] **Standard Outputs Present**: Verify outputs include `Result`, `Status Code`, `Status Message`, `Error Message` in `outputs` array
 - [ ] **Default Values Safety**: Scan `default_value` fields for production data (real IPs, device serials, org IDs, passwords) - should be generic placeholders only
